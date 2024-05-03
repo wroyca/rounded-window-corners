@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Rounded Window Corners Reborn</h1>
-  <p><i>A gnome-shell extensions that try to add rounded corners for all windows</i></p>
+  <p><i>A GNOME extension that adds rounded corners to all windows</i></p>
   <!--<a href="https://extensions.gnome.org/extension/5237/rounded-window-corners/">-->
   <!--  <img src="https://img.shields.io/badge/Install%20from-extensions.gnome.org-4A86CF?style=for-the-badge&logo=Gnome&logoColor=white"/>-->
   <!--</a>  -->
