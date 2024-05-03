@@ -1,16 +1,13 @@
 // This gulp script will do those step to build our gnome-shell extensions: 
 //   1. Compile typescript
-//   2. Format output js files
 //   2. Copy all things in Resources into build dir
-//   4. Convert import statements into style that Gjs need
-//   5. Compile settings schemas in build dir
-//   6. [Optional] Install extensions:
+//   3. Convert import statements into style that Gjs need
+//   4. Compile settings schemas in build dir
+//   5. [Optional] Install extensions:
 //      Copy all things in build dir into ~/.local/share/gnome-shell/extensions
 
 const { dest, src, series, parallel, } = require('gulp')
 const ts = require('gulp-typescript')
-const prettier = require('gulp-prettier')
-const gulpESLintNew = require('gulp-eslint-new')
 const colors = require('ansi-colors')
 const { po, compile_po } = require('./po')
 
@@ -27,23 +24,10 @@ const SRC_DIR = require('../tsconfig.json').compilerOptions.baseUrl + "/src"
 // [2] https://www.npmjs.com/package/gulp-preserve-typescript-whitespace
 const { restoreWhitespace, saveWhitespace } = require('gulp-preserve-typescript-whitespace')
 
-const eslint_src = () => gulpESLintNew({
-  fix: true,
-  overrideConfig: require('../src/.eslintrc.json')
-})
-const eslint_out = () => gulpESLintNew({
-  fix: true,
-  overrideConfig: { ...require('../resources/.eslintrc.json') }
-})
-
 const compile_ts = () => tsProject.src()  // Setup source
   .pipe(saveWhitespace())                 // Save white-space
   .pipe(tsProject()).js                   // Compile ts into js
   .pipe(restoreWhitespace())              // Restore white space
-  .pipe(prettier())                       // Format the output
-  .pipe(eslint_out())                     // eslint for output
-  .pipe(gulpESLintNew.fix())              // Auto fix
-  .pipe(gulpESLintNew.format())
   .pipe(replace())                        // Convert import statements to GJs-compatibility
   .pipe(src([
     `${SRC_DIR}/**/*`,
@@ -51,13 +35,6 @@ const compile_ts = () => tsProject.src()  // Setup source
     `!${SRC_DIR}/**/*.d.ts`
   ]))                                     // Add *.ui and shaders under src/ into source
   .pipe(dest(BUILD_DIR))                  // Set output
-
-const format = () =>  tsProject.src()
-  .pipe(prettier())                       // Format the source
-  .pipe(eslint_src())                     // eslint
-  .pipe(gulpESLintNew.fix())              // Auto Fix
-  .pipe(gulpESLintNew.format())
-  .pipe(dest('./src'))
 
 // Compile GSettings schemas in build directory by glib-compile-schemas
 // It will stop build process when schemas compile failed.
@@ -89,7 +66,7 @@ const install_extension = () => {
 
 const compile = series (compile_ts, copy_resources, compile_schema)
 
-exports.build = parallel(format, compile, po)
+exports.build = parallel(compile, po)
 exports.github_action = series(compile, compile_po)
 exports.copy_extension = install_extension
 
