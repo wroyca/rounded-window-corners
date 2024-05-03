@@ -32,7 +32,7 @@ import type {ExtensionsWindowActor} from './utils/types.js';
 export default class RoundedWindowCorners extends Extension {
     // The methods of gnome-shell to monkey patch
     private _orig_add_window!: (_: Meta.Window) => void;
-    private _orig_prep_worksapce_swt!: (workspaceIndices: number[]) => void;
+    private _orig_prep_workspace_swt!: (workspaceIndices: number[]) => void;
     private _orig_finish_workspace_swt!: typeof WorkspaceAnimationController.prototype._finishWorkspaceSwitch;
 
     private _services: Services | null = null;
@@ -44,7 +44,7 @@ export default class RoundedWindowCorners extends Extension {
         // Restore original methods, those methods will be restore when
         // extensions is disabled
         this._orig_add_window = WindowPreview.prototype._addWindow;
-        this._orig_prep_worksapce_swt =
+        this._orig_prep_workspace_swt =
             WorkspaceAnimationController.prototype._prepareWorkspaceSwitch;
         this._orig_finish_workspace_swt =
             WorkspaceAnimationController.prototype._finishWorkspaceSwitch;
@@ -231,7 +231,7 @@ export default class RoundedWindowCorners extends Extension {
         // actor when switching workspaces on Desktop
         WorkspaceAnimationController.prototype._prepareWorkspaceSwitch =
             function (workspaceIndices) {
-                self._orig_prep_worksapce_swt.apply(this, [workspaceIndices]);
+                self._orig_prep_workspace_swt.apply(this, [workspaceIndices]);
                 for (const monitor of this._switchData.monitors) {
                     for (const workspace of monitor._workspaceGroups) {
                         // Let shadow actor always behind the window clone actor when we
@@ -375,7 +375,7 @@ export default class RoundedWindowCorners extends Extension {
         // Restore patched methods
         WindowPreview.prototype._addWindow = this._orig_add_window;
         WorkspaceAnimationController.prototype._prepareWorkspaceSwitch =
-            this._orig_prep_worksapce_swt;
+            this._orig_prep_workspace_swt;
         WorkspaceAnimationController.prototype._finishWorkspaceSwitch =
             this._orig_finish_workspace_swt;
 
