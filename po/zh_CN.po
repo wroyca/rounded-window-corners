@@ -44,17 +44,17 @@ msgid "Blur Offset"
 msgstr "模糊半径"
 
 #: src/preferences/pages/general.ui:201
-#: src/preferences/widgets/reset_dialog.ts:65
+#: src/preferences/widgets/reset_dialog.ts:67
 msgid "Border Color"
 msgstr "边框颜色"
 
-#: src/preferences/widgets/reset_dialog.ts:70
+#: src/preferences/widgets/reset_dialog.ts:72
 #: src/preferences/widgets/rounded-corners-item.ui:19
 msgid "Border Radius"
 msgstr "圆角半径"
 
 #: src/preferences/pages/general.ui:168
-#: src/preferences/widgets/reset_dialog.ts:64
+#: src/preferences/widgets/reset_dialog.ts:66
 msgid "Border Width"
 msgstr "边框大小"
 
@@ -62,11 +62,11 @@ msgstr "边框大小"
 msgid "Bottom"
 msgstr "下边距"
 
-#: src/preferences/pages/blacklist.ts:64 src/preferences/pages/custom.ts:174
+#: src/preferences/pages/blacklist.ts:66 src/preferences/pages/custom.ts:182
 msgid "Can't add to list, because it has exists"
 msgstr "已在列表中，无法添加"
 
-#: src/preferences/widgets/app_row.ts:105
+#: src/preferences/widgets/app_row.ts:107
 msgid "Can't pick a window window from this position"
 msgstr "无法从此位置选取窗口"
 
@@ -74,7 +74,7 @@ msgstr "无法从此位置选取窗口"
 msgid "Clip paddings of window"
 msgstr "设置窗口的剪裁距离"
 
-#: src/preferences/widgets/reset_dialog.ts:75
+#: src/preferences/widgets/reset_dialog.ts:77
 #: src/preferences/widgets/rounded-corners-item.ui:53
 msgid "Corner Smoothing"
 msgstr "圆角平滑程度"
@@ -95,16 +95,16 @@ msgstr "调试"
 msgid "Edit Shadow for Rounded Corners Windows"
 msgstr "编辑圆角窗口阴影"
 
-#: src/preferences/pages/custom.ts:186
+#: src/preferences/pages/custom.ts:196
 msgid "Enable"
 msgstr "启用"
 
-#: src/preferences/pages/custom.ts:190
+#: src/preferences/pages/custom.ts:200
 msgid "Enable custom settings for this window"
 msgstr "为窗口启用自定义的配置"
 
 #: src/preferences/pages/general.ui:329
-#: src/preferences/widgets/reset_dialog.ts:66
+#: src/preferences/widgets/reset_dialog.ts:68
 msgid "Enable Log"
 msgstr "启用日志"
 
@@ -116,7 +116,7 @@ msgstr "展开此控件以选取窗口。"
 msgid "Focus Window"
 msgstr "已获取焦点的窗口"
 
-#: src/preferences/widgets/reset_dialog.ts:62
+#: src/preferences/widgets/reset_dialog.ts:64
 msgid "Focus Window Shadow Style"
 msgstr "已获取焦点窗口阴影"
 
@@ -140,7 +140,7 @@ msgstr "窗口全屏时保留圆角"
 msgid "Keep Rounded Corners when Maximized"
 msgstr "最大化时保留圆角"
 
-#: src/preferences/widgets/reset_dialog.ts:73
+#: src/preferences/widgets/reset_dialog.ts:75
 msgid "Keep Rounded Corners when Maximized or Fullscreen"
 msgstr "在窗口最大化或全屏时保留圆角"
 
@@ -169,7 +169,7 @@ msgstr "透明度"
 msgid "Open Reset Preferences Dialog"
 msgstr "打开重置对话框"
 
-#: src/preferences/widgets/reset_dialog.ts:71
+#: src/preferences/widgets/reset_dialog.ts:73
 msgid "Padding"
 msgstr "剪裁边距"
 
@@ -193,7 +193,7 @@ msgstr "重置设置"
 msgid "Right"
 msgstr "右边距"
 
-#: src/utils/ui.ts:103 src/utils/ui.ts:132
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
 msgid "Rounded Corners Settings..."
 msgstr "圆角设置…"
 
@@ -204,11 +204,11 @@ msgid ""
 msgstr ""
 "可以在终端里运行 <i>journalctl -o cat -f /usr/bin/gnome-shell</i> 来查看日志"
 
-#: src/preferences/widgets/reset_dialog.ts:96
+#: src/preferences/widgets/reset_dialog.ts:98
 msgid "Select All"
 msgstr "全选"
 
-#: src/preferences/widgets/reset_dialog.ts:87
+#: src/preferences/widgets/reset_dialog.ts:89
 msgid "Select Items to reset"
 msgstr "选择要重置的设置"
 
@@ -224,12 +224,12 @@ msgstr ""
 "每一项代表窗口的 WM_CLASS 属性，可以在添加窗口后选取窗口。"
 
 #: src/preferences/pages/general.ui:47
-#: src/preferences/widgets/reset_dialog.ts:60
+#: src/preferences/widgets/reset_dialog.ts:61
 msgid "Skip LibAdwaita Applications"
 msgstr "跳过 LibAdwaita 应用"
 
 #: src/preferences/pages/general.ui:74
-#: src/preferences/widgets/reset_dialog.ts:61
+#: src/preferences/widgets/reset_dialog.ts:63
 msgid "Skip LibHandy Applications"
 msgstr "跳过 LibHandy 应用"
 
@@ -269,7 +269,7 @@ msgstr "调整"
 msgid "Unfocus Window"
 msgstr "未获取焦点的窗口"
 
-#: src/preferences/widgets/reset_dialog.ts:63
+#: src/preferences/widgets/reset_dialog.ts:65
 msgid "Unfocus Window Shadow Style"
 msgstr "未获取焦点窗口阴影"
 

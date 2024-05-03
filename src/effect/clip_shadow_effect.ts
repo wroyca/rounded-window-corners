@@ -1,7 +1,7 @@
 // imports.gi
+import type * as Clutter from 'gi://Clutter';
 import * as GObject from 'gi://GObject';
 import * as Shell from 'gi://Shell';
-import * as Clutter from 'gi://Clutter';
 
 // local modules
 import {loadShader} from '../utils/io.js';

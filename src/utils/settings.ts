@@ -1,15 +1,15 @@
 // imports.gi
 import * as GLib from 'gi://GLib';
-import * as Gio from 'gi://Gio';
+import type * as Gio from 'gi://Gio';
 
 // used to mark types, will be remove in output files.
-import * as GObject from 'gi://GObject';
-import {
+import type * as GObject from 'gi://GObject';
+import {log} from '@global';
+import type {
     BoxShadow,
     CustomRoundedCornersCfg,
     RoundedCornersCfg,
 } from './types.js';
-import {log} from '@global';
 
 // --------------------------------------------------------------- [end imports]
 
@@ -65,11 +65,11 @@ export class Settings {
 
         // Define getter and setter for properties in class for keys in
         // schemas
-        this.g_settings.list_keys().forEach(key => {
+        for (const key of this.g_settings.list_keys()) {
             // Cache type string of keys first
             const default_val = this.g_settings.get_default_value(key);
             if (default_val == null) {
-                log('Err: Key of Settings undefined: ' + key);
+                log(`Err: Key of Settings undefined: ${key}`);
                 return;
             }
             type_of_keys[key] = default_val.get_type_string();
@@ -79,13 +79,13 @@ export class Settings {
                 get: () => this.g_settings.get_value(key).recursiveUnpack(),
                 set: val => {
                     const variant =
-                        type_of_keys[key] == 'a{sv}'
+                        type_of_keys[key] === 'a{sv}'
                             ? this._pack_val(val)
                             : new GLib.Variant(type_of_keys[key], val);
                     this.g_settings.set_value(key, variant);
                 },
             });
-        });
+        }
 
         /** Port rounded corners settings to new version  */
         this._fix();
@@ -116,11 +116,11 @@ export class Settings {
     private _pack_val(val: number | boolean | string | unknown): GLib.Variant {
         if (val instanceof Object) {
             const packed: {[prop: string]: GLib.Variant} = {};
-            Object.keys(val).forEach(k => {
+            for (const k in val) {
                 packed[k] = this._pack_val(
                     (val as {[prop: string]: unknown})[k],
                 );
-            });
+            }
             return new GLib.Variant('a{sv}', packed);
         }
 
@@ -128,30 +128,29 @@ export class Settings {
         // need to add handler to signed int number if we need store signed int
         // value into GSettings in GLib.Variant
 
-        if (typeof val == 'number') {
+        if (typeof val === 'number') {
             if (Math.abs(val - Math.floor(val)) < 10e-20) {
                 return GLib.Variant.new_uint32(val);
-            } else {
-                return GLib.Variant.new_double(val);
             }
+            return GLib.Variant.new_double(val);
         }
 
-        if (typeof val == 'boolean') {
+        if (typeof val === 'boolean') {
             return GLib.Variant.new_boolean(val);
         }
 
-        if (typeof val == 'string') {
+        if (typeof val === 'string') {
             return GLib.Variant.new_string(val);
         }
 
-        if (val instanceof Array) {
+        if (Array.isArray(val)) {
             return new GLib.Variant(
                 'av',
                 val.map(i => this._pack_val(i)),
             );
         }
 
-        throw Error('Unknown val to packed' + val);
+        throw Error(`Unknown val to packed${val}`);
     }
 
     /**  Fix RoundedCornersCfg when this type has been updated */
@@ -160,26 +159,26 @@ export class Settings {
         val: RoundedCornersCfg & {[prop: string]: undefined},
     ) {
         // Added missing props
-        Object.keys(default_val).forEach(k => {
+        for (const k in default_val) {
             if (val[k] === undefined) {
                 val[k] = default_val[k];
             }
-        });
+        }
 
         // keep_rounded_corners has been update to object type in v5
-        if (typeof val['keep_rounded_corners'] === 'boolean') {
+        if (typeof val.keep_rounded_corners === 'boolean') {
             const keep_rounded_corners = {
-                ...default_val['keep_rounded_corners'],
-                maximized: val['keep_rounded_corners'],
+                ...default_val.keep_rounded_corners,
+                maximized: val.keep_rounded_corners,
             };
-            val['keep_rounded_corners'] = keep_rounded_corners;
+            val.keep_rounded_corners = keep_rounded_corners;
         }
     }
 
     /** Port Settings to newer version in here when changed 'a{sv}' types */
     private _fix() {
         const VERSION = 5;
-        if (this.settings_version == VERSION) {
+        if (this.settings_version === VERSION) {
             return;
         }
         this.settings_version = VERSION;
@@ -198,9 +197,9 @@ export class Settings {
 
         // Fix custom-rounded-corner-settings
         const custom_cfg = this.custom_rounded_corner_settings;
-        Object.keys(custom_cfg).forEach(k => {
+        for (const k in custom_cfg) {
             this._fix_rounded_corners_cfg(default_val, custom_cfg[k] as _Cfg);
-        });
+        }
         this.custom_rounded_corner_settings = custom_cfg;
 
         log(`[RoundedWindowCorners] Update Settings to v${VERSION}`);

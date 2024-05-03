@@ -4,8 +4,21 @@
         "enabled": true
     },
     "linter": {
+        "ignore": ["**/*.d.ts"],
         "rules": {
-            "all": true
+            "all": true,
+            "style": {
+                "noNamespaceImport": "off",
+                "noDefaultExport": "off",
+                "useNamingConvention": "off",
+                "useSingleCaseStatement": "off"
+            },
+            "performance": {
+                "noDelete": "off"
+            },
+            "suspicious": {
+                "noConsoleLog": "off"
+            }
         }
     },
     "formatter": {

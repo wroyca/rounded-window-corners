@@ -1,16 +1,16 @@
 // imports.gi
-import * as Gtk from 'gi://Gtk';
 import * as GObject from 'gi://GObject';
+import * as Gtk from 'gi://Gtk';
 
 // local modules
-import {box_shadow_css} from '../../utils/types.js';
 import {settings} from '../../utils/settings.js';
+import {box_shadow_css} from '../../utils/types.js';
 
 import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
 // just used to mark type of value, will be remove in output javascript
-import {BoxShadow} from '../../utils/types.js';
 import {uri} from '../../utils/io.js';
+import type {BoxShadow} from '../../utils/types.js';
 // ----------------------------------------------------------------- end imports
 
 /**
@@ -152,7 +152,7 @@ export const EditShadowWindow = GObject.registerClass(
                 // Gtk.CssProvider.load_from_data() Deprecated since 4.12
                 type A = (data: string, len: number) => void;
                 const funcs = this.unfocus_provider.load_from_data;
-                if (funcs.length == 1) {
+                if (funcs.length === 1) {
                     this.unfocus_provider.load_from_data(
                         gen_style(this.unfocused_shadow, this.focused_shadow),
                     );

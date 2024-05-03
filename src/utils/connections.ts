@@ -1,5 +1,5 @@
 // Types
-import * as GObject from 'gi://GObject';
+import type * as GObject from 'gi://GObject';
 
 // ---------------------------------------------------------------- [end import]
 
@@ -28,6 +28,8 @@ export class Connections {
      * ```
      * @param source - Signal source
      * @param args - Arguments pass into GObject.Object.connect()
+     *
+     * biome-ignore lint/suspicious/noExplicitAny: this will make life easier
      */
     connect<T extends GObject.Object>(source: T, ...args: any): void {
         const signal: string = args[0];
@@ -40,10 +42,9 @@ export class Connections {
                 if (handlers[signal] !== undefined) {
                     handlers[signal].push(id);
                     return;
-                } else {
-                    handlers[signal] = [id];
-                    return;
                 }
+                handlers[signal] = [id];
+                return;
             }
         }
 
@@ -67,9 +68,11 @@ export class Connections {
         if (handlers !== undefined) {
             const handler = handlers[signal];
             if (handler !== undefined) {
-                handler.forEach(id => source.disconnect(id));
+                for (const id of handler) {
+                    source.disconnect(id);
+                }
                 delete handlers[signal];
-                if (Object.keys(handler).length == 0) {
+                if (Object.keys(handler).length === 0) {
                     this.connections.delete(source);
                 }
                 return;
@@ -88,10 +91,12 @@ export class Connections {
         if (source !== undefined) {
             const handlers = this.connections.get(source);
             if (handlers !== undefined) {
-                Object.keys(handlers).forEach(signal => {
-                    handlers[signal].forEach(id => source.disconnect(id));
+                for (const signal in handlers) {
+                    for (const id of handlers[signal]) {
+                        source.disconnect(id);
+                    }
                     delete handlers[signal];
-                });
+                }
                 this.connections.delete(source);
             }
             return;
@@ -99,10 +104,12 @@ export class Connections {
 
         // otherwise clear signal for all objects.
         this.connections.forEach((handlers, source) => {
-            Object.keys(handlers).forEach(signal => {
-                handlers[signal].forEach(id => source.disconnect(id));
+            for (const signal in handlers) {
+                for (const id of handlers[signal]) {
+                    source.disconnect(id);
+                }
                 delete handlers[signal];
-            });
+            }
         });
         this.connections.clear();
     }

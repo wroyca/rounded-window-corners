@@ -38,7 +38,7 @@ export function on_picked(cb: (wm_instance_class: string) => void) {
         obj_path,
         null,
         Gio.DBusSignalFlags.NONE,
-        (conn, sender, obj_path, iface, signal, params) => {
+        (_conn, _sender, _obj_path, _iface, _signal, params) => {
             const val = params.get_child_value(0);
             cb(val.get_string()[0]);
             connect.signal_unsubscribe(id);

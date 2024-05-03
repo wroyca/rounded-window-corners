@@ -5,10 +5,10 @@ import * as Shell from 'gi://Shell';
 
 // local modules
 import {loadShader} from '../utils/io.js';
-import * as types from '../utils/types.js';
+import type * as types from '../utils/types.js';
 
 // types
-import * as Clutter from 'gi://Clutter';
+import type * as Clutter from 'gi://Clutter';
 import {shell_version} from '../utils/ui.js';
 
 // --------------------------------------------------------------- [end imports]
@@ -55,11 +55,10 @@ export const RoundedCornersEffect = GObject.registerClass(
 
             super();
 
-            Object.keys(Effect.uniforms).forEach(k => {
-                if (!Effect.uniforms) return;
+            for (const k in Effect.uniforms) {
                 Effect.uniforms[k as keyof Uniforms] =
                     this.get_uniform_location(k);
-            });
+            }
         }
 
         vfunc_build_pipeline(): void {
@@ -88,7 +87,7 @@ export const RoundedCornersEffect = GObject.registerClass(
                 width: number;
                 color: [number, number, number, number];
             } = {width: 0, color: [0, 0, 0, 0]},
-            pixel_step?: [number, number],
+            pixel_step_raw?: [number, number],
         ) {
             const border_width = border.width * scale_factor;
             const border_color = border.color;
@@ -115,6 +114,7 @@ export const RoundedCornersEffect = GObject.registerClass(
                 inner_radius = 0.0;
             }
 
+            let pixel_step = pixel_step_raw;
             if (!pixel_step) {
                 const actor = this.actor;
                 pixel_step = [1 / actor.get_width(), 1 / actor.get_height()];

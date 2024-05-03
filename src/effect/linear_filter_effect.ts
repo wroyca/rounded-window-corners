@@ -1,4 +1,4 @@
-import * as Clutter from 'gi://Clutter';
+import type * as Clutter from 'gi://Clutter';
 import * as Cogl from 'gi://Cogl';
 import * as GObject from 'gi://GObject';
 import * as Shell from 'gi://Shell';

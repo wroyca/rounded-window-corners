@@ -1,9 +1,9 @@
-import * as Gtk from 'gi://Gtk';
+import type * as Gtk from 'gi://Gtk';
 
-import {General} from '../preferences/pages/general.js';
+import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 import {BlackList} from '../preferences/pages/blacklist.js';
 import {Custom} from '../preferences/pages/custom.js';
-import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
+import {General} from '../preferences/pages/general.js';
 
 type Page = {title: string; icon_name: string; widget: Gtk.Widget};
 

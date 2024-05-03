@@ -1,6 +1,6 @@
 // imports.gi
-import * as Meta from 'gi://Meta';
 import * as Gio from 'gi://Gio';
+import * as Meta from 'gi://Meta';
 
 // gnome modules
 import {
@@ -10,14 +10,14 @@ import {
 import {PACKAGE_VERSION} from 'resource:///org/gnome/shell/misc/config.js';
 
 // local modules
+import {constants} from './constants.js';
 import {load} from './io.js';
 import {_log, _logError} from './log.js';
-import {constants} from './constants.js';
 
 // types
+import type * as Clutter from 'gi://Clutter';
 import {global} from '@global';
-import * as types from './types.js';
-import * as Clutter from 'gi://Clutter';
+import type * as types from './types.js';
 
 // --------------------------------------------------------------- [end imports]
 
@@ -35,9 +35,9 @@ export const computeWindowContentsOffset = (
 };
 
 export enum AppType {
-    LibHandy,
-    LibAdwaita,
-    Other,
+    LibHandy = 'LibHandy',
+    LibAdwaita = 'LibAdwaita',
+    Other = 'Other',
 }
 
 /**
@@ -51,11 +51,13 @@ export const getAppType = (meta_window: Meta.Window) => {
         const contents = load(`/proc/${meta_window.get_pid()}/maps`);
         if (contents.match(/libhandy-1.so/)) {
             return AppType.LibHandy;
-        } else if (contents.match(/libadwaita-1.so/)) {
-            return AppType.LibAdwaita;
-        } else {
-            return AppType.Other;
         }
+
+        if (contents.match(/libadwaita-1.so/)) {
+            return AppType.LibAdwaita;
+        }
+
+        return AppType.Other;
     } catch (e) {
         _logError(e as Error);
         return AppType.Other;
@@ -111,7 +113,7 @@ export const AddBackgroundMenuItem = (menu: BackgroundMenu) => {
         const extension = Extension.lookupByURL(import.meta.url) as Extension;
         try {
             extension.openPreferences();
-        } catch (err) {
+        } catch {
             extension.openPreferences();
         }
     });
@@ -141,7 +143,7 @@ export const RestoreBackgroundMenu = () => {
     for (const _bg of global.window_group.first_child.get_children()) {
         const menu = (_bg as typeof _bg & BackgroundExtra)._backgroundMenu;
         remove_menu_item(menu);
-        _log('Added Item of ' + menu + 'Removed');
+        _log(`Added Item of ${menu}Removed`);
     }
 };
 
@@ -178,7 +180,7 @@ export function ShouldHasRoundedCorners(
     const fullscreen = win.fullscreen;
 
     should_has_rounded_corners =
-        (!maximized && !fullscreen) ||
+        !(maximized || fullscreen) ||
         (maximized && cfg.keep_rounded_corners.maximized) ||
         (fullscreen && cfg.keep_rounded_corners.fullscreen);
 

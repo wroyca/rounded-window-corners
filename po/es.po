@@ -49,17 +49,17 @@ msgid "Blur Offset"
 msgstr "Desenfoque"
 
 #: src/preferences/pages/general.ui:201
-#: src/preferences/widgets/reset_dialog.ts:65
+#: src/preferences/widgets/reset_dialog.ts:67
 msgid "Border Color"
 msgstr "Color de los bordes"
 
-#: src/preferences/widgets/reset_dialog.ts:70
+#: src/preferences/widgets/reset_dialog.ts:72
 #: src/preferences/widgets/rounded-corners-item.ui:19
 msgid "Border Radius"
 msgstr "Radio de los bordes"
 
 #: src/preferences/pages/general.ui:168
-#: src/preferences/widgets/reset_dialog.ts:64
+#: src/preferences/widgets/reset_dialog.ts:66
 msgid "Border Width"
 msgstr "Ancho de los bordes"
 
@@ -67,11 +67,11 @@ msgstr "Ancho de los bordes"
 msgid "Bottom"
 msgstr "Abajo"
 
-#: src/preferences/pages/blacklist.ts:64 src/preferences/pages/custom.ts:174
+#: src/preferences/pages/blacklist.ts:66 src/preferences/pages/custom.ts:182
 msgid "Can't add to list, because it has exists"
 msgstr "No se puede añadir a la lista, porque ya existe"
 
-#: src/preferences/widgets/app_row.ts:105
+#: src/preferences/widgets/app_row.ts:107
 msgid "Can't pick a window window from this position"
 msgstr "No se puede elegir una ventana desde esta posición"
 
@@ -79,7 +79,7 @@ msgstr "No se puede elegir una ventana desde esta posición"
 msgid "Clip paddings of window"
 msgstr "Recortar los márgenes de la ventana"
 
-#: src/preferences/widgets/reset_dialog.ts:75
+#: src/preferences/widgets/reset_dialog.ts:77
 #: src/preferences/widgets/rounded-corners-item.ui:53
 msgid "Corner Smoothing"
 msgstr "Suavizado de bordes"
@@ -100,16 +100,16 @@ msgstr "Depurar"
 msgid "Edit Shadow for Rounded Corners Windows"
 msgstr "Editar sombras de las ventanas con bordes redondeados"
 
-#: src/preferences/pages/custom.ts:186
+#: src/preferences/pages/custom.ts:196
 msgid "Enable"
 msgstr "Habilitar"
 
-#: src/preferences/pages/custom.ts:190
+#: src/preferences/pages/custom.ts:200
 msgid "Enable custom settings for this window"
 msgstr "Habilitar opciones personalizadas para esta ventana"
 
 #: src/preferences/pages/general.ui:329
-#: src/preferences/widgets/reset_dialog.ts:66
+#: src/preferences/widgets/reset_dialog.ts:68
 msgid "Enable Log"
 msgstr "Habilitar registro"
 
@@ -121,7 +121,7 @@ msgstr "Amplíe esta fila para elegir una ventana."
 msgid "Focus Window"
 msgstr "Ventana enfocada"
 
-#: src/preferences/widgets/reset_dialog.ts:62
+#: src/preferences/widgets/reset_dialog.ts:64
 msgid "Focus Window Shadow Style"
 msgstr "Estilo de sombra de la ventana enfocada"
 
@@ -145,7 +145,7 @@ msgstr "Mantener bordes redondeados en pantalla completa"
 msgid "Keep Rounded Corners when Maximized"
 msgstr "Mantener bordes redondeados cuando se está maximizado"
 
-#: src/preferences/widgets/reset_dialog.ts:73
+#: src/preferences/widgets/reset_dialog.ts:75
 msgid "Keep Rounded Corners when Maximized or Fullscreen"
 msgstr ""
 "Mantener bordes redondeados cuando se está maximizado o a pantalla completa"
@@ -176,7 +176,7 @@ msgstr "Opacidad"
 msgid "Open Reset Preferences Dialog"
 msgstr "Abrir el diálogo de Restaurar preferencias"
 
-#: src/preferences/widgets/reset_dialog.ts:71
+#: src/preferences/widgets/reset_dialog.ts:73
 msgid "Padding"
 msgstr "Relleno"
 
@@ -200,7 +200,7 @@ msgstr "Restaurar preferencias"
 msgid "Right"
 msgstr "Derecha"
 
-#: src/utils/ui.ts:103 src/utils/ui.ts:132
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
 msgid "Rounded Corners Settings..."
 msgstr "Configuración de Rounded Corners..."
 
@@ -212,11 +212,11 @@ msgstr ""
 "Ejecute <i>journalctl -o cat -f /usr/bin/gnome-shell</i> en una terminal "
 "para ver el registro"
 
-#: src/preferences/widgets/reset_dialog.ts:96
+#: src/preferences/widgets/reset_dialog.ts:98
 msgid "Select All"
 msgstr "Selecciona todo"
 
-#: src/preferences/widgets/reset_dialog.ts:87
+#: src/preferences/widgets/reset_dialog.ts:89
 msgid "Select Items to reset"
 msgstr "Seleccione los elementos que desea reiniciar"
 
@@ -233,12 +233,12 @@ msgstr ""
 "con ventana. Puede elegir una ventana para agregarla a esta lista."
 
 #: src/preferences/pages/general.ui:47
-#: src/preferences/widgets/reset_dialog.ts:60
+#: src/preferences/widgets/reset_dialog.ts:61
 msgid "Skip LibAdwaita Applications"
 msgstr "Omitir aplicaciones LibAdwaita"
 
 #: src/preferences/pages/general.ui:74
-#: src/preferences/widgets/reset_dialog.ts:61
+#: src/preferences/widgets/reset_dialog.ts:63
 msgid "Skip LibHandy Applications"
 msgstr "Omitir aplicaciones LibHandy"
 
@@ -278,7 +278,7 @@ msgstr "Retoques"
 msgid "Unfocus Window"
 msgstr "Ventana desenfocada"
 
-#: src/preferences/widgets/reset_dialog.ts:63
+#: src/preferences/widgets/reset_dialog.ts:65
 msgid "Unfocus Window Shadow Style"
 msgstr "Estilo de sombra de ventana no enfocada"
 

@@ -3,16 +3,19 @@ import * as GObject from 'gi://GObject';
 import * as Gtk from 'gi://Gtk';
 
 // local modules
-import {list_children, show_err_msg, TIPS_EMPTY} from '../../utils/prefs.js';
-import {constants} from '../../utils/constants.js';
-import {settings} from '../../utils/settings.js';
-import {connections} from '../../utils/connections.js';
 import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
-import {AppRowHandler, AppRow} from '../widgets/app_row.js';
+import {connections} from '../../utils/connections.js';
+import {constants} from '../../utils/constants.js';
+import {TIPS_EMPTY, list_children, show_err_msg} from '../../utils/prefs.js';
+import {settings} from '../../utils/settings.js';
+import {AppRow, type AppRowHandler} from '../widgets/app_row.js';
 import {RoundedCornersItem} from '../widgets/rounded_corners_item.js';
 
-import {CustomRoundedCornersCfg, RoundedCornersCfg} from '../../utils/types.js';
 import {uri} from '../../utils/io.js';
+import type {
+    CustomRoundedCornersCfg,
+    RoundedCornersCfg,
+} from '../../utils/types.js';
 
 // --------------------------------------------------------------- [end imports]
 
@@ -121,11 +124,13 @@ export const Custom = GObject.registerClass(
                         .connect(
                             app_row._expanded_list_box,
                             'row-activated',
-                            (me: Gtk.ListBox, row: Gtk.ListBoxRow) => {
+                            (_me: Gtk.ListBox, row: Gtk.ListBoxRow) => {
                                 if (!rounded_corners_item) {
                                     return;
                                 }
-                                if (row == rounded_corners_item._paddings_row) {
+                                if (
+                                    row === rounded_corners_item._paddings_row
+                                ) {
                                     rounded_corners_item.update_revealer();
                                 }
                             },
@@ -147,7 +152,7 @@ export const Custom = GObject.registerClass(
             expanded_row.title = title;
             expanded_row.activatable = false;
 
-            if (title == '') {
+            if (title === '') {
                 expanded_row.description = TIPS_EMPTY();
             }
 
@@ -157,9 +162,8 @@ export const Custom = GObject.registerClass(
 
             add_row(expanded_row, enabled_row);
 
-            list_children(rounded_corners_item)
-                .filter(child => child.name != constants.DON_T_CONFIG)
-                .forEach(child => {
+            for (const child of list_children(rounded_corners_item)) {
+                if (child.name === constants.DON_T_CONFIG) {
                     rounded_corners_item?.remove(child);
                     add_row(expanded_row, child);
                     enabled_switch.bind_property(
@@ -168,14 +172,16 @@ export const Custom = GObject.registerClass(
                         'sensitive',
                         GObject.BindingFlags.SYNC_CREATE,
                     );
-                });
+                }
+            }
 
             return expanded_row;
         }
 
         private show_exists_error_toast(item: string) {
-            const title =
-                `${item}: ` + _("Can't add to list, because it has exists");
+            const title = `${item}: ${_(
+                "Can't add to list, because it has exists",
+            )}`;
             show_err_msg(title);
         }
 

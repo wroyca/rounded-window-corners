@@ -48,17 +48,17 @@ msgid "Blur Offset"
 msgstr "Desfoque"
 
 #: src/preferences/pages/general.ui:201
-#: src/preferences/widgets/reset_dialog.ts:65
+#: src/preferences/widgets/reset_dialog.ts:67
 msgid "Border Color"
 msgstr "Cor da Borda"
 
-#: src/preferences/widgets/reset_dialog.ts:70
+#: src/preferences/widgets/reset_dialog.ts:72
 #: src/preferences/widgets/rounded-corners-item.ui:19
 msgid "Border Radius"
 msgstr "Raio da Borda"
 
 #: src/preferences/pages/general.ui:168
-#: src/preferences/widgets/reset_dialog.ts:64
+#: src/preferences/widgets/reset_dialog.ts:66
 msgid "Border Width"
 msgstr "Largura da Borda"
 
@@ -66,11 +66,11 @@ msgstr "Largura da Borda"
 msgid "Bottom"
 msgstr "Parte Inferior"
 
-#: src/preferences/pages/blacklist.ts:64 src/preferences/pages/custom.ts:174
+#: src/preferences/pages/blacklist.ts:66 src/preferences/pages/custom.ts:182
 msgid "Can't add to list, because it has exists"
 msgstr "Não é possível adicionar à lista porque já existe"
 
-#: src/preferences/widgets/app_row.ts:105
+#: src/preferences/widgets/app_row.ts:107
 msgid "Can't pick a window window from this position"
 msgstr "Não é possível selecionar uma janela a partir desta posição"
 
@@ -78,7 +78,7 @@ msgstr "Não é possível selecionar uma janela a partir desta posição"
 msgid "Clip paddings of window"
 msgstr "Recortar as margens da janela"
 
-#: src/preferences/widgets/reset_dialog.ts:75
+#: src/preferences/widgets/reset_dialog.ts:77
 #: src/preferences/widgets/rounded-corners-item.ui:53
 msgid "Corner Smoothing"
 msgstr "Suavização dos Cantos"
@@ -99,16 +99,16 @@ msgstr "Debug"
 msgid "Edit Shadow for Rounded Corners Windows"
 msgstr "Editar a sombra dos cantos da janela"
 
-#: src/preferences/pages/custom.ts:186
+#: src/preferences/pages/custom.ts:196
 msgid "Enable"
 msgstr "Habilitar"
 
-#: src/preferences/pages/custom.ts:190
+#: src/preferences/pages/custom.ts:200
 msgid "Enable custom settings for this window"
 msgstr "Habilitar customizações nesta janela"
 
 #: src/preferences/pages/general.ui:329
-#: src/preferences/widgets/reset_dialog.ts:66
+#: src/preferences/widgets/reset_dialog.ts:68
 msgid "Enable Log"
 msgstr "Habilitar Log"
 
@@ -120,7 +120,7 @@ msgstr "Expanda esta linha para escolher uma janela."
 msgid "Focus Window"
 msgstr "Janela Focada"
 
-#: src/preferences/widgets/reset_dialog.ts:62
+#: src/preferences/widgets/reset_dialog.ts:64
 msgid "Focus Window Shadow Style"
 msgstr "Estilo de Sombra da Janela Focada"
 
@@ -144,7 +144,7 @@ msgstr "Manter Cantos Arredondados em Tela Cheia"
 msgid "Keep Rounded Corners when Maximized"
 msgstr "Manter Cantos Arredondados ao Maximizar"
 
-#: src/preferences/widgets/reset_dialog.ts:73
+#: src/preferences/widgets/reset_dialog.ts:75
 msgid "Keep Rounded Corners when Maximized or Fullscreen"
 msgstr "Manter Cantos Arredondados ao Maximizar ou em Tela Cheia"
 
@@ -174,7 +174,7 @@ msgstr "Opacidade"
 msgid "Open Reset Preferences Dialog"
 msgstr "Abrir caixa de diálogo de Redefinição de Configurações"
 
-#: src/preferences/widgets/reset_dialog.ts:71
+#: src/preferences/widgets/reset_dialog.ts:73
 msgid "Padding"
 msgstr "Margem"
 
@@ -198,7 +198,7 @@ msgstr "Redefinir Preferências"
 msgid "Right"
 msgstr "Direita"
 
-#: src/utils/ui.ts:103 src/utils/ui.ts:132
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
 msgid "Rounded Corners Settings..."
 msgstr "Configurações de Cantos Arredondados..."
 
@@ -210,11 +210,11 @@ msgstr ""
 "Execute <i>journalctl -o cat -f /usr/bin/gnome-shell</i> no terminal para "
 "ver o log"
 
-#: src/preferences/widgets/reset_dialog.ts:96
+#: src/preferences/widgets/reset_dialog.ts:98
 msgid "Select All"
 msgstr "Selecionar tudo"
 
-#: src/preferences/widgets/reset_dialog.ts:87
+#: src/preferences/widgets/reset_dialog.ts:89
 msgid "Select Items to reset"
 msgstr "Selecionar Itens para Redefinir"
 
@@ -232,12 +232,12 @@ msgstr ""
 "selecionar uma janela para adicioná-la a esta lista."
 
 #: src/preferences/pages/general.ui:47
-#: src/preferences/widgets/reset_dialog.ts:60
+#: src/preferences/widgets/reset_dialog.ts:61
 msgid "Skip LibAdwaita Applications"
 msgstr "Ignorar Aplicativos Usando LibAdwaita"
 
 #: src/preferences/pages/general.ui:74
-#: src/preferences/widgets/reset_dialog.ts:61
+#: src/preferences/widgets/reset_dialog.ts:63
 msgid "Skip LibHandy Applications"
 msgstr "Ignorar Aplicativos Usando LibHandy"
 
@@ -277,7 +277,7 @@ msgstr "Ajustes"
 msgid "Unfocus Window"
 msgstr "Janela Desfocada"
 
-#: src/preferences/widgets/reset_dialog.ts:63
+#: src/preferences/widgets/reset_dialog.ts:65
 msgid "Unfocus Window Shadow Style"
 msgstr "Estilo de Sombra da Janela Desfocada"
 

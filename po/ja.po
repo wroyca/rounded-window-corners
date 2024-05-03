@@ -44,17 +44,17 @@ msgid "Blur Offset"
 msgstr "ぼかし補正"
 
 #: src/preferences/pages/general.ui:201
-#: src/preferences/widgets/reset_dialog.ts:65
+#: src/preferences/widgets/reset_dialog.ts:67
 msgid "Border Color"
 msgstr "境界線の色"
 
-#: src/preferences/widgets/reset_dialog.ts:70
+#: src/preferences/widgets/reset_dialog.ts:72
 #: src/preferences/widgets/rounded-corners-item.ui:19
 msgid "Border Radius"
 msgstr "境界線の角丸サイズ"
 
 #: src/preferences/pages/general.ui:168
-#: src/preferences/widgets/reset_dialog.ts:64
+#: src/preferences/widgets/reset_dialog.ts:66
 msgid "Border Width"
 msgstr "境界線の幅"
 
@@ -62,11 +62,11 @@ msgstr "境界線の幅"
 msgid "Bottom"
 msgstr "下"
 
-#: src/preferences/pages/blacklist.ts:64 src/preferences/pages/custom.ts:174
+#: src/preferences/pages/blacklist.ts:66 src/preferences/pages/custom.ts:182
 msgid "Can't add to list, because it has exists"
 msgstr "既に存在するため、一覧に追加できません"
 
-#: src/preferences/widgets/app_row.ts:105
+#: src/preferences/widgets/app_row.ts:107
 msgid "Can't pick a window window from this position"
 msgstr "この位置からウィンドウを選択できません"
 
@@ -74,7 +74,7 @@ msgstr "この位置からウィンドウを選択できません"
 msgid "Clip paddings of window"
 msgstr ""
 
-#: src/preferences/widgets/reset_dialog.ts:75
+#: src/preferences/widgets/reset_dialog.ts:77
 #: src/preferences/widgets/rounded-corners-item.ui:53
 msgid "Corner Smoothing"
 msgstr "角を滑らかに"
@@ -95,16 +95,16 @@ msgstr "デバッグ"
 msgid "Edit Shadow for Rounded Corners Windows"
 msgstr "角丸ウィンドウの影を編集"
 
-#: src/preferences/pages/custom.ts:186
+#: src/preferences/pages/custom.ts:196
 msgid "Enable"
 msgstr "有効化"
 
-#: src/preferences/pages/custom.ts:190
+#: src/preferences/pages/custom.ts:200
 msgid "Enable custom settings for this window"
 msgstr "このウィンドウの独自設定を有効化"
 
 #: src/preferences/pages/general.ui:329
-#: src/preferences/widgets/reset_dialog.ts:66
+#: src/preferences/widgets/reset_dialog.ts:68
 msgid "Enable Log"
 msgstr "ログを有効化"
 
@@ -116,7 +116,7 @@ msgstr "この行を展開しウィンドウを選択。"
 msgid "Focus Window"
 msgstr ""
 
-#: src/preferences/widgets/reset_dialog.ts:62
+#: src/preferences/widgets/reset_dialog.ts:64
 msgid "Focus Window Shadow Style"
 msgstr ""
 
@@ -140,7 +140,7 @@ msgstr "全画面時に角丸を維持"
 msgid "Keep Rounded Corners when Maximized"
 msgstr "最大化時に角丸を維持"
 
-#: src/preferences/widgets/reset_dialog.ts:73
+#: src/preferences/widgets/reset_dialog.ts:75
 msgid "Keep Rounded Corners when Maximized or Fullscreen"
 msgstr "最大化や全画面時に角丸を維持"
 
@@ -170,7 +170,7 @@ msgstr "不透明度"
 msgid "Open Reset Preferences Dialog"
 msgstr "設定初期化のダイアログを開く"
 
-#: src/preferences/widgets/reset_dialog.ts:71
+#: src/preferences/widgets/reset_dialog.ts:73
 msgid "Padding"
 msgstr ""
 
@@ -194,7 +194,7 @@ msgstr "設定を初期化"
 msgid "Right"
 msgstr "右"
 
-#: src/utils/ui.ts:103 src/utils/ui.ts:132
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
 msgid "Rounded Corners Settings..."
 msgstr "角丸の設定..."
 
@@ -206,11 +206,11 @@ msgstr ""
 "ログ閲覧にはターミナルで <i>journalctl -o cat -f /usr/bin/gnome-shell</i> を"
 "実行"
 
-#: src/preferences/widgets/reset_dialog.ts:96
+#: src/preferences/widgets/reset_dialog.ts:98
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/preferences/widgets/reset_dialog.ts:87
+#: src/preferences/widgets/reset_dialog.ts:89
 msgid "Select Items to reset"
 msgstr "初期化する項目を選択"
 
@@ -227,12 +227,12 @@ msgstr ""
 "これを追加するウィンドウを選択できます。"
 
 #: src/preferences/pages/general.ui:47
-#: src/preferences/widgets/reset_dialog.ts:60
+#: src/preferences/widgets/reset_dialog.ts:61
 msgid "Skip LibAdwaita Applications"
 msgstr "LibAdwaita のアプリは無視"
 
 #: src/preferences/pages/general.ui:74
-#: src/preferences/widgets/reset_dialog.ts:61
+#: src/preferences/widgets/reset_dialog.ts:63
 msgid "Skip LibHandy Applications"
 msgstr "LibHandy のアプリは無視"
 
@@ -272,7 +272,7 @@ msgstr ""
 msgid "Unfocus Window"
 msgstr ""
 
-#: src/preferences/widgets/reset_dialog.ts:63
+#: src/preferences/widgets/reset_dialog.ts:65
 msgid "Unfocus Window Shadow Style"
 msgstr ""
 

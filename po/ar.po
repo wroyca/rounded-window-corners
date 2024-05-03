@@ -46,17 +46,17 @@ msgid "Blur Offset"
 msgstr "توازن الضبابية"
 
 #: src/preferences/pages/general.ui:201
-#: src/preferences/widgets/reset_dialog.ts:65
+#: src/preferences/widgets/reset_dialog.ts:67
 msgid "Border Color"
 msgstr "لون الحدود"
 
-#: src/preferences/widgets/reset_dialog.ts:70
+#: src/preferences/widgets/reset_dialog.ts:72
 #: src/preferences/widgets/rounded-corners-item.ui:19
 msgid "Border Radius"
 msgstr "درجة تدوير زوايا الحدود"
 
 #: src/preferences/pages/general.ui:168
-#: src/preferences/widgets/reset_dialog.ts:64
+#: src/preferences/widgets/reset_dialog.ts:66
 #, fuzzy
 msgid "Border Width"
 msgstr "عرض الحدود"
@@ -65,11 +65,11 @@ msgstr "عرض الحدود"
 msgid "Bottom"
 msgstr "أسفل"
 
-#: src/preferences/pages/blacklist.ts:64 src/preferences/pages/custom.ts:174
+#: src/preferences/pages/blacklist.ts:66 src/preferences/pages/custom.ts:182
 msgid "Can't add to list, because it has exists"
 msgstr "لا يمك‏ن إضافته للقائمة، لأنه موجودة فيها"
 
-#: src/preferences/widgets/app_row.ts:105
+#: src/preferences/widgets/app_row.ts:107
 msgid "Can't pick a window window from this position"
 msgstr "لا يمكن اختيار النافذة من هذا المكان"
 
@@ -78,7 +78,7 @@ msgstr "لا يمكن اختيار النافذة من هذا المكان"
 msgid "Clip paddings of window"
 msgstr "تصغير حواف النافذة"
 
-#: src/preferences/widgets/reset_dialog.ts:75
+#: src/preferences/widgets/reset_dialog.ts:77
 #: src/preferences/widgets/rounded-corners-item.ui:53
 msgid "Corner Smoothing"
 msgstr "تمليس الزاوية"
@@ -99,16 +99,16 @@ msgstr "تصحيح الأخطاء"
 msgid "Edit Shadow for Rounded Corners Windows"
 msgstr "تعديل ظل النوافذ ذات الزوايا المدورة"
 
-#: src/preferences/pages/custom.ts:186
+#: src/preferences/pages/custom.ts:196
 msgid "Enable"
 msgstr "تفعيل"
 
-#: src/preferences/pages/custom.ts:190
+#: src/preferences/pages/custom.ts:200
 msgid "Enable custom settings for this window"
 msgstr "تفعيل الإعدادات الخاصة بهذه النافذة"
 
 #: src/preferences/pages/general.ui:329
-#: src/preferences/widgets/reset_dialog.ts:66
+#: src/preferences/widgets/reset_dialog.ts:68
 msgid "Enable Log"
 msgstr "تفعيل التسجيلات التقنية"
 
@@ -120,7 +120,7 @@ msgstr "كبر الصف لاختيار نافذة."
 msgid "Focus Window"
 msgstr "التركيز على النافذة"
 
-#: src/preferences/widgets/reset_dialog.ts:62
+#: src/preferences/widgets/reset_dialog.ts:64
 msgid "Focus Window Shadow Style"
 msgstr "نمط ظل النافذة المختارة"
 
@@ -144,7 +144,7 @@ msgstr "إبقاء الزوايا المدورة في وضع ملء الشاشة
 msgid "Keep Rounded Corners when Maximized"
 msgstr "إبقاء الزوايا المدورة في وضع التكبير"
 
-#: src/preferences/widgets/reset_dialog.ts:73
+#: src/preferences/widgets/reset_dialog.ts:75
 msgid "Keep Rounded Corners when Maximized or Fullscreen"
 msgstr "إبقاء الزوايا المدورة في وضع التكبير أو ملء الشاشة"
 
@@ -170,7 +170,7 @@ msgstr ""
 msgid "Open Reset Preferences Dialog"
 msgstr "فتح نافذة إعادة الضبط"
 
-#: src/preferences/widgets/reset_dialog.ts:71
+#: src/preferences/widgets/reset_dialog.ts:73
 msgid "Padding"
 msgstr "تباعد"
 
@@ -194,7 +194,7 @@ msgstr "إعادة ضبط الإعدادات"
 msgid "Right"
 msgstr "يمين"
 
-#: src/utils/ui.ts:103 src/utils/ui.ts:132
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
 msgid "Rounded Corners Settings..."
 msgstr "إعدادات الزوايا المدورة..."
 
@@ -206,11 +206,11 @@ msgstr ""
 "شغل <i>journalctl -o cat -f /usr/bin/gnome-shell</i> في الطرفية لتظهر "
 "التسجيلات"
 
-#: src/preferences/widgets/reset_dialog.ts:96
+#: src/preferences/widgets/reset_dialog.ts:98
 msgid "Select All"
 msgstr "اختر الكل"
 
-#: src/preferences/widgets/reset_dialog.ts:87
+#: src/preferences/widgets/reset_dialog.ts:89
 msgid "Select Items to reset"
 msgstr "اختر الأشياء لإعادة ضبطها"
 
@@ -223,12 +223,12 @@ msgid ""
 msgstr ""
 
 #: src/preferences/pages/general.ui:47
-#: src/preferences/widgets/reset_dialog.ts:60
+#: src/preferences/widgets/reset_dialog.ts:61
 msgid "Skip LibAdwaita Applications"
 msgstr "تجنب تطبيقات (LibAdwaita)"
 
 #: src/preferences/pages/general.ui:74
-#: src/preferences/widgets/reset_dialog.ts:61
+#: src/preferences/widgets/reset_dialog.ts:63
 msgid "Skip LibHandy Applications"
 msgstr "تجنب تطبيقات (LibHandy)"
 
@@ -269,7 +269,7 @@ msgstr "تعديلات"
 msgid "Unfocus Window"
 msgstr "النافذة الغير المختارة"
 
-#: src/preferences/widgets/reset_dialog.ts:63
+#: src/preferences/widgets/reset_dialog.ts:65
 msgid "Unfocus Window Shadow Style"
 msgstr "نمط ظل النافذة الغير المختارة"
 

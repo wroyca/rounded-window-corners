@@ -3,11 +3,11 @@ import * as GObject from 'gi://GObject';
 import * as Gtk from 'gi://Gtk';
 
 // local Modules
-import {show_err_msg, TIPS_EMPTY} from '../../utils/prefs.js';
-import {connections} from '../../utils/connections.js';
-import {on_picked, pick} from '../../dbus/client.js';
 import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
+import {on_picked, pick} from '../../dbus/client.js';
+import {connections} from '../../utils/connections.js';
 import {uri} from '../../utils/io.js';
+import {TIPS_EMPTY, show_err_msg} from '../../utils/prefs.js';
 
 // types
 
@@ -56,7 +56,7 @@ export const AppRow = GObject.registerClass(
                 }
                 connections.get().disconnect_all(btn);
                 connections.get().disconnect_all(this);
-                cb && cb.on_delete && cb.on_delete(this, this._title.label);
+                cb?.on_delete?.(this, this._title.label);
             });
 
             c.connect(this._expand_img, 'clicked', () =>
@@ -66,16 +66,16 @@ export const AppRow = GObject.registerClass(
 
         set title(t: string) {
             this._title.label = t;
-            this._title.visible = this._title.label != '';
-            this._description.visible = this._description.label != '';
+            this._title.visible = this._title.label !== '';
+            this._description.visible = this._description.label !== '';
         }
         get title(): string {
             return this._title.label;
         }
         set description(d: string) {
             this._description.label = d;
-            this._title.visible = this._title.label != '';
-            this._description.visible = this._description.label != '';
+            this._title.visible = this._title.label !== '';
+            this._description.visible = this._description.label !== '';
         }
 
         on_expanded_changed() {
@@ -84,12 +84,12 @@ export const AppRow = GObject.registerClass(
                 this._expand_img.add_css_class('rotated');
                 this._wm_class_instance_entry.text = this._title.label;
                 this.connect_signals();
-                this.cb && this.cb.on_open && this.cb.on_open(this);
+                this.cb?.on_open?.(this);
             } else {
                 this._expand_img.remove_css_class('rotated');
                 this.change_title();
                 this.disconnect_signals();
-                this.cb && this.cb.on_close && this.cb.on_close();
+                this.cb?.on_close?.();
             }
         }
 
@@ -107,7 +107,7 @@ export const AppRow = GObject.registerClass(
                     const title = _(
                         "Can't pick a window window from this position",
                     );
-                    if (wm_instance_class == 'window-not-found') {
+                    if (wm_instance_class === 'window-not-found') {
                         show_err_msg(title);
                         return;
                     }
@@ -125,10 +125,9 @@ export const AppRow = GObject.registerClass(
 
         private change_title() {
             if (
-                !this.cb ||
-                !this.cb.on_title_changed ||
-                this._title.label == this._wm_class_instance_entry.text ||
-                this._wm_class_instance_entry.text == ''
+                !this.cb?.on_title_changed ||
+                this._title.label === this._wm_class_instance_entry.text ||
+                this._wm_class_instance_entry.text === ''
             ) {
                 return;
             }
@@ -141,10 +140,8 @@ export const AppRow = GObject.registerClass(
             ) {
                 this.title = this._wm_class_instance_entry.text;
                 this.description = '';
-            } else {
-                if (this.title == '') {
-                    this.description = TIPS_EMPTY();
-                }
+            } else if (this.title === '') {
+                this.description = TIPS_EMPTY();
             }
         }
     },

@@ -2,13 +2,13 @@
 import * as GObject from 'gi://GObject';
 
 // Local Modules
-import {show_err_msg, TIPS_EMPTY} from '../../utils/prefs.js';
-import {settings} from '../../utils/settings.js';
-import {connections} from '../../utils/connections.js';
 import {AppRow} from '../../preferences/widgets/app_row.js';
+import {connections} from '../../utils/connections.js';
+import {TIPS_EMPTY, show_err_msg} from '../../utils/prefs.js';
+import {settings} from '../../utils/settings.js';
 
 // types
-import {AppRowHandler} from '../widgets/app_row.js';
+import type {AppRowHandler} from '../widgets/app_row.js';
 
 import * as Gtk from 'gi://Gtk';
 import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
@@ -35,7 +35,9 @@ export const BlackList = GObject.registerClass(
             this.black_list = settings().black_list;
 
             // Read blacklist from settings, and add it to this._black_list
-            this.black_list.forEach(name => this.on_add_row(name));
+            for (const name of this.black_list) {
+                this.on_add_row(name);
+            }
 
             connections.get().connect(this._add_row_btn, 'clicked', () => {
                 if (this.black_list.includes('')) {
@@ -52,7 +54,7 @@ export const BlackList = GObject.registerClass(
                 .connect(
                     this._black_list_group,
                     'row-activated',
-                    (me: Gtk.ListBox, row: Gtk.ListBoxRow) => {
+                    (_me: Gtk.ListBox, row: Gtk.ListBoxRow) => {
                         if (row instanceof AppRow) {
                             row.on_expanded_changed();
                         }
@@ -61,8 +63,9 @@ export const BlackList = GObject.registerClass(
         }
 
         private show_err_msg(item: string) {
-            const title =
-                `${item}: ` + _("Can't add to list, because it has exists");
+            const title = `${item}: ${_(
+                "Can't add to list, because it has exists",
+            )}`;
             show_err_msg(title);
         }
 

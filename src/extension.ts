@@ -1,31 +1,31 @@
 // imports.gi
-import * as Graphene from 'gi://Graphene';
 import * as Clutter from 'gi://Clutter';
-import * as Gio from 'gi://Gio';
-import * as Meta from 'gi://Meta';
 import * as GObject from 'gi://GObject';
+import type * as Gio from 'gi://Gio';
+import * as Graphene from 'gi://Graphene';
+import * as Meta from 'gi://Meta';
 
 // gnome-shell modules
-import {WindowPreview} from 'resource:///org/gnome/shell/ui/windowPreview.js';
-import {overview, layoutManager} from 'resource:///org/gnome/shell/ui/main.js';
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
+import {layoutManager, overview} from 'resource:///org/gnome/shell/ui/main.js';
+import {WindowPreview} from 'resource:///org/gnome/shell/ui/windowPreview.js';
 import {WorkspaceAnimationController} from 'resource:///org/gnome/shell/ui/workspaceAnimation.js';
 
 // local modules
-import {constants} from './utils/constants.js';
-import {stackMsg, _log} from './utils/log.js';
-import * as UI from './utils/ui.js';
-import {connections} from './utils/connections.js';
-import {SchemasKeys, init_settings, settings} from './utils/settings.js';
 import {Services} from './dbus/services.js';
 import {LinearFilterEffect} from './effect/linear_filter_effect.js';
 import {RoundedCornersEffect} from './effect/rounded_corners_effect.js';
 import {WindowActorTracker} from './manager/effect_manager.js';
+import {connections} from './utils/connections.js';
+import {constants} from './utils/constants.js';
+import {_log, stackMsg} from './utils/log.js';
+import {init_settings, settings} from './utils/settings.js';
+import * as UI from './utils/ui.js';
 
 // types, which will be removed in output
-import {RoundedCornersCfg} from './utils/types.js';
-import {ExtensionsWindowActor} from './utils/types.js';
 import {global} from '@global';
+import type {RoundedCornersCfg} from './utils/types.js';
+import type {ExtensionsWindowActor} from './utils/types.js';
 
 // --------------------------------------------------------------- [end imports]
 
@@ -117,7 +117,7 @@ export default class RoundedWindowCorners extends Extension {
                 );
                 has_rounded_corners = UI.ShouldHasRoundedCorners(window, cfg);
             }
-            if (!has_rounded_corners || !shadow) {
+            if (!(has_rounded_corners && shadow)) {
                 return;
             }
 
@@ -187,7 +187,7 @@ export default class RoundedWindowCorners extends Extension {
                     let pixel_step: [number, number] | undefined = undefined;
                     if (
                         UI.shell_version() >= 43.1 &&
-                        window.get_client_type() ==
+                        window.get_client_type() ===
                             Meta.WindowClientType.WAYLAND
                     ) {
                         const surface = (
@@ -241,7 +241,9 @@ export default class RoundedWindowCorners extends Extension {
                         const restacked_id = global.display.connect(
                             'restacked',
                             () => {
-                                workspace._windowRecords.forEach(({clone}) => {
+                                for (const {
+                                    clone,
+                                } of workspace._windowRecords) {
                                     const shadow = (clone as WsAnimationActor)
                                         ._shadow_clone;
                                     if (shadow) {
@@ -250,7 +252,7 @@ export default class RoundedWindowCorners extends Extension {
                                             clone,
                                         );
                                     }
-                                });
+                                }
                             },
                         );
                         const destroy_id = workspace.connect('destroy', () => {
@@ -258,76 +260,70 @@ export default class RoundedWindowCorners extends Extension {
                             workspace.disconnect(destroy_id);
                         });
 
-                        workspace._windowRecords.forEach(
-                            ({windowActor: actor, clone}) => {
-                                const win = actor.meta_window;
-                                const frame_rect = win.get_frame_rect();
-                                const shadow = (actor as ExtensionsWindowActor)
-                                    .__rwc_rounded_window_info?.shadow;
-                                const enabled =
-                                    UI.get_rounded_corners_effect(
-                                        actor,
-                                    )?.enabled;
-                                if (shadow && enabled) {
-                                    // Only create shadow actor when window should have rounded
-                                    // corners when switching workspace
+                        for (const {
+                            windowActor: actor,
+                            clone,
+                        } of workspace._windowRecords) {
+                            const win = actor.meta_window;
+                            const frame_rect = win.get_frame_rect();
+                            const shadow = (actor as ExtensionsWindowActor)
+                                .__rwc_rounded_window_info?.shadow;
+                            const enabled =
+                                UI.get_rounded_corners_effect(actor)?.enabled;
+                            if (shadow && enabled) {
+                                // Only create shadow actor when window should have rounded
+                                // corners when switching workspace
 
-                                    // Copy shadow actor to workspace group, so that to see
-                                    // shadow when switching workspace
-                                    const shadow_clone = new Clutter.Clone({
-                                        source: shadow,
-                                    });
-                                    const paddings =
-                                        constants.SHADOW_PADDING *
-                                        UI.WindowScaleFactor(win);
+                                // Copy shadow actor to workspace group, so that to see
+                                // shadow when switching workspace
+                                const shadow_clone = new Clutter.Clone({
+                                    source: shadow,
+                                });
+                                const paddings =
+                                    constants.SHADOW_PADDING *
+                                    UI.WindowScaleFactor(win);
 
-                                    shadow_clone.width =
-                                        frame_rect.width + paddings * 2;
-                                    shadow_clone.height =
-                                        frame_rect.height + paddings * 2;
-                                    shadow_clone.x =
-                                        clone.x +
-                                        frame_rect.x -
-                                        actor.x -
-                                        paddings;
-                                    shadow_clone.y =
-                                        clone.y +
-                                        frame_rect.y -
-                                        actor.y -
-                                        paddings;
+                                shadow_clone.width =
+                                    frame_rect.width + paddings * 2;
+                                shadow_clone.height =
+                                    frame_rect.height + paddings * 2;
+                                shadow_clone.x =
+                                    clone.x + frame_rect.x - actor.x - paddings;
+                                shadow_clone.y =
+                                    clone.y + frame_rect.y - actor.y - paddings;
 
-                                    // Should works well work Desktop Cube extensions
-                                    const notify_id = clone.connect(
-                                        'notify::translation-z',
-                                        () =>
-                                            (shadow_clone.translation_z =
-                                                clone.translation_z - 0.05),
-                                    );
-                                    const destroy_id = clone.connect(
-                                        'destroy',
-                                        () => {
-                                            clone.disconnect(notify_id);
-                                            clone.disconnect(destroy_id);
-                                        },
-                                    );
+                                // Should works well work Desktop Cube extensions
+                                const notify_id = clone.connect(
+                                    'notify::translation-z',
+                                    () => {
+                                        shadow_clone.translation_z =
+                                            clone.translation_z - 0.05;
+                                    },
+                                );
+                                const destroy_id = clone.connect(
+                                    'destroy',
+                                    () => {
+                                        clone.disconnect(notify_id);
+                                        clone.disconnect(destroy_id);
+                                    },
+                                );
 
-                                    // Add reference shadow clone for clone actor, so that we
-                                    // can restack position of shadow when we need
-                                    (clone as WsAnimationActor)._shadow_clone =
-                                        shadow_clone;
-                                    clone.bind_property(
-                                        'visible',
-                                        shadow_clone,
-                                        'visible',
-                                        0,
-                                    );
-                                    workspace.insert_child_below(
-                                        shadow_clone,
-                                        clone,
-                                    );
-                                }
-                            },
-                        );
+                                // Add reference shadow clone for clone actor, so that we
+                                // can restack position of shadow when we need
+                                (clone as WsAnimationActor)._shadow_clone =
+                                    shadow_clone;
+                                clone.bind_property(
+                                    'visible',
+                                    shadow_clone,
+                                    'visible',
+                                    0,
+                                );
+                                workspace.insert_child_below(
+                                    shadow_clone,
+                                    clone,
+                                );
+                            }
+                        }
                     }
                 }
             };
@@ -336,12 +332,12 @@ export default class RoundedWindowCorners extends Extension {
             function (switchData) {
                 for (const monitor of this._switchData.monitors) {
                     for (const workspace of monitor._workspaceGroups) {
-                        workspace._windowRecords.forEach(({clone}) => {
+                        for (const {clone} of workspace._windowRecords) {
                             (
                                 clone as WsAnimationActor
                             )._shadow_clone?.destroy();
                             delete (clone as WsAnimationActor)._shadow_clone;
-                        });
+                        }
                     }
                 }
                 self._orig_finish_workspace_swt.apply(this, [switchData]);
@@ -364,12 +360,10 @@ export default class RoundedWindowCorners extends Extension {
             settings().g_settings,
             'changed',
             (_: Gio.Settings, k: string) => {
-                switch (k as SchemasKeys) {
-                    case 'enable-preferences-entry':
-                        settings().enable_preferences_entry
-                            ? UI.SetupBackgroundMenu()
-                            : UI.RestoreBackgroundMenu();
-                        break;
+                if (k === 'enable-preferences-entry') {
+                    settings().enable_preferences_entry
+                        ? UI.SetupBackgroundMenu()
+                        : UI.RestoreBackgroundMenu();
                 }
             },
         );

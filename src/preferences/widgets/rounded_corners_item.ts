@@ -3,9 +3,9 @@ import * as GObject from 'gi://GObject';
 import * as Gtk from 'gi://Gtk';
 
 // local modules
-import {RoundedCornersCfg} from '../../utils/types.js';
 import {connections} from '../../utils/connections.js';
 import {uri} from '../../utils/io.js';
+import type {RoundedCornersCfg} from '../../utils/types.js';
 
 // types
 // ------------------------------------------------------------------ end import

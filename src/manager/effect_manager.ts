@@ -1,21 +1,21 @@
 // imports.gi
-import * as Clutter from 'gi://Clutter';
+import type * as Clutter from 'gi://Clutter';
 import * as Graphene from 'gi://Graphene';
-import * as Shell from 'gi://Shell';
-import * as Meta from 'gi://Meta';
+import type * as Meta from 'gi://Meta';
+import type * as Shell from 'gi://Shell';
 
+import {RoundedCornersManager} from '../manager/rounded_corners_manager.js';
+import {Connections} from '../utils/connections.js';
 // local modules
 import {_log} from '../utils/log.js';
 import {settings} from '../utils/settings.js';
-import {Connections} from '../utils/connections.js';
-import {RoundedCornersManager} from '../manager/rounded_corners_manager.js';
 
-// types, those import statements will be removed in output javascript files.
-import {SchemasKeys} from '../utils/settings.js';
-import {EffectManager} from '../utils/types.js';
-import {ExtensionsWindowActor} from '../utils/types.js';
+import type * as Gio from 'gi://Gio';
 import {global} from '@global';
-import * as Gio from 'gi://Gio';
+// types, those import statements will be removed in output javascript files.
+import type {SchemasKeys} from '../utils/settings.js';
+import type {EffectManager} from '../utils/types.js';
+import type {ExtensionsWindowActor} from '../utils/types.js';
 import {shell_version} from '../utils/ui.js';
 
 // --------------------------------------------------------------- [end imports]
@@ -32,7 +32,9 @@ export class WindowActorTracker {
     // ---------------------------------------------------------- [public methods]
 
     private run(exec: (m: EffectManager) => void) {
-        this.effect_managers.filter(m => m.enabled).forEach(m => exec(m));
+        for (const m of this.effect_managers) {
+            exec(m);
+        }
     }
 
     /** Call When enable extension */
@@ -84,7 +86,9 @@ export class WindowActorTracker {
                 this.run(m => {
                     const ws =
                         global.workspace_manager.get_workspace_by_index(to);
-                    if (!m.on_switch_workspace) return;
+                    if (!m.on_switch_workspace) {
+                        return;
+                    }
                     for (const win of ws?.list_windows() ?? []) {
                         m.on_switch_workspace(win.get_compositor_private());
                     }
@@ -143,19 +147,21 @@ export class WindowActorTracker {
 
         // When windows restacked, change order of shadow actor too
         this.connections.connect(global.display, 'restacked', () => {
-            global.get_window_actors().forEach(actor => {
+            for (const actor of global.get_window_actors()) {
                 if (!actor.visible) {
-                    return;
+                    continue;
                 }
                 this.run(m => m.on_restacked(actor));
-            });
+            }
         });
     }
 
     /** Call when extension is disabled */
     disable() {
         // Remove rounded effect and shadow actor for all windows
-        global.get_window_actors().forEach(actor => this._remove_effect(actor));
+        for (const actor of global.get_window_actors()) {
+            this._remove_effect(actor);
+        }
 
         // Disconnect all signal
         this.connections?.disconnect_all();

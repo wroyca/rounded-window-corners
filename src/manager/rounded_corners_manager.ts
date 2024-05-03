@@ -1,23 +1,23 @@
 // imports.gi
 import * as Clutter from 'gi://Clutter';
 import * as GLib from 'gi://GLib';
+import * as GObject from 'gi://GObject';
 import * as Meta from 'gi://Meta';
 import * as St from 'gi://St';
-import * as GObject from 'gi://GObject';
 
 // local modules
-import * as UI from '../utils/ui.js';
-import {_log} from '../utils/log.js';
-import {constants} from '../utils/constants.js';
 import {ClipShadowEffect} from '../effect/clip_shadow_effect.js';
-import * as types from '../utils/types.js';
-import {settings} from '../utils/settings.js';
 import {RoundedCornersEffect} from '../effect/rounded_corners_effect.js';
+import {constants} from '../utils/constants.js';
+import {_log} from '../utils/log.js';
+import {settings} from '../utils/settings.js';
+import * as types from '../utils/types.js';
+import * as UI from '../utils/ui.js';
 
 // types, those import statements will be removed in output javascript files.
-import {SchemasKeys} from '../utils/settings.js';
 import {global} from '@global';
-import {EffectManager, ExtensionsWindowActor} from '../utils/types.js';
+import type {SchemasKeys} from '../utils/settings.js';
+import type {EffectManager, ExtensionsWindowActor} from '../utils/types.js';
 type RoundedCornersEffectType = InstanceType<typeof RoundedCornersEffect>;
 
 // --------------------------------------------------------------- [end imports]
@@ -32,7 +32,7 @@ export class RoundedCornersManager implements EffectManager {
     // ---------------------------------------------------------- [public methods]
 
     on_add_effect(actor: ExtensionsWindowActor): void {
-        _log('opened: ' + actor?.meta_window.title + ': ' + actor);
+        _log(`opened: ${actor?.meta_window.title}: ${actor}`);
 
         const win = actor.meta_window;
 
@@ -101,7 +101,9 @@ export class RoundedCornersManager implements EffectManager {
         // Remove all timeout handler
         const timeout_id =
             actor.__rwc_rounded_window_info?.unminimized_timeout_id;
-        if (timeout_id) GLib.source_remove(timeout_id);
+        if (timeout_id) {
+            GLib.source_remove(timeout_id);
+        }
         delete actor.__rwc_rounded_window_info;
     }
 
@@ -124,7 +126,9 @@ export class RoundedCornersManager implements EffectManager {
 
             // Clear prev handler
             let id = info.unminimized_timeout_id;
-            if (id) GLib.source_remove(id);
+            if (id) {
+                GLib.source_remove(id);
+            }
             id = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 300, () => {
                 actor.first_child.queue_relayout();
                 return false;
@@ -158,7 +162,7 @@ export class RoundedCornersManager implements EffectManager {
         const effect = this._actor_to_rounded(actor)?.get_effect(
             constants.ROUNDED_CORNERS_EFFECT,
         ) as RoundedCornersEffectType | null;
-        if (!effect || !window_info) {
+        if (!(effect && window_info)) {
             return;
         }
 
@@ -311,7 +315,7 @@ export class RoundedCornersManager implements EffectManager {
         const {AppType, getAppType} = UI;
         const app_type = win.__app_type ?? getAppType(win);
         win.__app_type = app_type; // cache result
-        _log('Check Type of window:' + `${win.title} => ${AppType[app_type]}`);
+        _log(`Check Type of window:${win.title} => ${AppType[app_type]}`);
 
         if (settings().skip_libadwaita_app && app_type === AppType.LibAdwaita) {
             return false;
@@ -330,7 +334,7 @@ export class RoundedCornersManager implements EffectManager {
      */
     private _actor_to_rounded(actor: Meta.WindowActor): Clutter.Actor | null {
         const type = actor.meta_window.get_client_type();
-        return type == Meta.WindowClientType.X11
+        return type === Meta.WindowClientType.X11
             ? actor.get_first_child()
             : actor;
     }
@@ -401,7 +405,7 @@ export class RoundedCornersManager implements EffectManager {
         if (settings().tweak_kitty_terminal) {
             const type = Meta.WindowClientType.WAYLAND;
             if (
-                actor.meta_window.get_client_type() == type &&
+                actor.meta_window.get_client_type() === type &&
                 actor.meta_window.get_wm_class_instance() === 'kitty'
             ) {
                 const scale = UI.WindowScaleFactor(actor.meta_window);
@@ -444,16 +448,17 @@ export class RoundedCornersManager implements EffectManager {
     private _update_shadow_actor_style(
         win: Meta.Window,
         actor: St.Bin,
-        border_radius = this.global_rounded_corners?.border_radius,
+        border_radius_raw = this.global_rounded_corners?.border_radius,
         shadow = settings().focused_shadow,
         padding = this.global_rounded_corners?.padding,
     ) {
-        if (!border_radius || !padding) {
+        if (!(border_radius_raw && padding)) {
             return;
         }
         const {left, right, top, bottom} = padding;
 
         // Increasing border_radius when smoothing is on
+        let border_radius = border_radius_raw;
         if (this.global_rounded_corners !== null) {
             border_radius *= 1.0 + this.global_rounded_corners.smoothing;
         }
@@ -502,7 +507,7 @@ export class RoundedCornersManager implements EffectManager {
 
     /** Traversal all windows, add or remove rounded corners for them */
     private _update_all_window_effect_state() {
-        global.get_window_actors().forEach(actor => {
+        for (const actor of global.get_window_actors()) {
             const should_have_effect = this._should_enable_effect(
                 actor.meta_window,
             );
@@ -518,7 +523,7 @@ export class RoundedCornersManager implements EffectManager {
                 this.on_remove_effect(actor);
                 return;
             }
-        });
+        }
     }
 
     /** Update style for all shadow actors */

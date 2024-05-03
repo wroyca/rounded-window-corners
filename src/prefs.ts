@@ -1,13 +1,13 @@
-import * as Gtk from 'gi://Gtk';
-import * as Gdk from 'gi://Gdk';
 import * as Adw from 'gi://Adw';
+import * as Gdk from 'gi://Gdk';
+import * as Gtk from 'gi://Gtk';
 
-import {connections} from './utils/connections.js';
-import {init_settings, uninit_settings} from './utils/settings.js';
-import {pages} from './preferences/index.js';
-import {_log} from './utils/log.js';
-import * as Utils from './utils/io.js';
 import {ExtensionPreferences} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
+import {pages} from './preferences/index.js';
+import {connections} from './utils/connections.js';
+import * as Utils from './utils/io.js';
+import {_log} from './utils/log.js';
+import {init_settings, uninit_settings} from './utils/settings.js';
 
 export default class RoundedWindowCornresPrefs extends ExtensionPreferences {
     constructor(metadata: object) {

@@ -1,16 +1,16 @@
 // imports.gi
-import * as Gio from 'gi://Gio';
+import type * as Clutter from 'gi://Clutter';
 import * as GLib from 'gi://GLib';
+import * as Gio from 'gi://Gio';
 import * as Meta from 'gi://Meta';
-import * as Clutter from 'gi://Clutter';
 
 // gnome modules
 import {Inspector} from 'resource:///org/gnome/shell/ui/lookingGlass.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
 // local modules
-import {_log} from '../utils/log.js';
 import {loadFile} from '../utils/io.js';
+import {_log} from '../utils/log.js';
 
 // --------------------------------------------------------------- [end imports]
 
@@ -47,19 +47,20 @@ export class Services {
 
             // Remove border effect when window is picked.
             const effect_name = 'lookingGlass_RedBorderEffect';
-            target
-                .get_effects()
-                .filter((e: Clutter.Effect) =>
-                    e.toString().includes(effect_name),
-                )
-                .forEach((e: Clutter.Effect) => target.remove_effect(e));
+            for (const effect of target.get_effects()) {
+                if (effect.toString().includes(effect_name)) {
+                    target.remove_effect(effect);
+                }
+            }
 
             let actor: Clutter.Actor | null = target;
 
             // User will pick to a Meta.SurfaceActor in most time, let's find the
             // associate Meta.WindowActor
             for (let i = 0; i < 2; i++) {
-                if (actor == null || actor instanceof Meta.WindowActor) break;
+                if (actor == null || actor instanceof Meta.WindowActor) {
+                    break;
+                }
                 // If picked actor is not a Meta.WindowActor, search it's parent
                 actor = actor.get_parent();
             }

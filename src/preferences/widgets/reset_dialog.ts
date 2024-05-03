@@ -1,9 +1,9 @@
 import * as GObject from 'gi://GObject';
 import * as Gtk from 'gi://Gtk';
-import {_log} from '../../utils/log.js';
-import {SchemasKeys, settings} from '../../utils/settings.js';
-import {RoundedCornersCfg} from '../../utils/types.js';
 import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
+import {_log} from '../../utils/log.js';
+import {type SchemasKeys, settings} from '../../utils/settings.js';
+import type {RoundedCornersCfg} from '../../utils/types.js';
 
 class Cfg {
     description: string;
@@ -42,7 +42,7 @@ export const ResetDialog = GObject.registerClass(
             this.add_button('Apply', Gtk.ResponseType.APPLY);
             this.add_button('Cancel', Gtk.ResponseType.CANCEL);
 
-            this.connect('response', (source, id) => {
+            this.connect('response', (_source, id) => {
                 if (id === Gtk.ResponseType.CANCEL) {
                     this.destroy();
                 }
@@ -103,11 +103,13 @@ export const ResetDialog = GObject.registerClass(
             content.append(row);
 
             select_all_check_btn.connect('toggled', btn => {
-                this._all_check_btns.forEach(b => (b.active = btn.active));
+                for (const b of this._all_check_btns) {
+                    b.active = btn.active;
+                }
             });
 
             const build = (cfg: {[key: string]: {description: string}}) => {
-                Object.keys(cfg).forEach(key => {
+                for (const key in cfg) {
                     const item = new Gtk.Box();
                     const check_btn = new Gtk.CheckButton({
                         active: false,
@@ -121,7 +123,7 @@ export const ResetDialog = GObject.registerClass(
                     content.append(item);
 
                     this._all_check_btns.push(check_btn);
-                });
+                }
             };
 
             build(this._reset_corners_cfg);
@@ -144,10 +146,10 @@ export const ResetDialog = GObject.registerClass(
         }
 
         private apply() {
-            for (const k of Object.keys(this._reset_keys)) {
+            for (const k in this._reset_keys) {
                 if (this._reset_keys[k as SchemasKeys]?.reset === true) {
                     settings().g_settings.reset(k);
-                    _log('Reset ' + k);
+                    _log(`Reset ${k}`);
                 }
             }
 
@@ -156,11 +158,11 @@ export const ResetDialog = GObject.registerClass(
                 .g_settings.get_default_value(key)
                 ?.recursiveUnpack() as RoundedCornersCfg;
             const current_cfg = settings().global_rounded_corner_settings;
-            for (const k of Object.keys(this._reset_corners_cfg)) {
+            for (const k in this._reset_corners_cfg) {
                 const _k = k as keyof RoundedCornersCfg;
                 if (this._reset_corners_cfg[_k]?.reset === true) {
                     current_cfg[_k] = default_cfg[_k] as never;
-                    _log('Reset ' + k);
+                    _log(`Reset ${k}`);
                 }
             }
             settings().global_rounded_corner_settings = current_cfg;

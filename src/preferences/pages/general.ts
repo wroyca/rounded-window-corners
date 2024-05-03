@@ -4,13 +4,13 @@ import * as Gdk from 'gi://Gdk';
 import * as Gio from 'gi://Gio';
 
 // local modules
-import {settings} from '../../utils/settings.js';
-import {SchemasKeys} from '../../utils/settings.js';
 import {connections} from '../../utils/connections.js';
 import {list_children} from '../../utils/prefs.js';
-import {RoundedCornersItem} from '../widgets/rounded_corners_item.js';
+import {settings} from '../../utils/settings.js';
+import type {SchemasKeys} from '../../utils/settings.js';
 import {EditShadowWindow} from '../widgets/edit_shadow_window.js';
 import {ResetDialog} from '../widgets/reset_dialog.js';
+import {RoundedCornersItem} from '../widgets/rounded_corners_item.js';
 
 // types
 import * as Gtk from 'gi://Gtk';
@@ -66,7 +66,7 @@ export const General = GObject.registerClass(
                 .connect(
                     settings().g_settings,
                     'changed',
-                    (settings: Gio.Settings, key: string) =>
+                    (_settings: Gio.Settings, key: string) =>
                         this._on_settings_changed(key),
                 );
 
@@ -134,8 +134,8 @@ export const General = GObject.registerClass(
             c.connect(
                 this._global_settings_preferences_group,
                 'row-activated',
-                (box: Gtk.ListBox, row: Gtk.ListBoxRow) => {
-                    if (row == this.config_items._paddings_row) {
+                (_box: Gtk.ListBox, row: Gtk.ListBoxRow) => {
+                    if (row === this.config_items._paddings_row) {
                         this.config_items.update_revealer();
                     }
                 },
@@ -144,7 +144,7 @@ export const General = GObject.registerClass(
             c.connect(
                 this._applications_group,
                 'row-activated',
-                (box: Gtk.ListBox, row: Gtk.ListBoxRow) => {
+                (_box: Gtk.ListBox, row: Gtk.ListBoxRow) => {
                     if (row === this._edit_shadow_row) {
                         this._show_edit_shadow_window_cb();
                     }
@@ -157,10 +157,10 @@ export const General = GObject.registerClass(
         }
 
         private build_ui() {
-            list_children(this.config_items).forEach(i => {
-                this.config_items.remove(i);
-                this._global_settings_preferences_group.append(i);
-            });
+            for (const item of list_children(this.config_items)) {
+                this.config_items.remove(item);
+                this._global_settings_preferences_group.append(item);
+            }
             // Bind Variants
             this.config_items.cfg = settings().global_rounded_corner_settings;
             this.config_items.watch(cfg => {

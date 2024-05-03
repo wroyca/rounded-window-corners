@@ -45,17 +45,17 @@ msgid "Blur Offset"
 msgstr "Posun rozmazání"
 
 #: src/preferences/pages/general.ui:201
-#: src/preferences/widgets/reset_dialog.ts:65
+#: src/preferences/widgets/reset_dialog.ts:67
 msgid "Border Color"
 msgstr "Barva okraje"
 
-#: src/preferences/widgets/reset_dialog.ts:70
+#: src/preferences/widgets/reset_dialog.ts:72
 #: src/preferences/widgets/rounded-corners-item.ui:19
 msgid "Border Radius"
 msgstr "Poloměr okraje"
 
 #: src/preferences/pages/general.ui:168
-#: src/preferences/widgets/reset_dialog.ts:64
+#: src/preferences/widgets/reset_dialog.ts:66
 msgid "Border Width"
 msgstr "Šířka okraje"
 
@@ -63,11 +63,11 @@ msgstr "Šířka okraje"
 msgid "Bottom"
 msgstr "Spodní"
 
-#: src/preferences/pages/blacklist.ts:64 src/preferences/pages/custom.ts:174
+#: src/preferences/pages/blacklist.ts:66 src/preferences/pages/custom.ts:182
 msgid "Can't add to list, because it has exists"
 msgstr "Nelze přidat do seznamu, protože existuje"
 
-#: src/preferences/widgets/app_row.ts:105
+#: src/preferences/widgets/app_row.ts:107
 msgid "Can't pick a window window from this position"
 msgstr "Nelze vybrat okno z této pozice"
 
@@ -75,7 +75,7 @@ msgstr "Nelze vybrat okno z této pozice"
 msgid "Clip paddings of window"
 msgstr "Oříznout výplně okna"
 
-#: src/preferences/widgets/reset_dialog.ts:75
+#: src/preferences/widgets/reset_dialog.ts:77
 #: src/preferences/widgets/rounded-corners-item.ui:53
 msgid "Corner Smoothing"
 msgstr "Vyhlazování rohů"
@@ -96,16 +96,16 @@ msgstr "Ladění"
 msgid "Edit Shadow for Rounded Corners Windows"
 msgstr "Úprava stínu pro okna se zaoblenými rohy"
 
-#: src/preferences/pages/custom.ts:186
+#: src/preferences/pages/custom.ts:196
 msgid "Enable"
 msgstr "Povolit"
 
-#: src/preferences/pages/custom.ts:190
+#: src/preferences/pages/custom.ts:200
 msgid "Enable custom settings for this window"
 msgstr "Povolit vlastní nastavení tohoto okna"
 
 #: src/preferences/pages/general.ui:329
-#: src/preferences/widgets/reset_dialog.ts:66
+#: src/preferences/widgets/reset_dialog.ts:68
 msgid "Enable Log"
 msgstr "Povolit protokol"
 
@@ -117,7 +117,7 @@ msgstr "Rozbalte tento řádek a vyberte okno."
 msgid "Focus Window"
 msgstr "Zaměření okna"
 
-#: src/preferences/widgets/reset_dialog.ts:62
+#: src/preferences/widgets/reset_dialog.ts:64
 msgid "Focus Window Shadow Style"
 msgstr "Styl stínu zaměřeného okna"
 
@@ -141,7 +141,7 @@ msgstr "Zachovat zaoblené rohy v režimu celé obrazovky"
 msgid "Keep Rounded Corners when Maximized"
 msgstr "Zachovat zaoblené rohy při maximalizaci"
 
-#: src/preferences/widgets/reset_dialog.ts:73
+#: src/preferences/widgets/reset_dialog.ts:75
 msgid "Keep Rounded Corners when Maximized or Fullscreen"
 msgstr "Zachovat zaoblené rohy při maximalizaci nebo režimu na celou obrazovku"
 
@@ -171,7 +171,7 @@ msgstr "Neprůhlednost"
 msgid "Open Reset Preferences Dialog"
 msgstr "Otevřít dialogové okno Obnovit předvolby"
 
-#: src/preferences/widgets/reset_dialog.ts:71
+#: src/preferences/widgets/reset_dialog.ts:73
 msgid "Padding"
 msgstr "Výplň"
 
@@ -195,7 +195,7 @@ msgstr "Obnovit předvolby"
 msgid "Right"
 msgstr "Vpravo"
 
-#: src/utils/ui.ts:103 src/utils/ui.ts:132
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
 msgid "Rounded Corners Settings..."
 msgstr "Nastavení zaoblených rohů..."
 
@@ -207,11 +207,11 @@ msgstr ""
 "Pro zobrazení protokolu spusťte v terminálu příkaz <i>journalctl -o cat -f /"
 "usr/bin/gnome-shell</i>"
 
-#: src/preferences/widgets/reset_dialog.ts:96
+#: src/preferences/widgets/reset_dialog.ts:98
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: src/preferences/widgets/reset_dialog.ts:87
+#: src/preferences/widgets/reset_dialog.ts:89
 msgid "Select Items to reset"
 msgstr "Vyberte položky, které chcete resetovat"
 
@@ -228,12 +228,12 @@ msgstr ""
 "vybrat okno a přidat jej do tohoto seznamu."
 
 #: src/preferences/pages/general.ui:47
-#: src/preferences/widgets/reset_dialog.ts:60
+#: src/preferences/widgets/reset_dialog.ts:61
 msgid "Skip LibAdwaita Applications"
 msgstr "Přeskočit aplikace LibAdwaita"
 
 #: src/preferences/pages/general.ui:74
-#: src/preferences/widgets/reset_dialog.ts:61
+#: src/preferences/widgets/reset_dialog.ts:63
 msgid "Skip LibHandy Applications"
 msgstr "Přeskočit aplikace LibHandy"
 
@@ -273,7 +273,7 @@ msgstr "Vylepšení"
 msgid "Unfocus Window"
 msgstr "Okno bez zaměření"
 
-#: src/preferences/widgets/reset_dialog.ts:63
+#: src/preferences/widgets/reset_dialog.ts:65
 msgid "Unfocus Window Shadow Style"
 msgstr "Styl stínu nezaměřeného okna"
 
