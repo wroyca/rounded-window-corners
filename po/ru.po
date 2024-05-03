@@ -1,6 +1,7 @@
 msgid ""
 msgstr ""
-"Report-Msgid-Bugs-To: yilozt@outlook.com\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-03 20:43+0300\n"
 "PO-Revision-Date: 2023-03-09 15:37+0000\n"
 "Last-Translator: Evgeniy Khramov <thejenjagamertjg@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/rounded-window-"
@@ -11,144 +12,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.16.2-dev\n"
-
-#: src/preferences/pages/general.ui:284
-msgid "Add Settings Entry in right-click menu of Background"
-msgstr "Добавить запись настроек в меню правой кнопки мыши фона"
-
-#: src/preferences/pages/blacklist.ui:38 src/preferences/pages/custom.ui:38
-msgid "Add Window"
-msgstr "Добавить окно"
-
-#: src/preferences/widgets/rounded-corners-item.ui:130
-msgid "Always keep rounded corners when window is fullscreen."
-msgstr "Всегда сохранять закругленные углы при полноэкранном режиме окна."
-
-#: src/preferences/widgets/rounded-corners-item.ui:93
-msgid "Always keep rounded corners when window is maximized or tiled."
-msgstr ""
-"Всегда сохранять закругленные углы, когда окно максимизировано или свернуто."
-
-#: src/preferences/pages/general.ui:10
-msgid "Applications"
-msgstr "Приложения"
-
-#: src/preferences/widgets/app-row.ui:92
-msgid "Apply"
-msgstr "Применить"
-
-#: src/preferences/index.ts:17
-msgid "Blacklist"
-msgstr "Черный список"
-
-#: src/preferences/widgets/edit-shadow-window.ui:87
-msgid "Blur Offset"
-msgstr "Смещение размытия"
-
-#: src/preferences/pages/general.ui:201
-#: src/preferences/widgets/reset_dialog.ts:67
-msgid "Border Color"
-msgstr "Цвет границы"
-
-#: src/preferences/widgets/reset_dialog.ts:72
-#: src/preferences/widgets/rounded-corners-item.ui:19
-msgid "Border Radius"
-msgstr "Радиус границы"
-
-#: src/preferences/pages/general.ui:168
-#: src/preferences/widgets/reset_dialog.ts:66
-msgid "Border Width"
-msgstr "Ширина границы"
-
-#: src/preferences/widgets/rounded-corners-item.ui:309
-msgid "Bottom"
-msgstr "Нижний"
-
-#: src/preferences/pages/blacklist.ts:66 src/preferences/pages/custom.ts:182
-msgid "Can't add to list, because it has exists"
-msgstr "Не удается добавить в список, так как он существует"
-
-#: src/preferences/widgets/app_row.ts:107
-msgid "Can't pick a window window from this position"
-msgstr "Невозможно выбрать окно с этой позиции"
-
-#: src/preferences/widgets/rounded-corners-item.ui:170
-msgid "Clip paddings of window"
-msgstr "Обрезать отступы окна"
-
-#: src/preferences/widgets/reset_dialog.ts:77
-#: src/preferences/widgets/rounded-corners-item.ui:53
-msgid "Corner Smoothing"
-msgstr "Сглаживание углов"
-
-#: src/preferences/index.ts:22
-msgid "Custom"
-msgstr "Пользовательский"
-
-#: src/preferences/pages/general.ui:107
-msgid "Customize the shadow of the rounded corner window"
-msgstr "Настроить тень окна с закругленными углами"
-
-#: src/preferences/pages/general.ui:304
-msgid "Debug"
-msgstr "Отладка"
-
-#: src/preferences/widgets/edit_shadow_window.ts:59
-msgid "Edit Shadow for Rounded Corners Windows"
-msgstr "Редактировать тени для окон с закругленными углами"
-
-#: src/preferences/pages/custom.ts:196
-msgid "Enable"
-msgstr "Включить"
-
-#: src/preferences/pages/custom.ts:200
-msgid "Enable custom settings for this window"
-msgstr "Включить пользовательские настройки для этого окна"
-
-#: src/preferences/pages/general.ui:329
-#: src/preferences/widgets/reset_dialog.ts:68
-msgid "Enable Log"
-msgstr "Включить журнал"
-
-#: src/utils/prefs.ts:48
-msgid "Expand this row to pick a window."
-msgstr "Разверните этот ряд, чтобы выбрать окно."
-
-#: src/preferences/widgets/edit-shadow-window.ui:26
-msgid "Focus Window"
-msgstr "Активное окно"
-
-#: src/preferences/widgets/reset_dialog.ts:64
-msgid "Focus Window Shadow Style"
-msgstr "Стиль тени активного окна"
-
-#: src/preferences/index.ts:12
-msgid "General"
-msgstr "Общее"
-
-#: src/preferences/pages/general.ui:132
-msgid "Global Settings"
-msgstr "Глобальные настройки"
-
-#: src/preferences/widgets/edit-shadow-window.ui:46
-msgid "Horizontal Offset"
-msgstr "Горизонтальное смещение"
-
-#: src/preferences/widgets/rounded-corners-item.ui:123
-msgid "Keep Rounded Corners when Fullscreen"
-msgstr "Сохранить закругленные углы при полноэкранном режиме"
-
-#: src/preferences/widgets/rounded-corners-item.ui:86
-msgid "Keep Rounded Corners when Maximized"
-msgstr "Сохранить закругленные углы, когда они развернуты"
-
-#: src/preferences/widgets/reset_dialog.ts:75
-msgid "Keep Rounded Corners when Maximized or Fullscreen"
-msgstr "Сохранить закругленные углы при максимальном или полном экране"
-
-#: src/preferences/widgets/rounded-corners-item.ui:210
-msgid "Left"
-msgstr "Слева"
 
 #: src/preferences/pages/blacklist.ui:14
 msgid ""
@@ -164,57 +27,9 @@ msgstr ""
 "Элементом списка является экземпляр свойства WM_CLASS с окном. Вы можете "
 "выбрать окно, чтобы добавить его в этот список."
 
-#: src/preferences/widgets/edit-shadow-window.ui:126
-msgid "Opacity"
-msgstr "Непрозрачность"
-
-#: src/preferences/pages/general.ui:367
-msgid "Open Reset Preferences Dialog"
-msgstr "Открыть диалог сброса настроек"
-
-#: src/preferences/widgets/reset_dialog.ts:73
-msgid "Padding"
-msgstr "Отсуп"
-
-#: src/preferences/widgets/rounded-corners-item.ui:163
-msgid "Paddings"
-msgstr "Отступы"
-
-#: src/preferences/widgets/app-row.ui:77
-msgid "Pick Window to add into list"
-msgstr "Выберите окно для добавления в список"
-
-#: src/preferences/widgets/app-row.ui:36
-msgid "Remove Window from this List"
-msgstr "Удалить окно из этого списка"
-
-#: src/preferences/pages/general.ui:359
-msgid "Reset Preferences"
-msgstr "Сбросить настройки"
-
-#: src/preferences/widgets/rounded-corners-item.ui:243
-msgid "Right"
-msgstr "Справа"
-
-#: src/utils/ui.ts:105 src/utils/ui.ts:134
-msgid "Rounded Corners Settings..."
-msgstr "Настройки закругленных углов..."
-
-#: src/preferences/pages/general.ui:336
-msgid ""
-"Run <i>journalctl -o cat -f /usr/bin/gnome-shell</i> in terminal to see the "
-"log"
-msgstr ""
-"Запустите <i>journalctl -o cat -f /usr/bin/gnome-shell</i> в терминале, "
-"чтобы посмотреть журнал"
-
-#: src/preferences/widgets/reset_dialog.ts:98
-msgid "Select All"
-msgstr "Выбрать все"
-
-#: src/preferences/widgets/reset_dialog.ts:89
-msgid "Select Items to reset"
-msgstr "Выберите элементы для сброса"
+#: src/preferences/pages/blacklist.ui:38 src/preferences/pages/custom.ui:38
+msgid "Add Window"
+msgstr "Добавить окно"
 
 #: src/preferences/pages/custom.ui:14
 msgid ""
@@ -228,15 +43,9 @@ msgstr ""
 "Элементом списка является экземпляр свойства WM_CLASS с окном. Вы можете "
 "выбрать окно, чтобы добавить его в этот список."
 
-#: src/preferences/pages/general.ui:47
-#: src/preferences/widgets/reset_dialog.ts:61
-msgid "Skip LibAdwaita Applications"
-msgstr "Пропустить приложения LibAdwaita"
-
-#: src/preferences/pages/general.ui:74
-#: src/preferences/widgets/reset_dialog.ts:63
-msgid "Skip LibHandy Applications"
-msgstr "Пропустить приложения LibHandy"
+#: src/preferences/pages/general.ui:10
+msgid "Applications"
+msgstr "Приложения"
 
 #: src/preferences/pages/general.ui:23
 msgid ""
@@ -247,17 +56,45 @@ msgstr ""
 "уже имеют встроенные скругленные углы, поэтому мы можем пропустить их через "
 "эти настройки"
 
-#: src/preferences/widgets/edit-shadow-window.ui:107
-msgid "Spread Radius"
-msgstr "Радиус распространения"
+#: src/preferences/pages/general.ui:47
+#: src/preferences/widgets/reset_dialog.ts:61
+msgid "Skip LibAdwaita Applications"
+msgstr "Пропустить приложения LibAdwaita"
+
+#: src/preferences/pages/general.ui:74
+#: src/preferences/widgets/reset_dialog.ts:63
+msgid "Skip LibHandy Applications"
+msgstr "Пропустить приложения LibHandy"
+
+#: src/preferences/pages/general.ui:101
+msgid "Window Shadow"
+msgstr "Тень окна"
+
+#: src/preferences/pages/general.ui:107
+msgid "Customize the shadow of the rounded corner window"
+msgstr "Настроить тень окна с закругленными углами"
+
+#: src/preferences/pages/general.ui:132
+msgid "Global Settings"
+msgstr "Глобальные настройки"
 
 #: src/preferences/pages/general.ui:143
 msgid "This settings will try to effects all windows"
 msgstr "Эта настройка будет пытаться воздействовать на все окна"
 
-#: src/preferences/widgets/rounded-corners-item.ui:276
-msgid "Top"
-msgstr "Вверх"
+#: src/preferences/pages/general.ui:168
+#: src/preferences/widgets/reset_dialog.ts:66
+msgid "Border Width"
+msgstr "Ширина границы"
+
+#: src/preferences/pages/general.ui:201
+#: src/preferences/widgets/reset_dialog.ts:67
+msgid "Border Color"
+msgstr "Цвет границы"
+
+#: src/preferences/pages/general.ui:222
+msgid "Tweaks"
+msgstr "Твики"
 
 #: src/preferences/pages/general.ui:247
 msgid "Try to add rounded corners to Kitty Terminal in Wayland"
@@ -267,22 +104,186 @@ msgstr "Попробовать добавить закругленные угл�
 msgid "Tweak clip paddings for Kitty Terminal"
 msgstr "Настроить отступы зажимов для терминала Kitty Terminal"
 
-#: src/preferences/pages/general.ui:222
-msgid "Tweaks"
-msgstr "Твики"
+#: src/preferences/pages/general.ui:284
+msgid "Add Settings Entry in right-click menu of Background"
+msgstr "Добавить запись настроек в меню правой кнопки мыши фона"
+
+#: src/preferences/pages/general.ui:304
+msgid "Debug"
+msgstr "Отладка"
+
+#: src/preferences/pages/general.ui:329
+#: src/preferences/widgets/reset_dialog.ts:68
+msgid "Enable Log"
+msgstr "Включить журнал"
+
+#: src/preferences/pages/general.ui:336
+msgid ""
+"Run <i>journalctl -o cat -f /usr/bin/gnome-shell</i> in terminal to see the "
+"log"
+msgstr ""
+"Запустите <i>journalctl -o cat -f /usr/bin/gnome-shell</i> в терминале, "
+"чтобы посмотреть журнал"
+
+#: src/preferences/pages/general.ui:359
+msgid "Reset Preferences"
+msgstr "Сбросить настройки"
+
+#: src/preferences/pages/general.ui:367
+msgid "Open Reset Preferences Dialog"
+msgstr "Открыть диалог сброса настроек"
+
+#: src/preferences/widgets/app-row.ui:36
+msgid "Remove Window from this List"
+msgstr "Удалить окно из этого списка"
+
+#: src/preferences/widgets/app-row.ui:77
+msgid "Pick Window to add into list"
+msgstr "Выберите окно для добавления в список"
+
+#: src/preferences/widgets/app-row.ui:92
+msgid "Apply"
+msgstr "Применить"
+
+#: src/preferences/widgets/edit-shadow-window.ui:26
+msgid "Focus Window"
+msgstr "Активное окно"
 
 #: src/preferences/widgets/edit-shadow-window.ui:35
 msgid "Unfocus Window"
 msgstr "Неактивное окно"
 
-#: src/preferences/widgets/reset_dialog.ts:65
-msgid "Unfocus Window Shadow Style"
-msgstr "Стиль тени неактивного окна"
+#: src/preferences/widgets/edit-shadow-window.ui:46
+msgid "Horizontal Offset"
+msgstr "Горизонтальное смещение"
 
 #: src/preferences/widgets/edit-shadow-window.ui:66
 msgid "Vertical Offset"
 msgstr "Вертикальное смещение"
 
-#: src/preferences/pages/general.ui:101
-msgid "Window Shadow"
-msgstr "Тень окна"
+#: src/preferences/widgets/edit-shadow-window.ui:87
+msgid "Blur Offset"
+msgstr "Смещение размытия"
+
+#: src/preferences/widgets/edit-shadow-window.ui:107
+msgid "Spread Radius"
+msgstr "Радиус распространения"
+
+#: src/preferences/widgets/edit-shadow-window.ui:126
+msgid "Opacity"
+msgstr "Непрозрачность"
+
+#: src/preferences/widgets/rounded-corners-item.ui:19
+#: src/preferences/widgets/reset_dialog.ts:72
+msgid "Border Radius"
+msgstr "Радиус границы"
+
+#: src/preferences/widgets/rounded-corners-item.ui:53
+#: src/preferences/widgets/reset_dialog.ts:77
+msgid "Corner Smoothing"
+msgstr "Сглаживание углов"
+
+#: src/preferences/widgets/rounded-corners-item.ui:86
+msgid "Keep Rounded Corners when Maximized"
+msgstr "Сохранить закругленные углы, когда они развернуты"
+
+#: src/preferences/widgets/rounded-corners-item.ui:93
+msgid "Always keep rounded corners when window is maximized or tiled."
+msgstr ""
+"Всегда сохранять закругленные углы, когда окно максимизировано или свернуто."
+
+#: src/preferences/widgets/rounded-corners-item.ui:123
+msgid "Keep Rounded Corners when Fullscreen"
+msgstr "Сохранить закругленные углы при полноэкранном режиме"
+
+#: src/preferences/widgets/rounded-corners-item.ui:130
+msgid "Always keep rounded corners when window is fullscreen."
+msgstr "Всегда сохранять закругленные углы при полноэкранном режиме окна."
+
+#: src/preferences/widgets/rounded-corners-item.ui:163
+msgid "Paddings"
+msgstr "Отступы"
+
+#: src/preferences/widgets/rounded-corners-item.ui:170
+msgid "Clip paddings of window"
+msgstr "Обрезать отступы окна"
+
+#: src/preferences/widgets/rounded-corners-item.ui:210
+msgid "Left"
+msgstr "Слева"
+
+#: src/preferences/widgets/rounded-corners-item.ui:243
+msgid "Right"
+msgstr "Справа"
+
+#: src/preferences/widgets/rounded-corners-item.ui:276
+msgid "Top"
+msgstr "Вверх"
+
+#: src/preferences/widgets/rounded-corners-item.ui:309
+msgid "Bottom"
+msgstr "Нижний"
+
+#: src/preferences/index.ts:12
+msgid "General"
+msgstr "Общее"
+
+#: src/preferences/index.ts:17
+msgid "Blacklist"
+msgstr "Черный список"
+
+#: src/preferences/index.ts:22
+msgid "Custom"
+msgstr "Пользовательский"
+
+#: src/preferences/pages/blacklist.ts:67 src/preferences/pages/custom.ts:183
+msgid "Can't add to list, because it has exists"
+msgstr "Не удается добавить в список, так как он существует"
+
+#: src/preferences/pages/custom.ts:196
+msgid "Enable"
+msgstr "Включить"
+
+#: src/preferences/pages/custom.ts:200
+msgid "Enable custom settings for this window"
+msgstr "Включить пользовательские настройки для этого окна"
+
+#: src/preferences/widgets/app_row.ts:108
+msgid "Can't pick a window window from this position"
+msgstr "Невозможно выбрать окно с этой позиции"
+
+#: src/preferences/widgets/edit_shadow_window.ts:59
+msgid "Edit Shadow for Rounded Corners Windows"
+msgstr "Редактировать тени для окон с закругленными углами"
+
+#: src/preferences/widgets/reset_dialog.ts:64
+msgid "Focus Window Shadow Style"
+msgstr "Стиль тени активного окна"
+
+#: src/preferences/widgets/reset_dialog.ts:65
+msgid "Unfocus Window Shadow Style"
+msgstr "Стиль тени неактивного окна"
+
+#: src/preferences/widgets/reset_dialog.ts:73
+msgid "Padding"
+msgstr "Отсуп"
+
+#: src/preferences/widgets/reset_dialog.ts:75
+msgid "Keep Rounded Corners when Maximized or Fullscreen"
+msgstr "Сохранить закругленные углы при максимальном или полном экране"
+
+#: src/preferences/widgets/reset_dialog.ts:89
+msgid "Select Items to reset"
+msgstr "Выберите элементы для сброса"
+
+#: src/preferences/widgets/reset_dialog.ts:98
+msgid "Select All"
+msgstr "Выбрать все"
+
+#: src/utils/prefs.ts:48
+msgid "Expand this row to pick a window."
+msgstr "Разверните этот ряд, чтобы выбрать окно."
+
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
+msgid "Rounded Corners Settings..."
+msgstr "Настройки закругленных углов..."

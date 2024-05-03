@@ -1,6 +1,7 @@
 msgid ""
 msgstr ""
-"Report-Msgid-Bugs-To: yilozt@outlook.com\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-03 20:43+0300\n"
 "PO-Revision-Date: 2022-11-12 07:50+0000\n"
 "Last-Translator: Ilari Suhonen <ilari.suhonen@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/rounded-window-"
@@ -10,143 +11,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.15-dev\n"
-
-#: src/preferences/pages/general.ui:284
-msgid "Add Settings Entry in right-click menu of Background"
-msgstr "Lisää asetukset-rivi taustan kontekstivalikkoon"
-
-#: src/preferences/pages/blacklist.ui:38 src/preferences/pages/custom.ui:38
-msgid "Add Window"
-msgstr "Lisää ikkuna"
-
-#: src/preferences/widgets/rounded-corners-item.ui:130
-msgid "Always keep rounded corners when window is fullscreen."
-msgstr "Älä poista pyöristettyjä kulmia kokonäytön ikkunoista."
-
-#: src/preferences/widgets/rounded-corners-item.ui:93
-msgid "Always keep rounded corners when window is maximized or tiled."
-msgstr "Älä poista pyöristettyjä kulmia aseteltujen tai kokonäytön ikkunoista."
-
-#: src/preferences/pages/general.ui:10
-msgid "Applications"
-msgstr "Sovellukset"
-
-#: src/preferences/widgets/app-row.ui:92
-msgid "Apply"
-msgstr "Käytä"
-
-#: src/preferences/index.ts:17
-msgid "Blacklist"
-msgstr "Estot"
-
-#: src/preferences/widgets/edit-shadow-window.ui:87
-msgid "Blur Offset"
-msgstr "Sumennuksen määrä"
-
-#: src/preferences/pages/general.ui:201
-#: src/preferences/widgets/reset_dialog.ts:67
-msgid "Border Color"
-msgstr "Reunan väri"
-
-#: src/preferences/widgets/reset_dialog.ts:72
-#: src/preferences/widgets/rounded-corners-item.ui:19
-msgid "Border Radius"
-msgstr "Reunan säde"
-
-#: src/preferences/pages/general.ui:168
-#: src/preferences/widgets/reset_dialog.ts:66
-msgid "Border Width"
-msgstr "Reunan leveys"
-
-#: src/preferences/widgets/rounded-corners-item.ui:309
-msgid "Bottom"
-msgstr "Alaosa"
-
-#: src/preferences/pages/blacklist.ts:66 src/preferences/pages/custom.ts:182
-msgid "Can't add to list, because it has exists"
-msgstr ""
-
-#: src/preferences/widgets/app_row.ts:107
-msgid "Can't pick a window window from this position"
-msgstr "Ikkunaa ei voi valita tästä sijainnista"
-
-#: src/preferences/widgets/rounded-corners-item.ui:170
-msgid "Clip paddings of window"
-msgstr "Ikkunan ylijäämäleikkaus"
-
-#: src/preferences/widgets/reset_dialog.ts:77
-#: src/preferences/widgets/rounded-corners-item.ui:53
-msgid "Corner Smoothing"
-msgstr "Kulman pehmitys"
-
-#: src/preferences/index.ts:22
-msgid "Custom"
-msgstr "Mukautettu"
-
-#: src/preferences/pages/general.ui:107
-msgid "Customize the shadow of the rounded corner window"
-msgstr "Mukauta pyöristetyn kulman varjoa"
-
-#: src/preferences/pages/general.ui:304
-msgid "Debug"
-msgstr "Vianetsintä"
-
-#: src/preferences/widgets/edit_shadow_window.ts:59
-msgid "Edit Shadow for Rounded Corners Windows"
-msgstr "Muokkaa pyöristettyjen ikkunoiden varjoa"
-
-#: src/preferences/pages/custom.ts:196
-msgid "Enable"
-msgstr "Päälle"
-
-#: src/preferences/pages/custom.ts:200
-msgid "Enable custom settings for this window"
-msgstr "Käytä kustomoituja asetuksia tälle ikkunalle"
-
-#: src/preferences/pages/general.ui:329
-#: src/preferences/widgets/reset_dialog.ts:68
-msgid "Enable Log"
-msgstr "Kirjoita lokiin"
-
-#: src/utils/prefs.ts:48
-msgid "Expand this row to pick a window."
-msgstr "Laajenna rivi valitaksesi ikkunan."
-
-#: src/preferences/widgets/edit-shadow-window.ui:26
-msgid "Focus Window"
-msgstr "Keskitetty ikkuna"
-
-#: src/preferences/widgets/reset_dialog.ts:64
-msgid "Focus Window Shadow Style"
-msgstr "Keskitetyn ikkunan varjotyyli"
-
-#: src/preferences/index.ts:12
-msgid "General"
-msgstr "Yleinen"
-
-#: src/preferences/pages/general.ui:132
-msgid "Global Settings"
-msgstr "Globaalit asetukset"
-
-#: src/preferences/widgets/edit-shadow-window.ui:46
-msgid "Horizontal Offset"
-msgstr "Vaakasiirtymä"
-
-#: src/preferences/widgets/rounded-corners-item.ui:123
-msgid "Keep Rounded Corners when Fullscreen"
-msgstr "Pidä pyöristetyt kulmat kokonäytön tilassa"
-
-#: src/preferences/widgets/rounded-corners-item.ui:86
-msgid "Keep Rounded Corners when Maximized"
-msgstr "Pidä pyöristetyt kulmat maksimoidussa tilassa"
-
-#: src/preferences/widgets/reset_dialog.ts:75
-msgid "Keep Rounded Corners when Maximized or Fullscreen"
-msgstr "Pidä pyöristetyt kulmat maksimoidussa ja kokonäytön tilassa"
-
-#: src/preferences/widgets/rounded-corners-item.ui:210
-msgid "Left"
-msgstr "Vasen"
 
 #: src/preferences/pages/blacklist.ui:14
 msgid ""
@@ -162,57 +26,9 @@ msgstr ""
 "Listan alkiot täsmäävät ikkunoiden WM_CLASS:in instanssiosaa. Voit valita "
 "ikkunan lisätäksesi sen listaan."
 
-#: src/preferences/widgets/edit-shadow-window.ui:126
-msgid "Opacity"
-msgstr "Peittävyys"
-
-#: src/preferences/pages/general.ui:367
-msgid "Open Reset Preferences Dialog"
-msgstr "Avaa asetusten nollausvalikko"
-
-#: src/preferences/widgets/reset_dialog.ts:73
-msgid "Padding"
-msgstr "Ylijäämä"
-
-#: src/preferences/widgets/rounded-corners-item.ui:163
-msgid "Paddings"
-msgstr "Ylijäämäasetukset"
-
-#: src/preferences/widgets/app-row.ui:77
-msgid "Pick Window to add into list"
-msgstr "Valitse ikkuna lisätäksesi sen listaan"
-
-#: src/preferences/widgets/app-row.ui:36
-msgid "Remove Window from this List"
-msgstr "Poista ikkuna listasta"
-
-#: src/preferences/pages/general.ui:359
-msgid "Reset Preferences"
-msgstr "Nollaa asetukset"
-
-#: src/preferences/widgets/rounded-corners-item.ui:243
-msgid "Right"
-msgstr "Oikea"
-
-#: src/utils/ui.ts:105 src/utils/ui.ts:134
-msgid "Rounded Corners Settings..."
-msgstr "Kulmienpyöristyksen asetukset..."
-
-#: src/preferences/pages/general.ui:336
-msgid ""
-"Run <i>journalctl -o cat -f /usr/bin/gnome-shell</i> in terminal to see the "
-"log"
-msgstr ""
-"Suorita <i>journalctl -o cat -f /usr/bin/gnome-shell</i> komentopäätteessä "
-"nähdäksesi lokin"
-
-#: src/preferences/widgets/reset_dialog.ts:98
-msgid "Select All"
-msgstr "Valitse kaikki"
-
-#: src/preferences/widgets/reset_dialog.ts:89
-msgid "Select Items to reset"
-msgstr "Valitse nollattavat asetukset"
+#: src/preferences/pages/blacklist.ui:38 src/preferences/pages/custom.ui:38
+msgid "Add Window"
+msgstr "Lisää ikkuna"
 
 #: src/preferences/pages/custom.ui:14
 msgid ""
@@ -226,6 +42,18 @@ msgstr ""
 "Listan alkiot täsmäävät ikkunoiden WM_CLASS:in instanssiosaa. Voit valita "
 "ikkunan lisätäksesi sen listaan."
 
+#: src/preferences/pages/general.ui:10
+msgid "Applications"
+msgstr "Sovellukset"
+
+#: src/preferences/pages/general.ui:23
+msgid ""
+"Some applications written using LibAdwaita or LibHandy already have native "
+"rounded corners, so we can skip them through these settings"
+msgstr ""
+"Jotkut LibAdwaitalla tai LibHandyllä kirjoitetut ohjelmat pyöristävät "
+"kulmansa itse, joten ne voidaan ohittaa"
+
 #: src/preferences/pages/general.ui:47
 #: src/preferences/widgets/reset_dialog.ts:61
 msgid "Skip LibAdwaita Applications"
@@ -236,25 +64,35 @@ msgstr "Älä pyöristä LibAdwaita-ikkunoiden kulmia"
 msgid "Skip LibHandy Applications"
 msgstr "Älä pyöristä LibHandy-ikkunoiden kulmia"
 
-#: src/preferences/pages/general.ui:23
-msgid ""
-"Some applications written using LibAdwaita or LibHandy already have native "
-"rounded corners, so we can skip them through these settings"
-msgstr ""
-"Jotkut LibAdwaitalla tai LibHandyllä kirjoitetut ohjelmat pyöristävät "
-"kulmansa itse, joten ne voidaan ohittaa"
+#: src/preferences/pages/general.ui:101
+msgid "Window Shadow"
+msgstr "Ikkunan varjo"
 
-#: src/preferences/widgets/edit-shadow-window.ui:107
-msgid "Spread Radius"
-msgstr "Varjon koko"
+#: src/preferences/pages/general.ui:107
+msgid "Customize the shadow of the rounded corner window"
+msgstr "Mukauta pyöristetyn kulman varjoa"
+
+#: src/preferences/pages/general.ui:132
+msgid "Global Settings"
+msgstr "Globaalit asetukset"
 
 #: src/preferences/pages/general.ui:143
 msgid "This settings will try to effects all windows"
 msgstr "Tämä asetus pyrkii vaikuttamaan kaikkiin ikkunoihin"
 
-#: src/preferences/widgets/rounded-corners-item.ui:276
-msgid "Top"
-msgstr "Yläosa"
+#: src/preferences/pages/general.ui:168
+#: src/preferences/widgets/reset_dialog.ts:66
+msgid "Border Width"
+msgstr "Reunan leveys"
+
+#: src/preferences/pages/general.ui:201
+#: src/preferences/widgets/reset_dialog.ts:67
+msgid "Border Color"
+msgstr "Reunan väri"
+
+#: src/preferences/pages/general.ui:222
+msgid "Tweaks"
+msgstr "Hienosäädöt"
 
 #: src/preferences/pages/general.ui:247
 msgid "Try to add rounded corners to Kitty Terminal in Wayland"
@@ -264,22 +102,185 @@ msgstr "Koita pyöristää Kitty-pääteohjelman kulmat Waylandissa"
 msgid "Tweak clip paddings for Kitty Terminal"
 msgstr "Muokkaa Kitty-pääteohjelman ylijäämäleikkausta"
 
-#: src/preferences/pages/general.ui:222
-msgid "Tweaks"
-msgstr "Hienosäädöt"
+#: src/preferences/pages/general.ui:284
+msgid "Add Settings Entry in right-click menu of Background"
+msgstr "Lisää asetukset-rivi taustan kontekstivalikkoon"
+
+#: src/preferences/pages/general.ui:304
+msgid "Debug"
+msgstr "Vianetsintä"
+
+#: src/preferences/pages/general.ui:329
+#: src/preferences/widgets/reset_dialog.ts:68
+msgid "Enable Log"
+msgstr "Kirjoita lokiin"
+
+#: src/preferences/pages/general.ui:336
+msgid ""
+"Run <i>journalctl -o cat -f /usr/bin/gnome-shell</i> in terminal to see the "
+"log"
+msgstr ""
+"Suorita <i>journalctl -o cat -f /usr/bin/gnome-shell</i> komentopäätteessä "
+"nähdäksesi lokin"
+
+#: src/preferences/pages/general.ui:359
+msgid "Reset Preferences"
+msgstr "Nollaa asetukset"
+
+#: src/preferences/pages/general.ui:367
+msgid "Open Reset Preferences Dialog"
+msgstr "Avaa asetusten nollausvalikko"
+
+#: src/preferences/widgets/app-row.ui:36
+msgid "Remove Window from this List"
+msgstr "Poista ikkuna listasta"
+
+#: src/preferences/widgets/app-row.ui:77
+msgid "Pick Window to add into list"
+msgstr "Valitse ikkuna lisätäksesi sen listaan"
+
+#: src/preferences/widgets/app-row.ui:92
+msgid "Apply"
+msgstr "Käytä"
+
+#: src/preferences/widgets/edit-shadow-window.ui:26
+msgid "Focus Window"
+msgstr "Keskitetty ikkuna"
 
 #: src/preferences/widgets/edit-shadow-window.ui:35
 msgid "Unfocus Window"
 msgstr "Keskittämätön ikkuna"
 
-#: src/preferences/widgets/reset_dialog.ts:65
-msgid "Unfocus Window Shadow Style"
-msgstr "Keskittämättömän ikkunan varjo"
+#: src/preferences/widgets/edit-shadow-window.ui:46
+msgid "Horizontal Offset"
+msgstr "Vaakasiirtymä"
 
 #: src/preferences/widgets/edit-shadow-window.ui:66
 msgid "Vertical Offset"
 msgstr "Pystysiirtymä"
 
-#: src/preferences/pages/general.ui:101
-msgid "Window Shadow"
-msgstr "Ikkunan varjo"
+#: src/preferences/widgets/edit-shadow-window.ui:87
+msgid "Blur Offset"
+msgstr "Sumennuksen määrä"
+
+#: src/preferences/widgets/edit-shadow-window.ui:107
+msgid "Spread Radius"
+msgstr "Varjon koko"
+
+#: src/preferences/widgets/edit-shadow-window.ui:126
+msgid "Opacity"
+msgstr "Peittävyys"
+
+#: src/preferences/widgets/rounded-corners-item.ui:19
+#: src/preferences/widgets/reset_dialog.ts:72
+msgid "Border Radius"
+msgstr "Reunan säde"
+
+#: src/preferences/widgets/rounded-corners-item.ui:53
+#: src/preferences/widgets/reset_dialog.ts:77
+msgid "Corner Smoothing"
+msgstr "Kulman pehmitys"
+
+#: src/preferences/widgets/rounded-corners-item.ui:86
+msgid "Keep Rounded Corners when Maximized"
+msgstr "Pidä pyöristetyt kulmat maksimoidussa tilassa"
+
+#: src/preferences/widgets/rounded-corners-item.ui:93
+msgid "Always keep rounded corners when window is maximized or tiled."
+msgstr "Älä poista pyöristettyjä kulmia aseteltujen tai kokonäytön ikkunoista."
+
+#: src/preferences/widgets/rounded-corners-item.ui:123
+msgid "Keep Rounded Corners when Fullscreen"
+msgstr "Pidä pyöristetyt kulmat kokonäytön tilassa"
+
+#: src/preferences/widgets/rounded-corners-item.ui:130
+msgid "Always keep rounded corners when window is fullscreen."
+msgstr "Älä poista pyöristettyjä kulmia kokonäytön ikkunoista."
+
+#: src/preferences/widgets/rounded-corners-item.ui:163
+msgid "Paddings"
+msgstr "Ylijäämäasetukset"
+
+#: src/preferences/widgets/rounded-corners-item.ui:170
+msgid "Clip paddings of window"
+msgstr "Ikkunan ylijäämäleikkaus"
+
+#: src/preferences/widgets/rounded-corners-item.ui:210
+msgid "Left"
+msgstr "Vasen"
+
+#: src/preferences/widgets/rounded-corners-item.ui:243
+msgid "Right"
+msgstr "Oikea"
+
+#: src/preferences/widgets/rounded-corners-item.ui:276
+msgid "Top"
+msgstr "Yläosa"
+
+#: src/preferences/widgets/rounded-corners-item.ui:309
+msgid "Bottom"
+msgstr "Alaosa"
+
+#: src/preferences/index.ts:12
+msgid "General"
+msgstr "Yleinen"
+
+#: src/preferences/index.ts:17
+msgid "Blacklist"
+msgstr "Estot"
+
+#: src/preferences/index.ts:22
+msgid "Custom"
+msgstr "Mukautettu"
+
+#: src/preferences/pages/blacklist.ts:67 src/preferences/pages/custom.ts:183
+msgid "Can't add to list, because it has exists"
+msgstr ""
+
+#: src/preferences/pages/custom.ts:196
+msgid "Enable"
+msgstr "Päälle"
+
+#: src/preferences/pages/custom.ts:200
+msgid "Enable custom settings for this window"
+msgstr "Käytä kustomoituja asetuksia tälle ikkunalle"
+
+#: src/preferences/widgets/app_row.ts:108
+msgid "Can't pick a window window from this position"
+msgstr "Ikkunaa ei voi valita tästä sijainnista"
+
+#: src/preferences/widgets/edit_shadow_window.ts:59
+msgid "Edit Shadow for Rounded Corners Windows"
+msgstr "Muokkaa pyöristettyjen ikkunoiden varjoa"
+
+#: src/preferences/widgets/reset_dialog.ts:64
+msgid "Focus Window Shadow Style"
+msgstr "Keskitetyn ikkunan varjotyyli"
+
+#: src/preferences/widgets/reset_dialog.ts:65
+msgid "Unfocus Window Shadow Style"
+msgstr "Keskittämättömän ikkunan varjo"
+
+#: src/preferences/widgets/reset_dialog.ts:73
+msgid "Padding"
+msgstr "Ylijäämä"
+
+#: src/preferences/widgets/reset_dialog.ts:75
+msgid "Keep Rounded Corners when Maximized or Fullscreen"
+msgstr "Pidä pyöristetyt kulmat maksimoidussa ja kokonäytön tilassa"
+
+#: src/preferences/widgets/reset_dialog.ts:89
+msgid "Select Items to reset"
+msgstr "Valitse nollattavat asetukset"
+
+#: src/preferences/widgets/reset_dialog.ts:98
+msgid "Select All"
+msgstr "Valitse kaikki"
+
+#: src/utils/prefs.ts:48
+msgid "Expand this row to pick a window."
+msgstr "Laajenna rivi valitaksesi ikkunan."
+
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
+msgid "Rounded Corners Settings..."
+msgstr "Kulmienpyöristyksen asetukset..."

@@ -1,6 +1,7 @@
 msgid ""
 msgstr ""
-"Report-Msgid-Bugs-To: yilozt@outlook.com\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-03 20:43+0300\n"
 "PO-Revision-Date: 2022-09-15 06:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/rounded-"
@@ -11,145 +12,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.14.1-dev\n"
 
-#: src/preferences/pages/general.ui:284
-msgid "Add Settings Entry in right-click menu of Background"
-msgstr "Legg til innstillingsoppføring i høyreklikksmenyen for bakgrunn"
-
-#: src/preferences/pages/blacklist.ui:38 src/preferences/pages/custom.ui:38
-msgid "Add Window"
-msgstr "Legg til vindu"
-
-#: src/preferences/widgets/rounded-corners-item.ui:130
-#, fuzzy
-msgid "Always keep rounded corners when window is fullscreen."
-msgstr "Behold avrundede vinduer når vindu er i fullskjermsvisning."
-
-#: src/preferences/widgets/rounded-corners-item.ui:93
-#, fuzzy
-msgid "Always keep rounded corners when window is maximized or tiled."
-msgstr "Behold avrundede hjørner når vinduet er maksimert eller flislagt."
-
-#: src/preferences/pages/general.ui:10
-msgid "Applications"
-msgstr "Programmer"
-
-#: src/preferences/widgets/app-row.ui:92
-msgid "Apply"
-msgstr "Bruk"
-
-#: src/preferences/index.ts:17
-msgid "Blacklist"
-msgstr "Svarteliste"
-
-#: src/preferences/widgets/edit-shadow-window.ui:87
-msgid "Blur Offset"
-msgstr ""
-
-#: src/preferences/pages/general.ui:201
-#: src/preferences/widgets/reset_dialog.ts:67
-msgid "Border Color"
-msgstr ""
-
-#: src/preferences/widgets/reset_dialog.ts:72
-#: src/preferences/widgets/rounded-corners-item.ui:19
-msgid "Border Radius"
-msgstr ""
-
-#: src/preferences/pages/general.ui:168
-#: src/preferences/widgets/reset_dialog.ts:66
-msgid "Border Width"
-msgstr ""
-
-#: src/preferences/widgets/rounded-corners-item.ui:309
-msgid "Bottom"
-msgstr ""
-
-#: src/preferences/pages/blacklist.ts:66 src/preferences/pages/custom.ts:182
-msgid "Can't add to list, because it has exists"
-msgstr ""
-
-#: src/preferences/widgets/app_row.ts:107
-msgid "Can't pick a window window from this position"
-msgstr ""
-
-#: src/preferences/widgets/rounded-corners-item.ui:170
-msgid "Clip paddings of window"
-msgstr ""
-
-#: src/preferences/widgets/reset_dialog.ts:77
-#: src/preferences/widgets/rounded-corners-item.ui:53
-msgid "Corner Smoothing"
-msgstr ""
-
-#: src/preferences/index.ts:22
-msgid "Custom"
-msgstr ""
-
-#: src/preferences/pages/general.ui:107
-msgid "Customize the shadow of the rounded corner window"
-msgstr ""
-
-#: src/preferences/pages/general.ui:304
-msgid "Debug"
-msgstr ""
-
-#: src/preferences/widgets/edit_shadow_window.ts:59
-msgid "Edit Shadow for Rounded Corners Windows"
-msgstr ""
-
-#: src/preferences/pages/custom.ts:196
-msgid "Enable"
-msgstr ""
-
-#: src/preferences/pages/custom.ts:200
-msgid "Enable custom settings for this window"
-msgstr ""
-
-#: src/preferences/pages/general.ui:329
-#: src/preferences/widgets/reset_dialog.ts:68
-msgid "Enable Log"
-msgstr ""
-
-#: src/utils/prefs.ts:48
-msgid "Expand this row to pick a window."
-msgstr ""
-
-#: src/preferences/widgets/edit-shadow-window.ui:26
-msgid "Focus Window"
-msgstr ""
-
-#: src/preferences/widgets/reset_dialog.ts:64
-msgid "Focus Window Shadow Style"
-msgstr ""
-
-#: src/preferences/index.ts:12
-msgid "General"
-msgstr ""
-
-#: src/preferences/pages/general.ui:132
-msgid "Global Settings"
-msgstr ""
-
-#: src/preferences/widgets/edit-shadow-window.ui:46
-msgid "Horizontal Offset"
-msgstr ""
-
-#: src/preferences/widgets/rounded-corners-item.ui:123
-msgid "Keep Rounded Corners when Fullscreen"
-msgstr ""
-
-#: src/preferences/widgets/rounded-corners-item.ui:86
-msgid "Keep Rounded Corners when Maximized"
-msgstr ""
-
-#: src/preferences/widgets/reset_dialog.ts:75
-msgid "Keep Rounded Corners when Maximized or Fullscreen"
-msgstr ""
-
-#: src/preferences/widgets/rounded-corners-item.ui:210
-msgid "Left"
-msgstr ""
-
 #: src/preferences/pages/blacklist.ui:14
 msgid ""
 "Not all application can works well with rounded corners effects, add them to "
@@ -159,55 +21,9 @@ msgid ""
 "pick a window to add it into this list."
 msgstr ""
 
-#: src/preferences/widgets/edit-shadow-window.ui:126
-msgid "Opacity"
-msgstr ""
-
-#: src/preferences/pages/general.ui:367
-msgid "Open Reset Preferences Dialog"
-msgstr ""
-
-#: src/preferences/widgets/reset_dialog.ts:73
-msgid "Padding"
-msgstr ""
-
-#: src/preferences/widgets/rounded-corners-item.ui:163
-msgid "Paddings"
-msgstr ""
-
-#: src/preferences/widgets/app-row.ui:77
-msgid "Pick Window to add into list"
-msgstr ""
-
-#: src/preferences/widgets/app-row.ui:36
-msgid "Remove Window from this List"
-msgstr ""
-
-#: src/preferences/pages/general.ui:359
-msgid "Reset Preferences"
-msgstr ""
-
-#: src/preferences/widgets/rounded-corners-item.ui:243
-msgid "Right"
-msgstr ""
-
-#: src/utils/ui.ts:105 src/utils/ui.ts:134
-msgid "Rounded Corners Settings..."
-msgstr ""
-
-#: src/preferences/pages/general.ui:336
-msgid ""
-"Run <i>journalctl -o cat -f /usr/bin/gnome-shell</i> in terminal to see the "
-"log"
-msgstr ""
-
-#: src/preferences/widgets/reset_dialog.ts:98
-msgid "Select All"
-msgstr ""
-
-#: src/preferences/widgets/reset_dialog.ts:89
-msgid "Select Items to reset"
-msgstr ""
+#: src/preferences/pages/blacklist.ui:38 src/preferences/pages/custom.ui:38
+msgid "Add Window"
+msgstr "Legg til vindu"
 
 #: src/preferences/pages/custom.ui:14
 msgid ""
@@ -215,6 +31,16 @@ msgid ""
 "\n"
 "The item of list is instance part of WM_CLASS property with window. You can "
 "pick a window to add it into this list."
+msgstr ""
+
+#: src/preferences/pages/general.ui:10
+msgid "Applications"
+msgstr "Programmer"
+
+#: src/preferences/pages/general.ui:23
+msgid ""
+"Some applications written using LibAdwaita or LibHandy already have native "
+"rounded corners, so we can skip them through these settings"
 msgstr ""
 
 #: src/preferences/pages/general.ui:47
@@ -227,22 +53,34 @@ msgstr ""
 msgid "Skip LibHandy Applications"
 msgstr ""
 
-#: src/preferences/pages/general.ui:23
-msgid ""
-"Some applications written using LibAdwaita or LibHandy already have native "
-"rounded corners, so we can skip them through these settings"
+#: src/preferences/pages/general.ui:101
+msgid "Window Shadow"
 msgstr ""
 
-#: src/preferences/widgets/edit-shadow-window.ui:107
-msgid "Spread Radius"
+#: src/preferences/pages/general.ui:107
+msgid "Customize the shadow of the rounded corner window"
+msgstr ""
+
+#: src/preferences/pages/general.ui:132
+msgid "Global Settings"
 msgstr ""
 
 #: src/preferences/pages/general.ui:143
 msgid "This settings will try to effects all windows"
 msgstr ""
 
-#: src/preferences/widgets/rounded-corners-item.ui:276
-msgid "Top"
+#: src/preferences/pages/general.ui:168
+#: src/preferences/widgets/reset_dialog.ts:66
+msgid "Border Width"
+msgstr ""
+
+#: src/preferences/pages/general.ui:201
+#: src/preferences/widgets/reset_dialog.ts:67
+msgid "Border Color"
+msgstr ""
+
+#: src/preferences/pages/general.ui:222
+msgid "Tweaks"
 msgstr ""
 
 #: src/preferences/pages/general.ui:247
@@ -253,22 +91,185 @@ msgstr ""
 msgid "Tweak clip paddings for Kitty Terminal"
 msgstr ""
 
-#: src/preferences/pages/general.ui:222
-msgid "Tweaks"
+#: src/preferences/pages/general.ui:284
+msgid "Add Settings Entry in right-click menu of Background"
+msgstr "Legg til innstillingsoppføring i høyreklikksmenyen for bakgrunn"
+
+#: src/preferences/pages/general.ui:304
+msgid "Debug"
+msgstr ""
+
+#: src/preferences/pages/general.ui:329
+#: src/preferences/widgets/reset_dialog.ts:68
+msgid "Enable Log"
+msgstr ""
+
+#: src/preferences/pages/general.ui:336
+msgid ""
+"Run <i>journalctl -o cat -f /usr/bin/gnome-shell</i> in terminal to see the "
+"log"
+msgstr ""
+
+#: src/preferences/pages/general.ui:359
+msgid "Reset Preferences"
+msgstr ""
+
+#: src/preferences/pages/general.ui:367
+msgid "Open Reset Preferences Dialog"
+msgstr ""
+
+#: src/preferences/widgets/app-row.ui:36
+msgid "Remove Window from this List"
+msgstr ""
+
+#: src/preferences/widgets/app-row.ui:77
+msgid "Pick Window to add into list"
+msgstr ""
+
+#: src/preferences/widgets/app-row.ui:92
+msgid "Apply"
+msgstr "Bruk"
+
+#: src/preferences/widgets/edit-shadow-window.ui:26
+msgid "Focus Window"
 msgstr ""
 
 #: src/preferences/widgets/edit-shadow-window.ui:35
 msgid "Unfocus Window"
 msgstr ""
 
-#: src/preferences/widgets/reset_dialog.ts:65
-msgid "Unfocus Window Shadow Style"
+#: src/preferences/widgets/edit-shadow-window.ui:46
+msgid "Horizontal Offset"
 msgstr ""
 
 #: src/preferences/widgets/edit-shadow-window.ui:66
 msgid "Vertical Offset"
 msgstr ""
 
-#: src/preferences/pages/general.ui:101
-msgid "Window Shadow"
+#: src/preferences/widgets/edit-shadow-window.ui:87
+msgid "Blur Offset"
+msgstr ""
+
+#: src/preferences/widgets/edit-shadow-window.ui:107
+msgid "Spread Radius"
+msgstr ""
+
+#: src/preferences/widgets/edit-shadow-window.ui:126
+msgid "Opacity"
+msgstr ""
+
+#: src/preferences/widgets/rounded-corners-item.ui:19
+#: src/preferences/widgets/reset_dialog.ts:72
+msgid "Border Radius"
+msgstr ""
+
+#: src/preferences/widgets/rounded-corners-item.ui:53
+#: src/preferences/widgets/reset_dialog.ts:77
+msgid "Corner Smoothing"
+msgstr ""
+
+#: src/preferences/widgets/rounded-corners-item.ui:86
+msgid "Keep Rounded Corners when Maximized"
+msgstr ""
+
+#: src/preferences/widgets/rounded-corners-item.ui:93
+#, fuzzy
+msgid "Always keep rounded corners when window is maximized or tiled."
+msgstr "Behold avrundede hjørner når vinduet er maksimert eller flislagt."
+
+#: src/preferences/widgets/rounded-corners-item.ui:123
+msgid "Keep Rounded Corners when Fullscreen"
+msgstr ""
+
+#: src/preferences/widgets/rounded-corners-item.ui:130
+#, fuzzy
+msgid "Always keep rounded corners when window is fullscreen."
+msgstr "Behold avrundede vinduer når vindu er i fullskjermsvisning."
+
+#: src/preferences/widgets/rounded-corners-item.ui:163
+msgid "Paddings"
+msgstr ""
+
+#: src/preferences/widgets/rounded-corners-item.ui:170
+msgid "Clip paddings of window"
+msgstr ""
+
+#: src/preferences/widgets/rounded-corners-item.ui:210
+msgid "Left"
+msgstr ""
+
+#: src/preferences/widgets/rounded-corners-item.ui:243
+msgid "Right"
+msgstr ""
+
+#: src/preferences/widgets/rounded-corners-item.ui:276
+msgid "Top"
+msgstr ""
+
+#: src/preferences/widgets/rounded-corners-item.ui:309
+msgid "Bottom"
+msgstr ""
+
+#: src/preferences/index.ts:12
+msgid "General"
+msgstr ""
+
+#: src/preferences/index.ts:17
+msgid "Blacklist"
+msgstr "Svarteliste"
+
+#: src/preferences/index.ts:22
+msgid "Custom"
+msgstr ""
+
+#: src/preferences/pages/blacklist.ts:67 src/preferences/pages/custom.ts:183
+msgid "Can't add to list, because it has exists"
+msgstr ""
+
+#: src/preferences/pages/custom.ts:196
+msgid "Enable"
+msgstr ""
+
+#: src/preferences/pages/custom.ts:200
+msgid "Enable custom settings for this window"
+msgstr ""
+
+#: src/preferences/widgets/app_row.ts:108
+msgid "Can't pick a window window from this position"
+msgstr ""
+
+#: src/preferences/widgets/edit_shadow_window.ts:59
+msgid "Edit Shadow for Rounded Corners Windows"
+msgstr ""
+
+#: src/preferences/widgets/reset_dialog.ts:64
+msgid "Focus Window Shadow Style"
+msgstr ""
+
+#: src/preferences/widgets/reset_dialog.ts:65
+msgid "Unfocus Window Shadow Style"
+msgstr ""
+
+#: src/preferences/widgets/reset_dialog.ts:73
+msgid "Padding"
+msgstr ""
+
+#: src/preferences/widgets/reset_dialog.ts:75
+msgid "Keep Rounded Corners when Maximized or Fullscreen"
+msgstr ""
+
+#: src/preferences/widgets/reset_dialog.ts:89
+msgid "Select Items to reset"
+msgstr ""
+
+#: src/preferences/widgets/reset_dialog.ts:98
+msgid "Select All"
+msgstr ""
+
+#: src/utils/prefs.ts:48
+msgid "Expand this row to pick a window."
+msgstr ""
+
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
+msgid "Rounded Corners Settings..."
 msgstr ""

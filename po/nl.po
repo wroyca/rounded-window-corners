@@ -1,6 +1,7 @@
 msgid ""
 msgstr ""
-"Report-Msgid-Bugs-To: yilozt@outlook.com\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-03 20:43+0300\n"
 "PO-Revision-Date: 2023-03-02 12:35+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/rounded-window-"
@@ -10,146 +11,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.16.2-dev\n"
-
-#: src/preferences/pages/general.ui:284
-msgid "Add Settings Entry in right-click menu of Background"
-msgstr "Voorkeurenitem tonen in rechtermuisknopmenu van achtergrond"
-
-#: src/preferences/pages/blacklist.ui:38 src/preferences/pages/custom.ui:38
-msgid "Add Window"
-msgstr "Venster toevoegen"
-
-#: src/preferences/widgets/rounded-corners-item.ui:130
-msgid "Always keep rounded corners when window is fullscreen."
-msgstr "Behoud afgeronde hoeken als het venster in kwestie schermvullend is."
-
-#: src/preferences/widgets/rounded-corners-item.ui:93
-msgid "Always keep rounded corners when window is maximized or tiled."
-msgstr ""
-"Behoud afgeronde hoeken als het venster in kwestie gemaximaliseerd of "
-"getegeld is."
-
-#: src/preferences/pages/general.ui:10
-msgid "Applications"
-msgstr "Apps"
-
-#: src/preferences/widgets/app-row.ui:92
-msgid "Apply"
-msgstr "Toepassen"
-
-#: src/preferences/index.ts:17
-msgid "Blacklist"
-msgstr "Zwarte lijst"
-
-#: src/preferences/widgets/edit-shadow-window.ui:87
-msgid "Blur Offset"
-msgstr "Vervaging"
-
-#: src/preferences/pages/general.ui:201
-#: src/preferences/widgets/reset_dialog.ts:67
-msgid "Border Color"
-msgstr "Randkleur"
-
-#: src/preferences/widgets/reset_dialog.ts:72
-#: src/preferences/widgets/rounded-corners-item.ui:19
-msgid "Border Radius"
-msgstr "Randstraal"
-
-#: src/preferences/pages/general.ui:168
-#: src/preferences/widgets/reset_dialog.ts:66
-msgid "Border Width"
-msgstr "Randbreedte"
-
-#: src/preferences/widgets/rounded-corners-item.ui:309
-msgid "Bottom"
-msgstr "Onderaan"
-
-#: src/preferences/pages/blacklist.ts:66 src/preferences/pages/custom.ts:182
-msgid "Can't add to list, because it has exists"
-msgstr "Het toevoegen is mislukt omdat het item er al op staat"
-
-#: src/preferences/widgets/app_row.ts:107
-msgid "Can't pick a window window from this position"
-msgstr "Er kan vanaf deze positie geen venster worden gekozen"
-
-#: src/preferences/widgets/rounded-corners-item.ui:170
-msgid "Clip paddings of window"
-msgstr "Opvulling van venster"
-
-#: src/preferences/widgets/reset_dialog.ts:77
-#: src/preferences/widgets/rounded-corners-item.ui:53
-msgid "Corner Smoothing"
-msgstr "Hoeken gladstrijken"
-
-#: src/preferences/index.ts:22
-msgid "Custom"
-msgstr "Aangepast"
-
-#: src/preferences/pages/general.ui:107
-msgid "Customize the shadow of the rounded corner window"
-msgstr "Pas de schaduw van afgeronde vensters aan"
-
-#: src/preferences/pages/general.ui:304
-msgid "Debug"
-msgstr "Foutopsporing"
-
-#: src/preferences/widgets/edit_shadow_window.ts:59
-msgid "Edit Shadow for Rounded Corners Windows"
-msgstr "Pas de schaduw van afgeronde vensters aan"
-
-#: src/preferences/pages/custom.ts:196
-msgid "Enable"
-msgstr "Inschakelen"
-
-#: src/preferences/pages/custom.ts:200
-msgid "Enable custom settings for this window"
-msgstr "Gebruik aangepaste voorkeuren in dit venster"
-
-#: src/preferences/pages/general.ui:329
-#: src/preferences/widgets/reset_dialog.ts:68
-msgid "Enable Log"
-msgstr "Logboek bijhouden"
-
-#: src/utils/prefs.ts:48
-msgid "Expand this row to pick a window."
-msgstr "Klap deze rij uit om een venster te kiezen."
-
-#: src/preferences/widgets/edit-shadow-window.ui:26
-msgid "Focus Window"
-msgstr "Vensterfocus"
-
-#: src/preferences/widgets/reset_dialog.ts:64
-msgid "Focus Window Shadow Style"
-msgstr "Schaduw van vensterfocus"
-
-#: src/preferences/index.ts:12
-msgid "General"
-msgstr "Algemeen"
-
-#: src/preferences/pages/general.ui:132
-msgid "Global Settings"
-msgstr "Globale voorkeuren"
-
-#: src/preferences/widgets/edit-shadow-window.ui:46
-msgid "Horizontal Offset"
-msgstr "Horizontale verschuiving"
-
-#: src/preferences/widgets/rounded-corners-item.ui:123
-msgid "Keep Rounded Corners when Fullscreen"
-msgstr "Afgeronde hoeken van schermvullende vensters behouden"
-
-#: src/preferences/widgets/rounded-corners-item.ui:86
-msgid "Keep Rounded Corners when Maximized"
-msgstr "Afgeronde hoeken van gemaximaliseerde vensters behouden"
-
-#: src/preferences/widgets/reset_dialog.ts:75
-msgid "Keep Rounded Corners when Maximized or Fullscreen"
-msgstr ""
-"Afgeronde hoeken van gemaximaliseerde en schermvullende vensters behouden"
-
-#: src/preferences/widgets/rounded-corners-item.ui:210
-msgid "Left"
-msgstr "Links"
 
 #: src/preferences/pages/blacklist.ui:14
 msgid ""
@@ -165,57 +26,9 @@ msgstr ""
 "Het item in kwestie is onderdeel van de WM_CLASS-eigenschap van een venster. "
 "Ook kunt u een eigen venster kiezen."
 
-#: src/preferences/widgets/edit-shadow-window.ui:126
-msgid "Opacity"
-msgstr "Doorzichtigheid"
-
-#: src/preferences/pages/general.ui:367
-msgid "Open Reset Preferences Dialog"
-msgstr "Open het voorkeurenherstelvenster"
-
-#: src/preferences/widgets/reset_dialog.ts:73
-msgid "Padding"
-msgstr "Opvulling"
-
-#: src/preferences/widgets/rounded-corners-item.ui:163
-msgid "Paddings"
-msgstr "Opvullingen"
-
-#: src/preferences/widgets/app-row.ui:77
-msgid "Pick Window to add into list"
-msgstr "Kies een toe te voegen venster"
-
-#: src/preferences/widgets/app-row.ui:36
-msgid "Remove Window from this List"
-msgstr "Venster verwijderen van lijst"
-
-#: src/preferences/pages/general.ui:359
-msgid "Reset Preferences"
-msgstr "Voorkeuren herstellen"
-
-#: src/preferences/widgets/rounded-corners-item.ui:243
-msgid "Right"
-msgstr "Rechts"
-
-#: src/utils/ui.ts:105 src/utils/ui.ts:134
-msgid "Rounded Corners Settings..."
-msgstr "Afgeronde hoeken-voorkeuren…"
-
-#: src/preferences/pages/general.ui:336
-msgid ""
-"Run <i>journalctl -o cat -f /usr/bin/gnome-shell</i> in terminal to see the "
-"log"
-msgstr ""
-"Voer <i>journalctl -o cat -f /usr/bin/gnome-shell</i> uit in een "
-"terminalvenster om het logboek te bekijken"
-
-#: src/preferences/widgets/reset_dialog.ts:98
-msgid "Select All"
-msgstr "Alles selecteren"
-
-#: src/preferences/widgets/reset_dialog.ts:89
-msgid "Select Items to reset"
-msgstr "Selecteer te herstellen items"
+#: src/preferences/pages/blacklist.ui:38 src/preferences/pages/custom.ui:38
+msgid "Add Window"
+msgstr "Venster toevoegen"
 
 #: src/preferences/pages/custom.ui:14
 msgid ""
@@ -230,6 +43,18 @@ msgstr ""
 "Het item in kwestie is onderdeel van de WM_CLASS-eigenschap van een venster. "
 "Ook kunt u een eigen venster kiezen."
 
+#: src/preferences/pages/general.ui:10
+msgid "Applications"
+msgstr "Apps"
+
+#: src/preferences/pages/general.ui:23
+msgid ""
+"Some applications written using LibAdwaita or LibHandy already have native "
+"rounded corners, so we can skip them through these settings"
+msgstr ""
+"Sommige LibAdwaita- en LibHandy-apps hebben al afgeronde hoeken. Hierdoor is "
+"het niet nodig voor deze uitbreiding om te proberen ze ervan te voorzien."
+
 #: src/preferences/pages/general.ui:47
 #: src/preferences/widgets/reset_dialog.ts:61
 msgid "Skip LibAdwaita Applications"
@@ -240,25 +65,35 @@ msgstr "LibAdwaita-apps negeren"
 msgid "Skip LibHandy Applications"
 msgstr "LibHandy-apps negeren"
 
-#: src/preferences/pages/general.ui:23
-msgid ""
-"Some applications written using LibAdwaita or LibHandy already have native "
-"rounded corners, so we can skip them through these settings"
-msgstr ""
-"Sommige LibAdwaita- en LibHandy-apps hebben al afgeronde hoeken. Hierdoor is "
-"het niet nodig voor deze uitbreiding om te proberen ze ervan te voorzien."
+#: src/preferences/pages/general.ui:101
+msgid "Window Shadow"
+msgstr "Vensterschaduw"
 
-#: src/preferences/widgets/edit-shadow-window.ui:107
-msgid "Spread Radius"
-msgstr "Verspreiding"
+#: src/preferences/pages/general.ui:107
+msgid "Customize the shadow of the rounded corner window"
+msgstr "Pas de schaduw van afgeronde vensters aan"
+
+#: src/preferences/pages/general.ui:132
+msgid "Global Settings"
+msgstr "Globale voorkeuren"
 
 #: src/preferences/pages/general.ui:143
 msgid "This settings will try to effects all windows"
 msgstr "Deze voorkeuren zijn van toepassing op alle vensters"
 
-#: src/preferences/widgets/rounded-corners-item.ui:276
-msgid "Top"
-msgstr "Bovenaan"
+#: src/preferences/pages/general.ui:168
+#: src/preferences/widgets/reset_dialog.ts:66
+msgid "Border Width"
+msgstr "Randbreedte"
+
+#: src/preferences/pages/general.ui:201
+#: src/preferences/widgets/reset_dialog.ts:67
+msgid "Border Color"
+msgstr "Randkleur"
+
+#: src/preferences/pages/general.ui:222
+msgid "Tweaks"
+msgstr "Trucs"
 
 #: src/preferences/pages/general.ui:247
 msgid "Try to add rounded corners to Kitty Terminal in Wayland"
@@ -268,22 +103,188 @@ msgstr "Kitty Terminal voorzien van afgeronde hoeken op Wayland"
 msgid "Tweak clip paddings for Kitty Terminal"
 msgstr "Opvullingen van Kitty Terminal verbeteren"
 
-#: src/preferences/pages/general.ui:222
-msgid "Tweaks"
-msgstr "Trucs"
+#: src/preferences/pages/general.ui:284
+msgid "Add Settings Entry in right-click menu of Background"
+msgstr "Voorkeurenitem tonen in rechtermuisknopmenu van achtergrond"
+
+#: src/preferences/pages/general.ui:304
+msgid "Debug"
+msgstr "Foutopsporing"
+
+#: src/preferences/pages/general.ui:329
+#: src/preferences/widgets/reset_dialog.ts:68
+msgid "Enable Log"
+msgstr "Logboek bijhouden"
+
+#: src/preferences/pages/general.ui:336
+msgid ""
+"Run <i>journalctl -o cat -f /usr/bin/gnome-shell</i> in terminal to see the "
+"log"
+msgstr ""
+"Voer <i>journalctl -o cat -f /usr/bin/gnome-shell</i> uit in een "
+"terminalvenster om het logboek te bekijken"
+
+#: src/preferences/pages/general.ui:359
+msgid "Reset Preferences"
+msgstr "Voorkeuren herstellen"
+
+#: src/preferences/pages/general.ui:367
+msgid "Open Reset Preferences Dialog"
+msgstr "Open het voorkeurenherstelvenster"
+
+#: src/preferences/widgets/app-row.ui:36
+msgid "Remove Window from this List"
+msgstr "Venster verwijderen van lijst"
+
+#: src/preferences/widgets/app-row.ui:77
+msgid "Pick Window to add into list"
+msgstr "Kies een toe te voegen venster"
+
+#: src/preferences/widgets/app-row.ui:92
+msgid "Apply"
+msgstr "Toepassen"
+
+#: src/preferences/widgets/edit-shadow-window.ui:26
+msgid "Focus Window"
+msgstr "Vensterfocus"
 
 #: src/preferences/widgets/edit-shadow-window.ui:35
 msgid "Unfocus Window"
 msgstr "Ongefocust venster"
 
-#: src/preferences/widgets/reset_dialog.ts:65
-msgid "Unfocus Window Shadow Style"
-msgstr "Schaduw stijl van ongefocust venster"
+#: src/preferences/widgets/edit-shadow-window.ui:46
+msgid "Horizontal Offset"
+msgstr "Horizontale verschuiving"
 
 #: src/preferences/widgets/edit-shadow-window.ui:66
 msgid "Vertical Offset"
 msgstr "Verticale verschuiving"
 
-#: src/preferences/pages/general.ui:101
-msgid "Window Shadow"
-msgstr "Vensterschaduw"
+#: src/preferences/widgets/edit-shadow-window.ui:87
+msgid "Blur Offset"
+msgstr "Vervaging"
+
+#: src/preferences/widgets/edit-shadow-window.ui:107
+msgid "Spread Radius"
+msgstr "Verspreiding"
+
+#: src/preferences/widgets/edit-shadow-window.ui:126
+msgid "Opacity"
+msgstr "Doorzichtigheid"
+
+#: src/preferences/widgets/rounded-corners-item.ui:19
+#: src/preferences/widgets/reset_dialog.ts:72
+msgid "Border Radius"
+msgstr "Randstraal"
+
+#: src/preferences/widgets/rounded-corners-item.ui:53
+#: src/preferences/widgets/reset_dialog.ts:77
+msgid "Corner Smoothing"
+msgstr "Hoeken gladstrijken"
+
+#: src/preferences/widgets/rounded-corners-item.ui:86
+msgid "Keep Rounded Corners when Maximized"
+msgstr "Afgeronde hoeken van gemaximaliseerde vensters behouden"
+
+#: src/preferences/widgets/rounded-corners-item.ui:93
+msgid "Always keep rounded corners when window is maximized or tiled."
+msgstr ""
+"Behoud afgeronde hoeken als het venster in kwestie gemaximaliseerd of "
+"getegeld is."
+
+#: src/preferences/widgets/rounded-corners-item.ui:123
+msgid "Keep Rounded Corners when Fullscreen"
+msgstr "Afgeronde hoeken van schermvullende vensters behouden"
+
+#: src/preferences/widgets/rounded-corners-item.ui:130
+msgid "Always keep rounded corners when window is fullscreen."
+msgstr "Behoud afgeronde hoeken als het venster in kwestie schermvullend is."
+
+#: src/preferences/widgets/rounded-corners-item.ui:163
+msgid "Paddings"
+msgstr "Opvullingen"
+
+#: src/preferences/widgets/rounded-corners-item.ui:170
+msgid "Clip paddings of window"
+msgstr "Opvulling van venster"
+
+#: src/preferences/widgets/rounded-corners-item.ui:210
+msgid "Left"
+msgstr "Links"
+
+#: src/preferences/widgets/rounded-corners-item.ui:243
+msgid "Right"
+msgstr "Rechts"
+
+#: src/preferences/widgets/rounded-corners-item.ui:276
+msgid "Top"
+msgstr "Bovenaan"
+
+#: src/preferences/widgets/rounded-corners-item.ui:309
+msgid "Bottom"
+msgstr "Onderaan"
+
+#: src/preferences/index.ts:12
+msgid "General"
+msgstr "Algemeen"
+
+#: src/preferences/index.ts:17
+msgid "Blacklist"
+msgstr "Zwarte lijst"
+
+#: src/preferences/index.ts:22
+msgid "Custom"
+msgstr "Aangepast"
+
+#: src/preferences/pages/blacklist.ts:67 src/preferences/pages/custom.ts:183
+msgid "Can't add to list, because it has exists"
+msgstr "Het toevoegen is mislukt omdat het item er al op staat"
+
+#: src/preferences/pages/custom.ts:196
+msgid "Enable"
+msgstr "Inschakelen"
+
+#: src/preferences/pages/custom.ts:200
+msgid "Enable custom settings for this window"
+msgstr "Gebruik aangepaste voorkeuren in dit venster"
+
+#: src/preferences/widgets/app_row.ts:108
+msgid "Can't pick a window window from this position"
+msgstr "Er kan vanaf deze positie geen venster worden gekozen"
+
+#: src/preferences/widgets/edit_shadow_window.ts:59
+msgid "Edit Shadow for Rounded Corners Windows"
+msgstr "Pas de schaduw van afgeronde vensters aan"
+
+#: src/preferences/widgets/reset_dialog.ts:64
+msgid "Focus Window Shadow Style"
+msgstr "Schaduw van vensterfocus"
+
+#: src/preferences/widgets/reset_dialog.ts:65
+msgid "Unfocus Window Shadow Style"
+msgstr "Schaduw stijl van ongefocust venster"
+
+#: src/preferences/widgets/reset_dialog.ts:73
+msgid "Padding"
+msgstr "Opvulling"
+
+#: src/preferences/widgets/reset_dialog.ts:75
+msgid "Keep Rounded Corners when Maximized or Fullscreen"
+msgstr ""
+"Afgeronde hoeken van gemaximaliseerde en schermvullende vensters behouden"
+
+#: src/preferences/widgets/reset_dialog.ts:89
+msgid "Select Items to reset"
+msgstr "Selecteer te herstellen items"
+
+#: src/preferences/widgets/reset_dialog.ts:98
+msgid "Select All"
+msgstr "Alles selecteren"
+
+#: src/utils/prefs.ts:48
+msgid "Expand this row to pick a window."
+msgstr "Klap deze rij uit om een venster te kiezen."
+
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
+msgid "Rounded Corners Settings..."
+msgstr "Afgeronde hoeken-voorkeuren…"

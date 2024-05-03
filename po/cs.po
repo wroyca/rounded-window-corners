@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
-"Report-Msgid-Bugs-To: yilozt@outlook.com\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-03 20:43+0300\n"
 "PO-Revision-Date: 2023-04-25 17:52+0000\n"
 "Last-Translator: Fjuro <ifjuro@proton.me>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/rounded-window-"
@@ -11,143 +12,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 4.18-dev\n"
-
-#: src/preferences/pages/general.ui:284
-msgid "Add Settings Entry in right-click menu of Background"
-msgstr "Přidat položku Nastavení do nabídky pravého tlačítka myši na pozadí"
-
-#: src/preferences/pages/blacklist.ui:38 src/preferences/pages/custom.ui:38
-msgid "Add Window"
-msgstr "Přidat okno"
-
-#: src/preferences/widgets/rounded-corners-item.ui:130
-msgid "Always keep rounded corners when window is fullscreen."
-msgstr "Při zobrazení okna na celou obrazovku vždy zachovat zaoblené rohy."
-
-#: src/preferences/widgets/rounded-corners-item.ui:93
-msgid "Always keep rounded corners when window is maximized or tiled."
-msgstr "Při maximalizovaném okně nebo dlaždicích vždy zachovat zaoblené rohy."
-
-#: src/preferences/pages/general.ui:10
-msgid "Applications"
-msgstr "Aplikace"
-
-#: src/preferences/widgets/app-row.ui:92
-msgid "Apply"
-msgstr "Použít"
-
-#: src/preferences/index.ts:17
-msgid "Blacklist"
-msgstr "Černá listina"
-
-#: src/preferences/widgets/edit-shadow-window.ui:87
-msgid "Blur Offset"
-msgstr "Posun rozmazání"
-
-#: src/preferences/pages/general.ui:201
-#: src/preferences/widgets/reset_dialog.ts:67
-msgid "Border Color"
-msgstr "Barva okraje"
-
-#: src/preferences/widgets/reset_dialog.ts:72
-#: src/preferences/widgets/rounded-corners-item.ui:19
-msgid "Border Radius"
-msgstr "Poloměr okraje"
-
-#: src/preferences/pages/general.ui:168
-#: src/preferences/widgets/reset_dialog.ts:66
-msgid "Border Width"
-msgstr "Šířka okraje"
-
-#: src/preferences/widgets/rounded-corners-item.ui:309
-msgid "Bottom"
-msgstr "Spodní"
-
-#: src/preferences/pages/blacklist.ts:66 src/preferences/pages/custom.ts:182
-msgid "Can't add to list, because it has exists"
-msgstr "Nelze přidat do seznamu, protože existuje"
-
-#: src/preferences/widgets/app_row.ts:107
-msgid "Can't pick a window window from this position"
-msgstr "Nelze vybrat okno z této pozice"
-
-#: src/preferences/widgets/rounded-corners-item.ui:170
-msgid "Clip paddings of window"
-msgstr "Oříznout výplně okna"
-
-#: src/preferences/widgets/reset_dialog.ts:77
-#: src/preferences/widgets/rounded-corners-item.ui:53
-msgid "Corner Smoothing"
-msgstr "Vyhlazování rohů"
-
-#: src/preferences/index.ts:22
-msgid "Custom"
-msgstr "Vlastní"
-
-#: src/preferences/pages/general.ui:107
-msgid "Customize the shadow of the rounded corner window"
-msgstr "Přizpůsobení stínu zaobleného rohu okna"
-
-#: src/preferences/pages/general.ui:304
-msgid "Debug"
-msgstr "Ladění"
-
-#: src/preferences/widgets/edit_shadow_window.ts:59
-msgid "Edit Shadow for Rounded Corners Windows"
-msgstr "Úprava stínu pro okna se zaoblenými rohy"
-
-#: src/preferences/pages/custom.ts:196
-msgid "Enable"
-msgstr "Povolit"
-
-#: src/preferences/pages/custom.ts:200
-msgid "Enable custom settings for this window"
-msgstr "Povolit vlastní nastavení tohoto okna"
-
-#: src/preferences/pages/general.ui:329
-#: src/preferences/widgets/reset_dialog.ts:68
-msgid "Enable Log"
-msgstr "Povolit protokol"
-
-#: src/utils/prefs.ts:48
-msgid "Expand this row to pick a window."
-msgstr "Rozbalte tento řádek a vyberte okno."
-
-#: src/preferences/widgets/edit-shadow-window.ui:26
-msgid "Focus Window"
-msgstr "Zaměření okna"
-
-#: src/preferences/widgets/reset_dialog.ts:64
-msgid "Focus Window Shadow Style"
-msgstr "Styl stínu zaměřeného okna"
-
-#: src/preferences/index.ts:12
-msgid "General"
-msgstr "Obecné"
-
-#: src/preferences/pages/general.ui:132
-msgid "Global Settings"
-msgstr "Globální nastavení"
-
-#: src/preferences/widgets/edit-shadow-window.ui:46
-msgid "Horizontal Offset"
-msgstr "Horizontální posun"
-
-#: src/preferences/widgets/rounded-corners-item.ui:123
-msgid "Keep Rounded Corners when Fullscreen"
-msgstr "Zachovat zaoblené rohy v režimu celé obrazovky"
-
-#: src/preferences/widgets/rounded-corners-item.ui:86
-msgid "Keep Rounded Corners when Maximized"
-msgstr "Zachovat zaoblené rohy při maximalizaci"
-
-#: src/preferences/widgets/reset_dialog.ts:75
-msgid "Keep Rounded Corners when Maximized or Fullscreen"
-msgstr "Zachovat zaoblené rohy při maximalizaci nebo režimu na celou obrazovku"
-
-#: src/preferences/widgets/rounded-corners-item.ui:210
-msgid "Left"
-msgstr "Vlevo"
 
 #: src/preferences/pages/blacklist.ui:14
 msgid ""
@@ -163,57 +27,9 @@ msgstr ""
 "Položka seznamu je součástí instance vlastnosti WM_CLASS s oknem. Můžete "
 "vybrat okno a přidat jej do tohoto seznamu."
 
-#: src/preferences/widgets/edit-shadow-window.ui:126
-msgid "Opacity"
-msgstr "Neprůhlednost"
-
-#: src/preferences/pages/general.ui:367
-msgid "Open Reset Preferences Dialog"
-msgstr "Otevřít dialogové okno Obnovit předvolby"
-
-#: src/preferences/widgets/reset_dialog.ts:73
-msgid "Padding"
-msgstr "Výplň"
-
-#: src/preferences/widgets/rounded-corners-item.ui:163
-msgid "Paddings"
-msgstr "Výplně"
-
-#: src/preferences/widgets/app-row.ui:77
-msgid "Pick Window to add into list"
-msgstr "Vyberte okno, které chcete přidat do seznamu"
-
-#: src/preferences/widgets/app-row.ui:36
-msgid "Remove Window from this List"
-msgstr "Odebrat okno z tohoto seznamu"
-
-#: src/preferences/pages/general.ui:359
-msgid "Reset Preferences"
-msgstr "Obnovit předvolby"
-
-#: src/preferences/widgets/rounded-corners-item.ui:243
-msgid "Right"
-msgstr "Vpravo"
-
-#: src/utils/ui.ts:105 src/utils/ui.ts:134
-msgid "Rounded Corners Settings..."
-msgstr "Nastavení zaoblených rohů..."
-
-#: src/preferences/pages/general.ui:336
-msgid ""
-"Run <i>journalctl -o cat -f /usr/bin/gnome-shell</i> in terminal to see the "
-"log"
-msgstr ""
-"Pro zobrazení protokolu spusťte v terminálu příkaz <i>journalctl -o cat -f /"
-"usr/bin/gnome-shell</i>"
-
-#: src/preferences/widgets/reset_dialog.ts:98
-msgid "Select All"
-msgstr "Vybrat vše"
-
-#: src/preferences/widgets/reset_dialog.ts:89
-msgid "Select Items to reset"
-msgstr "Vyberte položky, které chcete resetovat"
+#: src/preferences/pages/blacklist.ui:38 src/preferences/pages/custom.ui:38
+msgid "Add Window"
+msgstr "Přidat okno"
 
 #: src/preferences/pages/custom.ui:14
 msgid ""
@@ -227,6 +43,18 @@ msgstr ""
 "Položka seznamu je součástí instance vlastnosti WM_CLASS s oknem. Můžete "
 "vybrat okno a přidat jej do tohoto seznamu."
 
+#: src/preferences/pages/general.ui:10
+msgid "Applications"
+msgstr "Aplikace"
+
+#: src/preferences/pages/general.ui:23
+msgid ""
+"Some applications written using LibAdwaita or LibHandy already have native "
+"rounded corners, so we can skip them through these settings"
+msgstr ""
+"Některé aplikace napsané pomocí LibAdwaita nebo LibHandy již mají nativní "
+"zaoblené rohy, takže je můžeme přeskočit pomocí těchto nastavení"
+
 #: src/preferences/pages/general.ui:47
 #: src/preferences/widgets/reset_dialog.ts:61
 msgid "Skip LibAdwaita Applications"
@@ -237,25 +65,35 @@ msgstr "Přeskočit aplikace LibAdwaita"
 msgid "Skip LibHandy Applications"
 msgstr "Přeskočit aplikace LibHandy"
 
-#: src/preferences/pages/general.ui:23
-msgid ""
-"Some applications written using LibAdwaita or LibHandy already have native "
-"rounded corners, so we can skip them through these settings"
-msgstr ""
-"Některé aplikace napsané pomocí LibAdwaita nebo LibHandy již mají nativní "
-"zaoblené rohy, takže je můžeme přeskočit pomocí těchto nastavení"
+#: src/preferences/pages/general.ui:101
+msgid "Window Shadow"
+msgstr "Stín okna"
 
-#: src/preferences/widgets/edit-shadow-window.ui:107
-msgid "Spread Radius"
-msgstr "Poloměr rozptylu"
+#: src/preferences/pages/general.ui:107
+msgid "Customize the shadow of the rounded corner window"
+msgstr "Přizpůsobení stínu zaobleného rohu okna"
+
+#: src/preferences/pages/general.ui:132
+msgid "Global Settings"
+msgstr "Globální nastavení"
 
 #: src/preferences/pages/general.ui:143
 msgid "This settings will try to effects all windows"
 msgstr "Toto nastavení se pokusí ovlivnit všechna okna"
 
-#: src/preferences/widgets/rounded-corners-item.ui:276
-msgid "Top"
-msgstr "Nahoře"
+#: src/preferences/pages/general.ui:168
+#: src/preferences/widgets/reset_dialog.ts:66
+msgid "Border Width"
+msgstr "Šířka okraje"
+
+#: src/preferences/pages/general.ui:201
+#: src/preferences/widgets/reset_dialog.ts:67
+msgid "Border Color"
+msgstr "Barva okraje"
+
+#: src/preferences/pages/general.ui:222
+msgid "Tweaks"
+msgstr "Vylepšení"
 
 #: src/preferences/pages/general.ui:247
 msgid "Try to add rounded corners to Kitty Terminal in Wayland"
@@ -265,22 +103,185 @@ msgstr "Pokusit se přidat zaoblené rohy do aplikace Kitty Terminal ve Waylandu
 msgid "Tweak clip paddings for Kitty Terminal"
 msgstr "Upravit výplně klipů pro Kitty Terminal"
 
-#: src/preferences/pages/general.ui:222
-msgid "Tweaks"
-msgstr "Vylepšení"
+#: src/preferences/pages/general.ui:284
+msgid "Add Settings Entry in right-click menu of Background"
+msgstr "Přidat položku Nastavení do nabídky pravého tlačítka myši na pozadí"
+
+#: src/preferences/pages/general.ui:304
+msgid "Debug"
+msgstr "Ladění"
+
+#: src/preferences/pages/general.ui:329
+#: src/preferences/widgets/reset_dialog.ts:68
+msgid "Enable Log"
+msgstr "Povolit protokol"
+
+#: src/preferences/pages/general.ui:336
+msgid ""
+"Run <i>journalctl -o cat -f /usr/bin/gnome-shell</i> in terminal to see the "
+"log"
+msgstr ""
+"Pro zobrazení protokolu spusťte v terminálu příkaz <i>journalctl -o cat -f /"
+"usr/bin/gnome-shell</i>"
+
+#: src/preferences/pages/general.ui:359
+msgid "Reset Preferences"
+msgstr "Obnovit předvolby"
+
+#: src/preferences/pages/general.ui:367
+msgid "Open Reset Preferences Dialog"
+msgstr "Otevřít dialogové okno Obnovit předvolby"
+
+#: src/preferences/widgets/app-row.ui:36
+msgid "Remove Window from this List"
+msgstr "Odebrat okno z tohoto seznamu"
+
+#: src/preferences/widgets/app-row.ui:77
+msgid "Pick Window to add into list"
+msgstr "Vyberte okno, které chcete přidat do seznamu"
+
+#: src/preferences/widgets/app-row.ui:92
+msgid "Apply"
+msgstr "Použít"
+
+#: src/preferences/widgets/edit-shadow-window.ui:26
+msgid "Focus Window"
+msgstr "Zaměření okna"
 
 #: src/preferences/widgets/edit-shadow-window.ui:35
 msgid "Unfocus Window"
 msgstr "Okno bez zaměření"
 
-#: src/preferences/widgets/reset_dialog.ts:65
-msgid "Unfocus Window Shadow Style"
-msgstr "Styl stínu nezaměřeného okna"
+#: src/preferences/widgets/edit-shadow-window.ui:46
+msgid "Horizontal Offset"
+msgstr "Horizontální posun"
 
 #: src/preferences/widgets/edit-shadow-window.ui:66
 msgid "Vertical Offset"
 msgstr "Vertikální posun"
 
-#: src/preferences/pages/general.ui:101
-msgid "Window Shadow"
-msgstr "Stín okna"
+#: src/preferences/widgets/edit-shadow-window.ui:87
+msgid "Blur Offset"
+msgstr "Posun rozmazání"
+
+#: src/preferences/widgets/edit-shadow-window.ui:107
+msgid "Spread Radius"
+msgstr "Poloměr rozptylu"
+
+#: src/preferences/widgets/edit-shadow-window.ui:126
+msgid "Opacity"
+msgstr "Neprůhlednost"
+
+#: src/preferences/widgets/rounded-corners-item.ui:19
+#: src/preferences/widgets/reset_dialog.ts:72
+msgid "Border Radius"
+msgstr "Poloměr okraje"
+
+#: src/preferences/widgets/rounded-corners-item.ui:53
+#: src/preferences/widgets/reset_dialog.ts:77
+msgid "Corner Smoothing"
+msgstr "Vyhlazování rohů"
+
+#: src/preferences/widgets/rounded-corners-item.ui:86
+msgid "Keep Rounded Corners when Maximized"
+msgstr "Zachovat zaoblené rohy při maximalizaci"
+
+#: src/preferences/widgets/rounded-corners-item.ui:93
+msgid "Always keep rounded corners when window is maximized or tiled."
+msgstr "Při maximalizovaném okně nebo dlaždicích vždy zachovat zaoblené rohy."
+
+#: src/preferences/widgets/rounded-corners-item.ui:123
+msgid "Keep Rounded Corners when Fullscreen"
+msgstr "Zachovat zaoblené rohy v režimu celé obrazovky"
+
+#: src/preferences/widgets/rounded-corners-item.ui:130
+msgid "Always keep rounded corners when window is fullscreen."
+msgstr "Při zobrazení okna na celou obrazovku vždy zachovat zaoblené rohy."
+
+#: src/preferences/widgets/rounded-corners-item.ui:163
+msgid "Paddings"
+msgstr "Výplně"
+
+#: src/preferences/widgets/rounded-corners-item.ui:170
+msgid "Clip paddings of window"
+msgstr "Oříznout výplně okna"
+
+#: src/preferences/widgets/rounded-corners-item.ui:210
+msgid "Left"
+msgstr "Vlevo"
+
+#: src/preferences/widgets/rounded-corners-item.ui:243
+msgid "Right"
+msgstr "Vpravo"
+
+#: src/preferences/widgets/rounded-corners-item.ui:276
+msgid "Top"
+msgstr "Nahoře"
+
+#: src/preferences/widgets/rounded-corners-item.ui:309
+msgid "Bottom"
+msgstr "Spodní"
+
+#: src/preferences/index.ts:12
+msgid "General"
+msgstr "Obecné"
+
+#: src/preferences/index.ts:17
+msgid "Blacklist"
+msgstr "Černá listina"
+
+#: src/preferences/index.ts:22
+msgid "Custom"
+msgstr "Vlastní"
+
+#: src/preferences/pages/blacklist.ts:67 src/preferences/pages/custom.ts:183
+msgid "Can't add to list, because it has exists"
+msgstr "Nelze přidat do seznamu, protože existuje"
+
+#: src/preferences/pages/custom.ts:196
+msgid "Enable"
+msgstr "Povolit"
+
+#: src/preferences/pages/custom.ts:200
+msgid "Enable custom settings for this window"
+msgstr "Povolit vlastní nastavení tohoto okna"
+
+#: src/preferences/widgets/app_row.ts:108
+msgid "Can't pick a window window from this position"
+msgstr "Nelze vybrat okno z této pozice"
+
+#: src/preferences/widgets/edit_shadow_window.ts:59
+msgid "Edit Shadow for Rounded Corners Windows"
+msgstr "Úprava stínu pro okna se zaoblenými rohy"
+
+#: src/preferences/widgets/reset_dialog.ts:64
+msgid "Focus Window Shadow Style"
+msgstr "Styl stínu zaměřeného okna"
+
+#: src/preferences/widgets/reset_dialog.ts:65
+msgid "Unfocus Window Shadow Style"
+msgstr "Styl stínu nezaměřeného okna"
+
+#: src/preferences/widgets/reset_dialog.ts:73
+msgid "Padding"
+msgstr "Výplň"
+
+#: src/preferences/widgets/reset_dialog.ts:75
+msgid "Keep Rounded Corners when Maximized or Fullscreen"
+msgstr "Zachovat zaoblené rohy při maximalizaci nebo režimu na celou obrazovku"
+
+#: src/preferences/widgets/reset_dialog.ts:89
+msgid "Select Items to reset"
+msgstr "Vyberte položky, které chcete resetovat"
+
+#: src/preferences/widgets/reset_dialog.ts:98
+msgid "Select All"
+msgstr "Vybrat vše"
+
+#: src/utils/prefs.ts:48
+msgid "Expand this row to pick a window."
+msgstr "Rozbalte tento řádek a vyberte okno."
+
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
+msgid "Rounded Corners Settings..."
+msgstr "Nastavení zaoblených rohů..."
