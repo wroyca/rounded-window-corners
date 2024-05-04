@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-03 20:43+0300\n"
+"POT-Creation-Date: 2024-05-04 20:11+0300\n"
 "PO-Revision-Date: 2023-10-11 16:02+0000\n"
 "Last-Translator: luxluth <delphin.blehoussi93@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/rounded-window-"
@@ -286,6 +286,6 @@ msgstr "Tout sélectionner"
 msgid "Expand this row to pick a window."
 msgstr "Développer la ligne pour choisir une fenêtre."
 
-#: src/utils/ui.ts:105 src/utils/ui.ts:134
+#: src/utils/ui.ts:104 src/utils/ui.ts:133
 msgid "Rounded Corners Settings..."
 msgstr "Paramètres de coins arrondis..."

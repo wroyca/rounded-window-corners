@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-03 20:43+0300\n"
+"POT-Creation-Date: 2024-05-04 20:11+0300\n"
 "PO-Revision-Date: 2023-10-01 14:00+0000\n"
 "Last-Translator: olevo <imagyarcsik@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/rounded-window-"
@@ -270,6 +270,6 @@ msgstr ""
 msgid "Expand this row to pick a window."
 msgstr ""
 
-#: src/utils/ui.ts:105 src/utils/ui.ts:134
+#: src/utils/ui.ts:104 src/utils/ui.ts:133
 msgid "Rounded Corners Settings..."
 msgstr ""

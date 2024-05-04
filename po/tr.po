@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-03 20:43+0300\n"
+"POT-Creation-Date: 2024-05-04 20:11+0300\n"
 "PO-Revision-Date: 2023-05-14 22:51+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/rounded-window-"
@@ -284,6 +284,6 @@ msgstr "Tümünü Seç"
 msgid "Expand this row to pick a window."
 msgstr "Bir pencere seçmek için bu sırayı genişlet."
 
-#: src/utils/ui.ts:105 src/utils/ui.ts:134
+#: src/utils/ui.ts:104 src/utils/ui.ts:133
 msgid "Rounded Corners Settings..."
 msgstr "Yuvarlatılmış Köşe Ayarları..."
