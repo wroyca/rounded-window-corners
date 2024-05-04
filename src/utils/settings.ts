@@ -1,10 +1,9 @@
 // imports.gi
-import * as GLib from 'gi://GLib';
-import type * as Gio from 'gi://Gio';
+import GLib from 'gi://GLib';
+import type Gio from 'gi://Gio';
 
 // used to mark types, will be remove in output files.
-import type * as GObject from 'gi://GObject';
-import {log} from '@global';
+import type GObject from 'gi://GObject';
 import type {
     BoxShadow,
     CustomRoundedCornersCfg,

@@ -1,14 +1,14 @@
 // imports.gi
-import * as GObject from 'gi://GObject';
-import * as Meta from 'gi://Meta';
-import * as Shell from 'gi://Shell';
+import GObject from 'gi://GObject';
+import Meta from 'gi://Meta';
+import Shell from 'gi://Shell';
 
 // local modules
 import {loadShader} from '../utils/io.js';
 import type * as types from '../utils/types.js';
 
 // types
-import type * as Clutter from 'gi://Clutter';
+import type Clutter from 'gi://Clutter';
 import {shell_version} from '../utils/ui.js';
 
 // --------------------------------------------------------------- [end imports]

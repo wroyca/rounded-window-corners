@@ -1,8 +1,8 @@
 // imports.gi
-import type * as Clutter from 'gi://Clutter';
-import * as Graphene from 'gi://Graphene';
-import type * as Meta from 'gi://Meta';
-import type * as Shell from 'gi://Shell';
+import type Clutter from 'gi://Clutter';
+import Graphene from 'gi://Graphene';
+import type Meta from 'gi://Meta';
+import type Shell from 'gi://Shell';
 
 // local modules
 import {RoundedCornersManager} from '../manager/rounded_corners_manager.js';
@@ -11,8 +11,7 @@ import {_log} from '../utils/log.js';
 import {settings} from '../utils/settings.js';
 
 // types, those import statements will be removed in output javascript files.
-import type * as Gio from 'gi://Gio';
-import {global} from '@global';
+import type Gio from 'gi://Gio';
 import type {SchemasKeys} from '../utils/settings.js';
 import type {EffectManager} from '../utils/types.js';
 import type {ExtensionsWindowActor} from '../utils/types.js';

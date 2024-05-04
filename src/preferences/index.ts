@@ -1,4 +1,4 @@
-import type * as Gtk from 'gi://Gtk';
+import type Gtk from 'gi://Gtk';
 
 import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 import {BlackList} from '../preferences/pages/blacklist.js';

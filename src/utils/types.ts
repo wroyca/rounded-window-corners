@@ -1,8 +1,8 @@
-import type * as Clutter from 'gi://Clutter';
-import type * as GObject from 'gi://GObject';
-import type * as Graphene from 'gi://Graphene';
-import type * as Meta from 'gi://Meta';
-import type * as St from 'gi://St';
+import type Clutter from 'gi://Clutter';
+import type GObject from 'gi://GObject';
+import type Graphene from 'gi://Graphene';
+import type Meta from 'gi://Meta';
+import type St from 'gi://St';
 import type {SchemasKeys} from '../utils/settings.js';
 
 /** Bounds of rounded corners  */

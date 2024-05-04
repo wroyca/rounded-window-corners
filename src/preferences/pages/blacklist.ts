@@ -1,5 +1,5 @@
 // imports.gi
-import * as GObject from 'gi://GObject';
+import GObject from 'gi://GObject';
 
 // Local Modules
 import {AppRow} from '../../preferences/widgets/app_row.js';
@@ -10,7 +10,7 @@ import {settings} from '../../utils/settings.js';
 // types
 import type {AppRowHandler} from '../widgets/app_row.js';
 
-import * as Gtk from 'gi://Gtk';
+import Gtk from 'gi://Gtk';
 import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 import {uri} from '../../utils/io.js';
 

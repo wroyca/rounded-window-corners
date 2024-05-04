@@ -13,7 +13,6 @@
         "paths": {
             "resource:///org/gnome/shell/*": ["@imports/*"],
             "resource:///org/gnome/Shell/Extensions/js/*": ["@imports/*"],
-            "@global": ["src/global.d.ts"],
             "gi://Adw": ["node_modules/@gi-types/adw1"],
             "gi://Gio": ["node_modules/@gi-types/gio2"],
             "gi://Gtk": ["node_modules/@gi-types/gtk4"],
@@ -27,7 +26,8 @@
             "gi://St": ["node_modules/@gi-types/st1"],
             "gi://Graphene": ["node_modules/@gi-types/graphene1"]
         },
-        "outDir": "./_build/"
+        "outDir": "./_build/",
+        "allowSyntheticDefaultImports": true
     },
     "include": ["src/**/*.ts"]
 }

@@ -1,6 +1,6 @@
 // imports.gi
-import * as GObject from 'gi://GObject';
-import * as Gtk from 'gi://Gtk';
+import GObject from 'gi://GObject';
+import Gtk from 'gi://Gtk';
 
 // local modules
 import {connections} from '../../utils/connections.js';

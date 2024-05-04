@@ -1,7 +1,7 @@
 // imports.gi
-import * as GObject from 'gi://GObject';
-import * as Gdk from 'gi://Gdk';
-import * as Gio from 'gi://Gio';
+import GObject from 'gi://GObject';
+import Gdk from 'gi://Gdk';
+import Gio from 'gi://Gio';
 
 // local modules
 import {connections} from '../../utils/connections.js';
@@ -13,7 +13,7 @@ import {ResetDialog} from '../widgets/reset_dialog.js';
 import {RoundedCornersItem} from '../widgets/rounded_corners_item.js';
 
 // types
-import * as Gtk from 'gi://Gtk';
+import Gtk from 'gi://Gtk';
 import {uri} from '../../utils/io.js';
 
 // --------------------------------------------------------------- [end imports]

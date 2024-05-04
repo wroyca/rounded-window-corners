@@ -1,5 +1,5 @@
-import * as GObject from 'gi://GObject';
-import * as Gtk from 'gi://Gtk';
+import GObject from 'gi://GObject';
+import Gtk from 'gi://Gtk';
 import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 import {_log} from '../../utils/log.js';
 import {type SchemasKeys, settings} from '../../utils/settings.js';

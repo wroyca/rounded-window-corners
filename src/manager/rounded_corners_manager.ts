@@ -1,9 +1,9 @@
 // imports.gi
-import * as Clutter from 'gi://Clutter';
-import * as GLib from 'gi://GLib';
-import * as GObject from 'gi://GObject';
-import * as Meta from 'gi://Meta';
-import * as St from 'gi://St';
+import Clutter from 'gi://Clutter';
+import GLib from 'gi://GLib';
+import GObject from 'gi://GObject';
+import Meta from 'gi://Meta';
+import St from 'gi://St';
 
 // local modules
 import {ClipShadowEffect} from '../effect/clip_shadow_effect.js';
@@ -15,7 +15,6 @@ import * as types from '../utils/types.js';
 import * as UI from '../utils/ui.js';
 
 // types, those import statements will be removed in output javascript files.
-import {global} from '@global';
 import type {SchemasKeys} from '../utils/settings.js';
 import type {EffectManager, ExtensionsWindowActor} from '../utils/types.js';
 type RoundedCornersEffectType = InstanceType<typeof RoundedCornersEffect>;

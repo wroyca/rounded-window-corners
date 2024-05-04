@@ -1,9 +1,9 @@
 // imports.gi
-import * as Clutter from 'gi://Clutter';
-import * as GObject from 'gi://GObject';
-import type * as Gio from 'gi://Gio';
-import * as Graphene from 'gi://Graphene';
-import * as Meta from 'gi://Meta';
+import Clutter from 'gi://Clutter';
+import GObject from 'gi://GObject';
+import type Gio from 'gi://Gio';
+import Graphene from 'gi://Graphene';
+import Meta from 'gi://Meta';
 
 // gnome-shell modules
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
@@ -23,7 +23,6 @@ import {init_settings, settings} from './utils/settings.js';
 import * as UI from './utils/ui.js';
 
 // types, which will be removed in output
-import {global} from '@global';
 import type {RoundedCornersCfg} from './utils/types.js';
 import type {ExtensionsWindowActor} from './utils/types.js';
 

@@ -1,6 +1,6 @@
 // imports.gi
-import * as Gio from 'gi://Gio';
-import * as Meta from 'gi://Meta';
+import Gio from 'gi://Gio';
+import Meta from 'gi://Meta';
 
 // gnome modules
 import {
@@ -15,8 +15,7 @@ import {load} from './io.js';
 import {_log, _logError} from './log.js';
 
 // types
-import type * as Clutter from 'gi://Clutter';
-import {global} from '@global';
+import type Clutter from 'gi://Clutter';
 import type * as types from './types.js';
 
 // --------------------------------------------------------------- [end imports]

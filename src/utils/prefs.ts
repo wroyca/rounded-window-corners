@@ -1,6 +1,6 @@
-import * as GLib from 'gi://GLib';
-import * as Gio from 'gi://Gio';
-import type * as Gtk from 'gi://Gtk';
+import GLib from 'gi://GLib';
+import Gio from 'gi://Gio';
+import type Gtk from 'gi://Gtk';
 import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
 export const list_children = (widget: Gtk.ListBox) => {

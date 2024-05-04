@@ -1,7 +1,7 @@
-import type * as Clutter from 'gi://Clutter';
-import * as Cogl from 'gi://Cogl';
-import * as GObject from 'gi://GObject';
-import * as Shell from 'gi://Shell';
+import type Clutter from 'gi://Clutter';
+import Cogl from 'gi://Cogl';
+import GObject from 'gi://GObject';
+import Shell from 'gi://Shell';
 
 export const LinearFilterEffect = GObject.registerClass(
     {},

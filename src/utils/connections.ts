@@ -1,5 +1,5 @@
 // Types
-import type * as GObject from 'gi://GObject';
+import type GObject from 'gi://GObject';
 
 // ---------------------------------------------------------------- [end import]
 

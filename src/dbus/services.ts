@@ -1,8 +1,8 @@
 // imports.gi
-import type * as Clutter from 'gi://Clutter';
-import * as GLib from 'gi://GLib';
-import * as Gio from 'gi://Gio';
-import * as Meta from 'gi://Meta';
+import type Clutter from 'gi://Clutter';
+import GLib from 'gi://GLib';
+import Gio from 'gi://Gio';
+import Meta from 'gi://Meta';
 
 // gnome modules
 import {Inspector} from 'resource:///org/gnome/shell/ui/lookingGlass.js';

@@ -30,6 +30,7 @@
             "quoteStyle": "single",
             "bracketSpacing": false,
             "arrowParentheses": "asNeeded"
-        }
+        },
+        "globals": ["global", "log", "logError"]
     }
 }

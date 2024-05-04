@@ -1,6 +1,6 @@
-import * as Adw from 'gi://Adw';
-import * as Gdk from 'gi://Gdk';
-import * as Gtk from 'gi://Gtk';
+import Adw from 'gi://Adw';
+import Gdk from 'gi://Gdk';
+import Gtk from 'gi://Gtk';
 
 import {ExtensionPreferences} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 import {pages} from './preferences/index.js';
