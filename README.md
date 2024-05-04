@@ -1,3 +1,5 @@
+![2022-07-29 23-49-57][6]
+
 <div align="center">
   <h1>Rounded Window Corners Reborn</h1>
   <p><i>A GNOME extension that adds rounded corners to all windows</i></p>
@@ -32,11 +34,6 @@ This is the fork of the [original rounded-window-corners extension][14] by
 - The rounded corner effect for windows is based on this [shader][4] from
   mutter project
 - TypeScript support for GJS is powered by [gi.ts][5]
-
-## Screenshots
-
-![2022-07-29 23-49-57][6]
-
 
 ## Installation
 
