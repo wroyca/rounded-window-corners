@@ -1,4 +1,4 @@
-yarn.lock
+package-lock.json
 _build
 *.zip
 node_modules

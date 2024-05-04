@@ -44,7 +44,7 @@ This is the fork of the [original rounded-window-corners extension][14] by
 
 1. Install the dependencies:
     - Node.js
-    - yarn
+    - npm
     - gettext
     - [just](https://just.systems)
 

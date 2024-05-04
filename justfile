@@ -6,7 +6,7 @@ uuid := 'rounded-window-corners@fxgn'
 
 # Compile the extension and all resources
 build: && pot
-  yarn install
+  npm install
   npx tsc --outDir {{buildDir}}
   cp -r ./resources/* {{buildDir}}
   glib-compile-schemas {{buildDir}}/schemas
