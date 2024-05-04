@@ -15,7 +15,7 @@ This is the fork of the [original rounded-window-corners extension][14] by
 - Custom border radius and clip paddings for windows
 - Blocklist for applications that draw their own window decorations
 - Custom shadow for windows with rounded corners
-- Option tokip libadwaita / libhandy application
+- Option to skip libadwaita / libhandy application
 - [Superelliptical][1] shape for rounded corners, thanks to [@YuraIz][2]
 - A simple reset preferences dialog
 
@@ -59,7 +59,7 @@ This is the fork of the [original rounded-window-corners extension][14] by
     just install
     ```
 
-After this, the extensions will be installed to
+After this, the extension will be installed to
 `~/.local/share/gnome-shell/extensions`.
 
 ## Development
