@@ -4,15 +4,15 @@ import * as Graphene from 'gi://Graphene';
 import type * as Meta from 'gi://Meta';
 import type * as Shell from 'gi://Shell';
 
+// local modules
 import {RoundedCornersManager} from '../manager/rounded_corners_manager.js';
 import {Connections} from '../utils/connections.js';
-// local modules
 import {_log} from '../utils/log.js';
 import {settings} from '../utils/settings.js';
 
+// types, those import statements will be removed in output javascript files.
 import type * as Gio from 'gi://Gio';
 import {global} from '@global';
-// types, those import statements will be removed in output javascript files.
 import type {SchemasKeys} from '../utils/settings.js';
 import type {EffectManager} from '../utils/types.js';
 import type {ExtensionsWindowActor} from '../utils/types.js';
