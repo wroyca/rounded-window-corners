@@ -62,6 +62,15 @@ This is the fork of the [original rounded-window-corners extension][14] by
 After this, the extension will be installed to
 `~/.local/share/gnome-shell/extensions`.
 
+## Translation
+
+You can help with the translation of the extension by submitting translations
+on [Weblate](https://hosted.weblate.org/engage/rounded-window-corners-reborn)
+
+[![Translation status](https://hosted.weblate.org/widget/rounded-window-corners-reborn/multi-auto.svg)](https://hosted.weblate.org/engage/rounded-window-corners-reborn/)
+
+You can also manually edit .po files and submit a PR if you know how to do that.
+
 ## Development
 
 Here are the avaliable `just` commands (run `just --list` to see this message):
