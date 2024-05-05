@@ -47,12 +47,12 @@ pot:
            src/**/*.ts
 
   for file in po/*.po; do \
-    echo -e "\033[0;32mUpdating $file"; \
+    echo -e "\033[0;32mUpdating $file\033[39m"; \
     msgmerge -q -U --backup=off $file po/{{uuid}}.pot; \
   done;
 
   for file in po/*.po; do \
-    echo -e "\033[0;32mCompiling $file"; \
+    echo -e "\033[0;32mCompiling $file\033[39m"; \
     locale=$(basename $file .po); \
     dir="{{buildDir}}/locale/$locale/LC_MESSAGES"; \
     mkdir -p $dir; \
