@@ -27,7 +27,7 @@ install: build
   cp -r {{buildDir}} ~/.local/share/gnome-shell/extensions/{{uuid}}
 
 # Build and pack the extension
-pack:
+pack: build
   cd {{buildDir}} && zip -9r ../{{uuid}}.shell-extension.zip .
 
 # Delete the build directory
