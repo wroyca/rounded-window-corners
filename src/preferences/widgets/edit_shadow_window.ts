@@ -138,38 +138,15 @@ export const EditShadowWindow = GObject.registerClass(
            ${box_shadow_css(hover)};
          }`;
 
-            if (Gtk.MAJOR_VERSION >= 4 && Gtk.MINOR_VERSION >= 12) {
-                type A = Gtk.CssProvider & {
-                    load_from_string: (s: string) => void;
-                };
-                (this.unfocus_provider as A).load_from_string(
-                    gen_style(this.unfocused_shadow, this.focused_shadow),
-                );
-                (this.focus_provider as A).load_from_string(
-                    gen_style(this.focused_shadow, this.unfocused_shadow),
-                );
-            } else {
-                // Gtk.CssProvider.load_from_data() Deprecated since 4.12
-                type A = (data: string, len: number) => void;
-                const funcs = this.unfocus_provider.load_from_data;
-                if (funcs.length === 1) {
-                    this.unfocus_provider.load_from_data(
-                        gen_style(this.unfocused_shadow, this.focused_shadow),
-                    );
-                    this.focus_provider.load_from_data(
-                        gen_style(this.focused_shadow, this.unfocused_shadow),
-                    );
-                } else {
-                    (this.unfocus_provider.load_from_data as A)(
-                        gen_style(this.unfocused_shadow, this.focused_shadow),
-                        -1,
-                    );
-                    (this.focus_provider.load_from_data as A)(
-                        gen_style(this.focused_shadow, this.unfocused_shadow),
-                        -1,
-                    );
-                }
-            }
+            type A = Gtk.CssProvider & {
+                load_from_string: (s: string) => void;
+            };
+            (this.unfocus_provider as A).load_from_string(
+                gen_style(this.unfocused_shadow, this.focused_shadow),
+            );
+            (this.focus_provider as A).load_from_string(
+                gen_style(this.focused_shadow, this.unfocused_shadow),
+            );
         }
 
         // signal handles
