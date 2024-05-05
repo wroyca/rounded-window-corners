@@ -37,6 +37,16 @@ This is the fork of the [original rounded-window-corners extension][14] by
 
 ## Installation
 
+### From pre-built archives
+
+If you want to install the latest commit of the extension, you can get a
+pre-built archive from GitHub Actions.
+
+1. Go to [the build action page](https://github.com/flexagoon/rounded-window-corners/actions/workflows/build.yml)
+2. Click on the latest workflow run
+3. Download the extension from the "artifacts" section at the bottom
+4. Install it with the `gnome-extensions install` command
+
 ### From source code
 
 1. Install the dependencies:
