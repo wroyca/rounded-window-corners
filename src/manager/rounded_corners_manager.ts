@@ -220,7 +220,7 @@ export class RoundedCornersManager implements EffectManager {
             return;
         }
 
-        const shadow_settings = win.appears_focused()
+        const shadow_settings = win.appears_focused
             ? settings().focused_shadow
             : settings().unfocused_shadow;
 
@@ -356,7 +356,7 @@ export class RoundedCornersManager implements EffectManager {
             actor.meta_window,
             shadow,
             this.global_rounded_corners?.border_radius,
-            actor.metaWindow.appears_focused()
+            actor.metaWindow.appears_focused
                 ? settings().focused_shadow
                 : settings().unfocused_shadow,
         );
@@ -535,7 +535,7 @@ export class RoundedCornersManager implements EffectManager {
             }
             const {shadow} = info;
             const win = actor.meta_window;
-            const shadow_cfg = actor.metaWindow.appears_focused()
+            const shadow_cfg = actor.metaWindow.appears_focused
                 ? settings().focused_shadow
                 : settings().unfocused_shadow;
             const {border_radius, padding} = this._get_rounded_corners_cfg(
