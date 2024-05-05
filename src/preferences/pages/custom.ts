@@ -199,7 +199,7 @@ export const Custom = GObject.registerClass(
             const description = new Gtk.Label({
                 label: _('Enable custom settings for this window'),
                 halign: Gtk.Align.START,
-                css_classes: ['caption'],
+                cssClasses: ['caption'],
             });
             const hbox = new Gtk.Box({
                 valign: Gtk.Align.CENTER,

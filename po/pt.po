@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 20:11+0300\n"
+"POT-Creation-Date: 2024-05-05 18:28+0300\n"
 "PO-Revision-Date: 2023-12-21 14:06+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/rounded-"
@@ -252,7 +252,7 @@ msgstr "Ativar"
 msgid "Enable custom settings for this window"
 msgstr "Ativar customizações nesta janela"
 
-#: src/preferences/widgets/app_row.ts:108
+#: src/preferences/widgets/app_row.ts:113
 msgid "Can't pick a window window from this position"
 msgstr "Não é possível selecionar uma janela a partir desta posição"
 

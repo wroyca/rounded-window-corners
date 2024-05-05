@@ -3,6 +3,7 @@ import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 
 import {ExtensionPreferences} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
+import type {ExtensionMetadata} from 'resource:///org/gnome/shell/extensions/extension.js';
 import {pages} from './preferences/index.js';
 import {connections} from './utils/connections.js';
 import * as Utils from './utils/io.js';
@@ -10,7 +11,7 @@ import {_log} from './utils/log.js';
 import {init_settings, uninit_settings} from './utils/settings.js';
 
 export default class RoundedWindowCornresPrefs extends ExtensionPreferences {
-    constructor(metadata: object) {
+    constructor(metadata: ExtensionMetadata) {
         super(metadata);
 
         // Classical GTK4 template ui need this to make translatable string works
@@ -34,7 +35,7 @@ export default class RoundedWindowCornresPrefs extends ExtensionPreferences {
         for (const page of pages()) {
             const pref_page = new Adw.PreferencesPage({
                 title: page.title,
-                icon_name: page.icon_name,
+                iconName: page.icon_name,
             });
             const group = new Adw.PreferencesGroup();
             pref_page.add(group);

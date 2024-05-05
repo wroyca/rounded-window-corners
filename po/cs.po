@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 20:11+0300\n"
+"POT-Creation-Date: 2024-05-05 18:28+0300\n"
 "PO-Revision-Date: 2023-04-25 17:52+0000\n"
 "Last-Translator: Fjuro <ifjuro@proton.me>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/rounded-window-"
@@ -246,7 +246,7 @@ msgstr "Povolit"
 msgid "Enable custom settings for this window"
 msgstr "Povolit vlastní nastavení tohoto okna"
 
-#: src/preferences/widgets/app_row.ts:108
+#: src/preferences/widgets/app_row.ts:113
 msgid "Can't pick a window window from this position"
 msgstr "Nelze vybrat okno z této pozice"
 

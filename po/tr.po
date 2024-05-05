@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 20:11+0300\n"
+"POT-Creation-Date: 2024-05-05 18:28+0300\n"
 "PO-Revision-Date: 2023-05-14 22:51+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/rounded-window-"
@@ -248,7 +248,7 @@ msgstr "Etkinleştir"
 msgid "Enable custom settings for this window"
 msgstr "Bu pencere için özel ayarları etkinleştir"
 
-#: src/preferences/widgets/app_row.ts:108
+#: src/preferences/widgets/app_row.ts:113
 msgid "Can't pick a window window from this position"
 msgstr "Bu konumdan bir pencere seçilemez"
 

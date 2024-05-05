@@ -107,13 +107,10 @@ export const General = GObject.registerClass(
                 Gio.SettingsBindFlags.DEFAULT,
             );
 
-            const color = settings().border_color;
-            this._border_color_button.rgba = new Gdk.RGBA({
-                red: color[0],
-                green: color[1],
-                blue: color[2],
-                alpha: color[3],
-            });
+            const color = new Gdk.RGBA();
+            [color.red, color.green, color.blue, color.alpha] =
+                settings().border_color;
+            this._border_color_button.set_rgba(color);
 
             const c = connections.get();
             c.connect(
@@ -188,13 +185,10 @@ export const General = GObject.registerClass(
             switch (key as SchemasKeys) {
                 case 'border-color':
                     {
-                        const color = settings().border_color;
-                        this._border_color_button.rgba = new Gdk.RGBA({
-                            red: color[0],
-                            green: color[1],
-                            blue: color[2],
-                            alpha: color[3],
-                        });
+                        const color = new Gdk.RGBA();
+                        [color.red, color.green, color.blue, color.alpha] =
+                            settings().border_color;
+                        this._border_color_button.set_rgba(color);
                     }
                     break;
                 case 'border-width':

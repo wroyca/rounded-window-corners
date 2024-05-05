@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 20:11+0300\n"
+"POT-Creation-Date: 2024-05-05 18:28+0300\n"
 "PO-Revision-Date: 2023-03-02 12:35+0000\n"
 "Last-Translator: Yi <yilozt@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -242,7 +242,7 @@ msgstr "启用"
 msgid "Enable custom settings for this window"
 msgstr "为窗口启用自定义的配置"
 
-#: src/preferences/widgets/app_row.ts:108
+#: src/preferences/widgets/app_row.ts:113
 msgid "Can't pick a window window from this position"
 msgstr "无法从此位置选取窗口"
 

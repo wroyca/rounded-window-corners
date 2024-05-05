@@ -7,10 +7,8 @@
     "main": "src/extension.ts",
     "devDependencies": {
         "@biomejs/biome": "1.7.2",
-        "@gi-types/adw1": "^1.1.1",
-        "@gi-types/gtk4": "^4.6.1",
-        "@gi-types/meta10": "^10.0.1",
-        "@gi-types/shell0": "^0.1.1",
-        "typescript": "^4.7.4"
+        "@girs/gjs": "^4.0.0-beta.5",
+        "@girs/gnome-shell": "^46.0.0-beta7",
+        "typescript": "^5.4.5"
     }
 }

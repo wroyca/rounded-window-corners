@@ -62,8 +62,8 @@ export const RoundedCornersItem = GObject.registerClass(
         }
 
         update_revealer() {
-            this._revealer.reveal_child = !this._revealer.reveal_child;
-            if (this._revealer.reveal_child) {
+            this._revealer.revealChild = !this._revealer.revealChild;
+            if (this._revealer.revealChild) {
                 this._expander_img.add_css_class('rotated');
             } else {
                 this._expander_img.remove_css_class('rotated');

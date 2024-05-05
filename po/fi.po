@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 20:11+0300\n"
+"POT-Creation-Date: 2024-05-05 18:28+0300\n"
 "PO-Revision-Date: 2022-11-12 07:50+0000\n"
 "Last-Translator: Ilari Suhonen <ilari.suhonen@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/rounded-window-"
@@ -245,7 +245,7 @@ msgstr "Päälle"
 msgid "Enable custom settings for this window"
 msgstr "Käytä kustomoituja asetuksia tälle ikkunalle"
 
-#: src/preferences/widgets/app_row.ts:108
+#: src/preferences/widgets/app_row.ts:113
 msgid "Can't pick a window window from this position"
 msgstr "Ikkunaa ei voi valita tästä sijainnista"
 

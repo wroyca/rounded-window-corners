@@ -49,7 +49,7 @@ export class WindowActorTracker {
                 this.run(m => m.on_settings_changed(key as SchemasKeys)),
         );
 
-        const wm = global.window_manager;
+        const wm = global.windowManager;
 
         // Add effects to all windows when extensions enabled
         const window_actors = global.get_window_actors();
@@ -63,7 +63,8 @@ export class WindowActorTracker {
             global.display,
             'window-created',
             (_: Meta.Display, win: Meta.Window) => {
-                const actor: Meta.WindowActor = win.get_compositor_private();
+                const actor: Meta.WindowActor =
+                    win.get_compositor_private() as Meta.WindowActor;
 
                 // If wm_class_instance of Meta.Window is null, try to add rounded
                 // corners when wm_class_instance is set
@@ -84,12 +85,14 @@ export class WindowActorTracker {
             (_: Shell.WM, from: number, to: number) => {
                 this.run(m => {
                     const ws =
-                        global.workspace_manager.get_workspace_by_index(to);
+                        global.workspaceManager.get_workspace_by_index(to);
                     if (!m.on_switch_workspace) {
                         return;
                     }
                     for (const win of ws?.list_windows() ?? []) {
-                        m.on_switch_workspace(win.get_compositor_private());
+                        m.on_switch_workspace(
+                            win.get_compositor_private() as Meta.WindowActor,
+                        );
                     }
                 });
                 _log(`Change WorkSpace ${from} -> ${to}`);
@@ -178,13 +181,14 @@ export class WindowActorTracker {
                 return;
             }
 
-            this.connections.connect(
-                actor.get_texture(),
-                'size-changed',
-                () => {
-                    this.run(m => m.on_size_changed(actor));
-                },
-            );
+            const texture = actor.get_texture();
+            if (!texture) {
+                return;
+            }
+
+            this.connections.connect(texture, 'size-changed', () => {
+                this.run(m => m.on_size_changed(actor));
+            });
 
             actor.__rwc_last_size = Graphene.Size.zero();
             this.connections.connect(actor, 'notify::size', () => {
@@ -201,16 +205,16 @@ export class WindowActorTracker {
                 // let's update effects when surface size of window actor changed in the
                 // first time. After Gnome 43.1, we need do this to make sure effects
                 // works when wayland client opened.
-                const id = actor.first_child.connect('notify::size', () => {
+                const id = actor.firstChild.connect('notify::size', () => {
                     this.run(m => m.on_size_changed(actor));
                     // Now updated, just disconnect it
-                    actor.first_child.disconnect(id);
+                    actor.firstChild.disconnect(id);
                 });
             }
 
             // Update shadow actor when focus of window has changed.
             this.connections.connect(
-                actor.meta_window,
+                actor.metaWindow,
                 'notify::appears-focused',
                 () => {
                     this.run(m => m.on_focus_changed(actor));
@@ -220,7 +224,7 @@ export class WindowActorTracker {
             // When window is switch between different monitor,
             // 'workspace-changed' signal emit.
             this.connections.connect(
-                actor.meta_window,
+                actor.metaWindow,
                 'workspace-changed',
                 () => {
                     this.run(m => m.on_focus_changed(actor));
@@ -235,7 +239,7 @@ export class WindowActorTracker {
             });
         };
 
-        if (actor.first_child) {
+        if (actor.firstChild) {
             actor_is_ready();
         } else {
             // In wayland session, Surface Actor of XWayland client not ready when
@@ -251,11 +255,12 @@ export class WindowActorTracker {
     private _remove_effect(actor: ExtensionsWindowActor) {
         delete actor.__rwc_last_size;
 
-        if (this.connections) {
-            this.connections.disconnect_all(actor.get_texture());
+        const texture = actor.get_texture();
+        if (this.connections && texture) {
+            this.connections.disconnect_all(texture);
             this.connections.disconnect_all(actor);
-            this.connections.disconnect_all(actor.meta_window);
-            this.connections.disconnect_all(actor.first_child);
+            this.connections.disconnect_all(actor.metaWindow);
+            this.connections.disconnect_all(actor.firstChild);
         }
         this.run(m => m.on_remove_effect(actor));
     }

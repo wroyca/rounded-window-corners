@@ -33,7 +33,7 @@ This is the fork of the [original rounded-window-corners extension][14] by
 
 - The rounded corner effect for windows is based on this [shader][4] from
   mutter project
-- TypeScript support for GJS is powered by [gi.ts][5]
+- TypeScript support for GJS is powered by [gjsify](https://gjsify.org/)
 
 ## Installation
 
@@ -97,7 +97,6 @@ Available recipes:
 [2]: https://github.com/YuraIz
 [3]: https://extensions.gnome.org/extension/3740/compiz-alike-magic-lamp-effect/
 [4]: https://gitlab.gnome.org/GNOME/mutter/-/blob/main/src/compositor/meta-background-content.c#L138
-[5]: https://gitlab.gnome.org/ewlsh/gi.ts
 [6]: https://user-images.githubusercontent.com/32430186/181902857-d4d10740-82fe-4941-b064-d436b9ea7317.png
 [7]: https://extensions.gnome.org/extension/5237/rounded-window-corners/
 [8]: https://github.com/yilozt/rounded-window-corners/releases

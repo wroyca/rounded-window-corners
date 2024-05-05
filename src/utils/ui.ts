@@ -120,7 +120,7 @@ export const AddBackgroundMenuItem = (menu: BackgroundMenu) => {
 
 /** Find all Background menu, then add extra item to it */
 export const SetupBackgroundMenu = () => {
-    for (const _bg of global.window_group.first_child.get_children()) {
+    for (const _bg of global.windowGroup.firstChild.get_children()) {
         _log('Found Desktop Background obj', _bg);
         const menu = (_bg as typeof _bg & BackgroundExtra)._backgroundMenu;
         AddBackgroundMenuItem(menu);
@@ -139,7 +139,7 @@ export const RestoreBackgroundMenu = () => {
         }
     };
 
-    for (const _bg of global.window_group.first_child.get_children()) {
+    for (const _bg of global.windowGroup.firstChild.get_children()) {
         const menu = (_bg as typeof _bg & BackgroundExtra)._backgroundMenu;
         remove_menu_item(menu);
         _log(`Added Item of ${menu}Removed`);
@@ -175,7 +175,7 @@ export function ShouldHasRoundedCorners(
 ): boolean {
     let should_has_rounded_corners = false;
 
-    const maximized = win.maximized_horizontally || win.maximized_vertically;
+    const maximized = win.maximizedHorizontally || win.maximizedVertically;
     const fullscreen = win.fullscreen;
 
     should_has_rounded_corners =
@@ -199,9 +199,9 @@ export function shell_version(): number {
 export function get_rounded_corners_effect(
     actor: Meta.WindowActor,
 ): Clutter.Effect | null {
-    const win = actor.meta_window;
+    const win = actor.metaWindow;
     const name = constants.ROUNDED_CORNERS_EFFECT;
     return win.get_client_type() === Meta.WindowClientType.X11
-        ? actor.first_child.get_effect(name)
+        ? actor.firstChild.get_effect(name)
         : actor.get_effect(name);
 }

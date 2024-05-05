@@ -71,7 +71,7 @@ export class Services {
             }
 
             _send_wm_class_instance(
-                actor.meta_window.get_wm_class_instance() ?? 'window-not-found',
+                actor.metaWindow.get_wm_class_instance() ?? 'window-not-found',
             );
         });
         inspector.connect('closed', () => {

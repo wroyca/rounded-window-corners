@@ -30,7 +30,7 @@ export const ResetDialog = GObject.registerClass(
 
         _init(): void {
             super._init({
-                use_header_bar: 1,
+                useHeaderBar: 1,
                 modal: true,
                 title: 'Reset Preferences',
             });
@@ -87,7 +87,7 @@ export const ResetDialog = GObject.registerClass(
             content.append(
                 new Gtk.Label({
                     label: _('Select Items to reset'),
-                    css_classes: ['heading'],
+                    cssClasses: ['heading'],
                     halign: Gtk.Align.START,
                 }),
             );

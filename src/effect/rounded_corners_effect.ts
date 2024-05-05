@@ -125,9 +125,9 @@ export const RoundedCornersEffect = GObject.registerClass(
                 if (
                     shell_version() >= 43.1 &&
                     actor instanceof Meta.WindowActor &&
-                    actor.first_child?.first_child
+                    actor.firstChild?.firstChild
                 ) {
-                    const {width, height} = actor.first_child.first_child;
+                    const {width, height} = actor.firstChild.firstChild;
                     pixel_step = [
                         1 / (width * scale_factor),
                         1 / (height * scale_factor),

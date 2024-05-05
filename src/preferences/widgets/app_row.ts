@@ -45,17 +45,22 @@ export const AppRow = GObject.registerClass(
         /** Store event handlers for this widget */
         private cb?: AppRowHandler;
 
-        _init(cb?: AppRowHandler) {
-            super._init();
+        constructor(cb?: AppRowHandler) {
+            super();
             this.cb = cb;
 
             const c = connections.get();
             c.connect(this._remove_button, 'clicked', (btn: Gtk.Button) => {
-                if (this._revealer.reveal_child) {
+                if (this._revealer.revealChild) {
                     this.disconnect_signals();
                 }
                 connections.get().disconnect_all(btn);
                 connections.get().disconnect_all(this);
+
+                if (!this._title.label) {
+                    this._title.label = '';
+                }
+
                 cb?.on_delete?.(this, this._title.label);
             });
 
@@ -70,7 +75,7 @@ export const AppRow = GObject.registerClass(
             this._description.visible = this._description.label !== '';
         }
         get title(): string {
-            return this._title.label;
+            return this._title.label || '';
         }
         set description(d: string) {
             this._description.label = d;
@@ -79,8 +84,8 @@ export const AppRow = GObject.registerClass(
         }
 
         on_expanded_changed() {
-            this._revealer.reveal_child = !this._revealer.reveal_child;
-            if (this._revealer.reveal_child) {
+            this._revealer.revealChild = !this._revealer.revealChild;
+            if (this._revealer.revealChild) {
                 this._expand_img.add_css_class('rotated');
                 this._wm_class_instance_entry.text = this._title.label;
                 this.connect_signals();
@@ -134,11 +139,11 @@ export const AppRow = GObject.registerClass(
 
             if (
                 this.cb.on_title_changed(
-                    this._title.label, // old title
-                    this._wm_class_instance_entry.text, // new title
+                    this._title.label || '', // old title
+                    this._wm_class_instance_entry.text || '', // new title
                 )
             ) {
-                this.title = this._wm_class_instance_entry.text;
+                this.title = this._wm_class_instance_entry.text || '';
                 this.description = '';
             } else if (this.title === '') {
                 this.description = TIPS_EMPTY();
