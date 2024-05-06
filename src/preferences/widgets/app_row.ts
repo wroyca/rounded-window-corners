@@ -30,15 +30,15 @@ export const AppRow = GObject.registerClass(
         ],
     },
     class extends Gtk.ListBoxRow {
-        private _wm_class_instance_entry!: Gtk.Entry;
-        private _remove_button!: Gtk.Button;
-        private _change_title_btn!: Gtk.Button;
-        private _pick_window_btn!: Gtk.Button;
-        private _title!: Gtk.Label;
-        private _description!: Gtk.Label;
-        private _expand_img!: Gtk.Button;
-        private _revealer!: Gtk.Revealer;
-        _expanded_list_box!: Gtk.ListBox;
+        private declare _wm_class_instance_entry: Gtk.Entry;
+        private declare _remove_button: Gtk.Button;
+        private declare _change_title_btn: Gtk.Button;
+        private declare _pick_window_btn: Gtk.Button;
+        private declare _title: Gtk.Label;
+        private declare _description: Gtk.Label;
+        private declare _expand_img: Gtk.Button;
+        private declare _revealer: Gtk.Revealer;
+        declare _expanded_list_box: Gtk.ListBox;
 
         private bind_property_handler?: GObject.Binding;
 

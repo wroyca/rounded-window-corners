@@ -29,21 +29,21 @@ export const RoundedCornersItem = GObject.registerClass(
         ],
     },
     class extends Gtk.ListBox {
-        private _rounded_in_maximized_switch!: Gtk.Switch;
-        private _rounded_in_fullscreen_switch!: Gtk.Switch;
-        private _border_radius_scale!: Gtk.Scale;
-        private _smoothing_scale!: Gtk.Scale;
-        private _padding_left_scale!: Gtk.Scale;
-        private _padding_right_scale!: Gtk.Scale;
-        private _padding_top_scale!: Gtk.Scale;
-        private _padding_bottom_scale!: Gtk.Scale;
-        private _revealer!: Gtk.Revealer;
-        private _expander_img!: Gtk.Image;
+        private declare _rounded_in_maximized_switch: Gtk.Switch;
+        private declare _rounded_in_fullscreen_switch: Gtk.Switch;
+        private declare _border_radius_scale: Gtk.Scale;
+        private declare _smoothing_scale: Gtk.Scale;
+        private declare _padding_left_scale: Gtk.Scale;
+        private declare _padding_right_scale: Gtk.Scale;
+        private declare _padding_top_scale: Gtk.Scale;
+        private declare _padding_bottom_scale: Gtk.Scale;
+        private declare _revealer: Gtk.Revealer;
+        private declare _expander_img: Gtk.Image;
 
-        _paddings_row!: Gtk.ListBoxRow;
+        declare _paddings_row: Gtk.ListBoxRow;
 
-        private _scales!: Gtk.Scale[];
-        private _switches!: Gtk.Switch[];
+        private declare _scales: Gtk.Scale[];
+        private declare _switches: Gtk.Switch[];
 
         _init() {
             super._init();

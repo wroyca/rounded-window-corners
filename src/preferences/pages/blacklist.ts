@@ -24,8 +24,8 @@ export const BlackList = GObject.registerClass(
         InternalChildren: ['black_list_group', 'add_row_btn'],
     },
     class extends Gtk.Box {
-        private _black_list_group!: Gtk.ListBox;
-        private _add_row_btn!: Gtk.Button;
+        private declare _black_list_group: Gtk.ListBox;
+        private declare _add_row_btn: Gtk.Button;
 
         /** Store value of settings */
         private black_list!: string[];

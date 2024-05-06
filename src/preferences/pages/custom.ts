@@ -26,8 +26,8 @@ export const Custom = GObject.registerClass(
         InternalChildren: ['custom_group', 'add_row_btn'],
     },
     class extends Gtk.Box {
-        private _custom_group!: Gtk.ListBox;
-        private _add_row_btn!: Gtk.Button;
+        private declare _custom_group: Gtk.ListBox;
+        private declare _add_row_btn: Gtk.Button;
 
         private _settings_cfg!: CustomRoundedCornersCfg;
 

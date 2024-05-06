@@ -36,15 +36,15 @@ export const EditShadowWindow = GObject.registerClass(
         ],
     },
     class extends Gtk.Window {
-        private _opacity_scale!: Gtk.Scale;
-        private _spread_radius_scale!: Gtk.Scale;
-        private _blur_offset_scale!: Gtk.Scale;
-        private _vertical_offset_scale!: Gtk.Scale;
-        private _horizontal_offset_scale!: Gtk.Scale;
-        private _unfocus_shadow_widget!: Gtk.Widget;
-        private _focus_shadow_widget!: Gtk.Widget;
-        private _focus_toggle_button!: Gtk.ToggleButton;
-        private _unfocus_toggle_button!: Gtk.ToggleButton;
+        private declare _opacity_scale: Gtk.Scale;
+        private declare _spread_radius_scale: Gtk.Scale;
+        private declare _blur_offset_scale: Gtk.Scale;
+        private declare _vertical_offset_scale: Gtk.Scale;
+        private declare _horizontal_offset_scale: Gtk.Scale;
+        private declare _unfocus_shadow_widget: Gtk.Widget;
+        private declare _focus_shadow_widget: Gtk.Widget;
+        private declare _focus_toggle_button: Gtk.ToggleButton;
+        private declare _unfocus_toggle_button: Gtk.ToggleButton;
 
         // CssProvider to change style of preview widgets in edit window
         private unfocus_provider!: Gtk.CssProvider;

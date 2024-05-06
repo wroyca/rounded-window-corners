@@ -39,18 +39,17 @@ export const General = GObject.registerClass(
         ],
     },
     class extends Gtk.Box {
-        // Those properties come from 'InternalChildren'
-        private _global_settings_preferences_group!: Gtk.ListBox;
-        private _enable_log_switch!: Gtk.Switch;
-        private _skip_libhandy_app_switch!: Gtk.Switch;
-        private _skip_libadwaita_app_switch!: Gtk.Switch;
-        private _tweak_kitty_switch!: Gtk.Switch;
-        private _preferences_entry_switch!: Gtk.Switch;
-        private _border_width_ajustment!: Gtk.Adjustment;
-        private _border_color_button!: Gtk.ColorButton;
-        private _edit_shadow_row!: Gtk.ListBoxRow;
-        private _applications_group!: Gtk.ListBox;
-        private _reset_preferences_btn!: Gtk.Button;
+        private declare _global_settings_preferences_group: Gtk.ListBox;
+        private declare _enable_log_switch: Gtk.Switch;
+        private declare _skip_libhandy_app_switch: Gtk.Switch;
+        private declare _skip_libadwaita_app_switch: Gtk.Switch;
+        private declare _tweak_kitty_switch: Gtk.Switch;
+        private declare _preferences_entry_switch: Gtk.Switch;
+        private declare _border_width_ajustment: Gtk.Adjustment;
+        private declare _border_color_button: Gtk.ColorButton;
+        private declare _edit_shadow_row: Gtk.ListBoxRow;
+        private declare _applications_group: Gtk.ListBox;
+        private declare _reset_preferences_btn: Gtk.Button;
 
         private config_items!: _Items;
 
