@@ -40,7 +40,7 @@ export const AppRow = GObject.registerClass(
         private declare _revealer: Gtk.Revealer;
         declare _expanded_list_box: Gtk.ListBox;
 
-        private bind_property_handler?: GObject.Binding;
+        private declare bind_property_handler?: GObject.Binding;
 
         /** Store event handlers for this widget */
         private cb?: AppRowHandler;

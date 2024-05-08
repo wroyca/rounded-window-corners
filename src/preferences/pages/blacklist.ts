@@ -28,7 +28,7 @@ export const BlackList = GObject.registerClass(
         private declare _add_row_btn: Gtk.Button;
 
         /** Store value of settings */
-        private black_list!: string[];
+        private declare black_list: string[];
 
         _init() {
             super._init();

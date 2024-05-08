@@ -29,7 +29,7 @@ export const Custom = GObject.registerClass(
         private declare _custom_group: Gtk.ListBox;
         private declare _add_row_btn: Gtk.Button;
 
-        private _settings_cfg!: CustomRoundedCornersCfg;
+        private declare _settings_cfg: CustomRoundedCornersCfg;
 
         _init() {
             super._init();
