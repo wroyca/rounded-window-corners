@@ -1,4 +1,4 @@
-import Adw from 'gi://Adw';
+import type Adw from 'gi://Adw';
 import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 
@@ -33,14 +33,7 @@ export default class RoundedWindowCornresPrefs extends ExtensionPreferences {
         init_settings(this.getSettings());
 
         for (const page of pages()) {
-            const pref_page = new Adw.PreferencesPage({
-                title: page.title,
-                iconName: page.icon_name,
-            });
-            const group = new Adw.PreferencesGroup();
-            pref_page.add(group);
-            group.add(page.widget);
-            win.add(pref_page);
+            win.add(page);
         }
 
         // Disconnect all signal when close prefs
