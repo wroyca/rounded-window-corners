@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-05 18:28+0300\n"
+"POT-Creation-Date: 2024-05-30 10:03+0300\n"
 "PO-Revision-Date: 2023-10-29 05:13+0000\n"
 "Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/rounded-window-"
@@ -14,267 +14,331 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 5.2-dev\n"
 
-#: src/preferences/pages/blacklist.ui:14
+#: src/preferences/pages/blacklist.ui:6 src/preferences/pages/blacklist.ui:10
+msgid "Blacklist"
+msgstr "Blokowane aplikacje"
+
+#: src/preferences/pages/blacklist.ui:11
+#, fuzzy
 msgid ""
 "Not all application can works well with rounded corners effects, add them to "
-"this list to disable effects.\n"
-"\n"
-"The item of list is instance part of WM_CLASS property with window. You can "
-"pick a window to add it into this list."
+"this list to disable effects."
 msgstr ""
 "Nie wszystkie aplikacje mogą działać dobrze z efektami zaokrąglonych "
 "krawędzi, dodaj je do tej listy by wyłączyć efekty.\n"
 "\n"
 "[unfinished translation]"
 
-#: src/preferences/pages/blacklist.ui:38 src/preferences/pages/custom.ui:38
-msgid "Add Window"
+#: src/preferences/pages/blacklist.ui:19 src/preferences/pages/custom.ui:19
+#, fuzzy
+msgid "Add window"
 msgstr "Dodaj okno"
 
-#: src/preferences/pages/custom.ui:14
-msgid ""
-"Setup different clip padding by add window into this list.\n"
-"\n"
-"The item of list is instance part of WM_CLASS property with window. You can "
-"pick a window to add it into this list."
-msgstr ""
+#: src/preferences/pages/custom.ui:6 src/preferences/pages/custom.ui:10
+msgid "Custom"
+msgstr "Własne"
+
+#: src/preferences/pages/custom.ui:11
+#, fuzzy
+msgid "Set custom effect setting for each window class"
+msgstr "Włącz własne ustawienia dla tego okna"
+
+#: src/preferences/pages/general.ui:6
+msgid "General"
+msgstr "Ogólne"
 
 #: src/preferences/pages/general.ui:10
 msgid "Applications"
 msgstr "Aplikacje"
 
-#: src/preferences/pages/general.ui:23
+#: src/preferences/pages/general.ui:11
+#, fuzzy
 msgid ""
-"Some applications written using LibAdwaita or LibHandy already have native "
-"rounded corners, so we can skip them through these settings"
+"Some applications created with LibAdwaita or LibHandy already have rounded "
+"corners. You may wish to skip cutting their corners."
 msgstr ""
 "Aplikacje wykorzystujące LibAdwaita i LibHandy natywnie wspierają "
 "zaokrąglone narożniki, więc możemy je pominąć wykorzystując te ustawienia"
 
-#: src/preferences/pages/general.ui:47
-#: src/preferences/widgets/reset_dialog.ts:61
-msgid "Skip LibAdwaita Applications"
+#: src/preferences/pages/general.ui:14
+#, fuzzy
+msgid "Skip LibAdwaita applications"
 msgstr "Pomiń aplikacje wykorzystujące LibAdwaita"
 
-#: src/preferences/pages/general.ui:74
-#: src/preferences/widgets/reset_dialog.ts:63
-msgid "Skip LibHandy Applications"
+#: src/preferences/pages/general.ui:19
+#, fuzzy
+msgid "Skip LibHandy applications"
 msgstr "Pomiń aplikacje wykorzytujące LibHandy"
 
-#: src/preferences/pages/general.ui:101
-msgid "Window Shadow"
+#: src/preferences/pages/general.ui:26
+#, fuzzy
+msgid "Global settings"
+msgstr "Globalne ustawienia"
+
+#: src/preferences/pages/general.ui:27
+msgid "These settings will have effect on all windows"
 msgstr ""
 
-#: src/preferences/pages/general.ui:107
+#: src/preferences/pages/general.ui:30
+#, fuzzy
+msgid "Border width"
+msgstr "Grubość obramowania"
+
+#: src/preferences/pages/general.ui:57 src/preferences/pages/general.ui:65
+#, fuzzy
+msgid "Border color"
+msgstr "Kolor obramowania"
+
+#: src/preferences/pages/general.ui:74
+#: src/preferences/widgets/customeffect_row.ts:16
+#, fuzzy
+msgid "Corner radius"
+msgstr "Zaokrąglenie krawędzi"
+
+#: src/preferences/pages/general.ui:101
+#: src/preferences/widgets/customeffect_row.ts:25
+#, fuzzy
+msgid "Corner smoothing"
+msgstr "wygładzanie krawędzi"
+
+#: src/preferences/pages/general.ui:127
+#, fuzzy
+msgid "Windows shadow"
+msgstr "Styl cienia wybranego okna"
+
+#: src/preferences/pages/general.ui:128
 msgid "Customize the shadow of the rounded corner window"
 msgstr "Dostosuj cień okien z zaokrąglonymi krawędziami"
 
-#: src/preferences/pages/general.ui:132
-msgid "Global Settings"
-msgstr "Globalne ustawienia"
+#: src/preferences/pages/general.ui:140
+#, fuzzy
+msgid "Keep rounded corners for maximized windows"
+msgstr "Zaokrąglaj okna kiedy zmaksymalizowane"
 
-#: src/preferences/pages/general.ui:143
-msgid "This settings will try to effects all windows"
-msgstr ""
+#: src/preferences/pages/general.ui:145
+#, fuzzy
+msgid "Keep rounded corners for fullscreen windows"
+msgstr "Zaokrąglaj okna w pełnym ekranie"
 
-#: src/preferences/pages/general.ui:168
-#: src/preferences/widgets/reset_dialog.ts:66
-msgid "Border Width"
-msgstr "Grubość obramowania"
-
-#: src/preferences/pages/general.ui:201
-#: src/preferences/widgets/reset_dialog.ts:67
-msgid "Border Color"
-msgstr "Kolor obramowania"
-
-#: src/preferences/pages/general.ui:222
+#: src/preferences/pages/general.ui:155
 msgid "Tweaks"
 msgstr "Ulepszenia"
 
-#: src/preferences/pages/general.ui:247
+#: src/preferences/pages/general.ui:158
 msgid "Try to add rounded corners to Kitty Terminal in Wayland"
 msgstr ""
 
-#: src/preferences/pages/general.ui:254
+#: src/preferences/pages/general.ui:159
 msgid "Tweak clip paddings for Kitty Terminal"
 msgstr ""
 
-#: src/preferences/pages/general.ui:284
+#: src/preferences/pages/general.ui:164
 msgid "Add Settings Entry in right-click menu of Background"
 msgstr ""
 "Dodaj opcję do menu pojawiającego się po kliknięciu prawym przyciskiem myszy "
 "na pulpicie"
 
-#: src/preferences/pages/general.ui:304
+#: src/preferences/pages/general.ui:171
 msgid "Debug"
 msgstr "Debuguj"
 
-#: src/preferences/pages/general.ui:329
-#: src/preferences/widgets/reset_dialog.ts:68
+#: src/preferences/pages/general.ui:174
+#: src/preferences/widgets/reset_page.ts:61
 msgid "Enable Log"
 msgstr "Włącz logi"
 
-#: src/preferences/pages/general.ui:336
+#: src/preferences/pages/general.ui:175
+#, fuzzy
 msgid ""
-"Run <i>journalctl -o cat -f /usr/bin/gnome-shell</i> in terminal to see the "
-"log"
+"Run journalctl -o cat -f /usr/bin/gnome-shell in terminal to see the log"
 msgstr ""
 "Aby zobaczyć log, uruchom w terminalu polecenie <i>journalctl -o cat -f /usr/"
 "bin/gnome-shell</i>"
 
-#: src/preferences/pages/general.ui:359
-msgid "Reset Preferences"
-msgstr "Przywróć preferencje do domyślnych"
-
-#: src/preferences/pages/general.ui:367
-msgid "Open Reset Preferences Dialog"
+#: src/preferences/pages/general.ui:184
+#, fuzzy
+msgid "Open prefereces reset page"
 msgstr "Otwórz okno resetowania ustawień"
 
-#: src/preferences/widgets/app-row.ui:36
-msgid "Remove Window from this List"
-msgstr "Usuń okno z tej listy"
+#: src/preferences/widgets/edit-shadow-page.ui:6
+msgid "Edit shadows"
+msgstr ""
 
-#: src/preferences/widgets/app-row.ui:77
-msgid "Pick Window to add into list"
-msgstr "Wybierz okno do dodania na listę"
-
-#: src/preferences/widgets/app-row.ui:92
-msgid "Apply"
-msgstr "Zastosuj"
-
-#: src/preferences/widgets/edit-shadow-window.ui:26
-msgid "Focus Window"
+#: src/preferences/widgets/edit-shadow-page.ui:28
+#, fuzzy
+msgid "Focused window"
 msgstr "Wybrane okno"
 
-#: src/preferences/widgets/edit-shadow-window.ui:35
-msgid "Unfocus Window"
+#: src/preferences/widgets/edit-shadow-page.ui:43
+#, fuzzy
+msgid "Unfocused window"
 msgstr "Nieaktywne okno"
 
-#: src/preferences/widgets/edit-shadow-window.ui:46
-msgid "Horizontal Offset"
+#: src/preferences/widgets/edit-shadow-page.ui:66
+msgid "Focused shadow prefrences"
+msgstr ""
+
+#: src/preferences/widgets/edit-shadow-page.ui:69
+#: src/preferences/widgets/edit-shadow-page.ui:209
+#, fuzzy
+msgid "Horizontal offset"
 msgstr "Poziome przesunięcie"
 
-#: src/preferences/widgets/edit-shadow-window.ui:66
-msgid "Vertical Offset"
-msgstr ""
+#: src/preferences/widgets/edit-shadow-page.ui:96
+#: src/preferences/widgets/edit-shadow-page.ui:236
+#, fuzzy
+msgid "Vertical offset"
+msgstr "Poziome przesunięcie"
 
-#: src/preferences/widgets/edit-shadow-window.ui:87
-msgid "Blur Offset"
-msgstr "Przesunięcie rozmycia"
+#: src/preferences/widgets/edit-shadow-page.ui:123
+#: src/preferences/widgets/edit-shadow-page.ui:263
+#, fuzzy
+msgid "Blur radius"
+msgstr "Zaokrąglenie krawędzi"
 
-#: src/preferences/widgets/edit-shadow-window.ui:107
-msgid "Spread Radius"
-msgstr ""
+#: src/preferences/widgets/edit-shadow-page.ui:150
+#: src/preferences/widgets/edit-shadow-page.ui:290
+#, fuzzy
+msgid "Spread radius"
+msgstr "Zaokrąglenie krawędzi"
 
-#: src/preferences/widgets/edit-shadow-window.ui:126
+#: src/preferences/widgets/edit-shadow-page.ui:177
+#: src/preferences/widgets/edit-shadow-page.ui:317
 msgid "Opacity"
 msgstr "Nieprzezroczystość"
 
-#: src/preferences/widgets/rounded-corners-item.ui:19
-#: src/preferences/widgets/reset_dialog.ts:72
-msgid "Border Radius"
-msgstr "Zaokrąglenie krawędzi"
+#: src/preferences/widgets/edit-shadow-page.ui:206
+msgid "Unfocused shadow prefrences"
+msgstr ""
 
-#: src/preferences/widgets/rounded-corners-item.ui:53
-#: src/preferences/widgets/reset_dialog.ts:77
-msgid "Corner Smoothing"
-msgstr "wygładzanie krawędzi"
-
-#: src/preferences/widgets/rounded-corners-item.ui:86
-msgid "Keep Rounded Corners when Maximized"
-msgstr "Zaokrąglaj okna kiedy zmaksymalizowane"
-
-#: src/preferences/widgets/rounded-corners-item.ui:93
-msgid "Always keep rounded corners when window is maximized or tiled."
-msgstr "Zaokrąglaj krawędzie okien, nawet jeśli okno jest zmaksymalizowane."
-
-#: src/preferences/widgets/rounded-corners-item.ui:123
-msgid "Keep Rounded Corners when Fullscreen"
-msgstr "Zaokrąglaj okna w pełnym ekranie"
-
-#: src/preferences/widgets/rounded-corners-item.ui:130
-msgid "Always keep rounded corners when window is fullscreen."
-msgstr "Zawsze zachowuj, gdy okno jest w trybie pełnoekranowym."
-
-#: src/preferences/widgets/rounded-corners-item.ui:163
+#: src/preferences/widgets/paddings-row.ui:12
 msgid "Paddings"
 msgstr "Marginesy wewnętrzne"
 
-#: src/preferences/widgets/rounded-corners-item.ui:170
-msgid "Clip paddings of window"
-msgstr "Odetnij wyściółkę"
-
-#: src/preferences/widgets/rounded-corners-item.ui:210
-msgid "Left"
-msgstr "Lewo"
-
-#: src/preferences/widgets/rounded-corners-item.ui:243
-msgid "Right"
-msgstr "Prawo"
-
-#: src/preferences/widgets/rounded-corners-item.ui:276
+#: src/preferences/widgets/paddings-row.ui:25
 msgid "Top"
 msgstr ""
 
-#: src/preferences/widgets/rounded-corners-item.ui:309
+#: src/preferences/widgets/paddings-row.ui:40
 msgid "Bottom"
 msgstr "Dół"
 
-#: src/preferences/index.ts:12
-msgid "General"
-msgstr "Ogólne"
+#: src/preferences/widgets/paddings-row.ui:55
+msgid "Left"
+msgstr "Lewo"
 
-#: src/preferences/index.ts:17
-msgid "Blacklist"
-msgstr "Blokowane aplikacje"
+#: src/preferences/widgets/paddings-row.ui:70
+msgid "Right"
+msgstr "Prawo"
 
-#: src/preferences/index.ts:22
-msgid "Custom"
-msgstr "Własne"
+#: src/preferences/widgets/reset-page.ui:6
+msgid "Reset settings"
+msgstr ""
 
-#: src/preferences/pages/blacklist.ts:67 src/preferences/pages/custom.ts:183
-msgid "Can't add to list, because it has exists"
-msgstr "Nie można dodać do listy, ponieważ to już istnieje"
+#: src/preferences/widgets/reset-page.ui:16
+#, fuzzy
+msgid "Settings to reset"
+msgstr "Wybierz elementy do zresetowania"
 
-#: src/preferences/pages/custom.ts:196
-msgid "Enable"
-msgstr "Włącz"
+#: src/preferences/widgets/reset-page.ui:22
+#, fuzzy
+msgid "Select all"
+msgstr "Wybierz wszystkie"
 
-#: src/preferences/pages/custom.ts:200
-msgid "Enable custom settings for this window"
-msgstr "Włącz własne ustawienia dla tego okna"
+#: src/preferences/widgets/reset-page.ui:39
+msgid "Reset"
+msgstr ""
 
-#: src/preferences/widgets/app_row.ts:113
-msgid "Can't pick a window window from this position"
+#: src/preferences/widgets/reset-page.ui:55
+msgid "Reset these settings?"
+msgstr ""
+
+#: src/preferences/widgets/reset-page.ui:60
+msgid "_Cancel"
+msgstr ""
+
+#: src/preferences/widgets/reset-page.ui:61
+msgid "_Reset"
+msgstr ""
+
+#: src/preferences/widgets/app_row.ts:28
+msgid "Window class"
+msgstr ""
+
+#: src/preferences/widgets/app_row.ts:48
+#, fuzzy
+msgid "Expand this row, to pick a window"
+msgstr "Zwiększ ten rząd aby wybrać okno"
+
+#: src/preferences/widgets/app_row.ts:92
+#, fuzzy
+msgid "Can't pick window from this position"
 msgstr "Nie można wybrać okna z tej pozycji"
 
-#: src/preferences/widgets/edit_shadow_window.ts:59
-msgid "Edit Shadow for Rounded Corners Windows"
-msgstr "Edytuj cienie okien z zaokrąglonymi krawędziami"
+#: src/preferences/widgets/customeffect_row.ts:13
+#, fuzzy
+msgid "Enabled"
+msgstr "Włącz"
 
-#: src/preferences/widgets/reset_dialog.ts:64
+#: src/preferences/widgets/customeffect_row.ts:34
+#, fuzzy
+msgid "Keep rounded corners when maximized"
+msgstr "Zaokrąglaj okna kiedy zmaksymalizowane"
+
+#: src/preferences/widgets/customeffect_row.ts:36
+#, fuzzy
+msgid "Always clip rounded corners even if window is maximized or tiled"
+msgstr "Zaokrąglaj krawędzie okien, nawet jeśli okno jest zmaksymalizowane."
+
+#: src/preferences/widgets/customeffect_row.ts:40
+#, fuzzy
+msgid "Keep rounded corners when in fullscreen"
+msgstr "Zaokrąglaj okna w pełnym ekranie"
+
+#: src/preferences/widgets/customeffect_row.ts:41
+#, fuzzy
+msgid "Always clip rounded corners even for fullscreen window"
+msgstr "Zawsze zachowuj, gdy okno jest w trybie pełnoekranowym."
+
+#: src/preferences/widgets/reset_page.ts:54
+msgid "Skip LibAdwaita Applications"
+msgstr "Pomiń aplikacje wykorzystujące LibAdwaita"
+
+#: src/preferences/widgets/reset_page.ts:56
+msgid "Skip LibHandy Applications"
+msgstr "Pomiń aplikacje wykorzytujące LibHandy"
+
+#: src/preferences/widgets/reset_page.ts:57
 msgid "Focus Window Shadow Style"
 msgstr "Styl cienia wybranego okna"
 
-#: src/preferences/widgets/reset_dialog.ts:65
+#: src/preferences/widgets/reset_page.ts:58
 msgid "Unfocus Window Shadow Style"
 msgstr "Styl cienia nieaktywnego okna"
 
-#: src/preferences/widgets/reset_dialog.ts:73
+#: src/preferences/widgets/reset_page.ts:59
+msgid "Border Width"
+msgstr "Grubość obramowania"
+
+#: src/preferences/widgets/reset_page.ts:60
+msgid "Border Color"
+msgstr "Kolor obramowania"
+
+#: src/preferences/widgets/reset_page.ts:65
+msgid "Border Radius"
+msgstr "Zaokrąglenie krawędzi"
+
+#: src/preferences/widgets/reset_page.ts:66
 msgid "Padding"
 msgstr "Margines wewnętrzny"
 
-#: src/preferences/widgets/reset_dialog.ts:75
+#: src/preferences/widgets/reset_page.ts:68
 msgid "Keep Rounded Corners when Maximized or Fullscreen"
 msgstr "Zaokrąglaj okna kiedy zmaksymalizowane lub w trybie pełnego ekranu"
 
-#: src/preferences/widgets/reset_dialog.ts:89
-msgid "Select Items to reset"
-msgstr "Wybierz elementy do zresetowania"
-
-#: src/preferences/widgets/reset_dialog.ts:98
-msgid "Select All"
-msgstr "Wybierz wszystkie"
+#: src/preferences/widgets/reset_page.ts:70
+msgid "Corner Smoothing"
+msgstr "wygładzanie krawędzi"
 
 #: src/utils/prefs.ts:48
 msgid "Expand this row to pick a window."
@@ -283,3 +347,27 @@ msgstr "Zwiększ ten rząd aby wybrać okno"
 #: src/utils/ui.ts:104 src/utils/ui.ts:133
 msgid "Rounded Corners Settings..."
 msgstr "Ustawienia zaokrąglonych narożników..."
+
+#~ msgid "Reset Preferences"
+#~ msgstr "Przywróć preferencje do domyślnych"
+
+#~ msgid "Remove Window from this List"
+#~ msgstr "Usuń okno z tej listy"
+
+#~ msgid "Pick Window to add into list"
+#~ msgstr "Wybierz okno do dodania na listę"
+
+#~ msgid "Apply"
+#~ msgstr "Zastosuj"
+
+#~ msgid "Blur Offset"
+#~ msgstr "Przesunięcie rozmycia"
+
+#~ msgid "Clip paddings of window"
+#~ msgstr "Odetnij wyściółkę"
+
+#~ msgid "Can't add to list, because it has exists"
+#~ msgstr "Nie można dodać do listy, ponieważ to już istnieje"
+
+#~ msgid "Edit Shadow for Rounded Corners Windows"
+#~ msgstr "Edytuj cienie okien z zaokrąglonymi krawędziami"
