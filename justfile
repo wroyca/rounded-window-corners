@@ -32,7 +32,7 @@ pack: build
 
 # Delete the build directory
 clean:
-  rm -rf {{buildDir}}
+  rm -rf {{buildDir}} {{uuid}}.shell-extension.zip
   
 # Update and compile the translation files
 pot:
