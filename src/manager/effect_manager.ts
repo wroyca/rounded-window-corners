@@ -253,6 +253,10 @@ export class WindowActorTracker {
     }
 
     private _remove_effect(actor: ExtensionsWindowActor) {
+        for (const m of this.effect_managers) {
+            m.disable(actor);
+        }
+
         delete actor.__rwc_last_size;
 
         const texture = actor.get_texture();

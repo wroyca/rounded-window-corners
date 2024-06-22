@@ -63,6 +63,7 @@ export interface EffectManager {
     on_size_changed(actor: ExtensionsWindowActor): void;
     on_focus_changed(actor: ExtensionsWindowActor): void;
     on_switch_workspace?: (actor: ExtensionsWindowActor) => void;
+    disable(actor: ExtensionsWindowActor): void;
 }
 
 export type ExtensionsWindowActor = Meta.WindowActor & {

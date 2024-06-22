@@ -257,6 +257,17 @@ export class RoundedCornersManager implements EffectManager {
         }
     }
 
+    disable(actor: ExtensionsWindowActor) {
+        const info = actor.__rwc_rounded_window_info;
+        if (!info) {
+            return;
+        }
+        const id = info.unminimized_timeout_id;
+        if (id) {
+            GLib.source_remove(id);
+        }
+    }
+
     // --------------------------------------------------------- [private methods]
 
     private _restore_shadow(actor: ExtensionsWindowActor) {
