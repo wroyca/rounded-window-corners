@@ -5,7 +5,7 @@ buildDir := './_build'
 uuid := 'rounded-window-corners@fxgn'
 
 # Compile the extension and all resources
-build: && pot
+build: clean && pot
   # Compile TypeScript
   npm install
   npx tsc --outDir {{buildDir}}
