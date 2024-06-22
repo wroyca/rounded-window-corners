@@ -381,8 +381,6 @@ export default class RoundedWindowCornersReborn extends Extension {
         // Remove the item to open preferences page in background menu
         UI.RestoreBackgroundMenu();
 
-        uninit_settings();
-
         this._services?.unexport();
         this._window_actor_tracker?.disable();
 
@@ -395,6 +393,8 @@ export default class RoundedWindowCornersReborn extends Extension {
         this._services = null;
 
         _log('Disabled');
+
+        uninit_settings();
     }
 }
 
