@@ -1,6 +1,6 @@
 {
     "name": "Rounded Window Corners Reborn",
-    "description": "Add rounded corners to all windows",
+    "description": "Add rounded corners to all windows. Fork of the now unmaintained Rounded Window Corners extension.",
     "uuid": "rounded-window-corners@fxgn",
     "url": "https://github.com/flexagoon/rounded-window-corners",
     "gettext-domain": "rounded-window-corners@fxgn",
