@@ -19,7 +19,7 @@ import {WindowActorTracker} from './manager/effect_manager.js';
 import {connections} from './utils/connections.js';
 import {constants} from './utils/constants.js';
 import {_log, stackMsg} from './utils/log.js';
-import {init_settings, settings} from './utils/settings.js';
+import {init_settings, uninit_settings, settings} from './utils/settings.js';
 import * as UI from './utils/ui.js';
 
 // types, which will be removed in output
@@ -28,7 +28,7 @@ import type {ExtensionsWindowActor} from './utils/types.js';
 
 // --------------------------------------------------------------- [end imports]
 
-export default class RoundedWindowCorners extends Extension {
+export default class RoundedWindowCornersReborn extends Extension {
     // The methods of gnome-shell to monkey patch
     private _orig_add_window!: (_: Meta.Window) => void;
     private _orig_prep_workspace_swt!: (workspaceIndices: number[]) => void;
@@ -59,12 +59,13 @@ export default class RoundedWindowCorners extends Extension {
         //  21d4bbde15acf7c3bf348f7375a12f7b14c3ab6f/src/extension.js#L87
 
         if (layoutManager._startingUp) {
-            const id = layoutManager.connect('startup-complete', () => {
+            const c = connections.get();
+            c.connect(layoutManager, 'startup-complete', () => {
                 this._window_actor_tracker?.enable();
                 if (settings().enable_preferences_entry) {
                     UI.SetupBackgroundMenu();
                 }
-                layoutManager.disconnect(id);
+                c.disconnect_all(layoutManager);
             });
         } else {
             this._window_actor_tracker?.enable();
@@ -379,6 +380,8 @@ export default class RoundedWindowCorners extends Extension {
 
         // Remove the item to open preferences page in background menu
         UI.RestoreBackgroundMenu();
+
+        uninit_settings();
 
         this._services?.unexport();
         this._window_actor_tracker?.disable();

@@ -10,7 +10,7 @@ import * as Utils from './utils/io.js';
 import {_log} from './utils/log.js';
 import {init_settings, uninit_settings} from './utils/settings.js';
 
-export default class RoundedWindowCornresPrefs extends ExtensionPreferences {
+export default class RoundedWindowCornersRebornPrefs extends ExtensionPreferences {
     constructor(metadata: ExtensionMetadata) {
         super(metadata);
 
