@@ -3,7 +3,6 @@ import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 
 import {ExtensionPreferences} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
-import type {ExtensionMetadata} from 'resource:///org/gnome/shell/extensions/extension.js';
 import {pages} from './preferences/index.js';
 import {connections} from './utils/connections.js';
 import * as Utils from './utils/io.js';
@@ -11,14 +10,6 @@ import {_log} from './utils/log.js';
 import {init_settings, uninit_settings} from './utils/settings.js';
 
 export default class RoundedWindowCornersRebornPrefs extends ExtensionPreferences {
-    constructor(metadata: ExtensionMetadata) {
-        super(metadata);
-
-        // Classical GTK4 template ui need this to make translatable string works
-        imports.gettext.textdomain(this.uuid);
-        this.initTranslations(this.uuid);
-    }
-
     _load_css() {
         const display = Gdk.Display.get_default();
         if (display) {
@@ -47,7 +38,3 @@ export default class RoundedWindowCornersRebornPrefs extends ExtensionPreference
         this._load_css();
     }
 }
-
-declare const imports: {
-    gettext: {textdomain: (uuid: string) => void};
-};
