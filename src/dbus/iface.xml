@@ -1,5 +1,5 @@
 <node>
-  <interface name="yi.github.RoundedCornersEffect">
+  <interface name="org.gnome.Shell.Extensions.RoundedWindowCorners">
     <!-- This method is called in preferences to pick a window -->
     <method name="pick" />
     <!-- If window is picked, send a signal to preferences -->

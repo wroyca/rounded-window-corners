@@ -83,7 +83,7 @@ export class Services {
     export() {
         this.DBusImpl.export(
             Gio.DBus.session,
-            '/yi/github/RoundedCornersEffect',
+            '/org/gnome/shell/extensions/RoundedWindowCorners',
         );
         _log('DBus Services exported');
     }

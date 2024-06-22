@@ -5,8 +5,8 @@ import Gio from 'gi://Gio';
 
 const connect = Gio.DBus.session;
 const bus_name = 'org.gnome.Shell';
-const iface_name = 'yi.github.RoundedCornersEffect';
-const obj_path = '/yi/github/RoundedCornersEffect';
+const iface_name = 'org.gnome.Shell.Extensions.RoundedWindowCorners';
+const obj_path = '/org/gnome/shell/extensions/RoundedWindowCorners';
 
 /**
  * Call pick() of DBus service, it will open Inspector from gnome-shell to
