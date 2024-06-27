@@ -3,13 +3,14 @@
 <div align="center">
   <h1>Rounded Window Corners Reborn</h1>
   <p><i>A GNOME extension that adds rounded corners to all windows</i></p>
-  <!--<a href="https://extensions.gnome.org/extension/5237/rounded-window-corners/">-->
-  <!--  <img src="https://img.shields.io/badge/Install%20from-extensions.gnome.org-4A86CF?style=for-the-badge&logo=Gnome&logoColor=white"/>-->
-  <!--</a>  -->
+  <a href="https://extensions.gnome.org/extension/7048/rounded-window-corners-reborn">
+    <img src="https://img.shields.io/badge/Install%20from-extensions.gnome.org-4A86CF?style=for-the-badge&logo=Gnome&logoColor=white"/>
+  </a>
 </div>
+<br>
 
-This is the fork of the [original rounded-window-corners extension][14] by
-@yilozt, which is no longer maintained.
+> [!NOTE]
+> This is the fork of the [original rounded-window-corners extension][14] by @yilozt, which is no longer maintained.
 
 ## Features
 
@@ -36,6 +37,10 @@ This is the fork of the [original rounded-window-corners extension][14] by
 - TypeScript support for GJS is powered by [gjsify](https://gjsify.org/)
 
 ## Installation
+
+### From Gnome Extensions
+
+The extension is available on [extensions.gnome.org](https://extensions.gnome.org). You can install it directly [from here](https://extensions.gnome.org/extension/7048/rounded-window-corners-reborn/), or from the Extension Manager app.
 
 ### From pre-built archives
 
