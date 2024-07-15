@@ -9,7 +9,6 @@ import type * as types from '../utils/types.js';
 
 // types
 import type Clutter from 'gi://Clutter';
-import {shell_version} from '../utils/ui.js';
 
 // --------------------------------------------------------------- [end imports]
 
@@ -123,7 +122,6 @@ export const RoundedCornersEffect = GObject.registerClass(
                 // from Meta.WindowActor to calculate pixel step, but its first child
                 // offers correct one.
                 if (
-                    shell_version() >= 43.1 &&
                     actor instanceof Meta.WindowActor &&
                     actor.firstChild?.firstChild
                 ) {

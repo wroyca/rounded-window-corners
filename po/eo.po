@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-30 10:03+0300\n"
+"POT-Creation-Date: 2024-07-22 10:52-0700\n"
 "PO-Revision-Date: 2023-01-04 20:51+0000\n"
 "Last-Translator: phlostically <phlostically@mailinator.com>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/rounded-window-"

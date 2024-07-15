@@ -7,16 +7,16 @@ import {
     Extension,
     gettext as _,
 } from 'resource:///org/gnome/shell/extensions/extension.js';
-import {PACKAGE_VERSION} from 'resource:///org/gnome/shell/misc/config.js';
 
 // local modules
-import {constants} from './constants.js';
+import {ROUNDED_CORNERS_EFFECT} from './constants.js';
 import {load} from './io.js';
 import {_log, _logError} from './log.js';
 
 // types
 import type Clutter from 'gi://Clutter';
 import type * as types from './types.js';
+import {settings} from './settings.js';
 
 // --------------------------------------------------------------- [end imports]
 
@@ -146,14 +146,17 @@ export const RestoreBackgroundMenu = () => {
     }
 };
 
-/** Choice Rounded Corners Settings for window  */
-export const ChoiceRoundedCornersCfg = (
-    global_cfg: types.RoundedCornersCfg,
-    custom_cfg_list: {
-        [wm_class_instance: string]: types.RoundedCornersCfg;
-    },
+/**
+ * Get the correct settings object for a window.
+ *
+ * @param win - The window to get the settings for.
+ */
+export function getRoundedCornersCfg(
     win: Meta.Window,
-) => {
+): types.RoundedCornersCfg {
+    const global_cfg = settings().global_rounded_corner_settings;
+    const custom_cfg_list = settings().custom_rounded_corner_settings;
+
     const k = win.get_wm_class_instance();
     if (k == null || !custom_cfg_list[k] || !custom_cfg_list[k].enabled) {
         return global_cfg;
@@ -163,34 +166,67 @@ export const ChoiceRoundedCornersCfg = (
     // Need to skip border radius item from custom settings
     custom_cfg.border_radius = global_cfg.border_radius;
     return custom_cfg;
-};
-
-/**
- * Decide whether windows should have rounded corners when it has been
- * maximized & fullscreen according to RoundedCornersCfg
- */
-export function ShouldHasRoundedCorners(
-    win: Meta.Window,
-    cfg: types.RoundedCornersCfg,
-): boolean {
-    let should_has_rounded_corners = false;
-
-    const maximized = win.maximizedHorizontally || win.maximizedVertically;
-    const fullscreen = win.fullscreen;
-
-    should_has_rounded_corners =
-        !(maximized || fullscreen) ||
-        (maximized && cfg.keep_rounded_corners.maximized) ||
-        (fullscreen && cfg.keep_rounded_corners.fullscreen);
-
-    return should_has_rounded_corners;
 }
 
 /**
- * @returns Current version of gnome shell
+ * Check whether a window should have rounded corners.
+ *
+ * @param win - The window to check.
+ * @returns Whether the window should have rounded corners.
  */
-export function shell_version(): number {
-    return Number.parseFloat(PACKAGE_VERSION);
+export function shouldEnableEffect(
+    win: Meta.Window & {_appType?: AppType},
+): boolean {
+    // DING (Desktop Icons NG) is a extensions that create a gtk
+    // application to show desktop grid on background, we need to
+    // skip it coercively.
+    // https://extensions.gnome.org/extension/2087/desktop-icons-ng-ding/
+    if (win.gtkApplicationId === 'com.rastersoft.ding') {
+        return false;
+    }
+
+    // Skip applications in black list.
+    const wmClassInstance = win.get_wm_class_instance();
+    if (wmClassInstance == null) {
+        _log(`Warning: wm_class_instance of ${win}: ${win.title} is null`);
+        return false;
+    }
+    if (settings().black_list.includes(wmClassInstance)) {
+        return false;
+    }
+
+    // Check type of window, only need to add rounded corners to normal
+    // window and dialog.
+    const normalType = [
+        Meta.WindowType.NORMAL,
+        Meta.WindowType.DIALOG,
+        Meta.WindowType.MODAL_DIALOG,
+    ].includes(win.windowType);
+    if (!normalType) {
+        return false;
+    }
+
+    // Skip libhandy / libadwaita applications according to settings.
+    const appType = win._appType ?? getAppType(win);
+    win._appType = appType; // cache result
+    _log(`Check Type of window:${win.title} => ${AppType[appType]}`);
+
+    if (settings().skip_libadwaita_app && appType === AppType.LibAdwaita) {
+        return false;
+    }
+    if (settings().skip_libhandy_app && appType === AppType.LibHandy) {
+        return false;
+    }
+
+    // Skip maximized / fullscreen windows according to settings.
+    const maximized = win.maximizedHorizontally || win.maximizedVertically;
+    const fullscreen = win.fullscreen;
+    const cfg = getRoundedCornersCfg(win);
+    return (
+        !(maximized || fullscreen) ||
+        (maximized && cfg.keep_rounded_corners.maximized) ||
+        (fullscreen && cfg.keep_rounded_corners.fullscreen)
+    );
 }
 
 /**
@@ -200,7 +236,7 @@ export function get_rounded_corners_effect(
     actor: Meta.WindowActor,
 ): Clutter.Effect | null {
     const win = actor.metaWindow;
-    const name = constants.ROUNDED_CORNERS_EFFECT;
+    const name = ROUNDED_CORNERS_EFFECT;
     return win.get_client_type() === Meta.WindowClientType.X11
         ? actor.firstChild.get_effect(name)
         : actor.get_effect(name);

@@ -1,9 +1,7 @@
 import type Clutter from 'gi://Clutter';
 import type GObject from 'gi://GObject';
-import type Graphene from 'gi://Graphene';
 import type Meta from 'gi://Meta';
 import type St from 'gi://St';
-import type {SchemasKeys} from '../utils/settings.js';
 
 /** Bounds of rounded corners  */
 export class Bounds {
@@ -52,30 +50,14 @@ export const box_shadow_css = (box_shadow: BoxShadow, scale = 1) => {
           rgba(0,0,0, ${box_shadow.opacity / 100})`;
 };
 
-export interface EffectManager {
-    enabled: boolean;
-    on_settings_changed(key: SchemasKeys): void;
-    on_add_effect(actor: ExtensionsWindowActor): void;
-    on_remove_effect(actor: ExtensionsWindowActor): void;
-    on_minimize(actor: ExtensionsWindowActor): void;
-    on_unminimize(actor: ExtensionsWindowActor): void;
-    on_restacked(actor: ExtensionsWindowActor): void;
-    on_size_changed(actor: ExtensionsWindowActor): void;
-    on_focus_changed(actor: ExtensionsWindowActor): void;
-    on_switch_workspace?: (actor: ExtensionsWindowActor) => void;
-    disable(actor: ExtensionsWindowActor): void;
-}
-
 export type ExtensionsWindowActor = Meta.WindowActor & {
-    __rwc_rounded_window_info?: {
+    __rwcRoundedWindowInfo?: {
         shadow: St.Bin;
-        visible_binding: GObject.Binding;
-        unminimized_timeout_id: number;
+        unminimizedTimeoutId: number;
     };
     __rwc_blurred_window_info?: {
         blur_actor: Clutter.Actor;
         visible_binding: GObject.Binding;
     };
     shadow_mode?: Meta.ShadowMode;
-    __rwc_last_size?: Graphene.Size;
 };
