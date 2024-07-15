@@ -19,7 +19,7 @@ import {WindowActorTracker} from './manager/effect_manager.js';
 import {connections} from './utils/connections.js';
 import {constants} from './utils/constants.js';
 import {_log, stackMsg} from './utils/log.js';
-import {init_settings, uninit_settings, settings} from './utils/settings.js';
+import {init_settings, settings, uninit_settings} from './utils/settings.js';
 import * as UI from './utils/ui.js';
 
 // types, which will be removed in output
