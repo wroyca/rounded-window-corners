@@ -336,7 +336,7 @@ const OverviewShadowActor = GObject.registerClass(
             super({
                 source, // the source shadow actor shown in desktop
                 name: constants.OVERVIEW_SHADOW_ACTOR,
-                pivotPoint: new Graphene.Point().init(0.5, 0.5),
+                pivotPoint: new Graphene.Point({x: 0.5, y: 0.5}),
             });
 
             this._window_preview = window_preview;
