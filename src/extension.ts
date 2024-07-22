@@ -14,7 +14,7 @@ import {WorkspaceAnimationController} from 'resource:///org/gnome/shell/ui/works
 // local modules
 import {Services} from './dbus/services.js';
 import {LinearFilterEffect} from './effect/linear_filter_effect.js';
-import {enableEffect, disableEffect} from './manager/event_manager.js';
+import {disableEffect, enableEffect} from './manager/event_manager.js';
 import {connections} from './utils/connections.js';
 import {constants, SHADOW_PADDING} from './utils/constants.js';
 import {_log, stackMsg} from './utils/log.js';

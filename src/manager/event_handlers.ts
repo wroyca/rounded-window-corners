@@ -22,11 +22,11 @@ import {_log} from '../utils/log.js';
 import {settings} from '../utils/settings.js';
 import * as types from '../utils/types.js';
 import {
-    computeWindowContentsOffset,
-    get_rounded_corners_effect,
-    getRoundedCornersCfg,
-    shouldEnableEffect,
     WindowScaleFactor,
+    computeWindowContentsOffset,
+    getRoundedCornersCfg,
+    get_rounded_corners_effect,
+    shouldEnableEffect,
 } from '../utils/ui.js';
 
 import type {SchemasKeys} from '../utils/settings.js';

@@ -15,8 +15,8 @@ import {_log, _logError} from './log.js';
 
 // types
 import type Clutter from 'gi://Clutter';
-import type * as types from './types.js';
 import {settings} from './settings.js';
+import type * as types from './types.js';
 
 // --------------------------------------------------------------- [end imports]
 
