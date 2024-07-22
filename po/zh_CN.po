@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 10:52-0700\n"
+"POT-Creation-Date: 2024-07-22 11:54-0700\n"
 "PO-Revision-Date: 2023-03-02 12:35+0000\n"
 "Last-Translator: Yi <yilozt@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -341,7 +341,7 @@ msgstr "圆角平滑程度"
 msgid "Expand this row to pick a window."
 msgstr "展开此控件以选取窗口。"
 
-#: src/utils/ui.ts:104 src/utils/ui.ts:133
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
 msgid "Rounded Corners Settings..."
 msgstr "圆角设置…"
 

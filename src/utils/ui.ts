@@ -15,6 +15,7 @@ import {_log, _logError} from './log.js';
 
 // types
 import type Clutter from 'gi://Clutter';
+import type {RoundedCornersEffect} from '../effect/rounded_corners_effect.js';
 import {settings} from './settings.js';
 import type * as types from './types.js';
 
@@ -229,15 +230,17 @@ export function shouldEnableEffect(
     );
 }
 
+type RoundedCornersEffectType = InstanceType<typeof RoundedCornersEffect>;
+
 /**
  * Get Rounded corners effect from a window actor
  */
 export function get_rounded_corners_effect(
     actor: Meta.WindowActor,
-): Clutter.Effect | null {
+): RoundedCornersEffectType | null {
     const win = actor.metaWindow;
     const name = ROUNDED_CORNERS_EFFECT;
     return win.get_client_type() === Meta.WindowClientType.X11
-        ? actor.firstChild.get_effect(name)
-        : actor.get_effect(name);
+        ? (actor.firstChild.get_effect(name) as RoundedCornersEffectType)
+        : (actor.get_effect(name) as RoundedCornersEffectType);
 }

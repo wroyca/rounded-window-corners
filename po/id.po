@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 10:52-0700\n"
+"POT-Creation-Date: 2024-07-22 11:54-0700\n"
 "PO-Revision-Date: 2023-05-24 00:51+0000\n"
 "Last-Translator: Reza Almanda <rezaalmanda27@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/rounded-"
@@ -345,7 +345,7 @@ msgstr "Penghalusan Sudut"
 msgid "Expand this row to pick a window."
 msgstr "Luaskan baris ini untuk memilih jendela."
 
-#: src/utils/ui.ts:104 src/utils/ui.ts:133
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
 msgid "Rounded Corners Settings..."
 msgstr "Pengaturan Sudut Bulat..."
 

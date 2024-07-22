@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 10:52-0700\n"
+"POT-Creation-Date: 2024-07-22 11:54-0700\n"
 "PO-Revision-Date: 2023-12-10 10:05+0000\n"
 "Last-Translator: Nadjib Chergui <chergui.cnadjib@outlook.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/rounded-window-"
@@ -343,7 +343,7 @@ msgstr "تمليس الزاوية"
 msgid "Expand this row to pick a window."
 msgstr "كبر الصف لاختيار نافذة."
 
-#: src/utils/ui.ts:104 src/utils/ui.ts:133
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
 msgid "Rounded Corners Settings..."
 msgstr "إعدادات الزوايا المدورة..."
 

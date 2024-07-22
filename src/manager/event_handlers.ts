@@ -25,13 +25,12 @@ import {
     WindowScaleFactor,
     computeWindowContentsOffset,
     getRoundedCornersCfg,
-    get_rounded_corners_effect,
+    get_rounded_corners_effect as getRoundedCornersEffect,
     shouldEnableEffect,
 } from '../utils/ui.js';
 
 import type {SchemasKeys} from '../utils/settings.js';
 import type {ExtensionsWindowActor} from '../utils/types.js';
-type RoundedCornersEffectType = InstanceType<typeof RoundedCornersEffect>;
 
 export function onAddEffect(actor: ExtensionsWindowActor) {
     _log(`opened: ${actor?.metaWindow.title}: ${actor}`);
@@ -109,11 +108,13 @@ export function onMinimize(actor: ExtensionsWindowActor): void {
     // Compatibility with "Compiz alike magic lamp effect".
     // When minimizing a window, disable the shadow to make the magic lamp effect
     // work.
-    const effect = actor.get_effect('minimize-magic-lamp-effect');
+    const magicLampEffect = actor.get_effect('minimize-magic-lamp-effect');
     const shadow = actor.__rwcRoundedWindowInfo?.shadow;
-    if (effect && shadow) {
+    const roundedCornersEffect = getRoundedCornersEffect(actor);
+    if (magicLampEffect && shadow && roundedCornersEffect) {
         _log('Minimizing with magic lamp effect');
         shadow.visible = false;
+        roundedCornersEffect.enabled = false;
     }
 }
 
@@ -121,18 +122,20 @@ export function onUnminimize(actor: ExtensionsWindowActor): void {
     // Compatibility with "Compiz alike magic lamp effect".
     // When unminimizing a window, wait until the effect is completed before
     // showing the shadow.
-    const effect = actor.get_effect('unminimize-magic-lamp-effect');
+    const magicLampEffect = actor.get_effect('unminimize-magic-lamp-effect');
     const shadow = actor.__rwcRoundedWindowInfo?.shadow;
-    if (effect && shadow) {
+    const roundedCornersEffect = getRoundedCornersEffect(actor);
+    if (magicLampEffect && shadow && roundedCornersEffect) {
         shadow.visible = false;
         type Effect = Clutter.Effect & {timerId: Clutter.Timeline};
-        const timer = (effect as Effect).timerId;
+        const timer = (magicLampEffect as Effect).timerId;
 
         const id = timer.connect('new-frame', source => {
             // Wait until the effect is 98% completed
             if (source.get_progress() > 0.98) {
                 _log('Unminimizing with magic lamp effect');
                 shadow.visible = true;
+                roundedCornersEffect.enabled = true;
                 source.disconnect(id);
             }
         });
@@ -348,7 +351,7 @@ function updateShadowActorStyle(
 function refreshEffectState() {
     for (const actor of global.get_window_actors()) {
         const shouldHaveEffect = shouldEnableEffect(actor.metaWindow);
-        const hasEffect = get_rounded_corners_effect(actor) != null;
+        const hasEffect = getRoundedCornersEffect(actor) != null;
 
         if (shouldHaveEffect && !hasEffect) {
             onAddEffect(actor);
@@ -398,9 +401,7 @@ function refreshRoundedCorners(actor: ExtensionsWindowActor): void {
     const win = actor.metaWindow;
 
     const windowInfo = actor.__rwcRoundedWindowInfo;
-    const effect = unwrapActor(actor)?.get_effect(
-        ROUNDED_CORNERS_EFFECT,
-    ) as RoundedCornersEffectType | null;
+    const effect = getRoundedCornersEffect(actor);
 
     if (!(effect && windowInfo)) {
         return;

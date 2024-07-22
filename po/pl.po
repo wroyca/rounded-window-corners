@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 10:52-0700\n"
+"POT-Creation-Date: 2024-07-22 11:54-0700\n"
 "PO-Revision-Date: 2023-10-29 05:13+0000\n"
 "Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/rounded-window-"
@@ -344,7 +344,7 @@ msgstr "wygładzanie krawędzi"
 msgid "Expand this row to pick a window."
 msgstr "Zwiększ ten rząd aby wybrać okno"
 
-#: src/utils/ui.ts:104 src/utils/ui.ts:133
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
 msgid "Rounded Corners Settings..."
 msgstr "Ustawienia zaokrąglonych narożników..."
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 10:52-0700\n"
+"POT-Creation-Date: 2024-07-22 11:54-0700\n"
 "PO-Revision-Date: 2024-02-25 14:01+0000\n"
 "Last-Translator: repex97 <repetto.andrea025@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/rounded-window-"
@@ -346,7 +346,7 @@ msgstr "Smussamento del bordo"
 msgid "Expand this row to pick a window."
 msgstr "Espandi questa riga per selezionare una finestra."
 
-#: src/utils/ui.ts:104 src/utils/ui.ts:133
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
 msgid "Rounded Corners Settings..."
 msgstr "Impostazioni per i Bordi Arrotondati..."
 

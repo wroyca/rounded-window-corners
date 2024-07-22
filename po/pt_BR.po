@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 10:52-0700\n"
+"POT-Creation-Date: 2024-07-22 11:54-0700\n"
 "PO-Revision-Date: 2023-11-12 08:23+0000\n"
 "Last-Translator: Matheus <cybercountry@proton.me>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -347,7 +347,7 @@ msgstr "Suavização dos Cantos"
 msgid "Expand this row to pick a window."
 msgstr "Expanda esta linha para escolher uma janela."
 
-#: src/utils/ui.ts:104 src/utils/ui.ts:133
+#: src/utils/ui.ts:105 src/utils/ui.ts:134
 msgid "Rounded Corners Settings..."
 msgstr "Configurações de Cantos Arredondados..."
 
