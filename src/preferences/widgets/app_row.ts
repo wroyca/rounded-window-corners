@@ -3,8 +3,8 @@ import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
 import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
-import {on_picked, pick} from '../../dbus/client.js';
 import {connections} from '../../utils/connections.js';
+import {onPicked, pick} from '../window_picker/client.js';
 
 export class AppRowClass extends Adw.ExpanderRow {
     private callbacks?: AppRowCallbacks;
@@ -84,7 +84,7 @@ export class AppRowClass extends Adw.ExpanderRow {
     }
 
     on_pick(entry: Adw.EntryRow) {
-        on_picked(wm_instance_class => {
+        onPicked(wm_instance_class => {
             if (wm_instance_class === 'window-not-found') {
                 const win = this.root as unknown as Adw.PreferencesDialog;
                 win.add_toast(

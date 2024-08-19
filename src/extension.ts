@@ -12,9 +12,9 @@ import {WindowPreview} from 'resource:///org/gnome/shell/ui/windowPreview.js';
 import {WorkspaceAnimationController} from 'resource:///org/gnome/shell/ui/workspaceAnimation.js';
 
 // local modules
-import {Services} from './dbus/services.js';
 import {LinearFilterEffect} from './effect/linear_filter_effect.js';
 import {disableEffect, enableEffect} from './manager/event_manager.js';
+import {WindowPicker} from './preferences/window_picker/service.js';
 import {connections} from './utils/connections.js';
 import {constants, SHADOW_PADDING} from './utils/constants.js';
 import {_log, stackMsg} from './utils/log.js';
@@ -32,7 +32,7 @@ export default class RoundedWindowCornersReborn extends Extension {
     private _orig_prep_workspace_swt!: (workspaceIndices: number[]) => void;
     private _orig_finish_workspace_swt!: typeof WorkspaceAnimationController.prototype._finishWorkspaceSwitch;
 
-    private _services: Services | null = null;
+    private _windowPicker: WindowPicker | null = null;
 
     enable() {
         init_settings(this.getSettings());
@@ -45,9 +45,9 @@ export default class RoundedWindowCornersReborn extends Extension {
         this._orig_finish_workspace_swt =
             WorkspaceAnimationController.prototype._finishWorkspaceSwitch;
 
-        this._services = new Services();
+        this._windowPicker = new WindowPicker();
 
-        this._services.export();
+        this._windowPicker.export();
 
         // Enable rounded corners effects when gnome-shell is ready
         //
@@ -291,7 +291,7 @@ export default class RoundedWindowCornersReborn extends Extension {
         // Remove the item to open preferences page in background menu
         UI.RestoreBackgroundMenu();
 
-        this._services?.unexport();
+        this._windowPicker?.unexport();
         disableEffect();
 
         // Disconnect all signals in global connections.get()
@@ -299,7 +299,7 @@ export default class RoundedWindowCornersReborn extends Extension {
         connections.del();
 
         // Set all props to null
-        this._services = null;
+        this._windowPicker = null;
 
         _log('Disabled');
 
