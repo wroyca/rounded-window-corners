@@ -389,7 +389,9 @@ function refreshShadow(actor: ExtensionsWindowActor) {
 
 /** Refresh the style of all shadow actors */
 function refreshAllShadows() {
-    global.get_window_actors().forEach(refreshShadow);
+    for (const actor of global.get_window_actors()) {
+        refreshShadow(actor);
+    }
 }
 
 /**
@@ -442,6 +444,8 @@ function refreshRoundedCorners(actor: ExtensionsWindowActor): void {
 
 /** Refresh rounded corners settings for all windows. */
 function refreshAllRoundedCorners() {
-    global.get_window_actors().forEach(refreshRoundedCorners);
+    for (const actor of global.get_window_actors()) {
+        refreshRoundedCorners(actor);
+    }
     refreshAllShadows();
 }
