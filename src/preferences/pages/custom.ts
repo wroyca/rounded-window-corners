@@ -1,10 +1,10 @@
 import Adw from 'gi://Adw';
+import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import type Gtk from 'gi://Gtk';
 
 import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
-import {connections} from '../../utils/connections.js';
-import {settings} from '../../utils/settings.js';
+import {getPref, setPref} from '../../utils/settings.js';
 import type {AppRowCallbacks, AppRowClass} from '../widgets/app_row.js';
 import {
     CustomEffectRow,
@@ -12,23 +12,26 @@ import {
 } from '../widgets/customeffect_row.js';
 import type {PaddingsRowClass} from '../widgets/paddings_row.js';
 
-import {uri} from '../../utils/io.js';
-import type {CustomRoundedCornersCfg} from '../../utils/types.js';
+import type {CustomRoundedCornerSettings} from '../../utils/types.js';
 
 export const Custom = GObject.registerClass(
     {
-        Template: uri(import.meta.url, 'custom.ui'),
+        Template: GLib.uri_resolve_relative(
+            import.meta.url,
+            'custom.ui',
+            GLib.UriFlags.NONE,
+        ),
         GTypeName: 'PrefsCustom',
         InternalChildren: ['custom_group'],
     },
     class extends Adw.PreferencesPage {
         private declare _custom_group: Adw.PreferencesGroup;
 
-        private declare _settings_cfg: CustomRoundedCornersCfg;
+        private declare _settings_cfg: CustomRoundedCornerSettings;
 
         constructor() {
             super();
-            this._settings_cfg = settings().custom_rounded_corner_settings;
+            this._settings_cfg = getPref('custom-rounded-corner-settings');
 
             for (const title in this._settings_cfg) {
                 this.add_window(undefined, title);
@@ -52,8 +55,7 @@ export const Custom = GObject.registerClass(
 
         private delete_row(row: AppRowClass) {
             delete this._settings_cfg[row.subtitle];
-            settings().custom_rounded_corner_settings = this._settings_cfg;
-            this.disconnect_row(row);
+            setPref('custom-rounded-corner-settings', this._settings_cfg);
             this._custom_group.remove(row);
         }
 
@@ -75,139 +77,124 @@ export const Custom = GObject.registerClass(
             }
 
             if (old_title === '') {
-                this._settings_cfg[new_title] =
-                    settings().global_rounded_corner_settings;
+                this._settings_cfg[new_title] = getPref(
+                    'global-rounded-corner-settings',
+                );
             } else {
                 const cfg = this._settings_cfg[old_title];
                 delete this._settings_cfg[old_title];
                 this._settings_cfg[new_title] = cfg;
-                this.disconnect_row(row);
             }
 
             this.setup_row(row, new_title);
-            settings().custom_rounded_corner_settings = this._settings_cfg;
+            setPref('custom-rounded-corner-settings', this._settings_cfg);
             return true;
         }
 
         private setup_row(row: AppRowClass, title: string) {
-            const c = connections.get();
             if (!(row instanceof CustomEffectRowClass)) {
                 return;
             }
             const r = row as CustomEffectRowClass;
 
-            c.connect(r, 'notify::subtitle', (row: CustomEffectRowClass) => {
+            r.connect('notify::subtitle', (row: CustomEffectRowClass) => {
                 row.check_state();
             });
             r.enabled_row.set_active(this._settings_cfg[title].enabled);
-            c.connect(r.enabled_row, 'notify::active', (row: Adw.SwitchRow) => {
+            r.enabled_row.connect('notify::active', (row: Adw.SwitchRow) => {
                 r.check_state();
                 this._settings_cfg[title].enabled = row.get_active();
-                settings().custom_rounded_corner_settings = this._settings_cfg;
+                setPref('custom-rounded-corner-settings', this._settings_cfg);
             });
-            r.corner_radius.set_value(this._settings_cfg[title].border_radius);
-            c.connect(
-                r.corner_radius,
-                'value-changed',
-                (adj: Gtk.Adjustment) => {
-                    this._settings_cfg[title].border_radius = adj.get_value();
-                    settings().custom_rounded_corner_settings =
-                        this._settings_cfg;
-                },
-            );
+            r.corner_radius.set_value(this._settings_cfg[title].borderRadius);
+            r.corner_radius.connect('value-changed', (adj: Gtk.Adjustment) => {
+                this._settings_cfg[title].borderRadius = adj.get_value();
+                setPref('custom-rounded-corner-settings', this._settings_cfg);
+            });
             r.corner_smoothing.set_value(this._settings_cfg[title].smoothing);
-            c.connect(
-                r.corner_smoothing,
+            r.corner_smoothing.connect(
                 'value-changed',
                 (adj: Gtk.Adjustment) => {
                     this._settings_cfg[title].smoothing = adj.get_value();
-                    settings().custom_rounded_corner_settings =
-                        this._settings_cfg;
+                    setPref(
+                        'custom-rounded-corner-settings',
+                        this._settings_cfg,
+                    );
                 },
             );
             r.keep_for_maximized.set_active(
-                this._settings_cfg[title].keep_rounded_corners.maximized,
+                this._settings_cfg[title].keepRoundedCorners.maximized,
             );
-            c.connect(
-                r.keep_for_maximized,
+            r.keep_for_maximized.connect(
                 'notify::active',
                 (row: Adw.SwitchRow) => {
-                    this._settings_cfg[title].keep_rounded_corners.maximized =
+                    this._settings_cfg[title].keepRoundedCorners.maximized =
                         row.get_active();
-                    settings().custom_rounded_corner_settings =
-                        this._settings_cfg;
+                    setPref(
+                        'custom-rounded-corner-settings',
+                        this._settings_cfg,
+                    );
                 },
             );
             r.keep_for_fullscreen.set_active(
-                this._settings_cfg[title].keep_rounded_corners.fullscreen,
+                this._settings_cfg[title].keepRoundedCorners.fullscreen,
             );
-            c.connect(
-                r.keep_for_fullscreen,
+            r.keep_for_fullscreen.connect(
                 'notify::active',
                 (row: Adw.SwitchRow) => {
-                    this._settings_cfg[title].keep_rounded_corners.fullscreen =
+                    this._settings_cfg[title].keepRoundedCorners.fullscreen =
                         row.get_active();
-                    settings().custom_rounded_corner_settings =
-                        this._settings_cfg;
+                    setPref(
+                        'custom-rounded-corner-settings',
+                        this._settings_cfg,
+                    );
                 },
             );
             r.paddings.paddingTop = this._settings_cfg[title].padding.top;
-            c.connect(
-                r.paddings,
+            r.paddings.connect(
                 'notify::padding-top',
                 (row: PaddingsRowClass) => {
                     this._settings_cfg[title].padding.top = row.paddingTop;
-                    settings().custom_rounded_corner_settings =
-                        this._settings_cfg;
+                    setPref(
+                        'custom-rounded-corner-settings',
+                        this._settings_cfg,
+                    );
                 },
             );
             r.paddings.paddingBottom = this._settings_cfg[title].padding.bottom;
-            c.connect(
-                r.paddings,
+            r.paddings.connect(
                 'notify::padding-bottom',
                 (row: PaddingsRowClass) => {
                     this._settings_cfg[title].padding.bottom =
                         row.paddingBottom;
-                    settings().custom_rounded_corner_settings =
-                        this._settings_cfg;
+                    setPref(
+                        'custom-rounded-corner-settings',
+                        this._settings_cfg,
+                    );
                 },
             );
             r.paddings.paddingStart = this._settings_cfg[title].padding.left;
-            c.connect(
-                r.paddings,
+            r.paddings.connect(
                 'notify::padding-start',
                 (row: PaddingsRowClass) => {
                     this._settings_cfg[title].padding.left = row.paddingStart;
-                    settings().custom_rounded_corner_settings =
-                        this._settings_cfg;
+                    setPref(
+                        'custom-rounded-corner-settings',
+                        this._settings_cfg,
+                    );
                 },
             );
             r.paddings.paddingEnd = this._settings_cfg[title].padding.right;
-            c.connect(
-                r.paddings,
+            r.paddings.connect(
                 'notify::padding-end',
                 (row: PaddingsRowClass) => {
                     this._settings_cfg[title].padding.right = row.paddingEnd;
-                    settings().custom_rounded_corner_settings =
-                        this._settings_cfg;
+                    setPref(
+                        'custom-rounded-corner-settings',
+                        this._settings_cfg,
+                    );
                 },
             );
-        }
-
-        private disconnect_row(row: AppRowClass) {
-            const c = connections.get();
-            if (!(row instanceof CustomEffectRowClass)) {
-                return;
-            }
-            const r = row as CustomEffectRowClass;
-
-            c.disconnect_all(r);
-            c.disconnect_all(r.enabled_row);
-            c.disconnect_all(r.corner_radius);
-            c.disconnect_all(r.corner_smoothing);
-            c.disconnect_all(r.keep_for_maximized);
-            c.disconnect_all(r.keep_for_fullscreen);
-            c.disconnect_all(r.paddings);
         }
     },
 );

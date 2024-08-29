@@ -7,37 +7,39 @@
 import Clutter from 'gi://Clutter';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
-import Meta from 'gi://Meta';
 import St from 'gi://St';
 
 import {ClipShadowEffect} from '../effect/clip_shadow_effect.js';
 import {RoundedCornersEffect} from '../effect/rounded_corners_effect.js';
 import {
-    APP_SHADOWS,
     CLIP_SHADOW_EFFECT,
     ROUNDED_CORNERS_EFFECT,
-    SHADOW_PADDING,
 } from '../utils/constants.js';
-import {_log} from '../utils/log.js';
-import {settings} from '../utils/settings.js';
-import * as types from '../utils/types.js';
+import {logDebug} from '../utils/log.js';
+import {getPref} from '../utils/settings.js';
 import {
-    WindowScaleFactor,
+    computeBounds,
+    computeShadowActorOffset,
     computeWindowContentsOffset,
     getRoundedCornersCfg,
-    get_rounded_corners_effect as getRoundedCornersEffect,
+    getRoundedCornersEffect,
     shouldEnableEffect,
-} from '../utils/ui.js';
+    unwrapActor,
+    updateShadowActorStyle,
+    windowScaleFactor,
+} from './utils.js';
 
-import type {SchemasKeys} from '../utils/settings.js';
-import type {ExtensionsWindowActor} from '../utils/types.js';
+import type Meta from 'gi://Meta';
+import type {SchemaKey} from '../utils/settings.js';
+import type {RoundedWindowActor} from '../utils/types.js';
 
-export function onAddEffect(actor: ExtensionsWindowActor) {
-    _log(`opened: ${actor?.metaWindow.title}: ${actor}`);
+export function onAddEffect(actor: RoundedWindowActor) {
+    logDebug(`opened: ${actor?.metaWindow.title}: ${actor}`);
 
     const win = actor.metaWindow;
 
     if (!shouldEnableEffect(win)) {
+        logDebug(`Skipping ${win.title}`);
         return;
     }
 
@@ -45,13 +47,6 @@ export function onAddEffect(actor: ExtensionsWindowActor) {
         ROUNDED_CORNERS_EFFECT,
         new RoundedCornersEffect(),
     );
-
-    // Some applications on X11 use server-side decorations, so their shadows
-    // are drawn my Mutter rather than by the application itself. This disables
-    // the shadow for those windows.
-    if (actor.shadow_mode !== undefined) {
-        actor.shadow_mode = Meta.ShadowMode.FORCED_OFF;
-    }
 
     const shadow = createShadow(actor);
 
@@ -69,7 +64,7 @@ export function onAddEffect(actor: ExtensionsWindowActor) {
     }
 
     // Store shadow, app type, visible binding, so that we can access them later
-    actor.__rwcRoundedWindowInfo = {
+    actor.rwcCustomData = {
         shadow,
         unminimizedTimeoutId: 0,
     };
@@ -79,17 +74,12 @@ export function onAddEffect(actor: ExtensionsWindowActor) {
     refreshShadow(actor);
 }
 
-export function onRemoveEffect(actor: ExtensionsWindowActor): void {
+export function onRemoveEffect(actor: RoundedWindowActor): void {
     const name = ROUNDED_CORNERS_EFFECT;
     unwrapActor(actor)?.remove_effect_by_name(name);
 
-    // Restore shadow for x11 windows
-    if (actor.shadow_mode) {
-        actor.shadow_mode = Meta.ShadowMode.AUTO;
-    }
-
     // Remove shadow actor
-    const shadow = actor.__rwcRoundedWindowInfo?.shadow;
+    const shadow = actor.rwcCustomData?.shadow;
     if (shadow) {
         global.windowGroup.remove_child(shadow);
         shadow.clear_effects();
@@ -97,33 +87,33 @@ export function onRemoveEffect(actor: ExtensionsWindowActor): void {
     }
 
     // Remove all timeout handler
-    const timeoutId = actor.__rwcRoundedWindowInfo?.unminimizedTimeoutId;
+    const timeoutId = actor.rwcCustomData?.unminimizedTimeoutId;
     if (timeoutId) {
         GLib.source_remove(timeoutId);
     }
-    delete actor.__rwcRoundedWindowInfo;
+    delete actor.rwcCustomData;
 }
 
-export function onMinimize(actor: ExtensionsWindowActor): void {
+export function onMinimize(actor: RoundedWindowActor): void {
     // Compatibility with "Compiz alike magic lamp effect".
     // When minimizing a window, disable the shadow to make the magic lamp effect
     // work.
     const magicLampEffect = actor.get_effect('minimize-magic-lamp-effect');
-    const shadow = actor.__rwcRoundedWindowInfo?.shadow;
+    const shadow = actor.rwcCustomData?.shadow;
     const roundedCornersEffect = getRoundedCornersEffect(actor);
     if (magicLampEffect && shadow && roundedCornersEffect) {
-        _log('Minimizing with magic lamp effect');
+        logDebug('Minimizing with magic lamp effect');
         shadow.visible = false;
         roundedCornersEffect.enabled = false;
     }
 }
 
-export function onUnminimize(actor: ExtensionsWindowActor): void {
+export function onUnminimize(actor: RoundedWindowActor): void {
     // Compatibility with "Compiz alike magic lamp effect".
     // When unminimizing a window, wait until the effect is completed before
     // showing the shadow.
     const magicLampEffect = actor.get_effect('unminimize-magic-lamp-effect');
-    const shadow = actor.__rwcRoundedWindowInfo?.shadow;
+    const shadow = actor.rwcCustomData?.shadow;
     const roundedCornersEffect = getRoundedCornersEffect(actor);
     if (magicLampEffect && shadow && roundedCornersEffect) {
         shadow.visible = false;
@@ -133,7 +123,7 @@ export function onUnminimize(actor: ExtensionsWindowActor): void {
         const id = timer.connect('new-frame', source => {
             // Wait until the effect is 98% completed
             if (source.get_progress() > 0.98) {
-                _log('Unminimizing with magic lamp effect');
+                logDebug('Unminimizing with magic lamp effect');
                 shadow.visible = true;
                 roundedCornersEffect.enabled = true;
                 source.disconnect(id);
@@ -146,8 +136,7 @@ export function onUnminimize(actor: ExtensionsWindowActor): void {
 
 export function onRestacked(): void {
     for (const actor of global.get_window_actors()) {
-        const shadow = (actor as ExtensionsWindowActor).__rwcRoundedWindowInfo
-            ?.shadow;
+        const shadow = (actor as RoundedWindowActor).rwcCustomData?.shadow;
 
         if (!(actor.visible && shadow)) {
             continue;
@@ -161,11 +150,11 @@ export const onSizeChanged = refreshRoundedCorners;
 
 export const onFocusChanged = refreshShadow;
 
-export function onSettingsChanged(key: SchemasKeys): void {
+export function onSettingsChanged(key: SchemaKey): void {
     switch (key) {
         case 'skip-libadwaita-app':
         case 'skip-libhandy-app':
-        case 'black-list':
+        case 'blacklist':
             refreshEffectState();
             break;
         case 'focused-shadow':
@@ -181,19 +170,6 @@ export function onSettingsChanged(key: SchemasKeys): void {
             break;
         default:
     }
-}
-
-/**
- * Get the actor that rounded corners should be applied to.
- * In Wayland, the effect is applied to WindowActor, but in X11, it is applied
- * to WindowActor.first_child.
- *
- * @param actor - The window actor to unwrap.
- * @returns The correct actor that the effect should be applied to.
- */
-function unwrapActor(actor: Meta.WindowActor): Clutter.Actor | null {
-    const type = actor.metaWindow.get_client_type();
-    return type === Meta.WindowClientType.X11 ? actor.get_first_child() : actor;
 }
 
 /**
@@ -233,120 +209,6 @@ function createShadow(actor: Meta.WindowActor): St.Bin {
     return shadow;
 }
 
-/** Compute outer bounds for rounded corners of a window
- *
- * @param actor - The window actor to compute the bounds for.
- * @param [x, y, width, height] - The content offsets of the window actor.
- * */
-function computeBounds(
-    actor: Meta.WindowActor,
-    [x, y, width, height]: [number, number, number, number],
-): types.Bounds {
-    const bounds = {
-        x1: x + 1,
-        y1: y + 1,
-        x2: x + actor.width + width,
-        y2: y + actor.height + height,
-    };
-
-    // Kitty draws its window decoration by itself, so we need to manually
-    // clip its shadow and recompute the outer bounds for it.
-    if (settings().tweak_kitty_terminal) {
-        if (
-            actor.metaWindow.get_client_type() ===
-                Meta.WindowClientType.WAYLAND &&
-            actor.metaWindow.get_wm_class_instance() === 'kitty'
-        ) {
-            const [x1, y1, x2, y2] = APP_SHADOWS.kitty;
-            const scale = WindowScaleFactor(actor.metaWindow);
-            bounds.x1 += x1 * scale;
-            bounds.y1 += y1 * scale;
-            bounds.x2 -= x2 * scale;
-            bounds.y2 -= y2 * scale;
-        }
-    }
-
-    return bounds;
-}
-
-/**
- * Compute the offset of the shadow actor for a window.
- *
- * @param actor - The window actor to compute the offset for.
- * @param [offsetX, offsetY, offsetWidth, offsetHeight] - The content offsets of the window actor.
- */
-function computeShadowActorOffset(
-    actor: Meta.WindowActor,
-    [offsetX, offsetY, offsetWidth, offsetHeight]: [
-        number,
-        number,
-        number,
-        number,
-    ],
-): number[] {
-    const win = actor.metaWindow;
-    const shadowPadding = SHADOW_PADDING * WindowScaleFactor(win);
-
-    return [
-        offsetX - shadowPadding,
-        offsetY - shadowPadding,
-        2 * shadowPadding + offsetWidth,
-        2 * shadowPadding + offsetHeight,
-    ];
-}
-
-/** Update css style of a shadow actor
- *
- * @param win - The window to update the style for.
- * @param actor - The shadow actor to update the style for.
- * @param borderRadiusRaw - The border radius of the shadow actor.
- * @param shadow - The shadow settings for the window.
- * @param padding - The padding of the shadow actor.
- * */
-function updateShadowActorStyle(
-    win: Meta.Window,
-    actor: St.Bin,
-    borderRadiusRaw = settings().global_rounded_corner_settings.border_radius,
-    shadow = settings().focused_shadow,
-    padding = settings().global_rounded_corner_settings.padding,
-) {
-    const {left, right, top, bottom} = padding;
-
-    // Increase border_radius when smoothing is on
-    let borderRadius = borderRadiusRaw;
-    if (settings().global_rounded_corner_settings !== null) {
-        borderRadius *=
-            1.0 + settings().global_rounded_corner_settings.smoothing;
-    }
-
-    // If there are two monitors with different scale factors, the scale of
-    // the window may be different from the scale that has to be applied in
-    // the css, so we have to adjust the scale factor accordingly.
-
-    const originalScale = St.ThemeContext.get_for_stage(
-        global.stage as Clutter.Stage,
-    ).scaleFactor;
-
-    const scale = WindowScaleFactor(win) / originalScale;
-
-    actor.style = `padding: ${SHADOW_PADDING * scale}px;`;
-
-    const child = actor.firstChild as St.Bin;
-
-    child.style =
-        win.maximizedHorizontally || win.maximizedVertically || win.fullscreen
-            ? 'opacity: 0;'
-            : `background: white;
-               border-radius: ${borderRadius * scale}px;
-               ${types.box_shadow_css(shadow, scale)};
-               margin: ${top * scale}px
-                       ${right * scale}px
-                       ${bottom * scale}px
-                       ${left * scale}px;`;
-
-    child.queue_redraw();
-}
-
 /** Traverse all windows, and check if they should have rounded corners. */
 function refreshEffectState() {
     for (const actor of global.get_window_actors()) {
@@ -371,20 +233,20 @@ function refreshEffectState() {
  *
  * @param actor - The window actor to refresh the shadow for.
  */
-function refreshShadow(actor: ExtensionsWindowActor) {
+function refreshShadow(actor: RoundedWindowActor) {
     const win = actor.metaWindow;
-    const shadow = actor.__rwcRoundedWindowInfo?.shadow;
+    const shadow = actor.rwcCustomData?.shadow;
     if (!shadow) {
         return;
     }
 
     const shadowSettings = win.appears_focused
-        ? settings().focused_shadow
-        : settings().unfocused_shadow;
+        ? getPref('focused-shadow')
+        : getPref('unfocused-shadow');
 
-    const {border_radius, padding} = getRoundedCornersCfg(win);
+    const {borderRadius, padding} = getRoundedCornersCfg(win);
 
-    updateShadowActorStyle(win, shadow, border_radius, shadowSettings, padding);
+    updateShadowActorStyle(win, shadow, borderRadius, shadowSettings, padding);
 }
 
 /** Refresh the style of all shadow actors */
@@ -399,10 +261,10 @@ function refreshAllShadows() {
  *
  * @param actor - The window actor to refresh the rounded corners settings for.
  */
-function refreshRoundedCorners(actor: ExtensionsWindowActor): void {
+function refreshRoundedCorners(actor: RoundedWindowActor): void {
     const win = actor.metaWindow;
 
-    const windowInfo = actor.__rwcRoundedWindowInfo;
+    const windowInfo = actor.rwcCustomData;
     const effect = getRoundedCornersEffect(actor);
 
     if (!(effect && windowInfo)) {
@@ -422,12 +284,12 @@ function refreshRoundedCorners(actor: ExtensionsWindowActor): void {
 
     // When window size is changed, update uniforms for corner rounding shader.
     effect.update_uniforms(
-        WindowScaleFactor(win),
+        windowScaleFactor(win),
         cfg,
         computeBounds(actor, windowContentOffset),
         {
-            width: settings().border_width,
-            color: settings().border_color,
+            width: getPref('border-width'),
+            color: getPref('border-color'),
         },
     );
 

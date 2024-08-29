@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 11:54-0700\n"
+"POT-Creation-Date: 2024-09-14 21:07+0300\n"
 "PO-Revision-Date: 2023-04-25 17:52+0000\n"
 "Last-Translator: Fjuro <ifjuro@proton.me>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/rounded-window-"
@@ -142,7 +142,7 @@ msgid "Debug"
 msgstr "Ladění"
 
 #: src/preferences/pages/general.ui:174
-#: src/preferences/widgets/reset_page.ts:61
+#: src/preferences/widgets/reset_page.ts:64
 msgid "Enable Log"
 msgstr "Povolit protokol"
 
@@ -260,17 +260,17 @@ msgstr ""
 msgid "_Reset"
 msgstr ""
 
-#: src/preferences/widgets/app_row.ts:28
+#: src/preferences/widgets/app_row.ts:27
 #, fuzzy
 msgid "Window class"
 msgstr "Stín okna"
 
-#: src/preferences/widgets/app_row.ts:48
+#: src/preferences/widgets/app_row.ts:47
 #, fuzzy
 msgid "Expand this row, to pick a window"
 msgstr "Rozbalte tento řádek a vyberte okno."
 
-#: src/preferences/widgets/app_row.ts:92
+#: src/preferences/widgets/app_row.ts:86
 #, fuzzy
 msgid "Can't pick window from this position"
 msgstr "Nelze vybrat okno z této pozice"
@@ -300,53 +300,52 @@ msgstr "Zachovat zaoblené rohy v režimu celé obrazovky"
 msgid "Always clip rounded corners even for fullscreen window"
 msgstr "Při zobrazení okna na celou obrazovku vždy zachovat zaoblené rohy."
 
-#: src/preferences/widgets/reset_page.ts:54
+#: src/preferences/widgets/reset_page.ts:57
 msgid "Skip LibAdwaita Applications"
 msgstr "Přeskočit aplikace LibAdwaita"
 
-#: src/preferences/widgets/reset_page.ts:56
+#: src/preferences/widgets/reset_page.ts:59
 msgid "Skip LibHandy Applications"
 msgstr "Přeskočit aplikace LibHandy"
 
-#: src/preferences/widgets/reset_page.ts:57
+#: src/preferences/widgets/reset_page.ts:60
 msgid "Focus Window Shadow Style"
 msgstr "Styl stínu zaměřeného okna"
 
-#: src/preferences/widgets/reset_page.ts:58
+#: src/preferences/widgets/reset_page.ts:61
 msgid "Unfocus Window Shadow Style"
 msgstr "Styl stínu nezaměřeného okna"
 
-#: src/preferences/widgets/reset_page.ts:59
+#: src/preferences/widgets/reset_page.ts:62
 msgid "Border Width"
 msgstr "Šířka okraje"
 
-#: src/preferences/widgets/reset_page.ts:60
+#: src/preferences/widgets/reset_page.ts:63
 msgid "Border Color"
 msgstr "Barva okraje"
 
-#: src/preferences/widgets/reset_page.ts:65
+#: src/preferences/widgets/reset_page.ts:68
 msgid "Border Radius"
 msgstr "Poloměr okraje"
 
-#: src/preferences/widgets/reset_page.ts:66
+#: src/preferences/widgets/reset_page.ts:69
 msgid "Padding"
 msgstr "Výplň"
 
-#: src/preferences/widgets/reset_page.ts:68
+#: src/preferences/widgets/reset_page.ts:71
 msgid "Keep Rounded Corners when Maximized or Fullscreen"
 msgstr "Zachovat zaoblené rohy při maximalizaci nebo režimu na celou obrazovku"
 
-#: src/preferences/widgets/reset_page.ts:70
+#: src/preferences/widgets/reset_page.ts:73
 msgid "Corner Smoothing"
 msgstr "Vyhlazování rohů"
 
-#: src/utils/prefs.ts:48
-msgid "Expand this row to pick a window."
-msgstr "Rozbalte tento řádek a vyberte okno."
-
-#: src/utils/ui.ts:105 src/utils/ui.ts:134
+#: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
 msgid "Rounded Corners Settings..."
 msgstr "Nastavení zaoblených rohů..."
+
+#~ msgid "Expand this row to pick a window."
+#~ msgstr "Rozbalte tento řádek a vyberte okno."
 
 #~ msgid ""
 #~ "Setup different clip padding by add window into this list.\n"

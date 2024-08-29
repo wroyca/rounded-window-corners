@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 11:54-0700\n"
+"POT-Creation-Date: 2024-09-14 21:07+0300\n"
 "PO-Revision-Date: 2024-02-25 14:01+0000\n"
 "Last-Translator: repex97 <repetto.andrea025@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/rounded-window-"
@@ -144,7 +144,7 @@ msgid "Debug"
 msgstr "Debug"
 
 #: src/preferences/pages/general.ui:174
-#: src/preferences/widgets/reset_page.ts:61
+#: src/preferences/widgets/reset_page.ts:64
 msgid "Enable Log"
 msgstr "Abilita i Log"
 
@@ -262,17 +262,17 @@ msgstr ""
 msgid "_Reset"
 msgstr ""
 
-#: src/preferences/widgets/app_row.ts:28
+#: src/preferences/widgets/app_row.ts:27
 #, fuzzy
 msgid "Window class"
 msgstr "Ombra della Finestra"
 
-#: src/preferences/widgets/app_row.ts:48
+#: src/preferences/widgets/app_row.ts:47
 #, fuzzy
 msgid "Expand this row, to pick a window"
 msgstr "Espandi questa riga per selezionare una finestra."
 
-#: src/preferences/widgets/app_row.ts:92
+#: src/preferences/widgets/app_row.ts:86
 #, fuzzy
 msgid "Can't pick window from this position"
 msgstr "Impossibile selezionare la finestra da questa posizione"
@@ -302,53 +302,52 @@ msgstr "Mantieni I Bordi Arrotondati In Schermo Intero"
 msgid "Always clip rounded corners even for fullscreen window"
 msgstr "Tieni i bordi arrotondati quando la finestra è a schermo intero."
 
-#: src/preferences/widgets/reset_page.ts:54
+#: src/preferences/widgets/reset_page.ts:57
 msgid "Skip LibAdwaita Applications"
 msgstr "Ignora Applicazioni LibAdwaita"
 
-#: src/preferences/widgets/reset_page.ts:56
+#: src/preferences/widgets/reset_page.ts:59
 msgid "Skip LibHandy Applications"
 msgstr "Ignora Applicazioni LibHandy"
 
-#: src/preferences/widgets/reset_page.ts:57
+#: src/preferences/widgets/reset_page.ts:60
 msgid "Focus Window Shadow Style"
 msgstr "Stile dell'ombra della finestra attiva"
 
-#: src/preferences/widgets/reset_page.ts:58
+#: src/preferences/widgets/reset_page.ts:61
 msgid "Unfocus Window Shadow Style"
 msgstr "Stile ombreggiatura finestra in secondo piano"
 
-#: src/preferences/widgets/reset_page.ts:59
+#: src/preferences/widgets/reset_page.ts:62
 msgid "Border Width"
 msgstr "Larghezza del bordo"
 
-#: src/preferences/widgets/reset_page.ts:60
+#: src/preferences/widgets/reset_page.ts:63
 msgid "Border Color"
 msgstr "Colore del bordo"
 
-#: src/preferences/widgets/reset_page.ts:65
+#: src/preferences/widgets/reset_page.ts:68
 msgid "Border Radius"
 msgstr "Raggio del bordo"
 
-#: src/preferences/widgets/reset_page.ts:66
+#: src/preferences/widgets/reset_page.ts:69
 msgid "Padding"
 msgstr "Padding"
 
-#: src/preferences/widgets/reset_page.ts:68
+#: src/preferences/widgets/reset_page.ts:71
 msgid "Keep Rounded Corners when Maximized or Fullscreen"
 msgstr "Mantieni I Bordi Arrotondati Quando Massimizzato o a Schermo Intero"
 
-#: src/preferences/widgets/reset_page.ts:70
+#: src/preferences/widgets/reset_page.ts:73
 msgid "Corner Smoothing"
 msgstr "Smussamento del bordo"
 
-#: src/utils/prefs.ts:48
-msgid "Expand this row to pick a window."
-msgstr "Espandi questa riga per selezionare una finestra."
-
-#: src/utils/ui.ts:105 src/utils/ui.ts:134
+#: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
 msgid "Rounded Corners Settings..."
 msgstr "Impostazioni per i Bordi Arrotondati..."
+
+#~ msgid "Expand this row to pick a window."
+#~ msgstr "Espandi questa riga per selezionare una finestra."
 
 #~ msgid ""
 #~ "Setup different clip padding by add window into this list.\n"

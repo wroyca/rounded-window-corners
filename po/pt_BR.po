@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 11:54-0700\n"
+"POT-Creation-Date: 2024-09-14 21:07+0300\n"
 "PO-Revision-Date: 2023-11-12 08:23+0000\n"
 "Last-Translator: Matheus <cybercountry@proton.me>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -142,7 +142,7 @@ msgid "Debug"
 msgstr "Debug"
 
 #: src/preferences/pages/general.ui:174
-#: src/preferences/widgets/reset_page.ts:61
+#: src/preferences/widgets/reset_page.ts:64
 msgid "Enable Log"
 msgstr "Habilitar Log"
 
@@ -260,17 +260,17 @@ msgstr ""
 msgid "_Reset"
 msgstr ""
 
-#: src/preferences/widgets/app_row.ts:28
+#: src/preferences/widgets/app_row.ts:27
 #, fuzzy
 msgid "Window class"
 msgstr "Sombra da janela"
 
-#: src/preferences/widgets/app_row.ts:48
+#: src/preferences/widgets/app_row.ts:47
 #, fuzzy
 msgid "Expand this row, to pick a window"
 msgstr "Expanda esta linha para escolher uma janela."
 
-#: src/preferences/widgets/app_row.ts:92
+#: src/preferences/widgets/app_row.ts:86
 #, fuzzy
 msgid "Can't pick window from this position"
 msgstr "Não é possível selecionar uma janela a partir desta posição"
@@ -303,53 +303,52 @@ msgid "Always clip rounded corners even for fullscreen window"
 msgstr ""
 "Sempre mantenha os cantos arredondados quando a janela estiver em tela cheia."
 
-#: src/preferences/widgets/reset_page.ts:54
+#: src/preferences/widgets/reset_page.ts:57
 msgid "Skip LibAdwaita Applications"
 msgstr "Ignorar Aplicativos Usando LibAdwaita"
 
-#: src/preferences/widgets/reset_page.ts:56
+#: src/preferences/widgets/reset_page.ts:59
 msgid "Skip LibHandy Applications"
 msgstr "Ignorar Aplicativos Usando LibHandy"
 
-#: src/preferences/widgets/reset_page.ts:57
+#: src/preferences/widgets/reset_page.ts:60
 msgid "Focus Window Shadow Style"
 msgstr "Estilo de Sombra da Janela Focada"
 
-#: src/preferences/widgets/reset_page.ts:58
+#: src/preferences/widgets/reset_page.ts:61
 msgid "Unfocus Window Shadow Style"
 msgstr "Estilo de Sombra da Janela Desfocada"
 
-#: src/preferences/widgets/reset_page.ts:59
+#: src/preferences/widgets/reset_page.ts:62
 msgid "Border Width"
 msgstr "Largura da Borda"
 
-#: src/preferences/widgets/reset_page.ts:60
+#: src/preferences/widgets/reset_page.ts:63
 msgid "Border Color"
 msgstr "Cor da Borda"
 
-#: src/preferences/widgets/reset_page.ts:65
+#: src/preferences/widgets/reset_page.ts:68
 msgid "Border Radius"
 msgstr "Raio da Borda"
 
-#: src/preferences/widgets/reset_page.ts:66
+#: src/preferences/widgets/reset_page.ts:69
 msgid "Padding"
 msgstr "Margem"
 
-#: src/preferences/widgets/reset_page.ts:68
+#: src/preferences/widgets/reset_page.ts:71
 msgid "Keep Rounded Corners when Maximized or Fullscreen"
 msgstr "Manter Cantos Arredondados ao Maximizar ou em Tela Cheia"
 
-#: src/preferences/widgets/reset_page.ts:70
+#: src/preferences/widgets/reset_page.ts:73
 msgid "Corner Smoothing"
 msgstr "Suavização dos Cantos"
 
-#: src/utils/prefs.ts:48
-msgid "Expand this row to pick a window."
-msgstr "Expanda esta linha para escolher uma janela."
-
-#: src/utils/ui.ts:105 src/utils/ui.ts:134
+#: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
 msgid "Rounded Corners Settings..."
 msgstr "Configurações de Cantos Arredondados..."
+
+#~ msgid "Expand this row to pick a window."
+#~ msgstr "Expanda esta linha para escolher uma janela."
 
 #~ msgid ""
 #~ "Setup different clip padding by add window into this list.\n"

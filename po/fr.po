@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 11:54-0700\n"
+"POT-Creation-Date: 2024-09-14 21:07+0300\n"
 "PO-Revision-Date: 2023-10-11 16:02+0000\n"
 "Last-Translator: luxluth <delphin.blehoussi93@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/rounded-window-"
@@ -142,7 +142,7 @@ msgid "Debug"
 msgstr "Débogage"
 
 #: src/preferences/pages/general.ui:174
-#: src/preferences/widgets/reset_page.ts:61
+#: src/preferences/widgets/reset_page.ts:64
 msgid "Enable Log"
 msgstr "Activer les journaux"
 
@@ -260,17 +260,17 @@ msgstr ""
 msgid "_Reset"
 msgstr ""
 
-#: src/preferences/widgets/app_row.ts:28
+#: src/preferences/widgets/app_row.ts:27
 #, fuzzy
 msgid "Window class"
 msgstr "Ombre de la fenêtre"
 
-#: src/preferences/widgets/app_row.ts:48
+#: src/preferences/widgets/app_row.ts:47
 #, fuzzy
 msgid "Expand this row, to pick a window"
 msgstr "Développer la ligne pour choisir une fenêtre."
 
-#: src/preferences/widgets/app_row.ts:92
+#: src/preferences/widgets/app_row.ts:86
 #, fuzzy
 msgid "Can't pick window from this position"
 msgstr "Impossible de sélectionner une fenêtre depuis cette position"
@@ -303,53 +303,52 @@ msgid "Always clip rounded corners even for fullscreen window"
 msgstr ""
 "Toujours garder les coins arrondis quand la fenêtre est en plein écran."
 
-#: src/preferences/widgets/reset_page.ts:54
+#: src/preferences/widgets/reset_page.ts:57
 msgid "Skip LibAdwaita Applications"
 msgstr "Ne pas modifier les applications utilisant LibAdwaita"
 
-#: src/preferences/widgets/reset_page.ts:56
+#: src/preferences/widgets/reset_page.ts:59
 msgid "Skip LibHandy Applications"
 msgstr "Ne pas modifier les applications utilisant LibHandy"
 
-#: src/preferences/widgets/reset_page.ts:57
+#: src/preferences/widgets/reset_page.ts:60
 msgid "Focus Window Shadow Style"
 msgstr "Style de l'ombre de la fenêtre sélectionnée"
 
-#: src/preferences/widgets/reset_page.ts:58
+#: src/preferences/widgets/reset_page.ts:61
 msgid "Unfocus Window Shadow Style"
 msgstr "Style de l'ombre de la fenêtre non active"
 
-#: src/preferences/widgets/reset_page.ts:59
+#: src/preferences/widgets/reset_page.ts:62
 msgid "Border Width"
 msgstr "Largeur de la bordure"
 
-#: src/preferences/widgets/reset_page.ts:60
+#: src/preferences/widgets/reset_page.ts:63
 msgid "Border Color"
 msgstr "Couleur de la bordure"
 
-#: src/preferences/widgets/reset_page.ts:65
+#: src/preferences/widgets/reset_page.ts:68
 msgid "Border Radius"
 msgstr "Rayon du coin"
 
-#: src/preferences/widgets/reset_page.ts:66
+#: src/preferences/widgets/reset_page.ts:69
 msgid "Padding"
 msgstr "Bordure"
 
-#: src/preferences/widgets/reset_page.ts:68
+#: src/preferences/widgets/reset_page.ts:71
 msgid "Keep Rounded Corners when Maximized or Fullscreen"
 msgstr "Garder les coins arrondis quand maximisé ou en plein écran"
 
-#: src/preferences/widgets/reset_page.ts:70
+#: src/preferences/widgets/reset_page.ts:73
 msgid "Corner Smoothing"
 msgstr "Lissage du coin"
 
-#: src/utils/prefs.ts:48
-msgid "Expand this row to pick a window."
-msgstr "Développer la ligne pour choisir une fenêtre."
-
-#: src/utils/ui.ts:105 src/utils/ui.ts:134
+#: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
 msgid "Rounded Corners Settings..."
 msgstr "Paramètres de coins arrondis..."
+
+#~ msgid "Expand this row to pick a window."
+#~ msgstr "Développer la ligne pour choisir une fenêtre."
 
 #~ msgid ""
 #~ "Setup different clip padding by add window into this list.\n"

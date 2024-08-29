@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 11:54-0700\n"
+"POT-Creation-Date: 2024-09-14 21:07+0300\n"
 "PO-Revision-Date: 2023-03-02 12:35+0000\n"
 "Last-Translator: Yi <yilozt@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -140,7 +140,7 @@ msgid "Debug"
 msgstr "调试"
 
 #: src/preferences/pages/general.ui:174
-#: src/preferences/widgets/reset_page.ts:61
+#: src/preferences/widgets/reset_page.ts:64
 msgid "Enable Log"
 msgstr "启用日志"
 
@@ -257,17 +257,17 @@ msgstr ""
 msgid "_Reset"
 msgstr ""
 
-#: src/preferences/widgets/app_row.ts:28
+#: src/preferences/widgets/app_row.ts:27
 #, fuzzy
 msgid "Window class"
 msgstr "窗口阴影"
 
-#: src/preferences/widgets/app_row.ts:48
+#: src/preferences/widgets/app_row.ts:47
 #, fuzzy
 msgid "Expand this row, to pick a window"
 msgstr "展开此控件以选取窗口。"
 
-#: src/preferences/widgets/app_row.ts:92
+#: src/preferences/widgets/app_row.ts:86
 #, fuzzy
 msgid "Can't pick window from this position"
 msgstr "无法从此位置选取窗口"
@@ -297,53 +297,52 @@ msgstr "窗口全屏时保留圆角"
 msgid "Always clip rounded corners even for fullscreen window"
 msgstr "当窗口全屏时保留圆角效果。"
 
-#: src/preferences/widgets/reset_page.ts:54
+#: src/preferences/widgets/reset_page.ts:57
 msgid "Skip LibAdwaita Applications"
 msgstr "跳过 LibAdwaita 应用"
 
-#: src/preferences/widgets/reset_page.ts:56
+#: src/preferences/widgets/reset_page.ts:59
 msgid "Skip LibHandy Applications"
 msgstr "跳过 LibHandy 应用"
 
-#: src/preferences/widgets/reset_page.ts:57
+#: src/preferences/widgets/reset_page.ts:60
 msgid "Focus Window Shadow Style"
 msgstr "已获取焦点窗口阴影"
 
-#: src/preferences/widgets/reset_page.ts:58
+#: src/preferences/widgets/reset_page.ts:61
 msgid "Unfocus Window Shadow Style"
 msgstr "未获取焦点窗口阴影"
 
-#: src/preferences/widgets/reset_page.ts:59
+#: src/preferences/widgets/reset_page.ts:62
 msgid "Border Width"
 msgstr "边框大小"
 
-#: src/preferences/widgets/reset_page.ts:60
+#: src/preferences/widgets/reset_page.ts:63
 msgid "Border Color"
 msgstr "边框颜色"
 
-#: src/preferences/widgets/reset_page.ts:65
+#: src/preferences/widgets/reset_page.ts:68
 msgid "Border Radius"
 msgstr "圆角半径"
 
-#: src/preferences/widgets/reset_page.ts:66
+#: src/preferences/widgets/reset_page.ts:69
 msgid "Padding"
 msgstr "剪裁边距"
 
-#: src/preferences/widgets/reset_page.ts:68
+#: src/preferences/widgets/reset_page.ts:71
 msgid "Keep Rounded Corners when Maximized or Fullscreen"
 msgstr "在窗口最大化或全屏时保留圆角"
 
-#: src/preferences/widgets/reset_page.ts:70
+#: src/preferences/widgets/reset_page.ts:73
 msgid "Corner Smoothing"
 msgstr "圆角平滑程度"
 
-#: src/utils/prefs.ts:48
-msgid "Expand this row to pick a window."
-msgstr "展开此控件以选取窗口。"
-
-#: src/utils/ui.ts:105 src/utils/ui.ts:134
+#: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
 msgid "Rounded Corners Settings..."
 msgstr "圆角设置…"
+
+#~ msgid "Expand this row to pick a window."
+#~ msgstr "展开此控件以选取窗口。"
 
 #~ msgid ""
 #~ "Setup different clip padding by add window into this list.\n"

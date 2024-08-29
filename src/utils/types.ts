@@ -1,63 +1,55 @@
-import type Clutter from 'gi://Clutter';
-import type GObject from 'gi://GObject';
+/** @file Provides types used throughout the codebase, mostly for storing settings. */
+
 import type Meta from 'gi://Meta';
 import type St from 'gi://St';
 
 /** Bounds of rounded corners  */
-export class Bounds {
-    x1 = 0;
-    y1 = 0;
-    x2 = 0;
-    y2 = 0;
-}
+export type Bounds = {
+    x1: number;
+    y1: number;
+    x2: number;
+    y2: number;
+};
 
-export class Padding {
-    left = 0;
-    right = 0;
-    top = 0;
-    bottom = 0;
-}
-
-/** Store into settings, rounded corners configuration  */
-export interface RoundedCornersCfg {
-    keep_rounded_corners: {
+/** Settings for corner rounding. */
+export type RoundedCornerSettings = {
+    keepRoundedCorners: {
         maximized: boolean;
         fullscreen: boolean;
     };
-    border_radius: number;
+    borderRadius: number;
     smoothing: number;
-    padding: Padding;
+    padding: {
+        left: number;
+        right: number;
+        top: number;
+        bottom: number;
+    };
     enabled: boolean;
-}
-
-export interface CustomRoundedCornersCfg {
-    [wm_class_instance: string]: RoundedCornersCfg;
-}
-
-export interface BoxShadow {
-    opacity: number;
-    spread_radius: number;
-    blur_offset: number;
-    vertical_offset: number;
-    horizontal_offset: number;
-}
-
-export const box_shadow_css = (box_shadow: BoxShadow, scale = 1) => {
-    return `box-shadow: ${box_shadow.horizontal_offset * scale}px
-          ${box_shadow.vertical_offset * scale}px
-          ${box_shadow.blur_offset * scale}px
-          ${box_shadow.spread_radius * scale}px
-          rgba(0,0,0, ${box_shadow.opacity / 100})`;
 };
 
-export type ExtensionsWindowActor = Meta.WindowActor & {
-    __rwcRoundedWindowInfo?: {
+/** Rounded corner settings exceptions for specific windows. */
+export type CustomRoundedCornerSettings = {
+    [wmClass: string]: RoundedCornerSettings;
+};
+
+/** Window shadow properties. */
+export type BoxShadow = {
+    opacity: number;
+    spreadRadius: number;
+    blurOffset: number;
+    verticalOffset: number;
+    horizontalOffset: number;
+};
+
+/**
+ * A window actor with rounded corners.
+ *
+ * This type is needed to store extra custom properties on a window actor.
+ */
+export type RoundedWindowActor = Meta.WindowActor & {
+    rwcCustomData?: {
         shadow: St.Bin;
         unminimizedTimeoutId: number;
     };
-    __rwc_blurred_window_info?: {
-        blur_actor: Clutter.Actor;
-        visible_binding: GObject.Binding;
-    };
-    shadow_mode?: Meta.ShadowMode;
 };

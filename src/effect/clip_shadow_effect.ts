@@ -4,11 +4,11 @@ import GObject from 'gi://GObject';
 import Shell from 'gi://Shell';
 
 // local modules
-import {loadShader} from '../utils/io.js';
+import {readShader} from '../utils/file.js';
 
 // ------------------------------------------------------------------- [imports]
 
-const {declarations, code} = loadShader(
+const [declarations, code] = readShader(
     import.meta.url,
     'shader/clip_shadow.frag',
 );

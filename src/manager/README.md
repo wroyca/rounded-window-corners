@@ -14,3 +14,7 @@ effect. It attaches the necessary signals to matching handlers on each effect.
 ## `event_handlers.ts`
 
 Contains the implementation of handlers for all of the events. 
+
+## `utils.ts`
+
+Provides various utility functions used withing signal handling code.

@@ -4,7 +4,7 @@ import Meta from 'gi://Meta';
 import Shell from 'gi://Shell';
 
 // local modules
-import {loadShader} from '../utils/io.js';
+import {readShader} from '../utils/file.js';
 import type * as types from '../utils/types.js';
 
 // types
@@ -13,7 +13,7 @@ import type Clutter from 'gi://Clutter';
 // --------------------------------------------------------------- [end imports]
 
 // Load fragment shader of rounded corners effect.
-const {declarations, code} = loadShader(
+const [declarations, code] = readShader(
     import.meta.url,
     'shader/rounded_corners.frag',
 );
@@ -80,7 +80,7 @@ export const RoundedCornersEffect = GObject.registerClass(
          */
         update_uniforms(
             scale_factor: number,
-            corners_cfg: types.RoundedCornersCfg,
+            corners_cfg: types.RoundedCornerSettings,
             outer_bounds: types.Bounds,
             border: {
                 width: number;
@@ -91,7 +91,7 @@ export const RoundedCornersEffect = GObject.registerClass(
             const border_width = border.width * scale_factor;
             const border_color = border.color;
 
-            const outer_radius = corners_cfg.border_radius * scale_factor;
+            const outer_radius = corners_cfg.borderRadius * scale_factor;
             const {padding, smoothing} = corners_cfg;
 
             const bounds = [

@@ -3,18 +3,16 @@
  * effect. See {@link enableEffect} for more information.
  */
 
-import {connections} from '../utils/connections.js';
-import {_log} from '../utils/log.js';
-import {settings} from '../utils/settings.js';
+import {logDebug} from '../utils/log.js';
+import {prefs} from '../utils/settings.js';
 import * as handlers from './event_handlers.js';
 
+import type GObject from 'gi://GObject';
 import type Gio from 'gi://Gio';
 import type Meta from 'gi://Meta';
 import type Shell from 'gi://Shell';
-import type {SchemasKeys} from '../utils/settings.js';
-import type {ExtensionsWindowActor} from '../utils/types.js';
-
-const connectionManager = connections.get();
+import type {SchemaKey} from '../utils/settings.js';
+import type {RoundedWindowActor} from '../utils/types.js';
 
 /**
  * The rounded corners effect has to perform some actions when differen events
@@ -26,24 +24,21 @@ const connectionManager = connections.get();
  */
 export function enableEffect() {
     // Update the effect when settings are changed.
-    connectionManager.connect(
-        settings().g_settings,
-        'changed',
-        (_: Gio.Settings, key: string) =>
-            handlers.onSettingsChanged(key as SchemasKeys),
+    connect(prefs, 'changed', (_: Gio.Settings, key: string) =>
+        handlers.onSettingsChanged(key as SchemaKey),
     );
 
     const wm = global.windowManager;
 
     // Add the effect to all windows when the extension is enabled.
     const windowActors = global.get_window_actors();
-    _log(`Initial window count: ${windowActors.length}`);
+    logDebug(`Initial window count: ${windowActors.length}`);
     for (const actor of windowActors) {
         applyEffectTo(actor);
     }
 
     // Add the effect to new windows when they are opened.
-    connectionManager.connect(
+    connect(
         global.display,
         'window-created',
         (_: Meta.Display, win: Meta.Window) => {
@@ -63,32 +58,22 @@ export function enableEffect() {
     );
 
     // Window minimized.
-    connectionManager.connect(
-        wm,
-        'minimize',
-        (_: Shell.WM, actor: Meta.WindowActor) => handlers.onMinimize(actor),
+    connect(wm, 'minimize', (_: Shell.WM, actor: Meta.WindowActor) =>
+        handlers.onMinimize(actor),
     );
 
     // Window unminimized.
-    connectionManager.connect(
-        wm,
-        'unminimize',
-        (_: Shell.WM, actor: Meta.WindowActor) => handlers.onUnminimize(actor),
+    connect(wm, 'unminimize', (_: Shell.WM, actor: Meta.WindowActor) =>
+        handlers.onUnminimize(actor),
     );
 
     // When closing the window, remove the effect from it.
-    connectionManager.connect(
-        wm,
-        'destroy',
-        (_: Shell.WM, actor: Meta.WindowActor) => removeEffectFrom(actor),
+    connect(wm, 'destroy', (_: Shell.WM, actor: Meta.WindowActor) =>
+        removeEffectFrom(actor),
     );
 
     // When windows are restacked, the order of shadow actors as well.
-    connectionManager.connect(
-        global.display,
-        'restacked',
-        handlers.onRestacked,
-    );
+    connect(global.display, 'restacked', handlers.onRestacked);
 }
 
 /** Disable the effect for all windows. */
@@ -97,7 +82,44 @@ export function disableEffect() {
         removeEffectFrom(actor);
     }
 
-    connectionManager?.disconnect_all();
+    disconnectAll();
+}
+
+const connections: {object: GObject.Object; id: number}[] = [];
+
+/**
+ * Connect a callback to an object signal and add it to the list of all
+ * connections. This allows to easily disconnect all signals when removing
+ * the effect.
+ *
+ * @param object - The object to connect the callback to.
+ * @param signal - The name of the signal.
+ * @param callback - The function to connect to the signal.
+ */
+function connect(
+    object: GObject.Object,
+    signal: string,
+    // Signal callbacks can have any return args and return types.
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+    callback: (...args: any[]) => any,
+) {
+    connections.push({
+        object: object,
+        id: object.connect(signal, callback),
+    });
+}
+
+/**
+ * Disconnect all connected signals from all actors or a specific object.
+ *
+ * @param object - If object is provided, only disconnect signals from it.
+ */
+function disconnectAll(object?: GObject.Object) {
+    for (const connection of connections) {
+        if (object === undefined || connection.object === object) {
+            connection.object.disconnect(connection.id);
+        }
+    }
 }
 
 /**
@@ -109,7 +131,7 @@ export function disableEffect() {
  *
  * @param actor - The window actor to apply the effect to.
  */
-function applyEffectTo(actor: ExtensionsWindowActor) {
+function applyEffectTo(actor: RoundedWindowActor) {
     // In wayland sessions, the surface actor of XWayland clients is sometimes
     // not ready when the window is created. In this case, we wait until it is
     // ready before applying the effect.
@@ -133,20 +155,18 @@ function applyEffectTo(actor: ExtensionsWindowActor) {
     // that? I have no idea. But without that, weird bugs can happen. For
     // example, when using Dash to Dock, all opened windows will be invisible
     // *unless they are pinned in the dock*. So yeah, GNOME is magic.
-    connectionManager.connect(actor, 'notify::size', () =>
-        handlers.onSizeChanged(actor),
-    );
-    connectionManager.connect(texture, 'size-changed', () => {
+    connect(actor, 'notify::size', () => handlers.onSizeChanged(actor));
+    connect(texture, 'size-changed', () => {
         handlers.onSizeChanged(actor);
     });
 
     // Window focus changed.
-    connectionManager.connect(actor.metaWindow, 'notify::appears-focused', () =>
+    connect(actor.metaWindow, 'notify::appears-focused', () =>
         handlers.onFocusChanged(actor),
     );
 
     // Workspace or monitor of the window changed.
-    connectionManager.connect(actor.metaWindow, 'workspace-changed', () => {
+    connect(actor.metaWindow, 'workspace-changed', () => {
         handlers.onFocusChanged(actor);
     });
 
@@ -158,11 +178,9 @@ function applyEffectTo(actor: ExtensionsWindowActor) {
  *
  * @param actor - The window actor to remove the effect from.
  */
-function removeEffectFrom(actor: ExtensionsWindowActor) {
-    if (connectionManager) {
-        connectionManager.disconnect_all(actor);
-        connectionManager.disconnect_all(actor.metaWindow);
-    }
+function removeEffectFrom(actor: RoundedWindowActor) {
+    disconnectAll(actor);
+    disconnectAll(actor.metaWindow);
 
     handlers.onRemoveEffect(actor);
 }

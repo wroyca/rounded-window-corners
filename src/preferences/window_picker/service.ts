@@ -10,9 +10,8 @@ import Meta from 'gi://Meta';
 import {Inspector} from 'resource:///org/gnome/shell/ui/lookingGlass.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
-import {loadFile} from '../../utils/io.js';
-import {_log} from '../../utils/log.js';
-
+import {readRelativeFile} from '../../utils/file.js';
+import {logDebug} from '../../utils/log.js';
 
 /**
  * This class provides the implementation of the DBus interface for the window
@@ -20,7 +19,7 @@ import {_log} from '../../utils/log.js';
  * and allows the user to select a window.
  */
 export class WindowPicker {
-    #iface = loadFile(import.meta.url, 'iface.xml');
+    #iface = readRelativeFile(import.meta.url, 'iface.xml');
     #dbus = Gio.DBusExportedObject.wrapJSObject(this.#iface, this);
 
     /** Emit the wm_class of the picked window to the `picked` signal. */
@@ -40,7 +39,7 @@ export class WindowPicker {
         const inspector = new Inspector(lookingGlass);
 
         inspector.connect('target', (me, target, x, y) => {
-            _log(`${me}: pick ${target} in ${x}, ${y}`);
+            logDebug(`${me}: pick ${target} in ${x}, ${y}`);
 
             // Remove the red border effect when the window is picked.
             const effectName = 'lookingGlass_RedBorderEffect';
@@ -82,7 +81,7 @@ export class WindowPicker {
             Gio.DBus.session,
             '/org/gnome/shell/extensions/RoundedWindowCorners',
         );
-        _log('DBus Service exported');
+        logDebug('DBus Service exported');
     }
 
     unexport() {

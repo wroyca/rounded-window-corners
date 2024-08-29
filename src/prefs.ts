@@ -1,27 +1,29 @@
 import type Adw from 'gi://Adw';
+import GLib from 'gi://GLib';
 import Gdk from 'gi://Gdk';
 import Gtk from 'gi://Gtk';
 
 import {ExtensionPreferences} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 import {pages} from './preferences/index.js';
-import {connections} from './utils/connections.js';
-import * as Utils from './utils/io.js';
-import {_log} from './utils/log.js';
-import {init_settings, uninit_settings} from './utils/settings.js';
+import {logDebug} from './utils/log.js';
+import {initPrefs, uninitPrefs} from './utils/settings.js';
 
 export default class RoundedWindowCornersRebornPrefs extends ExtensionPreferences {
     _load_css() {
         const display = Gdk.Display.get_default();
         if (display) {
             const css = new Gtk.CssProvider();
-            const path = Utils.path(import.meta.url, 'stylesheet-prefs.css');
+            const path = GLib.build_filenamev([
+                import.meta.url,
+                'stylesheet-prefs.css',
+            ]);
             css.load_from_path(path);
             Gtk.StyleContext.add_provider_for_display(display, css, 0);
         }
     }
 
     fillPreferencesWindow(win: Adw.PreferencesWindow) {
-        init_settings(this.getSettings());
+        initPrefs(this.getSettings());
 
         for (const page of pages()) {
             win.add(page);
@@ -29,10 +31,8 @@ export default class RoundedWindowCornersRebornPrefs extends ExtensionPreference
 
         // Disconnect all signal when close prefs
         win.connect('close-request', () => {
-            _log('Disconnect Signals');
-            connections.get().disconnect_all();
-            connections.del();
-            uninit_settings();
+            logDebug('Disconnect Signals');
+            uninitPrefs();
         });
 
         this._load_css();

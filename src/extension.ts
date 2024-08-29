@@ -1,9 +1,7 @@
 // imports.gi
 import Clutter from 'gi://Clutter';
 import GObject from 'gi://GObject';
-import type Gio from 'gi://Gio';
 import Graphene from 'gi://Graphene';
-import type Meta from 'gi://Meta';
 
 // gnome-shell modules
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
@@ -14,15 +12,24 @@ import {WorkspaceAnimationController} from 'resource:///org/gnome/shell/ui/works
 // local modules
 import {LinearFilterEffect} from './effect/linear_filter_effect.js';
 import {disableEffect, enableEffect} from './manager/event_manager.js';
+import {
+    getRoundedCornersEffect,
+    shouldEnableEffect,
+    windowScaleFactor,
+} from './manager/utils.js';
 import {WindowPicker} from './preferences/window_picker/service.js';
-import {connections} from './utils/connections.js';
-import {constants, SHADOW_PADDING} from './utils/constants.js';
-import {_log, stackMsg} from './utils/log.js';
-import {init_settings, settings, uninit_settings} from './utils/settings.js';
-import * as UI from './utils/ui.js';
+import {
+    disableBackgroundMenuItem,
+    enableBackgroundMenuItem,
+} from './utils/background_menu.js';
+import {OVERVIEW_SHADOW_ACTOR, SHADOW_PADDING} from './utils/constants.js';
+import {logDebug} from './utils/log.js';
+import {getPref, initPrefs, prefs, uninitPrefs} from './utils/settings.js';
 
 // types, which will be removed in output
-import type {ExtensionsWindowActor} from './utils/types.js';
+import type Gio from 'gi://Gio';
+import type Meta from 'gi://Meta';
+import type {RoundedWindowActor} from './utils/types.js';
 
 // --------------------------------------------------------------- [end imports]
 
@@ -35,7 +42,7 @@ export default class RoundedWindowCornersReborn extends Extension {
     private _windowPicker: WindowPicker | null = null;
 
     enable() {
-        init_settings(this.getSettings());
+        initPrefs(this.getSettings());
 
         // Restore original methods, those methods will be restore when
         // extensions is disabled
@@ -55,18 +62,17 @@ export default class RoundedWindowCornersReborn extends Extension {
         //  21d4bbde15acf7c3bf348f7375a12f7b14c3ab6f/src/extension.js#L87
 
         if (layoutManager._startingUp) {
-            const c = connections.get();
-            c.connect(layoutManager, 'startup-complete', () => {
+            const connection = layoutManager.connect('startup-complete', () => {
                 enableEffect();
-                if (settings().enable_preferences_entry) {
-                    UI.SetupBackgroundMenu();
+                if (getPref('enable-preferences-entry')) {
+                    enableBackgroundMenuItem();
                 }
-                c.disconnect_all(layoutManager);
+                layoutManager.disconnect(connection);
             });
         } else {
             enableEffect();
-            if (settings().enable_preferences_entry) {
-                UI.SetupBackgroundMenu();
+            if (getPref('enable-preferences-entry')) {
+                enableBackgroundMenuItem();
             }
         }
 
@@ -89,7 +95,7 @@ export default class RoundedWindowCornersReborn extends Extension {
             // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js
             // /ui/windowPreview.js#L42
 
-            const stack = stackMsg();
+            const stack = Error().stack?.trim();
             if (
                 stack === undefined ||
                 stack.indexOf('_updateAttachedDialogs') !== -1 ||
@@ -101,17 +107,17 @@ export default class RoundedWindowCornersReborn extends Extension {
             // If the window don't have rounded corners and shadows,
             // just return
             let has_rounded_corners = false;
-            const window_actor: ExtensionsWindowActor =
-                window.get_compositor_private() as ExtensionsWindowActor;
-            const shadow = window_actor.__rwcRoundedWindowInfo?.shadow;
+            const window_actor: RoundedWindowActor =
+                window.get_compositor_private() as RoundedWindowActor;
+            const shadow = window_actor.rwcCustomData?.shadow;
             if (shadow) {
-                has_rounded_corners = UI.shouldEnableEffect(window);
+                has_rounded_corners = shouldEnableEffect(window);
             }
             if (!(has_rounded_corners && shadow)) {
                 return;
             }
 
-            _log(`Add shadow for ${window.title} in overview`);
+            logDebug(`Add shadow for ${window.title} in overview`);
 
             // WindowPreview.windowContainer used to show content of window
             const windowContainer = this.windowContainer;
@@ -128,12 +134,12 @@ export default class RoundedWindowCornersReborn extends Extension {
             this.insert_child_below(shadow_clone, windowContainer);
 
             // Disconnect all signals when Window preview in overview is destroy
-            c.connect(this, 'destroy', () => {
+            const connection = this.connect('destroy', () => {
                 shadow_clone.destroy();
                 firstChild?.clear_effects();
                 firstChild = null;
 
-                c.disconnect_all(this);
+                this.disconnect(connection);
             });
         };
 
@@ -176,10 +182,10 @@ export default class RoundedWindowCornersReborn extends Extension {
                         } of workspace._windowRecords) {
                             const win = actor.metaWindow;
                             const frame_rect = win.get_frame_rect();
-                            const shadow = (actor as ExtensionsWindowActor)
-                                .__rwcRoundedWindowInfo?.shadow;
+                            const shadow = (actor as RoundedWindowActor)
+                                .rwcCustomData?.shadow;
                             const enabled =
-                                UI.get_rounded_corners_effect(actor)?.enabled;
+                                getRoundedCornersEffect(actor)?.enabled;
                             if (shadow && enabled) {
                                 // Only create shadow actor when window should have rounded
                                 // corners when switching workspace
@@ -190,7 +196,7 @@ export default class RoundedWindowCornersReborn extends Extension {
                                     source: shadow,
                                 });
                                 const paddings =
-                                    SHADOW_PADDING * UI.WindowScaleFactor(win);
+                                    SHADOW_PADDING * windowScaleFactor(win);
 
                                 shadow_clone.width =
                                     frame_rect.width + paddings * 2;
@@ -252,32 +258,27 @@ export default class RoundedWindowCornersReborn extends Extension {
                 self._orig_finish_workspace_swt.apply(this, [switchData]);
             };
 
-        const c = connections.get();
-
         // Gnome-shell will not disable extensions when _logout/shutdown/restart
         // system, it means that the signal handlers will not be cleaned when
         // gnome-shell is closing.
         //
         // Now clear all resources manually before gnome-shell closes
-        c.connect(global.display, 'closing', () => {
-            _log('Clear all resources because gnome-shell is shutdown');
+        const connection = global.display.connect('closing', () => {
+            logDebug('Clear all resources because gnome-shell is shutdown');
             this.disable();
+            global.display.disconnect(connection);
         });
 
         // Watch changes of GSettings
-        c.connect(
-            settings().g_settings,
-            'changed',
-            (_: Gio.Settings, k: string) => {
-                if (k === 'enable-preferences-entry') {
-                    settings().enable_preferences_entry
-                        ? UI.SetupBackgroundMenu()
-                        : UI.RestoreBackgroundMenu();
-                }
-            },
-        );
+        prefs.connect('changed', (_: Gio.Settings, k: string) => {
+            if (k === 'enable-preferences-entry') {
+                getPref('enable-preferences-entry')
+                    ? enableBackgroundMenuItem()
+                    : disableBackgroundMenuItem();
+            }
+        });
 
-        _log('Enabled');
+        logDebug('Enabled');
     }
 
     disable() {
@@ -289,21 +290,17 @@ export default class RoundedWindowCornersReborn extends Extension {
             this._orig_finish_workspace_swt;
 
         // Remove the item to open preferences page in background menu
-        UI.RestoreBackgroundMenu();
+        disableBackgroundMenuItem();
 
         this._windowPicker?.unexport();
         disableEffect();
 
-        // Disconnect all signals in global connections.get()
-        connections.get().disconnect_all();
-        connections.del();
-
         // Set all props to null
         this._windowPicker = null;
 
-        _log('Disabled');
+        logDebug('Disabled');
 
-        uninit_settings();
+        uninitPrefs();
     }
 }
 
@@ -324,7 +321,7 @@ const OverviewShadowActor = GObject.registerClass(
         constructor(source: Clutter.Actor, window_preview: WindowPreview) {
             super({
                 source, // the source shadow actor shown in desktop
-                name: constants.OVERVIEW_SHADOW_ACTOR,
+                name: OVERVIEW_SHADOW_ACTOR,
                 pivotPoint: new Graphene.Point({x: 0.5, y: 0.5}),
             });
 
@@ -361,9 +358,7 @@ const OverviewShadowActor = GObject.registerClass(
                 windowContainerBox.get_width() /
                 meta_win.get_frame_rect().width;
             const paddings =
-                SHADOW_PADDING *
-                container_scaled *
-                UI.WindowScaleFactor(meta_win);
+                SHADOW_PADDING * container_scaled * windowScaleFactor(meta_win);
 
             // Setup bounds box of shadow actor
             box.set_origin(-paddings, -paddings);

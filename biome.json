@@ -13,8 +13,7 @@
             "style": {
                 "noNamespaceImport": "off",
                 "noDefaultExport": "off",
-                "useNamingConvention": "off",
-                "useSingleCaseStatement": "off"
+                "useNamingConvention": "off"
             },
             "performance": {
                 "noDelete": "off"
