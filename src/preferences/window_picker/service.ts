@@ -13,7 +13,6 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import {loadFile} from '../../utils/io.js';
 import {_log} from '../../utils/log.js';
 
-const iface = loadFile(import.meta.url, 'iface.xml');
 
 /**
  * This class provides the implementation of the DBus interface for the window
@@ -21,7 +20,8 @@ const iface = loadFile(import.meta.url, 'iface.xml');
  * and allows the user to select a window.
  */
 export class WindowPicker {
-    #dbus = Gio.DBusExportedObject.wrapJSObject(iface, this);
+    #iface = loadFile(import.meta.url, 'iface.xml');
+    #dbus = Gio.DBusExportedObject.wrapJSObject(this.#iface, this);
 
     /** Emit the wm_class of the picked window to the `picked` signal. */
     #sendPickedWindow(wmClass: string) {
