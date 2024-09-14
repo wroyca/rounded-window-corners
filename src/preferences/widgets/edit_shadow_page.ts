@@ -179,18 +179,12 @@ export const EditShadowPage = GObject.registerClass(
         }
 
         private update_background(manager: Adw.StyleManager) {
-            let path = '';
             const backgrounds = Gio.Settings.new(
                 'org.gnome.desktop.background',
             );
-            switch (manager.get_dark()) {
-                case true:
-                    path = backgrounds.get_string('picture-uri-dark');
-                    break;
-                case false:
-                    path = backgrounds.get_string('picture-uri');
-                    break;
-            }
+            const path = manager.get_dark()
+                ? backgrounds.get_string('picture-uri-dark')
+                : backgrounds.get_string('picture-uri');
             this.backgroud_provider.load_from_string(`.desktop-background {
                 background: url("${path}");
                 background-size: cover; 

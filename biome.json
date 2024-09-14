@@ -19,6 +19,7 @@
                 "noDelete": "off"
             },
             "suspicious": {
+                "noConsole": "off",
                 "noConsoleLog": "off"
             }
         }

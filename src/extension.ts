@@ -95,7 +95,13 @@ export default class RoundedWindowCornersReborn extends Extension {
             // https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js
             // /ui/windowPreview.js#L42
 
-            const stack = Error().stack?.trim();
+            // Create a new error object and use it to get the call stack of
+            // the function.
+            //
+            // Since the error is not actually being raised, it doesn't need
+            // an error message.
+            // biome-ignore lint/suspicious/useErrorMessage:
+            const stack = new Error().stack?.trim();
             if (
                 stack === undefined ||
                 stack.indexOf('_updateAttachedDialogs') !== -1 ||
