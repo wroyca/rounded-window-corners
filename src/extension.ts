@@ -17,7 +17,6 @@ import {
     shouldEnableEffect,
     windowScaleFactor,
 } from './manager/utils.js';
-import {WindowPicker} from './preferences/window_picker/service.js';
 import {
     disableBackgroundMenuItem,
     enableBackgroundMenuItem,
@@ -25,6 +24,7 @@ import {
 import {OVERVIEW_SHADOW_ACTOR, SHADOW_PADDING} from './utils/constants.js';
 import {logDebug} from './utils/log.js';
 import {getPref, initPrefs, prefs, uninitPrefs} from './utils/settings.js';
+import {WindowPicker} from './window_picker/service.js';
 
 // types, which will be removed in output
 import type Gio from 'gi://Gio';

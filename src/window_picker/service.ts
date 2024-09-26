@@ -10,8 +10,8 @@ import Meta from 'gi://Meta';
 import {Inspector} from 'resource:///org/gnome/shell/ui/lookingGlass.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
-import {readRelativeFile} from '../../utils/file.js';
-import {logDebug} from '../../utils/log.js';
+import {readRelativeFile} from '../utils/file.js';
+import {logDebug} from '../utils/log.js';
 
 /**
  * This class provides the implementation of the DBus interface for the window
