@@ -122,12 +122,20 @@ export function bindPref(
  * @param prefs the GSettings object to clean.
  */
 function resetOutdated(prefs: Gio.Settings) {
-    if (prefs.get_uint('settings-version') < 5) {
-        prefs.reset('settings-version');
-        prefs.reset('black-list');
+    const lastVersion = 5;
+    const currentVersion = prefs
+        .get_user_value('settings-version')
+        ?.recursiveUnpack();
+
+    if (!currentVersion || currentVersion < lastVersion) {
+        if (prefs.list_keys().includes('black-list')) {
+            prefs.reset('black-list');
+        }
         prefs.reset('global-rounded-corner-settings');
+        prefs.reset('custom-rounded-corner-settings');
         prefs.reset('focused-shadow');
         prefs.reset('unfocused-shadow');
+        prefs.set_uint('settings-version', lastVersion);
     }
 }
 
