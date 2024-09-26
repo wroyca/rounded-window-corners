@@ -40,6 +40,7 @@ export default class RoundedWindowCornersReborn extends Extension {
     private _orig_finish_workspace_swt!: typeof WorkspaceAnimationController.prototype._finishWorkspaceSwitch;
 
     private _windowPicker: WindowPicker | null = null;
+    private _layoutManagerStartupConnection: number | null = null;
 
     enable() {
         initPrefs(this.getSettings());
@@ -62,13 +63,21 @@ export default class RoundedWindowCornersReborn extends Extension {
         //  21d4bbde15acf7c3bf348f7375a12f7b14c3ab6f/src/extension.js#L87
 
         if (layoutManager._startingUp) {
-            const connection = layoutManager.connect('startup-complete', () => {
-                enableEffect();
-                if (getPref('enable-preferences-entry')) {
-                    enableBackgroundMenuItem();
-                }
-                layoutManager.disconnect(connection);
-            });
+            this._layoutManagerStartupConnection = layoutManager.connect(
+                'startup-complete',
+                () => {
+                    enableEffect();
+                    if (getPref('enable-preferences-entry')) {
+                        enableBackgroundMenuItem();
+                    }
+                    layoutManager.disconnect(
+                        // Since this happens inside of the connection, there
+                        // is no way for this to be null.
+                        // biome-ignore lint/style/noNonNullAssertion:
+                        this._layoutManagerStartupConnection!,
+                    );
+                },
+            );
         } else {
             enableEffect();
             if (getPref('enable-preferences-entry')) {
@@ -303,6 +312,11 @@ export default class RoundedWindowCornersReborn extends Extension {
 
         // Set all props to null
         this._windowPicker = null;
+
+        if (this._layoutManagerStartupConnection !== null) {
+            layoutManager.disconnect(this._layoutManagerStartupConnection);
+            this._layoutManagerStartupConnection = null;
+        }
 
         logDebug('Disabled');
 
