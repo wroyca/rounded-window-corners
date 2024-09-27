@@ -122,7 +122,7 @@ export function bindPref(
  * @param prefs the GSettings object to clean.
  */
 function resetOutdated(prefs: Gio.Settings) {
-    const lastVersion = 5;
+    const lastVersion = 6;
     const currentVersion = prefs
         .get_user_value('settings-version')
         ?.recursiveUnpack();

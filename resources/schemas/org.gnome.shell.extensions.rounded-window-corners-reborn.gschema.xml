@@ -6,7 +6,8 @@
   >
 
     <key name="settings-version" type="u">
-      <default>5</default>
+      <!-- This gets set to the correct value when preferences are migrated -->
+      <default>0</default>
     </key>
     
     <key name="blacklist" type="as">
