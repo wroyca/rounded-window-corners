@@ -1,12 +1,14 @@
-// imports.gi
-import type Clutter from 'gi://Clutter';
+/**
+ * @file Clips shadows for windows.
+ *
+ * Needed because of this issue:
+ * https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/4474
+ */
+
 import GObject from 'gi://GObject';
 import Shell from 'gi://Shell';
 
-// local modules
 import {readShader} from '../utils/file.js';
-
-// ------------------------------------------------------------------- [imports]
 
 const [declarations, code] = readShader(
     import.meta.url,
@@ -16,17 +18,13 @@ const [declarations, code] = readShader(
 export const ClipShadowEffect = GObject.registerClass(
     {},
     class extends Shell.GLSLEffect {
-        vfunc_build_pipeline(): void {
-            const hook = Shell.SnippetHook.FRAGMENT;
-            this.add_glsl_snippet(hook, declarations, code, false);
-        }
-
-        vfunc_paint_target(node: Clutter.PaintNode, ctx: Clutter.PaintContext) {
-            // Reset to default blend string.
-            this.get_pipeline()?.set_blend(
-                'RGBA = ADD(SRC_COLOR, DST_COLOR*(1-SRC_COLOR[A]))',
+        vfunc_build_pipeline() {
+            this.add_glsl_snippet(
+                Shell.SnippetHook.FRAGMENT,
+                declarations,
+                code,
+                false,
             );
-            super.vfunc_paint_target(node, ctx);
         }
     },
 );
