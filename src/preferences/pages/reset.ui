@@ -12,7 +12,7 @@
                 <child>
                     <object class="AdwPreferencesPage">
                         <child>
-                            <object class="AdwPreferencesGroup" id="reset_grp">
+                            <object class="AdwPreferencesGroup" id="resetGroup">
                                 <property name="title" translatable="yes">Settings to reset</property>
                                 <property name="header-suffix">
                                     <object class="GtkButton">
@@ -20,7 +20,7 @@
                                             <class name="suggested-action" />
                                         </style>
                                         <property name="label" translatable="yes">Select all</property>
-                                        <signal name="clicked" handler="select_all" />
+                                        <signal name="clicked" handler="selectAll" />
                                     </object>
                                 </property>
                             </object>
@@ -28,7 +28,7 @@
                         <child>
                             <object class="AdwPreferencesGroup">
                                 <child>
-                                    <object class="GtkButton" id="reset_btn">
+                                    <object class="GtkButton" id="resetButton">
                                         <style>
                                             <class name="destructive-action" />
                                             <class name="pill" />
@@ -39,7 +39,7 @@
                                                 <property name="label" translatable="yes">Reset</property>
                                             </object>
                                         </child>
-                                        <signal name="clicked" handler="ask_for_reset" />
+                                        <signal name="clicked" handler="askForReset" />
                                     </object>
                                 </child>
                             </object>

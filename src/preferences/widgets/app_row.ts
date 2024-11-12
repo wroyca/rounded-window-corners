@@ -1,3 +1,8 @@
+/**
+ * @file Generic widget for choosing a window via a picker or a text entry.
+ * Used in the blacklist and custom settings pages.
+ */
+
 import Adw from 'gi://Adw';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
@@ -6,39 +11,41 @@ import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions
 import {onPicked, pick} from '../../window_picker/client.js';
 
 export class AppRowClass extends Adw.ExpanderRow {
-    private callbacks?: AppRowCallbacks;
+    #callbacks: AppRowCallbacks;
 
-    private remove_btn = new Gtk.Button({
+    #removeButton = new Gtk.Button({
         icon_name: 'window-close-symbolic',
         css_classes: ['flat', 'circular'],
         valign: Gtk.Align.CENTER,
     });
-    private apply_btn = new Gtk.Button({
+    #applyButton = new Gtk.Button({
         icon_name: 'object-select-symbolic',
         css_classes: ['flat', 'circular'],
         valign: Gtk.Align.CENTER,
     });
-    private pick_btn = new Gtk.Button({
+    #pickButton = new Gtk.Button({
         icon_name: 'find-location-symbolic',
         css_classes: ['flat', 'circular'],
         valign: Gtk.Align.CENTER,
     });
-    private wm_class_entry = new Adw.EntryRow({
+
+    #wmClassEntry = new Adw.EntryRow({
         title: _('Window class'),
     });
 
     constructor(cb: AppRowCallbacks) {
         super();
-        this.callbacks = cb;
 
-        this.wm_class_entry.add_prefix(this.apply_btn);
-        this.wm_class_entry.add_prefix(this.pick_btn);
-        this.add_row(this.wm_class_entry);
-        this.add_suffix(this.remove_btn);
+        this.#callbacks = cb;
+
+        this.#wmClassEntry.add_prefix(this.#applyButton);
+        this.#wmClassEntry.add_prefix(this.#pickButton);
+        this.add_row(this.#wmClassEntry);
+        this.add_suffix(this.#removeButton);
 
         this.bind_property(
             'subtitle',
-            this.wm_class_entry,
+            this.#wmClassEntry,
             'text',
             GObject.BindingFlags.DEFAULT,
         );
@@ -46,28 +53,25 @@ export class AppRowClass extends Adw.ExpanderRow {
         this.add_css_class('property');
         this.set_title(_('Expand this row, to pick a window'));
 
-        this.remove_btn.connect('clicked', () => {
-            this.on_delete();
+        this.#removeButton.connect('clicked', () => {
+            this.onDelete();
         });
-        this.pick_btn.connect('clicked', () => {
-            this.on_pick(this.wm_class_entry);
+        this.#pickButton.connect('clicked', () => {
+            this.pickWindow(this.#wmClassEntry);
         });
-        this.apply_btn.connect('clicked', () => {
-            this.on_title_change(this.wm_class_entry);
+        this.#applyButton.connect('clicked', () => {
+            this.onTitleChange(this.#wmClassEntry);
         });
     }
 
-    on_title_change(entry: Adw.EntryRow) {
-        if (
-            !this.callbacks?.on_title_changed ||
-            this.subtitle === entry.text ||
-            entry.text === ''
-        ) {
+    onTitleChange(entry: Adw.EntryRow) {
+        // Skip if the title hasn't changed
+        if (this.subtitle === entry.text || entry.text === '') {
             return;
         }
 
         if (
-            this.callbacks.on_title_changed(
+            this.#callbacks.onWindowChange(
                 this,
                 this.subtitle || '',
                 entry.text || '',
@@ -77,9 +81,13 @@ export class AppRowClass extends Adw.ExpanderRow {
         }
     }
 
-    on_pick(entry: Adw.EntryRow) {
-        onPicked(wm_instance_class => {
-            if (wm_instance_class === 'window-not-found') {
+    onDelete() {
+        this.#callbacks?.onDelete(this);
+    }
+
+    pickWindow(entry: Adw.EntryRow) {
+        onPicked(wmInstanceClass => {
+            if (wmInstanceClass === 'window-not-found') {
                 const win = this.root as unknown as Adw.PreferencesDialog;
                 win.add_toast(
                     new Adw.Toast({
@@ -88,13 +96,9 @@ export class AppRowClass extends Adw.ExpanderRow {
                 );
                 return;
             }
-            entry.text = wm_instance_class;
+            entry.text = wmInstanceClass;
         });
         pick();
-    }
-
-    on_delete() {
-        this.callbacks?.on_delete(this);
     }
 }
 
@@ -106,10 +110,10 @@ export const AppRow = GObject.registerClass(
 );
 
 export type AppRowCallbacks = {
-    on_delete: (row: AppRowClass) => void;
-    on_title_changed: (
+    onDelete: (row: AppRowClass) => void;
+    onWindowChange: (
         row: AppRowClass,
-        old_title: string,
-        new_title: string,
+        oldWmClass: string,
+        newWmClass: string,
     ) => boolean;
 };

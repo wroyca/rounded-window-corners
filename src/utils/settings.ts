@@ -37,7 +37,7 @@ type Schema = {
 export type SchemaKey = keyof Schema;
 
 /** Mapping of schema keys to their GLib Variant type string */
-const Schema = {
+export const Schema = {
     'settings-version': 'u',
     blacklist: 'as',
     'skip-libadwaita-app': 'b',

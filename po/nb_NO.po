@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-14 21:07+0300\n"
+"POT-Creation-Date: 2024-11-13 01:29+0300\n"
 "PO-Revision-Date: 2022-09-15 06:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/rounded-"
@@ -35,6 +35,51 @@ msgstr ""
 msgid "Set custom effect setting for each window class"
 msgstr ""
 
+#: src/preferences/pages/edit-shadow.ui:6
+msgid "Edit shadows"
+msgstr ""
+
+#: src/preferences/pages/edit-shadow.ui:28
+msgid "Focused window"
+msgstr ""
+
+#: src/preferences/pages/edit-shadow.ui:43
+msgid "Unfocused window"
+msgstr ""
+
+#: src/preferences/pages/edit-shadow.ui:66
+msgid "Focused shadow prefrences"
+msgstr ""
+
+#: src/preferences/pages/edit-shadow.ui:69
+#: src/preferences/pages/edit-shadow.ui:209
+msgid "Horizontal offset"
+msgstr ""
+
+#: src/preferences/pages/edit-shadow.ui:96
+#: src/preferences/pages/edit-shadow.ui:236
+msgid "Vertical offset"
+msgstr ""
+
+#: src/preferences/pages/edit-shadow.ui:123
+#: src/preferences/pages/edit-shadow.ui:263
+msgid "Blur radius"
+msgstr ""
+
+#: src/preferences/pages/edit-shadow.ui:150
+#: src/preferences/pages/edit-shadow.ui:290
+msgid "Spread radius"
+msgstr ""
+
+#: src/preferences/pages/edit-shadow.ui:177
+#: src/preferences/pages/edit-shadow.ui:317
+msgid "Opacity"
+msgstr ""
+
+#: src/preferences/pages/edit-shadow.ui:206
+msgid "Unfocused shadow prefrences"
+msgstr ""
+
 #: src/preferences/pages/general.ui:6
 msgid "General"
 msgstr ""
@@ -46,7 +91,8 @@ msgstr "Programmer"
 #: src/preferences/pages/general.ui:11
 msgid ""
 "Some applications created with LibAdwaita or LibHandy already have rounded "
-"corners. You may wish to skip cutting their corners."
+"corners. You can enable those settings to avoid rounding their corners an "
+"extra time."
 msgstr ""
 
 #: src/preferences/pages/general.ui:14
@@ -63,7 +109,7 @@ msgid "Global settings"
 msgstr ""
 
 #: src/preferences/pages/general.ui:27
-msgid "These settings will have effect on all windows"
+msgid "These settings will have an effect on all windows"
 msgstr ""
 
 #: src/preferences/pages/general.ui:30
@@ -75,17 +121,17 @@ msgid "Border color"
 msgstr ""
 
 #: src/preferences/pages/general.ui:74
-#: src/preferences/widgets/customeffect_row.ts:16
+#: src/preferences/widgets/custom_settings_row.ts:19
 msgid "Corner radius"
 msgstr ""
 
 #: src/preferences/pages/general.ui:101
-#: src/preferences/widgets/customeffect_row.ts:25
+#: src/preferences/widgets/custom_settings_row.ts:29
 msgid "Corner smoothing"
 msgstr ""
 
 #: src/preferences/pages/general.ui:127
-msgid "Windows shadow"
+msgid "Window shadow"
 msgstr ""
 
 #: src/preferences/pages/general.ui:128
@@ -107,15 +153,16 @@ msgid "Tweaks"
 msgstr ""
 
 #: src/preferences/pages/general.ui:158
-msgid "Try to add rounded corners to Kitty Terminal in Wayland"
+msgid "Add rounded corners to Kitty Terminal on Wayland"
 msgstr ""
 
 #: src/preferences/pages/general.ui:159
-msgid "Tweak clip paddings for Kitty Terminal"
+msgid "Adjust paddings for Kitty Terminal to correctly round its corners"
 msgstr ""
 
 #: src/preferences/pages/general.ui:164
-msgid "Add Settings Entry in right-click menu of Background"
+#, fuzzy
+msgid "Add a settings entry in right-click menu of the desktop"
 msgstr "Legg til innstillingsoppføring i høyreklikksmenyen for bakgrunn"
 
 #: src/preferences/pages/general.ui:171
@@ -123,62 +170,44 @@ msgid "Debug"
 msgstr ""
 
 #: src/preferences/pages/general.ui:174
-#: src/preferences/widgets/reset_page.ts:64
-msgid "Enable Log"
+msgid "Enable debug logs"
 msgstr ""
 
 #: src/preferences/pages/general.ui:175
 msgid ""
-"Run journalctl -o cat -f /usr/bin/gnome-shell in terminal to see the log"
+"Run journalctl -o cat -f /usr/bin/gnome-shell in your terminal to see the log"
 msgstr ""
 
 #: src/preferences/pages/general.ui:184
-msgid "Open prefereces reset page"
+msgid "Reset preferences"
 msgstr ""
 
-#: src/preferences/widgets/edit-shadow-page.ui:6
-msgid "Edit shadows"
+#: src/preferences/pages/reset.ui:6
+msgid "Reset settings"
 msgstr ""
 
-#: src/preferences/widgets/edit-shadow-page.ui:28
-msgid "Focused window"
+#: src/preferences/pages/reset.ui:16
+msgid "Settings to reset"
 msgstr ""
 
-#: src/preferences/widgets/edit-shadow-page.ui:43
-msgid "Unfocused window"
+#: src/preferences/pages/reset.ui:22
+msgid "Select all"
 msgstr ""
 
-#: src/preferences/widgets/edit-shadow-page.ui:66
-msgid "Focused shadow prefrences"
+#: src/preferences/pages/reset.ui:39
+msgid "Reset"
 msgstr ""
 
-#: src/preferences/widgets/edit-shadow-page.ui:69
-#: src/preferences/widgets/edit-shadow-page.ui:209
-msgid "Horizontal offset"
+#: src/preferences/pages/reset.ui:55
+msgid "Reset these settings?"
 msgstr ""
 
-#: src/preferences/widgets/edit-shadow-page.ui:96
-#: src/preferences/widgets/edit-shadow-page.ui:236
-msgid "Vertical offset"
+#: src/preferences/pages/reset.ui:60
+msgid "_Cancel"
 msgstr ""
 
-#: src/preferences/widgets/edit-shadow-page.ui:123
-#: src/preferences/widgets/edit-shadow-page.ui:263
-msgid "Blur radius"
-msgstr ""
-
-#: src/preferences/widgets/edit-shadow-page.ui:150
-#: src/preferences/widgets/edit-shadow-page.ui:290
-msgid "Spread radius"
-msgstr ""
-
-#: src/preferences/widgets/edit-shadow-page.ui:177
-#: src/preferences/widgets/edit-shadow-page.ui:317
-msgid "Opacity"
-msgstr ""
-
-#: src/preferences/widgets/edit-shadow-page.ui:206
-msgid "Unfocused shadow prefrences"
+#: src/preferences/pages/reset.ui:61
+msgid "_Reset"
 msgstr ""
 
 #: src/preferences/widgets/paddings-row.ui:12
@@ -201,109 +230,41 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: src/preferences/widgets/reset-page.ui:6
-msgid "Reset settings"
-msgstr ""
-
-#: src/preferences/widgets/reset-page.ui:16
-msgid "Settings to reset"
-msgstr ""
-
-#: src/preferences/widgets/reset-page.ui:22
-msgid "Select all"
-msgstr ""
-
-#: src/preferences/widgets/reset-page.ui:39
-msgid "Reset"
-msgstr ""
-
-#: src/preferences/widgets/reset-page.ui:55
-msgid "Reset these settings?"
-msgstr ""
-
-#: src/preferences/widgets/reset-page.ui:60
-msgid "_Cancel"
-msgstr ""
-
-#: src/preferences/widgets/reset-page.ui:61
-msgid "_Reset"
-msgstr ""
-
-#: src/preferences/widgets/app_row.ts:27
+#: src/preferences/widgets/app_row.ts:33
 msgid "Window class"
 msgstr ""
 
-#: src/preferences/widgets/app_row.ts:47
+#: src/preferences/widgets/app_row.ts:54
 msgid "Expand this row, to pick a window"
 msgstr ""
 
-#: src/preferences/widgets/app_row.ts:86
+#: src/preferences/widgets/app_row.ts:94
 msgid "Can't pick window from this position"
 msgstr ""
 
-#: src/preferences/widgets/customeffect_row.ts:13
+#: src/preferences/widgets/custom_settings_row.ts:15
 msgid "Enabled"
 msgstr ""
 
-#: src/preferences/widgets/customeffect_row.ts:34
+#: src/preferences/widgets/custom_settings_row.ts:39
 #, fuzzy
 msgid "Keep rounded corners when maximized"
 msgstr "Behold avrundede hjørner når vinduet er maksimert eller flislagt."
 
-#: src/preferences/widgets/customeffect_row.ts:36
+#: src/preferences/widgets/custom_settings_row.ts:41
 #, fuzzy
 msgid "Always clip rounded corners even if window is maximized or tiled"
 msgstr "Behold avrundede hjørner når vinduet er maksimert eller flislagt."
 
-#: src/preferences/widgets/customeffect_row.ts:40
+#: src/preferences/widgets/custom_settings_row.ts:45
 #, fuzzy
 msgid "Keep rounded corners when in fullscreen"
 msgstr "Behold avrundede vinduer når vindu er i fullskjermsvisning."
 
-#: src/preferences/widgets/customeffect_row.ts:41
+#: src/preferences/widgets/custom_settings_row.ts:46
 #, fuzzy
 msgid "Always clip rounded corners even for fullscreen window"
 msgstr "Behold avrundede vinduer når vindu er i fullskjermsvisning."
-
-#: src/preferences/widgets/reset_page.ts:57
-msgid "Skip LibAdwaita Applications"
-msgstr ""
-
-#: src/preferences/widgets/reset_page.ts:59
-msgid "Skip LibHandy Applications"
-msgstr ""
-
-#: src/preferences/widgets/reset_page.ts:60
-msgid "Focus Window Shadow Style"
-msgstr ""
-
-#: src/preferences/widgets/reset_page.ts:61
-msgid "Unfocus Window Shadow Style"
-msgstr ""
-
-#: src/preferences/widgets/reset_page.ts:62
-msgid "Border Width"
-msgstr ""
-
-#: src/preferences/widgets/reset_page.ts:63
-msgid "Border Color"
-msgstr ""
-
-#: src/preferences/widgets/reset_page.ts:68
-msgid "Border Radius"
-msgstr ""
-
-#: src/preferences/widgets/reset_page.ts:69
-msgid "Padding"
-msgstr ""
-
-#: src/preferences/widgets/reset_page.ts:71
-msgid "Keep Rounded Corners when Maximized or Fullscreen"
-msgstr ""
-
-#: src/preferences/widgets/reset_page.ts:73
-msgid "Corner Smoothing"
-msgstr ""
 
 #: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
 msgid "Rounded Corners Settings..."

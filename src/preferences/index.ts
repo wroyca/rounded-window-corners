@@ -1,11 +1,13 @@
+/** @file Contains the list of top-level pages (tabs) in the preferences window. */
+
 import type Adw from 'gi://Adw';
 
-import {BlackList} from '../preferences/pages/blacklist.js';
-import {Custom} from '../preferences/pages/custom.js';
-import {General} from '../preferences/pages/general.js';
+import {BlacklistPage} from '../preferences/pages/blacklist.js';
+import {CustomPage} from '../preferences/pages/custom.js';
+import {GeneralPage} from '../preferences/pages/general.js';
 
-export const pages = (): Adw.PreferencesPage[] => [
-    new General(),
-    new BlackList(),
-    new Custom(),
+export const prefsTabs: (typeof Adw.PreferencesPage)[] = [
+    GeneralPage,
+    BlacklistPage,
+    CustomPage,
 ];

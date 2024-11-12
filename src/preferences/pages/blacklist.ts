@@ -1,15 +1,19 @@
+/**
+ * @file Contains the implementation of the blacklist page.
+ * Handles creating blacklist entries and binding them to settings.
+ */
+
 import Adw from 'gi://Adw';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
-import type Gtk from 'gi://Gtk';
-
-import {getPref, setPref} from '../../utils/settings.js';
-import type {AppRowCallbacks, AppRowClass} from '../widgets/app_row.js';
-import {BlacklistRow} from '../widgets/blacklist_row.js';
 
 import {gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
+import {getPref, setPref} from '../../utils/settings.js';
+import {AppRow, type AppRowClass} from '../widgets/app_row.js';
 
-export const BlackList = GObject.registerClass(
+import type Gtk from 'gi://Gtk';
+
+export const BlacklistPage = GObject.registerClass(
     {
         Template: GLib.uri_resolve_relative(
             import.meta.url,
@@ -17,61 +21,76 @@ export const BlackList = GObject.registerClass(
             GLib.UriFlags.NONE,
         ),
         GTypeName: 'PrefsBlacklist',
-        InternalChildren: ['blacklist_group'],
+        InternalChildren: ['blacklistGroup'],
     },
     class extends Adw.PreferencesPage {
-        private declare _blacklist_group: Adw.PreferencesGroup;
+        private declare _blacklistGroup: Adw.PreferencesGroup;
 
-        private declare blacklist: string[];
+        #blacklist = getPref('blacklist');
 
         constructor() {
             super();
-            this.blacklist = getPref('blacklist');
 
-            for (const title of this.blacklist) {
-                this.add_window(undefined, title);
+            for (const title of this.#blacklist) {
+                this.addWindow(undefined, title);
             }
         }
 
-        private add_window(_?: Gtk.Button, title?: string) {
-            const callbacks: AppRowCallbacks = {
-                on_delete: row => this.delete_row(row),
-                on_title_changed: (_, old_title, new_title) =>
-                    this.change_title(old_title, new_title),
-            };
-
-            const row = new BlacklistRow(callbacks);
-            row.set_subtitle(title ?? '');
-            this._blacklist_group.add(row);
+        /**
+         * Add a new blacklist entry.
+         * @param wmClass - The WM_CLASS of the window.
+         */
+        addWindow(_?: Gtk.Button, wmClass?: string) {
+            const row = new AppRow({
+                onDelete: row => this.#deleteWindow(row),
+                onWindowChange: (_, oldWmClass, newWmClass) =>
+                    this.#changeWindow(oldWmClass, newWmClass),
+            });
+            row.set_subtitle(wmClass ?? '');
+            this._blacklistGroup.add(row);
         }
 
-        private delete_row(row: AppRowClass) {
-            this.blacklist.splice(this.blacklist.indexOf(row.title), 1);
-            setPref('blacklist', this.blacklist);
-            this._blacklist_group.remove(row);
+        /**
+         * Delete a blacklist entry.
+         * @param row - The row to delete.
+         */
+        #deleteWindow(row: AppRowClass) {
+            this.#blacklist.splice(this.#blacklist.indexOf(row.title), 1);
+            setPref('blacklist', this.#blacklist);
+            this._blacklistGroup.remove(row);
         }
 
-        private change_title(old_title: string, new_title: string): boolean {
-            if (this.blacklist.includes(new_title)) {
+        /**
+         * Change the blacklist entry to a different window.
+         * @param oldWmClass - Current WM_CLASS of the entry.
+         * @param newWmClass - New WM_CLASS of the entry.
+         * @returns Whether the entry was changed successfully.
+         */
+        #changeWindow(oldWmClass: string, newWmClass: string): boolean {
+            if (this.#blacklist.includes(newWmClass)) {
+                // If the new window is already in the blacklist, show an error.
                 const win = this.root as unknown as Adw.PreferencesDialog;
                 win.add_toast(
                     new Adw.Toast({
                         title: _(
-                            `Can't add ${new_title} to the list, because it already there`,
+                            `Can't add ${newWmClass} to the list, because it already there`,
                         ),
                     }),
                 );
                 return false;
             }
 
-            if (old_title === '') {
-                this.blacklist.push(new_title);
+            if (oldWmClass === '') {
+                // If the old WM_CLASS is empty, the entry was just created,
+                // so we need to just add the new window to the blacklist.
+                this.#blacklist.push(newWmClass);
             } else {
-                const old_id = this.blacklist.indexOf(old_title);
-                this.blacklist.splice(old_id, 1, new_title);
+                // Otherwise, replace the old window with the new one.
+                const oldId = this.#blacklist.indexOf(oldWmClass);
+                this.#blacklist.splice(oldId, 1, newWmClass);
             }
 
-            setPref('blacklist', this.blacklist);
+            setPref('blacklist', this.#blacklist);
 
             return true;
         }

@@ -14,7 +14,7 @@
             <child>
               <object class="AdwPreferencesGroup">
                 <child>
-                  <object class="GtkBox" id="preview_row">
+                  <object class="GtkBox" id="previewRow">
                     <style>
                       <class name="card"/>
                       <class name="desktop-background"/>
@@ -24,7 +24,7 @@
                         <property name="halign">center</property>
                         <property name="hexpand">true</property>
                         <child>
-                          <object class="GtkLabel" id="focused_shadow_preview">
+                          <object class="GtkLabel" id="focusedShadowPreview">
                             <property name="label" translatable="yes">Focused window</property>
                             <property name="width-request">192</property>
                             <property name="height-request">192</property>
@@ -39,7 +39,7 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="unfocused_shadow_preview">
+                          <object class="GtkLabel" id="unfocusedShadowPreview">
                             <property name="label" translatable="yes">Unfocused window</property>
                             <property name="width-request">192</property>
                             <property name="height-request">192</property>
@@ -79,12 +79,12 @@
                               <mark value="0" position="bottom">0</mark>
                             </marks>
                             <property name="adjustment">
-                              <object class="GtkAdjustment" id="focused_horizontal_offset">
+                              <object class="GtkAdjustment" id="focusedHorizontalOffset">
                                 <property name="lower">-60</property>
                                 <property name="upper">60</property>
                                 <property name="page-increment">1</property>
                                 <property name="step-increment">1</property>
-                                <signal name="value-changed" handler="on_value_changed" />
+                                <signal name="value-changed" handler="onValueChanged" />
                               </object>
                             </property>
                           </object>
@@ -106,12 +106,12 @@
                               <mark value="4" position="bottom">4</mark>
                             </marks>
                             <property name="adjustment">
-                              <object class="GtkAdjustment" id="focused_vertical_offset">
+                              <object class="GtkAdjustment" id="focusedVerticalOffset">
                                 <property name="lower">-60</property>
                                 <property name="upper">60</property>
                                 <property name="page-increment">1</property>
                                 <property name="step-increment">1</property>
-                                <signal name="value-changed" handler="on_value_changed" />
+                                <signal name="value-changed" handler="onValueChanged" />
                               </object>
                             </property>
                           </object>
@@ -133,12 +133,12 @@
                               <mark value="28" position="bottom">28</mark>
                             </marks>
                             <property name="adjustment">
-                              <object class="GtkAdjustment" id="focused_blur_radius">
+                              <object class="GtkAdjustment" id="focusedBlurRadius">
                                 <property name="lower">0</property>
                                 <property name="upper">60</property>
                                 <property name="page-increment">1</property>
                                 <property name="step-increment">1</property>
-                                <signal name="value-changed" handler="on_value_changed" />
+                                <signal name="value-changed" handler="onValueChanged" />
                               </object>
                             </property>
                           </object>
@@ -160,12 +160,12 @@
                               <mark value="4" position="bottom">4</mark>
                             </marks>
                             <property name="adjustment">
-                              <object class="GtkAdjustment" id="focused_spread_radius">
+                              <object class="GtkAdjustment" id="focusedSpreadRadius">
                                 <property name="lower">-60</property>
                                 <property name="upper">60</property>
                                 <property name="page-increment">1</property>
                                 <property name="step-increment">1</property>
-                                <signal name="value-changed" handler="on_value_changed" />
+                                <signal name="value-changed" handler="onValueChanged" />
                               </object>
                             </property>
                           </object>
@@ -187,12 +187,12 @@
                               <mark value="60" position="bottom">60</mark>
                             </marks>
                             <property name="adjustment">
-                              <object class="GtkAdjustment" id="focused_opacity">
+                              <object class="GtkAdjustment" id="focusedOpacity">
                                 <property name="lower">0</property>
                                 <property name="upper">100</property>
                                 <property name="page-increment">1</property>
                                 <property name="step-increment">1</property>
-                                <signal name="value-changed" handler="on_value_changed" />
+                                <signal name="value-changed" handler="onValueChanged" />
                               </object>
                             </property>
                           </object>
@@ -219,12 +219,12 @@
                               <mark value="0" position="bottom">0</mark>
                             </marks>
                             <property name="adjustment">
-                              <object class="GtkAdjustment" id="unfocused_horizontal_offset">
+                              <object class="GtkAdjustment" id="unfocusedHorizontalOffset">
                                 <property name="lower">-60</property>
                                 <property name="upper">60</property>
                                 <property name="page-increment">1</property>
                                 <property name="step-increment">1</property>
-                                <signal name="value-changed" handler="on_value_changed" />
+                                <signal name="value-changed" handler="onValueChanged" />
                               </object>
                             </property>
                           </object>
@@ -246,12 +246,12 @@
                               <mark value="2" position="bottom">2</mark>
                             </marks>
                             <property name="adjustment">
-                              <object class="GtkAdjustment" id="unfocused_vertical_offset">
+                              <object class="GtkAdjustment" id="unfocusedVerticalOffset">
                                 <property name="lower">-60</property>
                                 <property name="upper">60</property>
                                 <property name="page-increment">1</property>
                                 <property name="step-increment">1</property>
-                                <signal name="value-changed" handler="on_value_changed" />
+                                <signal name="value-changed" handler="onValueChanged" />
                               </object>
                             </property>
                           </object>
@@ -273,12 +273,12 @@
                               <mark value="12" position="bottom">12</mark>
                             </marks>
                             <property name="adjustment">
-                              <object class="GtkAdjustment" id="unfocused_blur_radius">
+                              <object class="GtkAdjustment" id="unfocusedBlurRadius">
                                 <property name="lower">0</property>
                                 <property name="upper">60</property>
                                 <property name="page-increment">1</property>
                                 <property name="step-increment">1</property>
-                                <signal name="value-changed" handler="on_value_changed" />
+                                <signal name="value-changed" handler="onValueChanged" />
                               </object>
                             </property>
                           </object>
@@ -300,12 +300,12 @@
                               <mark value="-1" position="bottom">-1</mark>
                             </marks>
                             <property name="adjustment">
-                              <object class="GtkAdjustment" id="unfocused_spread_radius">
+                              <object class="GtkAdjustment" id="unfocusedSpreadRadius">
                                 <property name="lower">-60</property>
                                 <property name="upper">60</property>
                                 <property name="page-increment">1</property>
                                 <property name="step-increment">1</property>
-                                <signal name="value-changed" handler="on_value_changed" />
+                                <signal name="value-changed" handler="onValueChanged" />
                               </object>
                             </property>
                           </object>
@@ -327,12 +327,12 @@
                               <mark value="65" position="bottom">65</mark>
                             </marks>
                             <property name="adjustment">
-                              <object class="GtkAdjustment" id="unfocused_opacity">
+                              <object class="GtkAdjustment" id="unfocusedOpacity">
                                 <property name="lower">0</property>
                                 <property name="upper">100</property>
                                 <property name="page-increment">1</property>
                                 <property name="step-increment">1</property>
-                                <signal name="value-changed" handler="on_value_changed" />
+                                <signal name="value-changed" handler="onValueChanged" />
                               </object>
                             </property>
                           </object>
