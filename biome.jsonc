@@ -13,7 +13,17 @@
             "style": {
                 "noNamespaceImport": "off",
                 "noDefaultExport": "off",
-                "useNamingConvention": "off"
+                "useNamingConvention": {
+                    "level": "warn",
+                    "options": {
+                        "conventions": [
+                            {
+                                // Whitelist some GJS names that don't follow the JS naming conventions
+                                "match": "(?:G[A-Z].*|vfunc_.*|Template|InternalChildren|icon_name|css_classes|draw_value|value_pos|round_digits|Properties|Padding.*|(.*))"
+                            }
+                        ]
+                    }
+                }
             },
             "performance": {
                 "noDelete": "off"

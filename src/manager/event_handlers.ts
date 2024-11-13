@@ -51,7 +51,6 @@ export function onAddEffect(actor: RoundedWindowActor) {
     const shadow = createShadow(actor);
 
     // Bind properties of the window to the shadow actor.
-    const SYNC_CREATE = GObject.BindingFlags.SYNC_CREATE;
     for (const prop of [
         'pivot-point',
         'translation-x',
@@ -60,7 +59,12 @@ export function onAddEffect(actor: RoundedWindowActor) {
         'scale-y',
         'visible',
     ]) {
-        actor.bind_property(prop, shadow, prop, SYNC_CREATE);
+        actor.bind_property(
+            prop,
+            shadow,
+            prop,
+            GObject.BindingFlags.SYNC_CREATE,
+        );
     }
 
     // Store shadow, app type, visible binding, so that we can access them later
