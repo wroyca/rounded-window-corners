@@ -22,20 +22,6 @@
 - [Superelliptical][1] shape for rounded corners, thanks to [@YuraIz][2]
 - A simple reset preferences dialog
 
-## Compatibility
-
-- [_Compiz alike magic lamp effect_][3]
-
-    This extension automatically hides the shadow when the magic lamp effect is
-    running. You need to restart (disable then enable) this extension after
-    enabling _Compiz alike magic lamp effect_. 
-
-## Notes
-
-- The rounded corner effect for windows is based on this [shader][4] from
-  mutter project
-- TypeScript support for GJS is powered by [gjsify](https://gjsify.org/)
-
 ## Installation
 
 ### From Gnome Extensions
