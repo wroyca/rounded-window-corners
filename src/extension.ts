@@ -16,6 +16,7 @@ import {logDebug} from './utils/log.js';
 import {getPref, initPrefs, prefs, uninitPrefs} from './utils/settings.js';
 import {WindowPicker} from './window_picker/service.js';
 
+import type GObject from 'gi://GObject';
 import type Gio from 'gi://Gio';
 
 export default class RoundedWindowCornersReborn extends Extension {
@@ -31,6 +32,8 @@ export default class RoundedWindowCornersReborn extends Extension {
     #windowPicker: WindowPicker | null = null;
 
     #layoutManagerStartupConnection: number | null = null;
+    #workspaceSwitchConnections: {object: GObject.Object; id: number}[] | null =
+        null;
 
     enable() {
         // Initialize extension preferences
@@ -87,7 +90,8 @@ export default class RoundedWindowCornersReborn extends Extension {
                 self.#originalPrepareWorkspaceSwitch.apply(this, [
                     workspaceIndices,
                 ]);
-                addShadowsInWorkspaceSwitch(this);
+                self.#workspaceSwitchConnections =
+                    addShadowsInWorkspaceSwitch(this);
             };
         WorkspaceAnimationController.prototype._finishWorkspaceSwitch =
             function (switchData) {
@@ -127,6 +131,10 @@ export default class RoundedWindowCornersReborn extends Extension {
         if (this.#layoutManagerStartupConnection !== null) {
             layoutManager.disconnect(this.#layoutManagerStartupConnection);
             this.#layoutManagerStartupConnection = null;
+        }
+
+        for (const connection of this.#workspaceSwitchConnections ?? []) {
+            connection.object.disconnect(connection.id);
         }
 
         logDebug('Disabled');
