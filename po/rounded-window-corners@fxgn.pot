@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 11:13+0100\n"
+"POT-Creation-Date: 2024-12-17 11:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,31 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/preferences/pages/blacklist.ui:6 src/preferences/pages/blacklist.ui:21
+#: src/preferences/pages/blacklist.ui:6 src/preferences/pages/blacklist.ui:10
 msgid "Blacklist / Whitelist"
 msgstr ""
 
-#: src/preferences/pages/blacklist.ui:10
-msgid "Whitelist"
-msgstr ""
-
-#: src/preferences/pages/blacklist.ui:13
-msgid "Use as Whitelist"
-msgstr ""
-
-#: src/preferences/pages/blacklist.ui:14
-msgid ""
-"When selected, instead of ommiting certain windows, only allows certain "
-"windows."
-msgstr ""
-
-#: src/preferences/pages/blacklist.ui:22
+#: src/preferences/pages/blacklist.ui:11
 msgid ""
 "Not all application can works well with rounded corners effects, add them to "
 "this list to disable effects."
 msgstr ""
 
-#: src/preferences/pages/blacklist.ui:30 src/preferences/pages/custom.ui:19
+#: src/preferences/pages/blacklist.ui:14
+msgid "Use as Whitelist"
+msgstr ""
+
+#: src/preferences/pages/blacklist.ui:15
+msgid ""
+"When selected, instead of omitting certain windows, only allows certain "
+"windows."
+msgstr ""
+
+#: src/preferences/pages/blacklist.ui:25 src/preferences/pages/custom.ui:19
 msgid "Add window"
 msgstr ""
 

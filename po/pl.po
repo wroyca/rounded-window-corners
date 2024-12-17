@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 11:13+0100\n"
+"POT-Creation-Date: 2024-12-17 11:51+0100\n"
 "PO-Revision-Date: 2023-10-29 05:13+0000\n"
 "Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/rounded-window-"
@@ -14,28 +14,12 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 5.2-dev\n"
 
-#: src/preferences/pages/blacklist.ui:6 src/preferences/pages/blacklist.ui:21
+#: src/preferences/pages/blacklist.ui:6 src/preferences/pages/blacklist.ui:10
 #, fuzzy
 msgid "Blacklist / Whitelist"
 msgstr "Blokowane aplikacje"
 
-#: src/preferences/pages/blacklist.ui:10
-#, fuzzy
-msgid "Whitelist"
-msgstr "Blokowane aplikacje"
-
-#: src/preferences/pages/blacklist.ui:13
-#, fuzzy
-msgid "Use as Whitelist"
-msgstr "Blokowane aplikacje"
-
-#: src/preferences/pages/blacklist.ui:14
-msgid ""
-"When selected, instead of ommiting certain windows, only allows certain "
-"windows."
-msgstr ""
-
-#: src/preferences/pages/blacklist.ui:22
+#: src/preferences/pages/blacklist.ui:11
 #, fuzzy
 msgid ""
 "Not all application can works well with rounded corners effects, add them to "
@@ -46,7 +30,18 @@ msgstr ""
 "\n"
 "[unfinished translation]"
 
-#: src/preferences/pages/blacklist.ui:30 src/preferences/pages/custom.ui:19
+#: src/preferences/pages/blacklist.ui:14
+#, fuzzy
+msgid "Use as Whitelist"
+msgstr "Blokowane aplikacje"
+
+#: src/preferences/pages/blacklist.ui:15
+msgid ""
+"When selected, instead of omitting certain windows, only allows certain "
+"windows."
+msgstr ""
+
+#: src/preferences/pages/blacklist.ui:25 src/preferences/pages/custom.ui:19
 #, fuzzy
 msgid "Add window"
 msgstr "Dodaj okno"
@@ -322,6 +317,10 @@ msgstr "Zawsze zachowuj, gdy okno jest w trybie pełnoekranowym."
 #: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
 msgid "Rounded Corners Settings..."
 msgstr "Ustawienia zaokrąglonych narożników..."
+
+#, fuzzy
+#~ msgid "Whitelist"
+#~ msgstr "Blokowane aplikacje"
 
 #~ msgid "Blacklist"
 #~ msgstr "Blokowane aplikacje"

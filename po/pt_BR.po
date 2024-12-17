@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 11:13+0100\n"
+"POT-Creation-Date: 2024-12-17 11:51+0100\n"
 "PO-Revision-Date: 2023-11-12 08:23+0000\n"
 "Last-Translator: Matheus <cybercountry@proton.me>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -13,28 +13,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 5.2-dev\n"
 
-#: src/preferences/pages/blacklist.ui:6 src/preferences/pages/blacklist.ui:21
+#: src/preferences/pages/blacklist.ui:6 src/preferences/pages/blacklist.ui:10
 #, fuzzy
 msgid "Blacklist / Whitelist"
 msgstr "Lista negra"
 
-#: src/preferences/pages/blacklist.ui:10
-#, fuzzy
-msgid "Whitelist"
-msgstr "Lista negra"
-
-#: src/preferences/pages/blacklist.ui:13
-#, fuzzy
-msgid "Use as Whitelist"
-msgstr "Lista negra"
-
-#: src/preferences/pages/blacklist.ui:14
-msgid ""
-"When selected, instead of ommiting certain windows, only allows certain "
-"windows."
-msgstr ""
-
-#: src/preferences/pages/blacklist.ui:22
+#: src/preferences/pages/blacklist.ui:11
 #, fuzzy
 msgid ""
 "Not all application can works well with rounded corners effects, add them to "
@@ -46,7 +30,18 @@ msgstr ""
 "O item da lista é uma parte da propriedade WM_CLASS da janela. Você pode "
 "selecionar uma janela para adicioná-la a esta lista."
 
-#: src/preferences/pages/blacklist.ui:30 src/preferences/pages/custom.ui:19
+#: src/preferences/pages/blacklist.ui:14
+#, fuzzy
+msgid "Use as Whitelist"
+msgstr "Lista negra"
+
+#: src/preferences/pages/blacklist.ui:15
+msgid ""
+"When selected, instead of omitting certain windows, only allows certain "
+"windows."
+msgstr ""
+
+#: src/preferences/pages/blacklist.ui:25 src/preferences/pages/custom.ui:19
 #, fuzzy
 msgid "Add window"
 msgstr "Adicionar janela"
@@ -324,6 +319,10 @@ msgstr ""
 #: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
 msgid "Rounded Corners Settings..."
 msgstr "Configurações de Cantos Arredondados..."
+
+#, fuzzy
+#~ msgid "Whitelist"
+#~ msgstr "Lista negra"
 
 #~ msgid "Blacklist"
 #~ msgstr "Lista negra"

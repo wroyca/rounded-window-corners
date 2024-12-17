@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 11:13+0100\n"
+"POT-Creation-Date: 2024-12-17 11:51+0100\n"
 "PO-Revision-Date: 2023-05-14 22:51+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/rounded-window-"
@@ -12,28 +12,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.18-dev\n"
 
-#: src/preferences/pages/blacklist.ui:6 src/preferences/pages/blacklist.ui:21
+#: src/preferences/pages/blacklist.ui:6 src/preferences/pages/blacklist.ui:10
 #, fuzzy
 msgid "Blacklist / Whitelist"
 msgstr "Kara liste"
 
-#: src/preferences/pages/blacklist.ui:10
-#, fuzzy
-msgid "Whitelist"
-msgstr "Kara liste"
-
-#: src/preferences/pages/blacklist.ui:13
-#, fuzzy
-msgid "Use as Whitelist"
-msgstr "Kara liste"
-
-#: src/preferences/pages/blacklist.ui:14
-msgid ""
-"When selected, instead of ommiting certain windows, only allows certain "
-"windows."
-msgstr ""
-
-#: src/preferences/pages/blacklist.ui:22
+#: src/preferences/pages/blacklist.ui:11
 #, fuzzy
 msgid ""
 "Not all application can works well with rounded corners effects, add them to "
@@ -45,7 +29,18 @@ msgstr ""
 "Listenin öğesi, pencere ile WM_CLASS özelliğinin örnek parçasıdır. Bu "
 "listeye eklemek için bir pencere seçebilirsiniz."
 
-#: src/preferences/pages/blacklist.ui:30 src/preferences/pages/custom.ui:19
+#: src/preferences/pages/blacklist.ui:14
+#, fuzzy
+msgid "Use as Whitelist"
+msgstr "Kara liste"
+
+#: src/preferences/pages/blacklist.ui:15
+msgid ""
+"When selected, instead of omitting certain windows, only allows certain "
+"windows."
+msgstr ""
+
+#: src/preferences/pages/blacklist.ui:25 src/preferences/pages/custom.ui:19
 #, fuzzy
 msgid "Add window"
 msgstr "Pencere Ekle"
@@ -325,6 +320,10 @@ msgstr "Pencere tam ekran olduğunda köşeleri her zaman yuvarlak tut."
 #: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
 msgid "Rounded Corners Settings..."
 msgstr "Yuvarlatılmış Köşe Ayarları..."
+
+#, fuzzy
+#~ msgid "Whitelist"
+#~ msgstr "Kara liste"
 
 #~ msgid "Blacklist"
 #~ msgstr "Kara liste"

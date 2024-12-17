@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 11:13+0100\n"
+"POT-Creation-Date: 2024-12-17 11:51+0100\n"
 "PO-Revision-Date: 2022-11-12 07:50+0000\n"
 "Last-Translator: Ilari Suhonen <ilari.suhonen@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/rounded-window-"
@@ -12,28 +12,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.15-dev\n"
 
-#: src/preferences/pages/blacklist.ui:6 src/preferences/pages/blacklist.ui:21
+#: src/preferences/pages/blacklist.ui:6 src/preferences/pages/blacklist.ui:10
 #, fuzzy
 msgid "Blacklist / Whitelist"
 msgstr "Estot"
 
-#: src/preferences/pages/blacklist.ui:10
-#, fuzzy
-msgid "Whitelist"
-msgstr "Estot"
-
-#: src/preferences/pages/blacklist.ui:13
-#, fuzzy
-msgid "Use as Whitelist"
-msgstr "Estot"
-
-#: src/preferences/pages/blacklist.ui:14
-msgid ""
-"When selected, instead of ommiting certain windows, only allows certain "
-"windows."
-msgstr ""
-
-#: src/preferences/pages/blacklist.ui:22
+#: src/preferences/pages/blacklist.ui:11
 #, fuzzy
 msgid ""
 "Not all application can works well with rounded corners effects, add them to "
@@ -45,7 +29,18 @@ msgstr ""
 "Listan alkiot täsmäävät ikkunoiden WM_CLASS:in instanssiosaa. Voit valita "
 "ikkunan lisätäksesi sen listaan."
 
-#: src/preferences/pages/blacklist.ui:30 src/preferences/pages/custom.ui:19
+#: src/preferences/pages/blacklist.ui:14
+#, fuzzy
+msgid "Use as Whitelist"
+msgstr "Estot"
+
+#: src/preferences/pages/blacklist.ui:15
+msgid ""
+"When selected, instead of omitting certain windows, only allows certain "
+"windows."
+msgstr ""
+
+#: src/preferences/pages/blacklist.ui:25 src/preferences/pages/custom.ui:19
 #, fuzzy
 msgid "Add window"
 msgstr "Lisää ikkuna"
@@ -322,6 +317,10 @@ msgstr "Älä poista pyöristettyjä kulmia kokonäytön ikkunoista."
 #: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
 msgid "Rounded Corners Settings..."
 msgstr "Kulmienpyöristyksen asetukset..."
+
+#, fuzzy
+#~ msgid "Whitelist"
+#~ msgstr "Estot"
 
 #~ msgid "Blacklist"
 #~ msgstr "Estot"

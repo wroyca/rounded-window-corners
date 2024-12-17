@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 11:13+0100\n"
+"POT-Creation-Date: 2024-12-17 11:51+0100\n"
 "PO-Revision-Date: 2023-04-18 06:49+0000\n"
 "Last-Translator: Jörn Weigend <das.jott@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/rounded-window-"
@@ -12,28 +12,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.17\n"
 
-#: src/preferences/pages/blacklist.ui:6 src/preferences/pages/blacklist.ui:21
+#: src/preferences/pages/blacklist.ui:6 src/preferences/pages/blacklist.ui:10
 #, fuzzy
 msgid "Blacklist / Whitelist"
 msgstr "Ausschlüsse"
 
-#: src/preferences/pages/blacklist.ui:10
-#, fuzzy
-msgid "Whitelist"
-msgstr "Ausschlüsse"
-
-#: src/preferences/pages/blacklist.ui:13
-#, fuzzy
-msgid "Use as Whitelist"
-msgstr "Ausschlüsse"
-
-#: src/preferences/pages/blacklist.ui:14
-msgid ""
-"When selected, instead of ommiting certain windows, only allows certain "
-"windows."
-msgstr ""
-
-#: src/preferences/pages/blacklist.ui:22
+#: src/preferences/pages/blacklist.ui:11
 #, fuzzy
 msgid ""
 "Not all application can works well with rounded corners effects, add them to "
@@ -46,7 +30,18 @@ msgstr ""
 "Fensters. Du kannst Fenster auswählen, um sie direkt dieser Liste "
 "hinzuzufügen."
 
-#: src/preferences/pages/blacklist.ui:30 src/preferences/pages/custom.ui:19
+#: src/preferences/pages/blacklist.ui:14
+#, fuzzy
+msgid "Use as Whitelist"
+msgstr "Ausschlüsse"
+
+#: src/preferences/pages/blacklist.ui:15
+msgid ""
+"When selected, instead of omitting certain windows, only allows certain "
+"windows."
+msgstr ""
+
+#: src/preferences/pages/blacklist.ui:25 src/preferences/pages/custom.ui:19
 #, fuzzy
 msgid "Add window"
 msgstr "Fenster hinzufügen"
@@ -325,6 +320,10 @@ msgstr "Abgerundete Ecken für Fenster im Vollbildmodus behalten."
 #: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
 msgid "Rounded Corners Settings..."
 msgstr "Einstellungen für abgerundete Ecken..."
+
+#, fuzzy
+#~ msgid "Whitelist"
+#~ msgstr "Ausschlüsse"
 
 #~ msgid "Blacklist"
 #~ msgstr "Ausschlüsse"
