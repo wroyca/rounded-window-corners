@@ -36,13 +36,6 @@ import type {RoundedWindowActor} from '../utils/types.js';
 export function onAddEffect(actor: RoundedWindowActor) {
     logDebug(`opened: ${actor?.metaWindow.title}: ${actor}`);
 
-    const win = actor.metaWindow;
-
-    if (!shouldEnableEffect(win)) {
-        logDebug(`Skipping ${win.title}`);
-        return;
-    }
-
     unwrapActor(actor)?.add_effect_with_name(
         ROUNDED_CORNERS_EFFECT,
         new RoundedCornersEffect(),
