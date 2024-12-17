@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 11:51+0100\n"
+"POT-Creation-Date: 2024-12-17 12:46+0100\n"
 "Language: et\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -227,6 +227,14 @@ msgstr ""
 
 #: src/preferences/widgets/paddings-row.ui:70
 msgid "Right"
+msgstr ""
+
+#: src/preferences/pages/blacklist.ts:64
+msgid "Whitelist"
+msgstr ""
+
+#: src/preferences/pages/blacklist.ts:65
+msgid "Blacklist"
 msgstr ""
 
 #: src/preferences/widgets/app_row.ts:33

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 11:51+0100\n"
+"POT-Creation-Date: 2024-12-17 12:46+0100\n"
 "PO-Revision-Date: 2023-01-04 20:51+0000\n"
 "Last-Translator: phlostically <phlostically@mailinator.com>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/rounded-window-"
@@ -244,6 +244,14 @@ msgstr "Maldekstro"
 #: src/preferences/widgets/paddings-row.ui:70
 msgid "Right"
 msgstr "Dekstro"
+
+#: src/preferences/pages/blacklist.ts:64
+msgid "Whitelist"
+msgstr ""
+
+#: src/preferences/pages/blacklist.ts:65
+msgid "Blacklist"
+msgstr ""
 
 #: src/preferences/widgets/app_row.ts:33
 msgid "Window class"

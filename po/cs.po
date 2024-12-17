@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 11:51+0100\n"
+"POT-Creation-Date: 2024-12-17 12:46+0100\n"
 "PO-Revision-Date: 2023-04-25 17:52+0000\n"
 "Last-Translator: Fjuro <ifjuro@proton.me>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/rounded-window-"
@@ -275,6 +275,15 @@ msgstr "Vlevo"
 msgid "Right"
 msgstr "Vpravo"
 
+#: src/preferences/pages/blacklist.ts:64
+#, fuzzy
+msgid "Whitelist"
+msgstr "Černá listina"
+
+#: src/preferences/pages/blacklist.ts:65
+msgid "Blacklist"
+msgstr "Černá listina"
+
 #: src/preferences/widgets/app_row.ts:33
 #, fuzzy
 msgid "Window class"
@@ -318,13 +327,6 @@ msgstr "Při zobrazení okna na celou obrazovku vždy zachovat zaoblené rohy."
 #: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
 msgid "Rounded Corners Settings..."
 msgstr "Nastavení zaoblených rohů..."
-
-#, fuzzy
-#~ msgid "Whitelist"
-#~ msgstr "Černá listina"
-
-#~ msgid "Blacklist"
-#~ msgstr "Černá listina"
 
 #~ msgid "Tweak clip paddings for Kitty Terminal"
 #~ msgstr "Upravit výplně klipů pro Kitty Terminal"

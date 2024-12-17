@@ -46,6 +46,26 @@ export const BlacklistPage = GObject.registerClass(
             for (const title of this.#blacklist) {
                 this.addWindow(undefined, title);
             }
+
+            // update page title dynamically
+            this._useWhitelist.connect('notify::active', () => {
+                this.#updateBlacklistPageTitle();
+            });
+            this.#updateBlacklistPageTitle();
+        }
+
+        /**
+         * Dynamically update the title of the blacklist page
+         * based on the state of the whitelist switch.
+         */
+        #updateBlacklistPageTitle() {
+            const isWhitelist = this._useWhitelist.get_active();
+            const newTitle = isWhitelist
+                ? _('Whitelist') // Title when switch is ON
+                : _('Blacklist'); // Title when switch is OFF
+
+            this.set_title(newTitle); // changes page Title
+            this._blacklistGroup.set_title(newTitle); // changes group Title
         }
 
         /**
