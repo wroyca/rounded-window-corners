@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 18:36+0100\n"
+"POT-Creation-Date: 2024-12-17 11:13+0100\n"
 "PO-Revision-Date: 2023-04-25 17:52+0000\n"
 "Last-Translator: Fjuro <ifjuro@proton.me>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/rounded-window-"
@@ -17,6 +17,22 @@ msgstr ""
 #, fuzzy
 msgid "Blacklist / Whitelist"
 msgstr "Černá listina"
+
+#: src/preferences/pages/blacklist.ui:10
+#, fuzzy
+msgid "Whitelist"
+msgstr "Černá listina"
+
+#: src/preferences/pages/blacklist.ui:13
+#, fuzzy
+msgid "Use as Whitelist"
+msgstr "Černá listina"
+
+#: src/preferences/pages/blacklist.ui:14
+msgid ""
+"When selected, instead of ommiting certain windows, only allows certain "
+"windows."
+msgstr ""
 
 #: src/preferences/pages/blacklist.ui:22
 #, fuzzy

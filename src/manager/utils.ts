@@ -251,13 +251,10 @@ export function shouldEnableEffect(
         logDebug(`Warning: wm_class_instance of ${win}: ${win.title} is null`);
         return false;
     }
-    if (!getPref('whitelist') && getPref('blacklist').includes(wmClass)) {
-        return false;
-    }
-    // Skip not whitelisted applications.
-    if (getPref('whitelist') && !getPref('blacklist').includes(wmClass)) {
-        return false;
-    }
+    // handles blacklist / whitelist
+    const isException = getPref('blacklist').includes(wmClass);
+    const enableExceptions = getPref('whitelist');
+    if (isException != enableExceptions) return false;
 
     // Only apply the effect to normal windows (skip menus, tooltips, etc.)
     if (

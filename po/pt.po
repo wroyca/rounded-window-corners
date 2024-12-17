@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 18:36+0100\n"
+"POT-Creation-Date: 2024-12-17 11:13+0100\n"
 "PO-Revision-Date: 2023-12-21 14:06+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/rounded-"
@@ -17,6 +17,22 @@ msgstr ""
 #, fuzzy
 msgid "Blacklist / Whitelist"
 msgstr "Lista negra"
+
+#: src/preferences/pages/blacklist.ui:10
+#, fuzzy
+msgid "Whitelist"
+msgstr "Lista negra"
+
+#: src/preferences/pages/blacklist.ui:13
+#, fuzzy
+msgid "Use as Whitelist"
+msgstr "Lista negra"
+
+#: src/preferences/pages/blacklist.ui:14
+msgid ""
+"When selected, instead of ommiting certain windows, only allows certain "
+"windows."
+msgstr ""
 
 #: src/preferences/pages/blacklist.ui:22
 #, fuzzy

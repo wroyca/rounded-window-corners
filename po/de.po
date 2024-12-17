@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 18:36+0100\n"
+"POT-Creation-Date: 2024-12-17 11:13+0100\n"
 "PO-Revision-Date: 2023-04-18 06:49+0000\n"
 "Last-Translator: Jörn Weigend <das.jott@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/rounded-window-"
@@ -16,6 +16,22 @@ msgstr ""
 #, fuzzy
 msgid "Blacklist / Whitelist"
 msgstr "Ausschlüsse"
+
+#: src/preferences/pages/blacklist.ui:10
+#, fuzzy
+msgid "Whitelist"
+msgstr "Ausschlüsse"
+
+#: src/preferences/pages/blacklist.ui:13
+#, fuzzy
+msgid "Use as Whitelist"
+msgstr "Ausschlüsse"
+
+#: src/preferences/pages/blacklist.ui:14
+msgid ""
+"When selected, instead of ommiting certain windows, only allows certain "
+"windows."
+msgstr ""
 
 #: src/preferences/pages/blacklist.ui:22
 #, fuzzy
