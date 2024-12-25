@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-13 01:29+0300\n"
+"POT-Creation-Date: 2024-12-25 13:30+0300\n"
 "PO-Revision-Date: 2023-04-18 06:49+0000\n"
 "Last-Translator: Jörn Weigend <das.jott@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/rounded-window-"
@@ -305,7 +305,7 @@ msgstr "Zeige abgerundete Ecken im Vollbild"
 msgid "Always clip rounded corners even for fullscreen window"
 msgstr "Abgerundete Ecken für Fenster im Vollbildmodus behalten."
 
-#: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
+#: src/utils/background_menu.ts:49 src/utils/background_menu.ts:74
 msgid "Rounded Corners Settings..."
 msgstr "Einstellungen für abgerundete Ecken..."
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-13 01:29+0300\n"
+"POT-Creation-Date: 2024-12-25 13:30+0300\n"
 "PO-Revision-Date: 2023-05-24 00:51+0000\n"
 "Last-Translator: Reza Almanda <rezaalmanda27@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/rounded-"
@@ -304,7 +304,7 @@ msgstr "Pertahankan Sudut Bulat saat Layar Penuh"
 msgid "Always clip rounded corners even for fullscreen window"
 msgstr "Selalu pertahankan sudut membulat saat jendela dalam layar penuh."
 
-#: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
+#: src/utils/background_menu.ts:49 src/utils/background_menu.ts:74
 msgid "Rounded Corners Settings..."
 msgstr "Pengaturan Sudut Bulat..."
 

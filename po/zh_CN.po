@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-13 01:29+0300\n"
+"POT-Creation-Date: 2024-12-25 13:30+0300\n"
 "PO-Revision-Date: 2023-03-02 12:35+0000\n"
 "Last-Translator: Yi <yilozt@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -300,7 +300,7 @@ msgstr "窗口全屏时保留圆角"
 msgid "Always clip rounded corners even for fullscreen window"
 msgstr "当窗口全屏时保留圆角效果。"
 
-#: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
+#: src/utils/background_menu.ts:49 src/utils/background_menu.ts:74
 msgid "Rounded Corners Settings..."
 msgstr "圆角设置…"
 

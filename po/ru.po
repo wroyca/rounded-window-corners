@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-13 01:29+0300\n"
+"POT-Creation-Date: 2024-12-25 13:30+0300\n"
 "PO-Revision-Date: 2023-03-09 15:37+0000\n"
 "Last-Translator: Evgeniy Khramov <thejenjagamertjg@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/rounded-window-"
@@ -305,7 +305,7 @@ msgstr "Сохранить закругленные углы при полноэ
 msgid "Always clip rounded corners even for fullscreen window"
 msgstr "Всегда сохранять закругленные углы при полноэкранном режиме окна."
 
-#: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
+#: src/utils/background_menu.ts:49 src/utils/background_menu.ts:74
 msgid "Rounded Corners Settings..."
 msgstr "Настройки закругленных углов..."
 

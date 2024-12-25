@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-13 01:29+0300\n"
+"POT-Creation-Date: 2024-12-25 13:30+0300\n"
 "PO-Revision-Date: 2023-12-10 10:05+0000\n"
 "Last-Translator: Nadjib Chergui <chergui.cnadjib@outlook.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/rounded-window-"
@@ -300,7 +300,7 @@ msgstr "إبقاء الزوايا المدورة في وضع ملء الشاشة
 msgid "Always clip rounded corners even for fullscreen window"
 msgstr "إبقاء الزوايا المدورة في حال النافذة في وضع ملء الشاشة."
 
-#: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
+#: src/utils/background_menu.ts:49 src/utils/background_menu.ts:74
 msgid "Rounded Corners Settings..."
 msgstr "إعدادات الزوايا المدورة..."
 

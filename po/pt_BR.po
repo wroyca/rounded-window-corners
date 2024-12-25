@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-13 01:29+0300\n"
+"POT-Creation-Date: 2024-12-25 13:30+0300\n"
 "PO-Revision-Date: 2023-11-12 08:23+0000\n"
 "Last-Translator: Matheus <cybercountry@proton.me>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -304,7 +304,7 @@ msgid "Always clip rounded corners even for fullscreen window"
 msgstr ""
 "Sempre mantenha os cantos arredondados quando a janela estiver em tela cheia."
 
-#: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
+#: src/utils/background_menu.ts:49 src/utils/background_menu.ts:74
 msgid "Rounded Corners Settings..."
 msgstr "Configurações de Cantos Arredondados..."
 

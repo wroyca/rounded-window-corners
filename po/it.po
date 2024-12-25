@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-13 01:29+0300\n"
+"POT-Creation-Date: 2024-12-25 13:30+0300\n"
 "PO-Revision-Date: 2024-02-25 14:01+0000\n"
 "Last-Translator: repex97 <repetto.andrea025@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/rounded-window-"
@@ -305,7 +305,7 @@ msgstr "Mantieni I Bordi Arrotondati In Schermo Intero"
 msgid "Always clip rounded corners even for fullscreen window"
 msgstr "Tieni i bordi arrotondati quando la finestra è a schermo intero."
 
-#: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
+#: src/utils/background_menu.ts:49 src/utils/background_menu.ts:74
 msgid "Rounded Corners Settings..."
 msgstr "Impostazioni per i Bordi Arrotondati..."
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-13 01:29+0300\n"
+"POT-Creation-Date: 2024-12-25 13:30+0300\n"
 "PO-Revision-Date: 2023-04-25 17:52+0000\n"
 "Last-Translator: Fjuro <ifjuro@proton.me>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/rounded-window-"
@@ -303,7 +303,7 @@ msgstr "Zachovat zaoblené rohy v režimu celé obrazovky"
 msgid "Always clip rounded corners even for fullscreen window"
 msgstr "Při zobrazení okna na celou obrazovku vždy zachovat zaoblené rohy."
 
-#: src/utils/background_menu.ts:60 src/utils/background_menu.ts:82
+#: src/utils/background_menu.ts:49 src/utils/background_menu.ts:74
 msgid "Rounded Corners Settings..."
 msgstr "Nastavení zaoblených rohů..."
 
