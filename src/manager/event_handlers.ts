@@ -36,6 +36,13 @@ import type {RoundedWindowActor} from '../utils/types.js';
 export function onAddEffect(actor: RoundedWindowActor) {
     logDebug(`opened: ${actor?.metaWindow.title}: ${actor}`);
 
+    const win = actor.metaWindow;
+
+    if (!shouldEnableEffect(win)) {
+        logDebug(`Skipping ${win.title}`);
+        return;
+    }
+
     unwrapActor(actor)?.add_effect_with_name(
         ROUNDED_CORNERS_EFFECT,
         new RoundedCornersEffect(),
@@ -264,13 +271,19 @@ function refreshRoundedCorners(actor: RoundedWindowActor): void {
     const windowInfo = actor.rwcCustomData;
     const effect = getRoundedCornersEffect(actor);
 
+    const shouldHaveEffect = shouldEnableEffect(win);
+
     if (!(effect && windowInfo)) {
+        if (shouldHaveEffect) {
+            logDebug(`Adding previously missing effect to ${win.title}`);
+            onAddEffect(actor);
+        }
+
         return;
     }
 
     // Skip rounded corners when window is fullscreen & maximize
     const cfg = getRoundedCornersCfg(win);
-    const shouldHaveEffect = shouldEnableEffect(win);
 
     if (effect.enabled !== shouldHaveEffect) {
         effect.enabled = shouldHaveEffect;
