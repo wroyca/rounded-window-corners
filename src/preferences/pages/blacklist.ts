@@ -22,10 +22,7 @@ export const BlacklistPage = GObject.registerClass(
             GLib.UriFlags.NONE,
         ),
         GTypeName: 'PrefsBlacklist',
-        InternalChildren: [
-          'blacklistGroup',
-          'useWhitelist',
-        ],
+        InternalChildren: ['blacklistGroup', 'useWhitelist'],
     },
     class extends Adw.PreferencesPage {
         private declare _blacklistGroup: Adw.PreferencesGroup;

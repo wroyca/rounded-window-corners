@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 12:46+0100\n"
+"POT-Creation-Date: 2025-01-31 09:36+0100\n"
 "PO-Revision-Date: 2023-10-11 16:02+0000\n"
 "Last-Translator: luxluth <delphin.blehoussi93@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/rounded-window-"
@@ -275,12 +275,12 @@ msgstr "Gauche"
 msgid "Right"
 msgstr "Droite"
 
-#: src/preferences/pages/blacklist.ts:64
+#: src/preferences/pages/blacklist.ts:61
 #, fuzzy
 msgid "Whitelist"
 msgstr "Liste noire"
 
-#: src/preferences/pages/blacklist.ts:65
+#: src/preferences/pages/blacklist.ts:62
 msgid "Blacklist"
 msgstr "Liste noire"
 

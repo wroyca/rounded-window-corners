@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 12:46+0100\n"
+"POT-Creation-Date: 2025-01-31 09:36+0100\n"
 "PO-Revision-Date: 2023-05-14 22:51+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/rounded-window-"
@@ -275,12 +275,12 @@ msgstr "Sol"
 msgid "Right"
 msgstr "Sağ"
 
-#: src/preferences/pages/blacklist.ts:64
+#: src/preferences/pages/blacklist.ts:61
 #, fuzzy
 msgid "Whitelist"
 msgstr "Kara liste"
 
-#: src/preferences/pages/blacklist.ts:65
+#: src/preferences/pages/blacklist.ts:62
 msgid "Blacklist"
 msgstr "Kara liste"
 

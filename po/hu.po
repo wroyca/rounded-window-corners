@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 12:46+0100\n"
+"POT-Creation-Date: 2025-01-31 09:36+0100\n"
 "PO-Revision-Date: 2023-10-01 14:00+0000\n"
 "Last-Translator: olevo <imagyarcsik@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/rounded-window-"
@@ -246,11 +246,11 @@ msgstr "Bal"
 msgid "Right"
 msgstr "Jobb"
 
-#: src/preferences/pages/blacklist.ts:64
+#: src/preferences/pages/blacklist.ts:61
 msgid "Whitelist"
 msgstr ""
 
-#: src/preferences/pages/blacklist.ts:65
+#: src/preferences/pages/blacklist.ts:62
 msgid "Blacklist"
 msgstr ""
 

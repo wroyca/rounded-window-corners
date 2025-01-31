@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 12:46+0100\n"
+"POT-Creation-Date: 2025-01-31 09:36+0100\n"
 "PO-Revision-Date: 2023-10-29 05:13+0000\n"
 "Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/rounded-window-"
@@ -275,12 +275,12 @@ msgstr "Lewo"
 msgid "Right"
 msgstr "Prawo"
 
-#: src/preferences/pages/blacklist.ts:64
+#: src/preferences/pages/blacklist.ts:61
 #, fuzzy
 msgid "Whitelist"
 msgstr "Blokowane aplikacje"
 
-#: src/preferences/pages/blacklist.ts:65
+#: src/preferences/pages/blacklist.ts:62
 msgid "Blacklist"
 msgstr "Blokowane aplikacje"
 

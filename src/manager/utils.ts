@@ -254,7 +254,9 @@ export function shouldEnableEffect(
     // handles blacklist / whitelist
     const isException = getPref('blacklist').includes(wmClass);
     const enableExceptions = getPref('whitelist');
-    if (isException != enableExceptions) return false;
+    if (isException !== enableExceptions) {
+        return false;
+    }
 
     // Only apply the effect to normal windows (skip menus, tooltips, etc.)
     if (

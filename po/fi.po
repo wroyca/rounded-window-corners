@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 12:46+0100\n"
+"POT-Creation-Date: 2025-01-31 09:36+0100\n"
 "PO-Revision-Date: 2022-11-12 07:50+0000\n"
 "Last-Translator: Ilari Suhonen <ilari.suhonen@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/rounded-window-"
@@ -274,12 +274,12 @@ msgstr "Vasen"
 msgid "Right"
 msgstr "Oikea"
 
-#: src/preferences/pages/blacklist.ts:64
+#: src/preferences/pages/blacklist.ts:61
 #, fuzzy
 msgid "Whitelist"
 msgstr "Estot"
 
-#: src/preferences/pages/blacklist.ts:65
+#: src/preferences/pages/blacklist.ts:62
 msgid "Blacklist"
 msgstr "Estot"
 
