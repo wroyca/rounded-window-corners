@@ -1,5 +1,6 @@
 /** @file Binds the actual corner rounding shader to the windows. */
 
+import Cogl from 'gi://Cogl';
 import GObject from 'gi://GObject';
 import Shell from 'gi://Shell';
 
@@ -46,7 +47,7 @@ export const RoundedCornersEffect = GObject.registerClass(
 
         vfunc_build_pipeline() {
             this.add_glsl_snippet(
-                Shell.SnippetHook.FRAGMENT,
+                Cogl.SnippetHook.FRAGMENT,
                 declarations,
                 code,
                 false,
