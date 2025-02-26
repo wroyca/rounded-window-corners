@@ -251,7 +251,10 @@ export function shouldEnableEffect(
         logDebug(`Warning: wm_class_instance of ${win}: ${win.title} is null`);
         return false;
     }
-    if (getPref('blacklist').includes(wmClass)) {
+    // handles blacklist / whitelist
+    const isException = getPref('blacklist').includes(wmClass);
+    const enableExceptions = getPref('whitelist');
+    if (isException !== enableExceptions) {
         return false;
     }
 

@@ -165,6 +165,7 @@ export function onSettingsChanged(key: SchemaKey): void {
         case 'unfocused-shadow':
             refreshAllShadows();
             break;
+        case 'whitelist':
         case 'global-rounded-corner-settings':
         case 'custom-rounded-corner-settings':
         case 'border-width':
