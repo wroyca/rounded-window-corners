@@ -168,7 +168,6 @@ export function onSettingsChanged(key: SchemaKey): void {
         case 'whitelist':
         case 'global-rounded-corner-settings':
         case 'custom-rounded-corner-settings':
-        case 'border-color':
         case 'border-width':
         case 'tweak-kitty-terminal':
             refreshAllRoundedCorners();
@@ -272,13 +271,19 @@ function refreshRoundedCorners(actor: RoundedWindowActor): void {
     const windowInfo = actor.rwcCustomData;
     const effect = getRoundedCornersEffect(actor);
 
+    const shouldHaveEffect = shouldEnableEffect(win);
+
     if (!(effect && windowInfo)) {
+        if (shouldHaveEffect) {
+            logDebug(`Adding previously missing effect to ${win.title}`);
+            onAddEffect(actor);
+        }
+
         return;
     }
 
     // Skip rounded corners when window is fullscreen & maximize
     const cfg = getRoundedCornersCfg(win);
-    const shouldHaveEffect = shouldEnableEffect(win);
 
     if (effect.enabled !== shouldHaveEffect) {
         effect.enabled = shouldHaveEffect;
